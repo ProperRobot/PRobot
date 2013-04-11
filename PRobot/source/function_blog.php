@@ -390,6 +390,7 @@ function blog_bbcode($message) {
 	return $message;
 }
 //สำฦต
+
 function blog_flash($swf_url, $type='') {
 	$width = '520';
 	$height = '390';

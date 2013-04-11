@@ -131,5 +131,48 @@ $_SGLOBAL['click']=Array
 			'displayorder' => '0'
 			)
 		)
+	'pnid' => Array
+		(
+		16 => Array
+			(
+			'clickid' => 1,
+			'name' => '路过',
+			'icon' => 'luguo.gif',
+			'idtype' => 'pnid',
+			'displayorder' => '0'
+			),
+		20 => Array
+			(
+			'clickid' => 5,
+			'name' => '鸡蛋',
+			'icon' => 'jidan.gif',
+			'idtype' => 'pnid',
+			'displayorder' => '0'
+			),
+		19 => Array
+			(
+			'clickid' => 4,
+			'name' => '鲜花',
+			'icon' => 'xianhua.gif',
+			'idtype' => 'pnid',
+			'displayorder' => '0'
+			),
+		18 => Array
+			(
+			'clickid' => 3,
+			'name' => '握手',
+			'icon' => 'woshou.gif',
+			'idtype' => 'pnid',
+			'displayorder' => '0'
+			),
+		17 => Array
+			(
+			'clickid' => 2,
+			'name' => '雷人',
+			'icon' => 'leiren.gif',
+			'idtype' => 'pnid',
+			'displayorder' => '0'
+			)
+		),
 	)
 ?>

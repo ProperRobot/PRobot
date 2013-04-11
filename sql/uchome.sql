@@ -246,6 +246,11 @@ INSERT INTO `uchome_click` (`clickid`, `name`, `icon`, `idtype`, `displayorder`)
 (13, '雷人', 'leiren.gif', 'tid', 0),
 (14, '鲜花', 'xianhua.gif', 'tid', 0),
 (15, '鸡蛋', 'jidan.gif', 'tid', 0);
+(16, '路过', 'luguo.gif', 'pnid', 0),
+(17, '雷人', 'leiren.gif', 'pnid', 0),
+(18, '握手', 'woshou.gif', 'pnid', 0),
+(19, '鲜花', 'xianhua.gif', 'pnid', 0),
+(20, '鸡蛋', 'jidan.gif', 'pnid', 0),
 
 -- --------------------------------------------------------
 
@@ -346,6 +351,7 @@ INSERT INTO `uchome_config` (`var`, `datavalue`) VALUES
 ('name_allowpoke', '1'),
 ('name_allowdoing', '1'),
 ('name_allowblog', '0'),
+('name_allowpronotice', '0'),
 ('name_allowalbum', '0'),
 ('name_allowthread', '0'),
 ('name_allowshare', '0'),
@@ -473,6 +479,10 @@ INSERT INTO `uchome_creditrule` (`rid`, `rulename`, `action`, `cycletype`, `cycl
 (45, '分享被删除', 'delshare', 0, 0, 1, 0, 0, 4, 4),
 (46, '留言被删除', 'delguestbook', 0, 0, 1, 0, 0, 4, 4),
 (47, '评论被删除', 'delcomment', 0, 0, 1, 0, 0, 2, 2);
+(48, '物业通知', 'pushpronotice', 1, 0, 3, 1, 0, 5, 5),
+(49, '物业通知导入', 'pronoticeimport', 0, 0, 1, 0, 0, 10, 0),
+(50, '日志被删除', 'delpronotice', 0, 0, 1, 0, 0, 10, 0),
+
 
 -- --------------------------------------------------------
 
@@ -1409,6 +1419,7 @@ CREATE TABLE IF NOT EXISTS `uchome_space` (
   `pokenum` smallint(6) unsigned NOT NULL DEFAULT '0',
   `doingnum` smallint(6) unsigned NOT NULL DEFAULT '0',
   `blognum` smallint(6) unsigned NOT NULL DEFAULT '0',
+  `pronoticenum` smallint(6) unsigned NOT NULL DEFAULT '0',
   `albumnum` smallint(6) unsigned NOT NULL DEFAULT '0',
   `threadnum` smallint(6) unsigned NOT NULL DEFAULT '0',
   `pollnum` smallint(6) unsigned NOT NULL DEFAULT '0',
@@ -1441,8 +1452,8 @@ CREATE TABLE IF NOT EXISTS `uchome_space` (
 -- 转存表中的数据 `uchome_space`
 --
 
-INSERT INTO `uchome_space` (`uid`, `groupid`, `credit`, `experience`, `username`, `name`, `namestatus`, `videostatus`, `domain`, `friendnum`, `viewnum`, `notenum`, `addfriendnum`, `mtaginvitenum`, `eventinvitenum`, `myinvitenum`, `pokenum`, `doingnum`, `blognum`, `albumnum`, `threadnum`, `pollnum`, `eventnum`, `sharenum`, `dateline`, `updatetime`, `lastsearch`, `lastpost`, `lastlogin`, `lastsend`, `attachsize`, `addsize`, `addfriend`, `flag`, `newpm`, `avatar`, `regip`, `ip`, `mood`) VALUES
-(1, 1, 25, 15, 'admin', '', 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1364924853, 0, 0, 0, 1364924853, 0, 0, 0, 0, 1, 0, 0, '127.0.0.1', 127000000, 0);
+INSERT INTO `uchome_space` (`uid`, `groupid`, `credit`, `experience`, `username`, `name`, `namestatus`, `videostatus`, `domain`, `friendnum`, `viewnum`, `notenum`, `addfriendnum`, `mtaginvitenum`, `eventinvitenum`, `myinvitenum`, `pokenum`, `doingnum`, `blognum`, `pronoticenum`,`albumnum`, `threadnum`, `pollnum`, `eventnum`, `sharenum`, `dateline`, `updatetime`, `lastsearch`, `lastpost`, `lastlogin`, `lastsend`, `attachsize`, `addsize`, `addfriend`, `flag`, `newpm`, `avatar`, `regip`, `ip`, `mood`) VALUES
+(1, 1, 25, 15, 'admin', '', 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1364924853, 0, 0, 0, 1364924853, 0, 0, 0, 0, 1, 0, 0, '127.0.0.1', 127000000, 0);
 
 -- --------------------------------------------------------
 
@@ -1549,6 +1560,7 @@ CREATE TABLE IF NOT EXISTS `uchome_stat` (
   `appinvite` smallint(6) unsigned NOT NULL DEFAULT '0',
   `doing` smallint(6) unsigned NOT NULL DEFAULT '0',
   `blog` smallint(6) unsigned NOT NULL DEFAULT '0',
+  `pronotice` smallint(6) unsigned NOT NULL DEFAULT '0',
   `pic` smallint(6) unsigned NOT NULL DEFAULT '0',
   `poll` smallint(6) unsigned NOT NULL DEFAULT '0',
   `event` smallint(6) unsigned NOT NULL DEFAULT '0',
@@ -1556,6 +1568,7 @@ CREATE TABLE IF NOT EXISTS `uchome_stat` (
   `thread` smallint(6) unsigned NOT NULL DEFAULT '0',
   `docomment` smallint(6) unsigned NOT NULL DEFAULT '0',
   `blogcomment` smallint(6) unsigned NOT NULL DEFAULT '0',
+  `pronoticecomment` smallint(6) unsigned NOT NULL DEFAULT '0',
   `piccomment` smallint(6) unsigned NOT NULL DEFAULT '0',
   `pollcomment` smallint(6) unsigned NOT NULL DEFAULT '0',
   `pollvote` smallint(6) unsigned NOT NULL DEFAULT '0',
@@ -1573,8 +1586,8 @@ CREATE TABLE IF NOT EXISTS `uchome_stat` (
 -- 转存表中的数据 `uchome_stat`
 --
 
-INSERT INTO `uchome_stat` (`daytime`, `login`, `register`, `invite`, `appinvite`, `doing`, `blog`, `pic`, `poll`, `event`, `share`, `thread`, `docomment`, `blogcomment`, `piccomment`, `pollcomment`, `pollvote`, `eventcomment`, `eventjoin`, `sharecomment`, `post`, `wall`, `poke`, `click`) VALUES
-(20130403, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+INSERT INTO `uchome_stat` (`daytime`, `login`, `register`, `invite`, `appinvite`, `doing`, `blog`,`pronotice`,`pic`, `poll`, `event`, `share`, `thread`, `docomment`, `blogcomment`, `pronoticecomment`,`piccomment`, `pollcomment`, `pollvote`, `eventcomment`, `eventjoin`, `sharecomment`, `post`, `wall`, `poke`, `click`) VALUES
+(20130403, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1608,6 +1621,7 @@ CREATE TABLE IF NOT EXISTS `uchome_tag` (
   `uid` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `dateline` int(10) unsigned NOT NULL DEFAULT '0',
   `blognum` smallint(6) unsigned NOT NULL DEFAULT '0',
+  `pronoticenum` smallint(6) unsigned NOT NULL DEFAULT '0',
   `close` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`tagid`),
   KEY `tagname` (`tagname`)
@@ -1624,7 +1638,17 @@ CREATE TABLE IF NOT EXISTS `uchome_tagblog` (
   `blogid` mediumint(8) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`tagid`,`blogid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+-- --------------------------------------------------------
 
+--
+-- 表的结构 `uchome_tagblog`
+--
+
+CREATE TABLE IF NOT EXISTS `uchome_tagpronotice` (
+  `tagid` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `pnid` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`tagid`,`pnid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 -- --------------------------------------------------------
 
 --
@@ -1678,6 +1702,7 @@ INSERT INTO `uchome_task` (`taskid`, `available`, `name`, `note`, `num`, `maxnum
 (5, 1, '验证激活自己的邮箱', '填写自己真实的邮箱地址并验证通过。<br>您可以在忘记密码的时候使用该邮箱取回自己的密码；<br>还可以及时接受站内的好友通知等等。', 0, 0, 'image/task/email.gif', 'email.php', 0, 0, 0, '', 10, 5),
 (6, 1, '邀请10个新朋友加入', '邀请一下自己的QQ好友或者邮箱联系人，让亲朋好友一起来加入我们吧。', 0, 0, 'image/task/friend.gif', 'invite.php', 0, 0, 0, '', 100, 6),
 (7, 1, '领取每日访问大礼包', '每天登录访问自己的主页，就可领取大礼包。', 0, 0, 'image/task/gift.gif', 'gift.php', 0, 0, 0, 'day', 5, 99);
+(8, 1, '发表自己的第一篇通知', '现在，就写下自己的第一篇通知吧。<br>与大家一起分享自己的生活感悟。', 0, 0, 'image/task/pronotice.gif', 'pronotice.php', 0, 0, 0, '', 5, 3),
 
 -- --------------------------------------------------------
 
@@ -1837,6 +1862,7 @@ CREATE TABLE IF NOT EXISTS `uchome_usergroup` (
   `spamignore` tinyint(1) NOT NULL DEFAULT '0',
   `videophotoignore` tinyint(1) NOT NULL DEFAULT '0',
   `allowblog` tinyint(1) NOT NULL DEFAULT '0',
+  `allowpronotice` tinyint(1) NOT NULL DEFAULT '0',
   `allowdoing` tinyint(1) NOT NULL DEFAULT '0',
   `allowupload` tinyint(1) NOT NULL DEFAULT '0',
   `allowshare` tinyint(1) NOT NULL DEFAULT '0',
@@ -1872,6 +1898,7 @@ CREATE TABLE IF NOT EXISTS `uchome_usergroup` (
   `manageshare` tinyint(1) NOT NULL DEFAULT '0',
   `managedoing` tinyint(1) NOT NULL DEFAULT '0',
   `manageblog` tinyint(1) NOT NULL DEFAULT '0',
+  `managepronotice` tinyint(1) NOT NULL DEFAULT '0',
   `managetag` tinyint(1) NOT NULL DEFAULT '0',
   `managetagtpl` tinyint(1) NOT NULL DEFAULT '0',
   `managealbum` tinyint(1) NOT NULL DEFAULT '0',
@@ -1914,20 +1941,22 @@ CREATE TABLE IF NOT EXISTS `uchome_usergroup` (
   PRIMARY KEY (`gid`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
 
+-- --------------------------------------------------------
+
 --
 -- 转存表中的数据 `uchome_usergroup`
 --
 
-INSERT INTO `uchome_usergroup` (`gid`, `grouptitle`, `system`, `banvisit`, `explower`, `maxfriendnum`, `maxattachsize`, `allowhtml`, `allowcomment`, `searchinterval`, `searchignore`, `postinterval`, `spamignore`, `videophotoignore`, `allowblog`, `allowdoing`, `allowupload`, `allowshare`, `allowmtag`, `allowthread`, `allowpost`, `allowcss`, `allowpoke`, `allowfriend`, `allowpoll`, `allowclick`, `allowevent`, `allowmagic`, `allowpm`, `allowviewvideopic`, `allowmyop`, `allowtopic`, `allowstat`, `magicdiscount`, `verifyevent`, `edittrail`, `domainlength`, `closeignore`, `seccode`, `color`, `icon`, `manageconfig`, `managenetwork`, `manageprofilefield`, `manageprofield`, `manageusergroup`, `managefeed`, `manageshare`, `managedoing`, `manageblog`, `managetag`, `managetagtpl`, `managealbum`, `managecomment`, `managemtag`, `managethread`, `manageevent`, `manageeventclass`, `managecensor`, `managead`, `managesitefeed`, `managebackup`, `manageblock`, `managetemplate`, `managestat`, `managecache`, `managecredit`, `managecron`, `managename`, `manageapp`, `managetask`, `managereport`, `managepoll`, `manageclick`, `managemagic`, `managemagiclog`, `managebatch`, `managedelspace`, `managetopic`, `manageip`, `managehotuser`, `managedefaultuser`, `managespacegroup`, `managespaceinfo`, `managespacecredit`, `managespacenote`, `managevideophoto`, `managelog`, `magicaward`) VALUES
-(1, '站点管理员', -1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 'red', 'image/group/admin.gif', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ''),
-(2, '信息管理员', -1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 3, 1, 0, 'blue', 'image/group/infor.gif', 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ''),
-(3, '贵宾VIP', 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 3, 0, 0, 'green', 'image/group/vip.gif', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ''),
-(4, '受限会员', 0, 0, -999999999, 10, 10, 0, 0, 600, 0, 300, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ''),
-(5, '普通会员', 0, 0, 0, 100, 20, 0, 1, 60, 0, 60, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ''),
-(6, '中级会员', 0, 0, 100, 200, 50, 0, 1, 30, 0, 30, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 5, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ''),
-(7, '高级会员', 0, 0, 1000, 300, 100, 1, 1, 10, 1, 10, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 3, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ''),
-(8, '禁止发言', -1, 0, 0, 1, 1, 0, 0, 9999, 0, 9999, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 99, 0, 1, '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ''),
-(9, '禁止访问', -1, 1, 0, 1, 1, 0, 0, 9999, 0, 9999, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 99, 0, 1, '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '');
+INSERT INTO `uchome_usergroup` (`gid`, `grouptitle`, `system`, `banvisit`, `explower`, `maxfriendnum`, `maxattachsize`, `allowhtml`, `allowcomment`, `searchinterval`, `searchignore`, `postinterval`, `spamignore`, `videophotoignore`, `allowblog`, `allowpronotice`, `allowdoing`, `allowupload`, `allowshare`, `allowmtag`, `allowthread`, `allowpost`, `allowcss`, `allowpoke`, `allowfriend`, `allowpoll`, `allowclick`, `allowevent`, `allowmagic`, `allowpm`, `allowviewvideopic`, `allowmyop`, `allowtopic`, `allowstat`, `magicdiscount`, `verifyevent`, `edittrail`, `domainlength`, `closeignore`, `seccode`, `color`, `icon`, `manageconfig`, `managenetwork`, `manageprofilefield`, `manageprofield`, `manageusergroup`, `managefeed`, `manageshare`, `managedoing`, `manageblog`, `managepronotice`, `managetag`, `managetagtpl`, `managealbum`, `managecomment`, `managemtag`, `managethread`, `manageevent`, `manageeventclass`, `managecensor`, `managead`, `managesitefeed`, `managebackup`, `manageblock`, `managetemplate`, `managestat`, `managecache`, `managecredit`, `managecron`, `managename`, `manageapp`, `managetask`, `managereport`, `managepoll`, `manageclick`, `managemagic`, `managemagiclog`, `managebatch`, `managedelspace`, `managetopic`, `manageip`, `managehotuser`, `managedefaultuser`, `managespacegroup`, `managespaceinfo`, `managespacecredit`, `managespacenote`, `managevideophoto`, `managelog`, `magicaward`) VALUES
+(1, '站点管理员', -1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 'red', 'image/group/admin.gif', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ''),
+(2, '信息管理员', -1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 3, 1, 0, 'blue', 'image/group/infor.gif', 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ''),
+(3, '贵宾VIP', 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 3, 0, 0, 'green', 'image/group/vip.gif', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ''),
+(4, '受限会员', 0, 0, -999999999, 10, 10, 0, 0, 600, 0, 300, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ''),
+(5, '普通会员', 0, 0, 0, 100, 20, 0, 1, 60, 0, 60, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ''),
+(6, '中级会员', 0, 0, 100, 200, 50, 0, 1, 30, 0, 30, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 5, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ''),
+(7, '高级会员', 0, 0, 1000, 300, 100, 1, 1, 10, 1, 10, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 3, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ''),
+(8, '禁止发言', -1, 0, 0, 1, 1, 0, 0, 9999, 0, 9999, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 99, 0, 1, '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ''),
+(9, '禁止访问', -1, 1, 0, 1, 1, 0, 0, 9999, 0, 9999, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 99, 0, 1, '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '');
 
 -- --------------------------------------------------------
 
@@ -1992,3 +2021,58 @@ CREATE TABLE IF NOT EXISTS `uchome_visitor` (
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `uchome_propertynotice`
+--
+
+CREATE TABLE IF NOT EXISTS `uchome_pronotice` (
+  `pnid` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `topicid` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `uid` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `username` char(15) NOT NULL DEFAULT '',
+  `subject` char(80) NOT NULL DEFAULT '',
+  `classid` smallint(6) unsigned NOT NULL DEFAULT '0',
+  `viewnum` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `replynum` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `hot` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `dateline` int(10) unsigned NOT NULL DEFAULT '0',
+  `pic` char(120) NOT NULL DEFAULT '',
+  `picflag` tinyint(1) NOT NULL DEFAULT '0',
+  `noreply` tinyint(1) NOT NULL DEFAULT '0',
+  `friend` tinyint(1) NOT NULL DEFAULT '0',
+  `password` char(10) NOT NULL DEFAULT '',
+  `click_1` smallint(6) unsigned NOT NULL DEFAULT '0',
+  `click_2` smallint(6) unsigned NOT NULL DEFAULT '0',
+  `click_3` smallint(6) unsigned NOT NULL DEFAULT '0',
+  `click_4` smallint(6) unsigned NOT NULL DEFAULT '0',
+  `click_5` smallint(6) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`pnid`),
+  KEY `uid` (`uid`,`dateline`),
+  KEY `topicid` (`topicid`,`dateline`),
+  KEY `dateline` (`dateline`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- -----------------------------------------------------
+
+--
+-- 表的结构 `uchome_pronoticefield`
+--
+CREATE TABLE IF NOT EXISTS `uchome_pronoticefield` (
+  `pnid` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `uid` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `tag` varchar(255) NOT NULL DEFAULT '',
+  `message` mediumtext NOT NULL,
+  `postip` varchar(20) NOT NULL DEFAULT '',
+  `related` text NOT NULL,
+  `relatedtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `target_ids` text NOT NULL,
+  `hotuser` text NOT NULL,
+  `magiccolor` tinyint(6) NOT NULL DEFAULT '0',
+  `magicpaper` tinyint(6) NOT NULL DEFAULT '0',
+  `magiccall` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`pnid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+

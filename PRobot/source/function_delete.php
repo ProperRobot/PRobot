@@ -113,6 +113,65 @@ function deleteblogs($blogids) {
 	return $blogs;
 }
 
+//删除通知
+function deletepronotices($pnids) {
+	global $_SGLOBAL;
+
+	//获取积分
+	$reward = getreward('delpronotice', 0);
+	//获取通知信息
+	$spaces = $pronotices = $newpnids = array();
+	$allowmanage = checkperm('managepronotice');
+	$managebatch = checkperm('managebatch');
+	$delnum = 0;
+	$query = $_SGLOBAL['db']->query("SELECT * FROM ".tname('pronotice')." WHERE pnid IN (".simplode($pnids).")");
+	while ($value = $_SGLOBAL['db']->fetch_array($query)) {
+		if($allowmanage || $value['uid'] == $_SGLOBAL['supe_uid']) {
+			$pronotices[] = $value;
+			if(!$managebatch && $value['uid'] != $_SGLOBAL['supe_uid']) {
+				$delnum++;
+			}
+		}
+	}
+	if(empty($pronotices) || (!$managebatch && $delnum > 1)) return array();
+	
+	foreach($pronotices as $key => $value) {
+		$newpnids[] = $value['pnid'];
+		if($allowmanage && $value['uid'] != $_SGLOBAL['supe_uid']) {
+			//扣除积分
+			$_SGLOBAL['db']->query("UPDATE ".tname('space')." SET credit=credit-$reward[credit], experience=experience-$reward[experience] WHERE uid='$value[uid]'");
+		}
+		//tag
+		$tags = array();
+		$subquery = $_SGLOBAL['db']->query("SELECT tagid, pnid FROM ".tname('tagpronotice')." WHERE pnid='$value[pnid]'");
+		while ($tag = $_SGLOBAL['db']->fetch_array($subquery)) {
+			$tags[] = $tag['tagid'];
+		}
+		if($tags) {
+			$_SGLOBAL['db']->query("UPDATE ".tname('tag')." SET pronoticenum=pronoticenum-1 WHERE tagid IN (".simplode($tags).")");
+			$_SGLOBAL['db']->query("DELETE FROM ".tname('tagpronotice')." WHERE pnid='$value[pnid]'");
+		}
+	}
+
+	//数据删除
+	$_SGLOBAL['db']->query("DELETE FROM ".tname('pronotice')." WHERE pnid IN (".simplode($newpnids).")");
+	$_SGLOBAL['db']->query("DELETE FROM ".tname('pronoticefield')." WHERE pnid IN (".simplode($newpnids).")");
+
+	//评论
+	$_SGLOBAL['db']->query("DELETE FROM ".tname('comment')." WHERE id IN (".simplode($newpnids).") AND idtype='pnid'");
+
+	//删除举报
+	$_SGLOBAL['db']->query("DELETE FROM ".tname('report')." WHERE id IN (".simplode($newpnids).") AND idtype='pnid'");
+
+	//删除feed
+	$_SGLOBAL['db']->query("DELETE FROM ".tname('feed')." WHERE id IN (".simplode($newpnids).") AND idtype='pnid'");
+	
+	//删除脚印
+	$_SGLOBAL['db']->query("DELETE FROM ".tname('clickuser')." WHERE id IN (".simplode($newpnids).") AND idtype='pnid'");
+
+	return $pronotices;
+}
+
 //删除事件
 function deletefeeds($feedids) {
 	global $_SGLOBAL;
