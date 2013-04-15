@@ -14,9 +14,9 @@
 	<!--{if $tagspace[grade]==9}-->群主
 	<!--{elseif $tagspace[grade]==8}-->副群主
 	<!--{elseif $tagspace[grade]==1}-->明星
-	<!--{elseif $tagspace[grade]==-1}-->待审核
+	<!--{elseif $tagspace[grade]==-1}-->待審核
 	<!--{elseif $tagspace[grade]==-2}-->禁言
-	<!--{else}-->普通会员
+	<!--{else}-->普通會員
 	<!--{/if}-->
 	
 <!--{elseif $op == 'post'}-->
@@ -48,12 +48,12 @@
 	<div class="popupmenu_layer">
 			<p>$rule[rulename]</p>
 			<p class="btn_line">
-				<!--{if $rule[credit]}-->积分 <strong>+$rule[credit]</strong> <!--{/if}-->
-				<!--{if $rule[experience]}-->经验 <strong>+$rule[experience]</strong> <!--{/if}-->
+				<!--{if $rule[credit]}-->積分 <strong>+$rule[credit]</strong> <!--{/if}-->
+				<!--{if $rule[experience]}-->經驗 <strong>+$rule[experience]</strong> <!--{/if}-->
 			</p>
 			<!--{if $rule[cyclenum]}-->
 			<p>
-				本周期内，您还有 $rule[cyclenum] 次机会
+				本週期內，您還有 $rule[cyclenum] 次機會
 			</p>
 			<!--{/if}-->
 	</div>

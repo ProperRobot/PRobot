@@ -5,12 +5,12 @@
 
 <div class="tabs_header">
 	<ul class="tabs">
-		<li$actives[all]><a href="admincp.php?ac=$ac"><span>浏览全部列表</span></a></li>
-		<li$actives[grade0]><a href="admincp.php?ac=$ac&perpage=20&grade=0&searchsubmit=1"><span>待审核活动</span></a></li>
-		<li$actives[grade_1]><a href="admincp.php?ac=$ac&perpage=20&grade=-1&searchsubmit=1"><span>未通过审核活动</span></a></li>
-		<li$actives[grade1]><a href="admincp.php?ac=$ac&perpage=20&grade=1&searchsubmit=1"><span>已通过审核活动</span></a></li>
-		<li$actives[grade_2]><a href="admincp.php?ac=$ac&perpage=20&grade=-2&searchsubmit=1"><span>已关闭活动</span></a></li>
-		<li$actives[grade2]><a href="admincp.php?ac=$ac&perpage=20&grade=2&searchsubmit=1"><span>推荐活动</span></a></li>
+		<li$actives[all]><a href="admincp.php?ac=$ac"><span>瀏覽全部列表</span></a></li>
+		<li$actives[grade0]><a href="admincp.php?ac=$ac&perpage=20&grade=0&searchsubmit=1"><span>待審核活動</span></a></li>
+		<li$actives[grade_1]><a href="admincp.php?ac=$ac&perpage=20&grade=-1&searchsubmit=1"><span>未通過審核活動</span></a></li>
+		<li$actives[grade1]><a href="admincp.php?ac=$ac&perpage=20&grade=1&searchsubmit=1"><span>已通過審核活動</span></a></li>
+		<li$actives[grade_2]><a href="admincp.php?ac=$ac&perpage=20&grade=-2&searchsubmit=1"><span>已關閉活動</span></a></li>
+		<li$actives[grade2]><a href="admincp.php?ac=$ac&perpage=20&grade=2&searchsubmit=1"><span>推薦活動</span></a></li>
 	</ul>
 </div>
 
@@ -18,16 +18,16 @@
 	<div class="block style4">
 		<table cellspacing="3" cellpadding="3">
 		<tr>
-			<th>活动ID</th><td><input type="text" name="eventid" value="$_GET[eventid]"></td>
-			<th>创建者UID</th><td><input type="text" name="uid" value="$_GET[uid]"></td>
+			<th>活動ID</th><td><input type="text" name="eventid" value="$_GET[eventid]"></td>
+			<th>創建者UID</th><td><input type="text" name="uid" value="$_GET[uid]"></td>
 		</tr>
 		<tr>
-			<th>标题*</th><td><input type="text" name="title" value="$_GET[title]"></td>
-			<th>活动类型</th>
+			<th>標題*</th><td><input type="text" name="title" value="$_GET[title]"></td>
+			<th>活動類型</th>
 			<td>
 				<select name="classid">
 					<option value="">
-						请选择活动分类
+						請選擇活動分類
 					</option>
 					<!--{loop $_SGLOBAL[eventclass] $key $value}-->
 					<option value="$key" <!--{if $_GET[classid] == $key}--> selected<!--{/if}-->>$value[classname]</option>
@@ -36,7 +36,7 @@
 			</td>
 		</tr>
 		<tr>
-			<th>活动城市</th>
+			<th>活動城市</th>
 			<td id="citybox">
 				<script type="text/javascript" src="source/script_city.js" charset="$_SC[charset]"></script>
                 <script type="text/javascript" charset="$_SC[charset]">
@@ -44,68 +44,68 @@
                     showcity('city', '$_GET[city]', 'province', 'citybox');
                 </script>
 			</td>
-			<th>公开性质</th>
+			<th>公開性質</th>
 			<td>
 				<select name="public">
 					<option value="">不限</option>
 					<option value="0"<!--{if $_GET[public] === '0'}--> selected<!--{/if}-->>私密</option>
-					<option value="1"<!--{if $_GET[public] === '1'}--> selected<!--{/if}-->>半公开</option>
-					<option value="2"<!--{if $_GET[public] === '2'}--> selected<!--{/if}-->>完全公开</option>
+					<option value="1"<!--{if $_GET[public] === '1'}--> selected<!--{/if}-->>半公開</option>
+					<option value="2"<!--{if $_GET[public] === '2'}--> selected<!--{/if}-->>完全公開</option>
 				</select>
 			</td>
 		</tr>
 		<tr>
-			<th>活动时间</th>
+			<th>活動時間</th>
 			<td>
 				<script type="text/javascript" src="source/script_calendar.js"></script>
 				<input type="text" name="starttime" value="$_GET[starttime]" onclick="showcalendar(event,this,1)"/> ~
 				<input type="text" name="endtime" value="$_GET[endtime]"  onclick="showcalendar(event,this,1)" />
 			</td>
-			<th>是否结束</th>
+			<th>是否結束</th>
 			<td>
 				<select name="over">
 					<option value="">不限</option>
-					<option value="0"<!--{if $_GET[over] === '0'}--> selected<!--{/if}-->>未结束</option>
-					<option value="1"<!--{if $_GET[over] === '1'}--> selected<!--{/if}-->>已结束</option>
+					<option value="0"<!--{if $_GET[over] === '0'}--> selected<!--{/if}-->>未結束</option>
+					<option value="1"<!--{if $_GET[over] === '1'}--> selected<!--{/if}-->>已結束</option>
 				</select>
 			</td>
 		</tr>
 		<tr>
-			<th>活动状态</th>
+			<th>活動狀態</th>
 			<td colspan="3">
 				<select name="grade">
 					<option value="">不限</option>
-					<option value="-2"<!--{if $_GET[grade] === '-2'}--> selected<!--{/if}-->>已关闭</option>
-					<option value="-1"<!--{if $_GET[grade] === '-1'}--> selected<!--{/if}-->>未通过审核</option>
-					<option value="0"<!--{if $_GET[grade] === '0'}--> selected<!--{/if}-->>待审核</option>
-					<option value="1"<!--{if $_GET[grade] === '1'}--> selected<!--{/if}-->>通过审核</option>
-					<option value="2"<!--{if $_GET[grade] === '2'}--> selected<!--{/if}-->>推荐</option>
+					<option value="-2"<!--{if $_GET[grade] === '-2'}--> selected<!--{/if}-->>已關閉</option>
+					<option value="-1"<!--{if $_GET[grade] === '-1'}--> selected<!--{/if}-->>未通過審核</option>
+					<option value="0"<!--{if $_GET[grade] === '0'}--> selected<!--{/if}-->>待審核</option>
+					<option value="1"<!--{if $_GET[grade] === '1'}--> selected<!--{/if}-->>通過審核</option>
+					<option value="2"<!--{if $_GET[grade] === '2'}--> selected<!--{/if}-->>推薦</option>
 				</select>
 			</td>
 		</tr>
-		<tr><th>热度</th><td colspan="3">
+		<tr><th>熱度</th><td colspan="3">
 			<input type="text" name="hot1" value="$_GET[hot1]" size="10"> ~
 			<input type="text" name="hot2" value="$_GET[hot2]" size="10">
 		</td></tr>
 		<tr>
-			<th>结果排序</th>
+			<th>結果排序</th>
 			<td colspan="3">
 				<select name="orderby">
-					<option value="">默认排序</option>
-					<option value="dateline"$orderby[dateline]>发布时间</option>
-					<option value="starttime"$orderby[starttime]>开始时间</option>
-					<option value="membernum"$orderby[membernum]>参加人数</option>
-					<option value="hot"$orderby[hot]>热度</option>
+					<option value="">默認排序</option>
+					<option value="dateline"$orderby[dateline]>發佈時間</option>
+					<option value="starttime"$orderby[starttime]>開始時間</option>
+					<option value="membernum"$orderby[membernum]>參加人數</option>
+					<option value="hot"$orderby[hot]>熱度</option>
 				</select>
 				<select name="ordersc">
-					<option value="desc"$ordersc[desc]>递减</option>
-					<option value="asc"$ordersc[asc]>递增</option>
+					<option value="desc"$ordersc[desc]>遞減</option>
+					<option value="asc"$ordersc[asc]>遞增</option>
 				</select>
 				<select name="perpage">
-					<option value="20"$perpages[20]>每页显示20个</option>
-					<option value="50"$perpages[50]>每页显示50个</option>
-					<option value="100"$perpages[100]>每页显示100个</option>
-					<option value="1000"$perpages[1000]>一次处理1000个</option>
+					<option value="20"$perpages[20]>每頁顯示20個</option>
+					<option value="50"$perpages[50]>每頁顯示50個</option>
+					<option value="100"$perpages[100]>每頁顯示100個</option>
+					<option value="1000"$perpages[1000]>一次處理1000個</option>
 				</select>
 				<input type="hidden" name="ac" value="event">
 				<input type="submit" name="searchsubmit" value="搜索" class="submit">
@@ -122,7 +122,7 @@
 	<div class="bdrcontent">
 
 	<!--{if $perpage>100}-->
-		<p>总共有满足条件的数据 <strong>$count</strong> 个</p>
+		<p>總共有滿足條件的數據 <strong>$count</strong> 個</p>
 		<!--{loop $list $value}-->
 		<input type="hidden" name="ids[]" value="$value[eventid]">
 		<!--{/loop}-->
@@ -131,11 +131,11 @@
 		<table cellspacing="0" cellpadding="0" class="formtable">
 		<tr>
 			<td width="25">&nbsp;</td>
-			<th>活动名称</th>
-			<th width="80">活动城市</th>
-			<th width="120">活动时间</th>
-			<th width="80">参加/关注</th>
-			<th width="80">发起者</th>
+			<th>活動名稱</th>
+			<th width="80">活動城市</th>
+			<th width="120">活動時間</th>
+			<th width="80">參加/關注</th>
+			<th width="80">發起者</th>
 			<th width="40">操作</th>
 		</tr>
 		<!--{loop $list $value}-->
@@ -146,13 +146,13 @@
 			<td>
 				<a href="space.php?do=event&id=$value[eventid]" target="_blank">$value[title]</a>
 				<a class="gray" href="admincp.php?ac=event&grade=$value[grade]">
-					<!--{if $value[grade] == 0}-->待审核
-					<!--{elseif $value[grade]==-1}-->未通过审核
-					<!--{elseif $value[grade]==2}-->推荐
-					<!--{elseif $value[grade]==-2}-->已关闭
+					<!--{if $value[grade] == 0}-->待審核
+					<!--{elseif $value[grade]==-1}-->未通過審核
+					<!--{elseif $value[grade]==2}-->推薦
+					<!--{elseif $value[grade]==-2}-->已關閉
 					<!--{/if}-->				
 				</a>
-				<!--{if $value[hot]}--><span style="color:red;">热度($value[hot])</span><!--{/if}-->
+				<!--{if $value[hot]}--><span style="color:red;">熱度($value[hot])</span><!--{/if}-->
 			</td>
 			<td>
 				<a href="admincp.php?ac=event&province=$value[province]">$value[province]</a> - 
@@ -164,7 +164,7 @@
 				<a href="space.php?uid=$value[uid]">$value[username]</a>
 			</td>
 			<td>
-				<a href="cp.php?ac=event&op=edit&id=$value[eventid]" target="_blank">编辑</a>
+				<a href="cp.php?ac=event&op=edit&id=$value[eventid]" target="_blank">編輯</a>
 			</td>
 		</tr>
 		<!--{/loop}-->
@@ -175,21 +175,21 @@
 	<div class="footactions">
 		<input type="hidden" name="mpurl" value="$mpurl">
 		<!--{if $allowbatch && $perpage<=100}-->
-		<input type="checkbox" id="chkall" name="chkall" onclick="checkAll(this.form, 'ids')">全选
+		<input type="checkbox" id="chkall" name="chkall" onclick="checkAll(this.form, 'ids')">全選
 		<!--{/if}-->
-		<input id="ckdelete" type="radio" name="optype" value="delete"><label for="ckdelete">删除</label>
-		<input id="ckverify" type="radio" name="optype" value="verify"><label for="ckverify">通过审核</label>
-		<input id="ckdelayverify" type="radio" name="optype" value="delayverify"><label for="ckdelayverify">不通过审核</label>
-		<input id="ckrecommend" type="radio" name="optype" value="recommend"><label for="ckrecommend">推荐</label>
-		<input id="ckunrecommend" type="radio" name="optype" value="unrecommend"><label for="ckunrecommend">取消推荐</label>
-		<input type="submit" name="opsubmit" value="执行操作" onclick="if($('ckdelete').checked){return confirm('本操作不可恢复，确认继续？')};" class="submit">
+		<input id="ckdelete" type="radio" name="optype" value="delete"><label for="ckdelete">刪除</label>
+		<input id="ckverify" type="radio" name="optype" value="verify"><label for="ckverify">通過審核</label>
+		<input id="ckdelayverify" type="radio" name="optype" value="delayverify"><label for="ckdelayverify">不通過審核</label>
+		<input id="ckrecommend" type="radio" name="optype" value="recommend"><label for="ckrecommend">推薦</label>
+		<input id="ckunrecommend" type="radio" name="optype" value="unrecommend"><label for="ckunrecommend">取消推薦</label>
+		<input type="submit" name="opsubmit" value="執行操作" onclick="if($('ckdelete').checked){return confirm('本操作不可恢復，確認繼續？')};" class="submit">
 
 		<div class="pages">$multi</div>
 	</div>
 	</form>
 <!--{else}-->
 	<div class="bdrcontent">
-		<p>指定条件下还没有数据</p>
+		<p>指定條件下還沒有數據</p>
 	</div>
 <!--{/if}-->
 </div>

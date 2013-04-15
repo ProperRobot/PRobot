@@ -10,17 +10,17 @@ if(!defined('IN_UCHOME')) {
 
 if($space['friendnum']>=5) {
 
-	$task['done'] = 1;//任务完成
+	$task['done'] = 1;//任務完成
 
 } else {
 
-	//向导
+	//嚮導
 	$task['guide'] = '
-		<strong>请按照以下的说明来参与本任务：</strong>
+		<strong>請按照以下的說明來參與本任務：</strong>
 		<ul>
-		<li>1. <a href="cp.php?ac=friend&op=find" target="_blank">新窗口打开寻找好友页面</a>；</li>
-		<li>2. 在新打开的页面中，可以将系统自动给你找到的推荐用户加为好友，也可以自己设置条件寻找并添加为好友；</li>
-		<li>3. 接下来，您还需要等待对方批准您的好友申请。</li>
+		<li>1. <a href="cp.php?ac=friend&op=find" target="_blank">新窗口打開尋找好友頁面</a>；</li>
+		<li>2. 在新打開的頁面中，可以將系統自動給你找到的推薦用戶加為好友，也可以自己設置條件尋找並添加為好友；</li>
+		<li>3. 接下來，您還需要等待對方批准您的好友申請。</li>
 		</ul>';
 
 }

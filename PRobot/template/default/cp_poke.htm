@@ -2,17 +2,17 @@
 
 <!--{eval 
 $icons = array(
-	0 => '不用动作',
+	0 => '不用動作',
 	1 => '<img src="image/poke/cyx.gif" /> 踩一下',
-	2 => '<img src="image/poke/wgs.gif" /> 握个手',
+	2 => '<img src="image/poke/wgs.gif" /> 握個手',
 	3 => '<img src="image/poke/wx.gif" /> 微笑',
 	4 => '<img src="image/poke/jy.gif" /> 加油',
-	5 => '<img src="image/poke/pmy.gif" /> 抛媚眼',
-	6 => '<img src="image/poke/yb.gif" /> 拥抱',
-	7 => '<img src="image/poke/fw.gif" /> 飞吻',
-	8 => '<img src="image/poke/nyy.gif" /> 挠痒痒',
-	9 => '<img src="image/poke/gyq.gif" /> 给一拳',
-	10 => '<img src="image/poke/dyx.gif" /> 电一下',
+	5 => '<img src="image/poke/pmy.gif" /> 拋媚眼',
+	6 => '<img src="image/poke/yb.gif" /> 擁抱',
+	7 => '<img src="image/poke/fw.gif" /> 飛吻',
+	8 => '<img src="image/poke/nyy.gif" /> 撓癢癢',
+	9 => '<img src="image/poke/gyq.gif" /> 給一拳',
+	10 => '<img src="image/poke/dyx.gif" /> 電一下',
 	11 => '<img src="image/poke/yw.gif" /> 依偎',
 	12 => '<img src="image/poke/ppjb.gif" /> 拍拍肩膀',
 	13 => '<img src="image/poke/yyk.gif" /> 咬一口'
@@ -24,7 +24,7 @@ $icons = array(
 <!--{if $_SGLOBAL[inajax]}-->
 
 	<h1>打招呼</h1>
-	<a href="javascript:hideMenu();" title="关闭" class="float_del">关闭</a>
+	<a href="javascript:hideMenu();" title="關閉" class="float_del">關閉</a>
 
 <!--{else}-->
 
@@ -44,7 +44,7 @@ $icons = array(
 		<!--{if $tospace[uid]}-->
 			<th width="52"><div class="avatar48"><a href="space.php?uid=$tospace[uid]"><!--{avatar($tospace[uid],small)}--></div></th>
 		<!--{else}-->
-			<th></th><td class="l_status">用户名: <input type="text" name="username" value=""></td></tr>
+			<th></th><td class="l_status">用戶名: <input type="text" name="username" value=""></td></tr>
 			<tr><th></th>
 		<!--{/if}-->
 			<td>
@@ -57,7 +57,7 @@ $icons = array(
 					<!--{/loop}-->
 				</ul>
 				<input type="text" name="note" id="note" value="" size="16" class="t_input" onkeydown="ctrlEnter(event, 'pokesubmit_btn', 1);" style="width: 300px;" maxlength="25" />
-				<div class="gray">(内容为可选，并且会覆盖之前的招呼，最多25个汉字)</div>
+				<div class="gray">(內容為可選，並且會覆蓋之前的招呼，最多25個漢字)</div>
 			</td>
 		</tr>
 		<tr>
@@ -66,9 +66,9 @@ $icons = array(
 				<input type="hidden" name="refer" value="$_SGLOBAL[refer]">
 				<input type="hidden" name="pokesubmit" value="true" />
 				<!--{if $_SGLOBAL[inajax]}-->
-				<input type="button" name="pokesubmit_btn" id="pokesubmit_btn" value="确定" class="submit" onclick="ajaxpost('pokeform_{$tospace[uid]}', 'poke_send', 2000)" />
+				<input type="button" name="pokesubmit_btn" id="pokesubmit_btn" value="確定" class="submit" onclick="ajaxpost('pokeform_{$tospace[uid]}', 'poke_send', 2000)" />
 				<!--{else}-->
-				<input type="submit" name="pokesubmit_btn" id="pokesubmit_btn" value="确定" class="submit" />
+				<input type="submit" name="pokesubmit_btn" id="pokesubmit_btn" value="確定" class="submit" />
 				<!--{/if}-->
 			</td>
 	</table>
@@ -86,7 +86,7 @@ $icons = array(
 	</ul>
 </div>
 
-<div class="h_status">您可以回复招呼或者进行忽略<span class="pipe">|</span><a href="cp.php?ac=poke&op=ignore" id="a_poke" onclick="ajaxmenu(event, this.id, 0, 2000, 'mypoke_all')">全部忽略</a></div>
+<div class="h_status">您可以回復招呼或者進行忽略<span class="pipe">|</span><a href="cp.php?ac=poke&op=ignore" id="a_poke" onclick="ajaxmenu(event, this.id, 0, 2000, 'mypoke_all')">全部忽略</a></div>
 
 <!--{if $list}-->
 <style>
@@ -107,12 +107,12 @@ $icons = array(
 				<p><a href="space.php?uid=$value[uid]">{$_SN[$value[uid]]}</a> <span class="gray"><!--{date('m-d H:i',$value[dateline],1)}--></span></p>
 				
 				<div style="padding:10px 0 10px 0;font-size:14px;">
-				<!--{if $value[iconid]}-->{$icons[$value[iconid]]}<!--{else}-->打个招呼<!--{/if}-->
-				<!--{if $value[note]}-->，并对您说：$value[note]<!--{/if}-->
+				<!--{if $value[iconid]}-->{$icons[$value[iconid]]}<!--{else}-->打個招呼<!--{/if}-->
+				<!--{if $value[note]}-->，並對您說：$value[note]<!--{/if}-->
 				</div>
 				<div style="padding:10px 0 10px 0;">
 				<a href="cp.php?ac=poke&op=reply&uid=$value[uid]" id="a_p_r_$value[uid]" onclick="ajaxmenu(event, this.id, 1)" class="submit">回打招呼</a> 
-				<!--{if !$value['isfriend']}--><a href="cp.php?ac=friend&op=add&uid=$value[uid]" id="a_friend_$key" onclick="ajaxmenu(event, this.id, 1)" class="submit">加为好友</a> <!--{/if}-->
+				<!--{if !$value['isfriend']}--><a href="cp.php?ac=friend&op=add&uid=$value[uid]" id="a_friend_$key" onclick="ajaxmenu(event, this.id, 1)" class="submit">加為好友</a> <!--{/if}-->
 				</div>
 
 			</td>
@@ -128,7 +128,7 @@ $icons = array(
 
 <!--{else}-->
 <div class="c_form">
-	还没有新招呼。
+	還沒有新招呼。
 </div>
 <!--{/if}-->
 

@@ -4,7 +4,7 @@
 
 	<!--{if !$frombuy}-->
 	<h1>使用道具</h1>
-	<a class="float_del" title="关闭" href="javascript:hideMenu();">关闭</a>
+	<a class="float_del" title="關閉" href="javascript:hideMenu();">關閉</a>
 	<!--{/if}-->
 	<div class="toolly" id="__magicuse_form_$mid">
 		<form method="post" id="magicuse_form_$mid" action="magic.php?mid=$mid&idtype=$idtype&id=$id">
@@ -14,11 +14,11 @@
 			<div class="magic_info">
 				<h3>$magic[name]</h3>
 				<p class="gray">$magic[description]</p>
-				<p>拥有个数: $usermagic[count]</p>
+				<p>擁有個數: $usermagic[count]</p>
 				<div>
-					<h4>好友名单</h4>
+					<h4>好友名單</h4>
 					<div>
-						<label for="friendinput">输入好友用户名点添加，最多点 $magic[custom][maxcall] 个好友</label><br />
+						<label for="friendinput">輸入好友用戶名點添加，最多點 $magic[custom][maxcall] 個好友</label><br />
 						<input class="t_input" type="text" id="friendinput" />
 						<input type="button" class="button" value="添加" onclick="addFriendCall();" />
 					</div>

@@ -29,9 +29,9 @@
 <table border="0" cellPadding="0" cellSpacing="0" height="100%" width="100%">
 	<tr>
 		<td height="26" class="link_td">
-			<img src="image/icon/profile.gif" align="absmiddle"> <a href="$_SGLOBAL[refer]">返回我的空间</a> <span class="pipe">|</span>
+			<img src="image/icon/profile.gif" align="absmiddle"> <a href="$_SGLOBAL[refer]">返回我的空間</a> <span class="pipe">|</span>
 			<img src="image/icon/share.gif" align="absmiddle"> <a href="javascript:;" onclick="do_share();">分享</a> <span class="pipe">|</span>
-			<img src="image/icon/network.gif" align="absmiddle"> <a target="_blank" href="$url">$url</a> (<a href="javascript:;" onclick="javascript:setCopy('$url');return false;">复制</a>)
+			<img src="image/icon/network.gif" align="absmiddle"> <a target="_blank" href="$url">$url</a> (<a href="javascript:;" onclick="javascript:setCopy('$url');return false;">複製</a>)
 		</td>
 	</tr>
 	<tr>
@@ -46,10 +46,10 @@
 	<table>
 		<tr>
 			<td>
-				<a href="javascript:hideShare()" title="关闭" style="float: right;">关闭</a>
-				<h2>分享链接:</h2>
+				<a href="javascript:hideShare()" title="關閉" style="float: right;">關閉</a>
+				<h2>分享鏈接:</h2>
 				<input type="text" id="link" name="link" value="$url" class="t_input" style="width: 380px;" onkeyup="showPreview(this.value, 'preview')">
-				<h2>你的分享说明:</h2>
+				<h2>你的分享說明:</h2>
 				<textarea id="general" name="general" cols="40" rows="5" style="width: 380px;" onkeyup="showPreview(this.value, 'quote')"></textarea>
 			</td>
 		</tr>
@@ -57,12 +57,12 @@
 		<tr>
 			<td>
 			<!--{if $_SCONFIG['questionmode']}-->
-					<p>请正确回答下面问题后再提交</p>
+					<p>請正確回答下面問題後再提交</p>
 					<p><!--{eval question();}--></p>
 					<p><input type="text" id="seccode" name="seccode" value="" size="15" class="t_input"></p>
 			<!--{else}-->
 					<p><script>seccode();</script></p>
-					<p>请输入上面的4位字母或数字，看不清可<a href="javascript:updateseccode()">更换一张</a></p>
+					<p>請輸入上面的4位字母或數字，看不清可<a href="javascript:updateseccode()">更換一張</a></p>
 					<p><input type="text" id="seccode" name="seccode" value="" size="15" class="t_input"></p>
 			<!--{/if}-->
 			</td>
@@ -71,7 +71,7 @@
 		<tr>
 			<td>
 			<input type="hidden" name="refer" value="space.php?do=share">
-			<button name="sharesubmit" id="sharesubmit" type="submit" class="submit" value="true" onclick="ajaxpost('shareform', 'frame_share_add')">确定</button>
+			<button name="sharesubmit" id="sharesubmit" type="submit" class="submit" value="true" onclick="ajaxpost('shareform', 'frame_share_add')">確定</button>
 			<span id="__shareform"></span>
 			</td>
 		</tr>
@@ -80,7 +80,7 @@
 	<ul class="box" style="text-align: left;">
 	<li id="share_li">
 		<div class="title">
-			<a href="space.php?uid=$space[uid]">{$_SN[$space[uid]]}</a> 分享了一个网址
+			<a href="space.php?uid=$space[uid]">{$_SN[$space[uid]]}</a> 分享了一個網址
 			<span class="gray"><!--{date('Y-m-d H:i',$_SGLOBAL[timestamp],1)}--></span>
 		</div>
 		<div class="feed">
@@ -103,7 +103,7 @@
 	}
 	function frame_share_add(sid, result) {
 		if(result) {
-			$('divshare').innerHTML = '<br><br>分享完成了 [<a href="javascript:hideShare()">关闭</a>]<br><br><br>';
+			$('divshare').innerHTML = '<br><br>分享完成了 [<a href="javascript:hideShare()">關閉</a>]<br><br><br>';
 			setTimeout("hideShare();", 1000);
 		}
 	}

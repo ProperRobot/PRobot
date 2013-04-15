@@ -4,8 +4,8 @@
 <!--{if !empty($_SGLOBAL[inajax])}-->
 	<div id="space_friend">
 		<h3 class="feed_header">
-			<a href="cp.php?ac=friend&op=search" class="r_option" target="_blank">寻找好友</a>
-			好友(共 $count 个)
+			<a href="cp.php?ac=friend&op=search" class="r_option" target="_blank">尋找好友</a>
+			好友(共 $count 個)
 		</h3><br>
 
 		<!--{if $list}-->
@@ -27,7 +27,7 @@
 					<div class="setti">
 
 					<!--{if !$value['isfriend']}-->
-					<a href="cp.php?ac=friend&op=add&uid=$value[uid]" id="a_friend_$key" onclick="ajaxmenu(event, this.id, 1)">加为好友</a>
+					<a href="cp.php?ac=friend&op=add&uid=$value[uid]" id="a_friend_$key" onclick="ajaxmenu(event, this.id, 1)">加為好友</a>
 					<!--{/if}-->
 					</div>
 					</td></tr></table>
@@ -39,7 +39,7 @@
 
 		<!--{else}-->
 		<div class="c_form">
-			没有相关用户列表。
+			沒有相關用戶列表。
 		</div>
 		<!--{/if}-->
 	</div><br />
@@ -70,11 +70,11 @@
 	<ul class="tabs">
 		<li$actives[me]><a href="space.php?uid=$space[uid]&do=friend"><span>好友列表</span></a></li>
 		<li><a href="cp.php?ac=friend&op=search"><span>查找好友</span></a></li>
-		<li><a href="cp.php?ac=friend&op=find"><span>可能认识的人</span></a></li>
+		<li><a href="cp.php?ac=friend&op=find"><span>可能認識的人</span></a></li>
 		<!--{if empty($_SCONFIG['closeinvite'])}-->
-		<li><a href="cp.php?ac=invite"><span>邀请好友</span></a></li>
+		<li><a href="cp.php?ac=invite"><span>邀請好友</span></a></li>
 		<!--{/if}-->
-		<li><a href="cp.php?ac=friend&op=request"><span>好友请求</span></a></li>
+		<li><a href="cp.php?ac=friend&op=request"><span>好友請求</span></a></li>
 		<li><a href="space.php?do=top"><span>排行榜</span></a></li>
 	</ul>
 </div>
@@ -82,47 +82,47 @@
 
 	<div class="c_mgs"><div class="ye_r_t"><div class="ye_l_t"><div class="ye_r_b"><div class="ye_l_b">
 		<!--{if $_GET['view']=='blacklist'}-->
-			加入到黑名单的用户，将会从您的好友列表中删除。同时，对方将不能进行与您相关的打招呼、踩日志、加好友、评论、留言、短消息等互动行为。
+			加入到黑名單的用戶，將會從您的好友列表中刪除。同時，對方將不能進行與您相關的打招呼、踩日誌、加好友、評論、留言、短消息等互動行為。
 		<!--{elseif $_GET['view']=='me'}-->
 
-			当前共有 $space[friendnum] 个好友。
+			當前共有 $space[friendnum] 個好友。
 
 
 			<!--{if $maxfriendnum}-->
-			(最多可以添加 $maxfriendnum 个好友)
+			(最多可以添加 $maxfriendnum 個好友)
 			<p>
 				<!--{if $_SGLOBAL[magic][friendnum]}-->
 				<img src="image/magic/friendnum.small.gif" class="magicicon" />
-				<a id="a_magic_friendnum" href="magic.php?mid=friendnum" onclick="ajaxmenu(event, this.id, 1)">我要扩容好友数</a>
-				(您可以购买道具“{$_SGLOBAL[magic][friendnum]}”来扩容，让自己可以添加更多的好友。)
+				<a id="a_magic_friendnum" href="magic.php?mid=friendnum" onclick="ajaxmenu(event, this.id, 1)">我要擴容好友數</a>
+				(您可以購買道具「{$_SGLOBAL[magic][friendnum]}」來擴容，讓自己可以添加更多的好友。)
 				<!--{/if}-->
 			</p>
 			<!--{/if}-->
 
 			<p style="padding-top:10px;">
-			好友列表按照好友热度高低排序<br>
-			好友热度是系统根据您与好友之间交互的动作自动累计的一个参考值，数值越大，表示您与这位好友互动越频繁。
+			好友列表按照好友熱度高低排序<br>
+			好友熱度是系統根據您與好友之間交互的動作自動累計的一個參考值，數值越大，表示您與這位好友互動越頻繁。
 			</p>
 		<!--{elseif $_GET['view']=='online'}-->
 			<!--{if $_GET['type'] == 'friend'}-->
-			这些好友当前在线，赶快去拜访一下吧
+			這些好友當前在線，趕快去拜訪一下吧
 			<!--{elseif $_GET['type']=='near'}-->
-			通过系统匹配，这些朋友就在您附近，您可能认识他们
+			通過系統匹配，這些朋友就在您附近，您可能認識他們
 			<!--{else}-->
-			显示当前全部在线的用户
+			顯示當前全部在線的用戶
 			<!--{/if}-->
 		<!--{elseif $_GET['view']=='visitor'}-->
-			他们拜访过您，回访一下吧
+			他們拜訪過您，回訪一下吧
 		<!--{elseif $_GET['view']=='trace'}-->
-			您曾经拜访过的用户列表
+			您曾經拜訪過的用戶列表
 		<!--{/if}-->
 	</div></div></div></div></div>
 
 	<!--{if $_GET['view']=='blacklist'}-->
 	<div class="h_status">
-		<h2>添加新黑名单用户</h2>
+		<h2>添加新黑名單用戶</h2>
 		<form method="post" name="blackform" action="cp.php?ac=friend&op=blacklist&start=$_GET[start]">
-			用户名：<input type="text" name="username" value="" size="15" class="t_input">
+			用戶名：<input type="text" name="username" value="" size="15" class="t_input">
 			<input type="submit" name="blacklistsubmit_btn" id="moodsubmit_btn" value="添加" class="submit">
 			<input type="hidden" name="blacklistsubmit" value="true" />
 		<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
@@ -152,20 +152,20 @@
 				<!--{/if}-->
 
 				<!--{if $_GET['view']=='blacklist'}-->
-					<div class="gray"><a href="cp.php?ac=friend&op=blacklist&subop=delete&uid=$value[uid]&start=$_GET[start]">黑名单除名</a></div>
+					<div class="gray"><a href="cp.php?ac=friend&op=blacklist&subop=delete&uid=$value[uid]&start=$_GET[start]">黑名單除名</a></div>
 				<!--{elseif $_GET['view']=='visitor' || $_GET['view'] == 'trace'}-->
-					<div class="gray"><!--{date('n月j号',$value[dateline],1)}--></div>
+					<div class="gray"><!--{date('n月j號',$value[dateline],1)}--></div>
 				<!--{elseif $_GET['view']=='online'}-->
 					<div class="gray"><!--{date('H:i',$ols[$value[uid]],1)}--></div>
 				<!--{else}-->
 					<!--{if $ols[$value[uid]]}--><div class="gray"><!--{date('H:i',$ols[$value[uid]],1)}--></div><!--{/if}-->
 					<div class="gray">
-					<!--{if $value['num']}--><a href="cp.php?ac=friend&op=changenum&uid=$value[uid]" id="friendnum_$value[uid]" onclick="ajaxmenu(event, this.id)">热度(<span id="spannum_$value[uid]">$value[num]</span>)</a><span class="pipe">|</span><!--{/if}-->
+					<!--{if $value['num']}--><a href="cp.php?ac=friend&op=changenum&uid=$value[uid]" id="friendnum_$value[uid]" onclick="ajaxmenu(event, this.id)">熱度(<span id="spannum_$value[uid]">$value[num]</span>)</a><span class="pipe">|</span><!--{/if}-->
 					<!--{if !$value['isfriend']}-->
-					<a href="cp.php?ac=friend&op=add&uid=$value[uid]" id="a_friend_$key" onclick="ajaxmenu(event, this.id, 1)">加为好友</a>
+					<a href="cp.php?ac=friend&op=add&uid=$value[uid]" id="a_friend_$key" onclick="ajaxmenu(event, this.id, 1)">加為好友</a>
 					<!--{else}-->
-					<a href="cp.php?ac=friend&op=changegroup&uid=$value[uid]" id="friend_group_$value[uid]" onclick="ajaxmenu(event, this.id)">分组</a><span class="pipe">|</span>
-					<a href="cp.php?ac=friend&op=ignore&uid=$value[uid]" id="a_ignore_$key" onclick="ajaxmenu(event, this.id)">删除</a>
+					<a href="cp.php?ac=friend&op=changegroup&uid=$value[uid]" id="friend_group_$value[uid]" onclick="ajaxmenu(event, this.id)">分組</a><span class="pipe">|</span>
+					<a href="cp.php?ac=friend&op=ignore&uid=$value[uid]" id="a_ignore_$key" onclick="ajaxmenu(event, this.id)">刪除</a>
 					<!--{/if}-->
 					</div>
 				<!--{/if}-->
@@ -177,7 +177,7 @@
 
 	<!--{else}-->
 	<div class="c_form">
-		没有相关用户列表。
+		沒有相關用戶列表。
 	</div>
 	<!--{/if}-->
 
@@ -185,7 +185,7 @@
 
 <div id="sidebar" style="width: 150px;">
 	<!--{if $_SCONFIG['my_status']}-->
-	<!-- 同步好友至Manyou 开始 -->
+	<!-- 同步好友至Manyou 開始 -->
 	<script type="text/javascript">
 		function my_sync_tip(msg, close_time) {;
 			var my_tip = document.getElementById("my_tip");
@@ -210,39 +210,39 @@
 	</script>
 
 	<div class="c_mgs"><div class="ye_r_t"><div class="ye_l_t"><div class="ye_r_b"><div class="ye_l_b">
-		<p>在游戏中找不到自己的好友？请点击下面的的按钮，将好友信息同步到里面。</p>
-		<p style="text-align: center;padding: 20px 0 0;"> <a href="#" onclick="my_sync_friend(); return false;" title="将好友关系同步至Manyou平台，以便在应用里看到他们"><img alt="刷新好友信息" src="image/syncfriend.gif"/></a> </p>
+		<p>在遊戲中找不到自己的好友？請點擊下面的的按鈕，將好友信息同步到裡面。</p>
+		<p style="text-align: center;padding: 20px 0 0;"> <a href="#" onclick="my_sync_friend(); return false;" title="將好友關係同步至Manyou平台，以便在應用裡看到他們"><img alt="刷新好友信息" src="image/syncfriend.gif"/></a> </p>
 	</div></div></div></div></div>
-	<!-- 同步好友至Manyou 结束 -->
+	<!-- 同步好友至Manyou 結束 -->
 	<!--{/if}-->
 
 	<div class="cat">
 		<h3>
-			好友菜单
+			好友菜單
 		</h3>
 		<ul>
 			<li{$a_actives[me]}><a href="space.php?uid=$space[uid]&do=friend">全部好友列表</a></li>
-			<li{$a_actives[onlinefriend]}><a href="space.php?uid=$space[uid]&do=friend&view=online&type=friend">当前在线的好友</a></li>
+			<li{$a_actives[onlinefriend]}><a href="space.php?uid=$space[uid]&do=friend&view=online&type=friend">當前在線的好友</a></li>
 			<li{$a_actives[onlinenear]}><a href="space.php?uid=$space[uid]&do=friend&view=online&type=near">就在我附近的朋友</a></li>
-			<li{$a_actives[visitor]}><a href="space.php?uid=$space[uid]&do=friend&view=visitor">我的访客</a></li>
-			<li{$a_actives[trace]}><a href="space.php?uid=$space[uid]&do=friend&view=trace">我的足迹</a></li>
-			<li{$a_actives[blacklist]}><a href="space.php?uid=$space[uid]&do=friend&view=blacklist">我的黑名单</a></li>
+			<li{$a_actives[visitor]}><a href="space.php?uid=$space[uid]&do=friend&view=visitor">我的訪客</a></li>
+			<li{$a_actives[trace]}><a href="space.php?uid=$space[uid]&do=friend&view=trace">我的足跡</a></li>
+			<li{$a_actives[blacklist]}><a href="space.php?uid=$space[uid]&do=friend&view=blacklist">我的黑名單</a></li>
 		</ul>
 	</div>
 
 	<!--{if $groups}-->
 	<div class="cat">
 		<h3>
-			<span class="r_option"><a href="cp.php?ac=friend&op=group">批量分组</a></span>
-			好友分组
+			<span class="r_option"><a href="cp.php?ac=friend&op=group">批量分組</a></span>
+			好友分組
 		</h3>
 		<ul class="post_list line_list">
 			<li><a href="space.php?do=friend&group=-1">全部好友</a></li>
 			<!--{loop $groups $key $value}-->
 			<li{$groupselect[$key]}>
-				<a href="cp.php?ac=friend&op=groupignore&group=$key" id="c_ignore_$key" onclick="ajaxmenu(event, this.id)" title="屏蔽用户组动态" class="c_delete">屏蔽</a>
+				<a href="cp.php?ac=friend&op=groupignore&group=$key" id="c_ignore_$key" onclick="ajaxmenu(event, this.id)" title="屏蔽用戶組動態" class="c_delete">屏蔽</a>
 				<!--{if $key}-->
-				<a href="cp.php?ac=friend&op=groupname&group=$key" id="c_edit_$key" onclick="ajaxmenu(event, this.id, 1)" title="编辑用户组名" class="c_edit">编辑</a>
+				<a href="cp.php?ac=friend&op=groupname&group=$key" id="c_edit_$key" onclick="ajaxmenu(event, this.id, 1)" title="編輯用戶組名" class="c_edit">編輯</a>
 				<!--{/if}-->
 				<!--{if isset($space['privacy']['filter_gid'][$key])}--><span class="gray">[屏蔽]</span><!--{/if}--> <a href="space.php?do=friend&group=$key"><span id="friend_groupname_$key">$value</span></a>
 			</li>
@@ -260,7 +260,7 @@
 	$_TPL['spacemenus'][] = "<a href=\"space.php?uid=$space[uid]&do=friend&view=me\">TA的好友列表</a>";
 }-->
 	<!--{template space_menu}-->
-	<div class="h_status">共有 $space[friendnum] 个好友</div>
+	<div class="h_status">共有 $space[friendnum] 個好友</div>
 	<!--{template space_list}-->
 
 <!--{/if}-->

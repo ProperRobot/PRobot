@@ -1,16 +1,16 @@
 --
--- ucenter home 数据库SQL
+-- ucenter home 數據庫SQL
 -- 生成日期: 2008 年 1 月 1 日 00:00
 --
 
 --
--- 数据库: 'uchome'
+-- 數據庫: 'uchome'
 --
 
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_ad'
+-- 表的結構 'uchome_ad'
 --
 
 CREATE TABLE uchome_ad (
@@ -26,7 +26,7 @@ CREATE TABLE uchome_ad (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_adminsession'
+-- 表的結構 'uchome_adminsession'
 --
 
 CREATE TABLE uchome_adminsession (
@@ -40,7 +40,7 @@ CREATE TABLE uchome_adminsession (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_album'
+-- 表的結構 'uchome_album'
 --
 
 CREATE TABLE uchome_album (
@@ -64,7 +64,7 @@ CREATE TABLE uchome_album (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_appcreditlog'
+-- 表的結構 'uchome_appcreditlog'
 --
 
 CREATE TABLE uchome_appcreditlog (
@@ -83,7 +83,7 @@ CREATE TABLE uchome_appcreditlog (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_blacklist'
+-- 表的結構 'uchome_blacklist'
 --
 
 CREATE TABLE uchome_blacklist (
@@ -97,7 +97,7 @@ CREATE TABLE uchome_blacklist (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_block'
+-- 表的結構 'uchome_block'
 --
 
 CREATE TABLE uchome_block (
@@ -116,7 +116,7 @@ CREATE TABLE uchome_block (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_blog'
+-- 表的結構 'uchome_blog'
 --
 
 CREATE TABLE uchome_blog (
@@ -149,7 +149,7 @@ CREATE TABLE uchome_blog (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_blogfield'
+-- 表的結構 'uchome_blogfield'
 --
 
 CREATE TABLE uchome_blogfield (
@@ -171,7 +171,7 @@ CREATE TABLE uchome_blogfield (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_cache'
+-- 表的結構 'uchome_cache'
 --
 
 CREATE TABLE uchome_cache (
@@ -184,7 +184,7 @@ CREATE TABLE uchome_cache (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_class'
+-- 表的結構 'uchome_class'
 --
 
 CREATE TABLE uchome_class (
@@ -199,7 +199,7 @@ CREATE TABLE uchome_class (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_click'
+-- 表的結構 'uchome_click'
 --
 
 CREATE TABLE uchome_click (
@@ -215,7 +215,7 @@ CREATE TABLE uchome_click (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_clickuser'
+-- 表的結構 'uchome_clickuser'
 --
 
 CREATE TABLE uchome_clickuser (
@@ -232,7 +232,7 @@ CREATE TABLE uchome_clickuser (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_comment'
+-- 表的結構 'uchome_comment'
 --
 
 CREATE TABLE uchome_comment (
@@ -254,7 +254,7 @@ CREATE TABLE uchome_comment (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_config'
+-- 表的結構 'uchome_config'
 --
 
 CREATE TABLE uchome_config (
@@ -266,7 +266,7 @@ CREATE TABLE uchome_config (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_cron'
+-- 表的結構 'uchome_cron'
 --
 
 CREATE TABLE uchome_cron (
@@ -288,7 +288,7 @@ CREATE TABLE uchome_cron (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_creditrule'
+-- 表的結構 'uchome_creditrule'
 --
 
 CREATE TABLE uchome_creditrule (
@@ -309,7 +309,7 @@ CREATE TABLE uchome_creditrule (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_creditlog'
+-- 表的結構 'uchome_creditlog'
 --
 
 CREATE TABLE uchome_creditlog (
@@ -333,7 +333,7 @@ CREATE TABLE uchome_creditlog (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_data'
+-- 表的結構 'uchome_data'
 --
 
 CREATE TABLE uchome_data (
@@ -346,7 +346,7 @@ CREATE TABLE uchome_data (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_docomment'
+-- 表的結構 'uchome_docomment'
 --
 
 CREATE TABLE uchome_docomment (
@@ -367,7 +367,7 @@ CREATE TABLE uchome_docomment (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_doing'
+-- 表的結構 'uchome_doing'
 --
 
 CREATE TABLE uchome_doing (
@@ -388,7 +388,7 @@ CREATE TABLE uchome_doing (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_event'
+-- 表的結構 'uchome_event'
 --
 
 CREATE TABLE uchome_event (
@@ -430,7 +430,7 @@ CREATE TABLE uchome_event (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_eventclass'
+-- 表的結構 'uchome_eventclass'
 --
 
 CREATE TABLE uchome_eventclass (
@@ -446,7 +446,7 @@ CREATE TABLE uchome_eventclass (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_eventfield'
+-- 表的結構 'uchome_eventfield'
 --
 
 CREATE TABLE uchome_eventfield (
@@ -467,7 +467,7 @@ CREATE TABLE uchome_eventfield (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_eventinvite'
+-- 表的結構 'uchome_eventinvite'
 --
 
 CREATE TABLE uchome_eventinvite (
@@ -484,7 +484,7 @@ CREATE TABLE uchome_eventinvite (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_eventpic'
+-- 表的結構 'uchome_eventpic'
 --
 
 CREATE TABLE uchome_eventpic (
@@ -500,7 +500,7 @@ CREATE TABLE uchome_eventpic (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_feed'
+-- 表的結構 'uchome_feed'
 --
 
 CREATE TABLE uchome_feed (
@@ -539,7 +539,7 @@ CREATE TABLE uchome_feed (
 
 -- --------------------------------------------------------
 --
--- 表的结构 'uchome_friend'
+-- 表的結構 'uchome_friend'
 --
 
 CREATE TABLE uchome_friend (
@@ -559,7 +559,7 @@ CREATE TABLE uchome_friend (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_friendguide'
+-- 表的結構 'uchome_friendguide'
 --
 
 CREATE TABLE uchome_friendguide (
@@ -573,7 +573,7 @@ CREATE TABLE uchome_friendguide (
 
 -- --------------------------------------------------------
 --
--- 表的结构 'uchome_friendlog'
+-- 表的結構 'uchome_friendlog'
 --
 
 CREATE TABLE uchome_friendlog (
@@ -587,7 +587,7 @@ CREATE TABLE uchome_friendlog (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_invite'
+-- 表的結構 'uchome_invite'
 --
 
 CREATE TABLE uchome_invite (
@@ -606,7 +606,7 @@ CREATE TABLE uchome_invite (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_log'
+-- 表的結構 'uchome_log'
 --
 
 CREATE TABLE uchome_log (
@@ -619,7 +619,7 @@ CREATE TABLE uchome_log (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_magic'
+-- 表的結構 'uchome_magic'
 --
 
 CREATE TABLE uchome_magic (
@@ -642,7 +642,7 @@ CREATE TABLE uchome_magic (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_magicinlog'
+-- 表的結構 'uchome_magicinlog'
 --
 
 CREATE TABLE uchome_magicinlog (
@@ -663,7 +663,7 @@ CREATE TABLE uchome_magicinlog (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uch_magicstore'
+-- 表的結構 'uch_magicstore'
 --
 
 CREATE TABLE uchome_magicstore (
@@ -678,7 +678,7 @@ CREATE TABLE uchome_magicstore (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_magicuselog'
+-- 表的結構 'uchome_magicuselog'
 --
 
 CREATE TABLE uchome_magicuselog (
@@ -700,7 +700,7 @@ CREATE TABLE uchome_magicuselog (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_mailqueue'
+-- 表的結構 'uchome_mailqueue'
 --
 
 CREATE TABLE uchome_mailqueue (
@@ -716,7 +716,7 @@ CREATE TABLE uchome_mailqueue (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_mailcron'
+-- 表的結構 'uchome_mailcron'
 --
 
 CREATE TABLE uchome_mailcron (
@@ -731,7 +731,7 @@ CREATE TABLE uchome_mailcron (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_member'
+-- 表的結構 'uchome_member'
 --
 
 CREATE TABLE uchome_member (
@@ -744,7 +744,7 @@ CREATE TABLE uchome_member (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_mtag'
+-- 表的結構 'uchome_mtag'
 --
 
 CREATE TABLE uchome_mtag (
@@ -772,7 +772,7 @@ CREATE TABLE uchome_mtag (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_mtaginvite'
+-- 表的結構 'uchome_mtaginvite'
 --
 
 CREATE TABLE uchome_mtaginvite (
@@ -787,7 +787,7 @@ CREATE TABLE uchome_mtaginvite (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_myapp'
+-- 表的結構 'uchome_myapp'
 --
 
 CREATE TABLE uchome_myapp (
@@ -805,7 +805,7 @@ CREATE TABLE uchome_myapp (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_myinvite'
+-- 表的結構 'uchome_myinvite'
 --
 
 CREATE TABLE uchome_myinvite (
@@ -826,7 +826,7 @@ CREATE TABLE uchome_myinvite (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_notification'
+-- 表的結構 'uchome_notification'
 --
 
 CREATE TABLE uchome_notification (
@@ -845,7 +845,7 @@ CREATE TABLE uchome_notification (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_pic'
+-- 表的結構 'uchome_pic'
 --
 
 CREATE TABLE uchome_pic (
@@ -878,7 +878,7 @@ CREATE TABLE uchome_pic (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_picfield'
+-- 表的結構 'uchome_picfield'
 --
 
 CREATE TABLE uchome_picfield (
@@ -890,7 +890,7 @@ CREATE TABLE uchome_picfield (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_poke'
+-- 表的結構 'uchome_poke'
 --
 
 CREATE TABLE uchome_poke (
@@ -907,7 +907,7 @@ CREATE TABLE uchome_poke (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_poll'
+-- 表的結構 'uchome_poll'
 --
 
 CREATE TABLE uchome_poll (
@@ -941,7 +941,7 @@ CREATE TABLE uchome_poll (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_pollfield'
+-- 表的結構 'uchome_pollfield'
 --
 
 CREATE TABLE uchome_pollfield (
@@ -958,7 +958,7 @@ CREATE TABLE uchome_pollfield (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_polloption'
+-- 表的結構 'uchome_polloption'
 --
 
 CREATE TABLE uchome_polloption (
@@ -973,7 +973,7 @@ CREATE TABLE uchome_polloption (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_polluser'
+-- 表的結構 'uchome_polluser'
 --
 
 CREATE TABLE uchome_polluser (
@@ -990,7 +990,7 @@ CREATE TABLE uchome_polluser (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_post'
+-- 表的結構 'uchome_post'
 --
 
 CREATE TABLE uchome_post (
@@ -1012,7 +1012,7 @@ CREATE TABLE uchome_post (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_profield'
+-- 表的結構 'uchome_profield'
 --
 
 CREATE TABLE uchome_profield (
@@ -1033,7 +1033,7 @@ CREATE TABLE uchome_profield (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_profilefield'
+-- 表的結構 'uchome_profilefield'
 --
 
 CREATE TABLE uchome_profilefield (
@@ -1053,7 +1053,7 @@ CREATE TABLE uchome_profilefield (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_report'
+-- 表的結構 'uchome_report'
 --
 
 CREATE TABLE uchome_report (
@@ -1073,7 +1073,7 @@ CREATE TABLE uchome_report (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_session'
+-- 表的結構 'uchome_session'
 --
 
 CREATE TABLE uchome_session (
@@ -1091,7 +1091,7 @@ CREATE TABLE uchome_session (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_share'
+-- 表的結構 'uchome_share'
 --
 
 CREATE TABLE uchome_share (
@@ -1119,7 +1119,7 @@ CREATE TABLE uchome_share (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_show'
+-- 表的結構 'uchome_show'
 --
 
 CREATE TABLE uchome_show (
@@ -1134,7 +1134,7 @@ CREATE TABLE uchome_show (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_space'
+-- 表的結構 'uchome_space'
 --
 
 CREATE TABLE uchome_space (
@@ -1188,7 +1188,7 @@ CREATE TABLE uchome_space (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_spacefield'
+-- 表的結構 'uchome_spacefield'
 --
 
 CREATE TABLE uchome_spacefield (
@@ -1232,7 +1232,7 @@ CREATE TABLE uchome_spacefield (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_spaceinfo'
+-- 表的結構 'uchome_spaceinfo'
 --
 
 CREATE TABLE uchome_spaceinfo (
@@ -1254,7 +1254,7 @@ CREATE TABLE uchome_spaceinfo (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_spacelog'
+-- 表的結構 'uchome_spacelog'
 --
 
 CREATE TABLE uchome_spacelog (
@@ -1272,7 +1272,7 @@ CREATE TABLE uchome_spacelog (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_stat'
+-- 表的結構 'uchome_stat'
 --
 
 CREATE TABLE uchome_stat (
@@ -1306,7 +1306,7 @@ CREATE TABLE uchome_stat (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_statuser'
+-- 表的結構 'uchome_statuser'
 --
 
 CREATE TABLE uchome_statuser (
@@ -1319,7 +1319,7 @@ CREATE TABLE uchome_statuser (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_tag'
+-- 表的結構 'uchome_tag'
 --
 
 CREATE TABLE uchome_tag (
@@ -1336,7 +1336,7 @@ CREATE TABLE uchome_tag (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_tagblog'
+-- 表的結構 'uchome_tagblog'
 --
 
 CREATE TABLE uchome_tagblog (
@@ -1348,7 +1348,7 @@ CREATE TABLE uchome_tagblog (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_tagspace'
+-- 表的結構 'uchome_tagspace'
 --
 
 CREATE TABLE uchome_tagspace (
@@ -1364,7 +1364,7 @@ CREATE TABLE uchome_tagspace (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_task'
+-- 表的結構 'uchome_task'
 --
 
 CREATE TABLE uchome_task (
@@ -1389,7 +1389,7 @@ CREATE TABLE uchome_task (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_thread'
+-- 表的結構 'uchome_thread'
 --
 
 CREATE TABLE uchome_thread (
@@ -1427,7 +1427,7 @@ CREATE TABLE uchome_thread (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_topic'
+-- 表的結構 'uchome_topic'
 --
 
 CREATE TABLE uchome_topic (
@@ -1453,7 +1453,7 @@ CREATE TABLE uchome_topic (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_topicuser'
+-- 表的結構 'uchome_topicuser'
 --
 
 CREATE TABLE uchome_topicuser (
@@ -1470,7 +1470,7 @@ CREATE TABLE uchome_topicuser (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_userapp'
+-- 表的結構 'uchome_userapp'
 --
 
 CREATE TABLE uchome_userapp (
@@ -1492,7 +1492,7 @@ CREATE TABLE uchome_userapp (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_userappfield'
+-- 表的結構 'uchome_userappfield'
 --
 
 CREATE TABLE uchome_userappfield (
@@ -1506,7 +1506,7 @@ CREATE TABLE uchome_userappfield (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_userevent'
+-- 表的結構 'uchome_userevent'
 --
 
 CREATE TABLE uchome_userevent (
@@ -1525,7 +1525,7 @@ CREATE TABLE uchome_userevent (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_usergroup'
+-- 表的結構 'uchome_usergroup'
 --
 
 CREATE TABLE uchome_usergroup (
@@ -1624,7 +1624,7 @@ CREATE TABLE uchome_usergroup (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_userlog'
+-- 表的結構 'uchome_userlog'
 --
 
 CREATE TABLE uchome_userlog (
@@ -1638,7 +1638,7 @@ CREATE TABLE uchome_userlog (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_usermagic'
+-- 表的結構 'uchome_usermagic'
 --
 
 CREATE TABLE uchome_usermagic (
@@ -1652,7 +1652,7 @@ CREATE TABLE uchome_usermagic (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_usertask'
+-- 表的結構 'uchome_usertask'
 --
 
 CREATE TABLE uchome_usertask (
@@ -1669,7 +1669,7 @@ CREATE TABLE uchome_usertask (
 -- --------------------------------------------------------
 
 --
--- 表的结构 'uchome_visitor'
+-- 表的結構 'uchome_visitor'
 --
 
 CREATE TABLE uchome_visitor (

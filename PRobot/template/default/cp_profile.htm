@@ -2,29 +2,29 @@
 <!--{template cp_header}-->
 
 <div class="l_status c_form">
-	<a href="cp.php?ac=profile&op=base"$cat_actives[base]>基本资料</a><span class="pipe">|</span>
-	<a href="cp.php?ac=profile&op=contact"$cat_actives[contact]>联系方式</a><span class="pipe">|</span>
-	<a href="cp.php?ac=profile&op=edu"$cat_actives[edu]>教育情况</a><span class="pipe">|</span>
-	<a href="cp.php?ac=profile&op=work"$cat_actives[work]>工作情况</a><span class="pipe">|</span>
-	<a href="cp.php?ac=profile&op=info"$cat_actives[info]>个人信息</a>
+	<a href="cp.php?ac=profile&op=base"$cat_actives[base]>基本資料</a><span class="pipe">|</span>
+	<a href="cp.php?ac=profile&op=contact"$cat_actives[contact]>聯繫方式</a><span class="pipe">|</span>
+	<a href="cp.php?ac=profile&op=edu"$cat_actives[edu]>教育情況</a><span class="pipe">|</span>
+	<a href="cp.php?ac=profile&op=work"$cat_actives[work]>工作情況</a><span class="pipe">|</span>
+	<a href="cp.php?ac=profile&op=info"$cat_actives[info]>個人信息</a>
 </div>
 
-<!--{eval $farr = array(0=>'全用户','1'=>'仅好友','3'=>'仅自己');}-->
+<!--{eval $farr = array(0=>'全用戶','1'=>'僅好友','3'=>'僅自己');}-->
 <form method="post" action="$theurl&ref" class="c_form">
 
 <!--{if $_GET['op'] == 'base'}-->
 
 <table cellspacing="0" cellpadding="0" class="formtable">
 <tr>
-	<th style="width:10em;">您的登录用户名:</th>
+	<th style="width:10em;">您的登錄用戶名:</th>
 	<td>
-		<!--{eval echo stripslashes($space['username']);}--> (<a href="cp.php?ac=password">修改登录密码</a>)
+		<!--{eval echo stripslashes($space['username']);}--> (<a href="cp.php?ac=password">修改登錄密碼</a>)
 	</td>
 	<td></td>
 </tr>
 <!--{if !$_SCONFIG['realname']}-->
 <tr>
-	<th style="width:10em;">真实姓名:</th>
+	<th style="width:10em;">真實姓名:</th>
 	<td>
 		<input type="text" id="name" name="name" value="<!--{eval echo stripslashes($space['name']);}-->" class="t_input" />
 	</td>
@@ -32,30 +32,30 @@
 </tr>
 <!--{else}-->
 <tr>
-	<th style="width:10em;">真实姓名:</th>
+	<th style="width:10em;">真實姓名:</th>
 	<td>
 	<!--{if $space[name] && empty($_GET['namechange'])}-->
 	<span style="font-weight:bold;"><!--{eval echo stripslashes($space['name']);}--></span>
 	<!--{if $_SCONFIG['namechange']}-->[<a href="$theurl&namechange=1">修改</a>]<!--{/if}-->
-	<!--{if $space[namestatus]}-->[<font color="red">认证通过</font>]<!--{else}--><br>等待验证中，您目前将只能使用用户名，并且一些操作可能会受到限制<!--{/if}-->
+	<!--{if $space[namestatus]}-->[<font color="red">認證通過</font>]<!--{else}--><br>等待驗證中，您目前將只能使用用戶名，並且一些操作可能會受到限制<!--{/if}-->
 	<input type="hidden" name="name" value="<!--{eval echo stripslashes($space['name']);}-->" />
 	<!--{else}-->
-	<!--{if $rncredit && $_GET['namechange']}--><img src="image/credit.gif" align="absmiddle"> 本操作需要支付积分 $rncredit 个，您现在的积分 $space[credit] 个。<br><!--{/if}-->
-	<!--{if empty($_SCONFIG['namechange'])}-->您的真实姓名一经确认，将不再允许再次修改，请真实填写。<br><!--{/if}-->
-	<!--{if $_SCONFIG['namecheck']}-->您填写/修改真实姓名后，需要等待我们认证后才能有效，在认证通过之前，您将只能使用用户名，并且一些操作可能会受到限制。<br><!--{/if}-->
-	<input type="text" id="name" name="name" value="<!--{eval echo stripslashes($space['name']);}-->" class="t_input" /> (请输入2～5个汉字)
+	<!--{if $rncredit && $_GET['namechange']}--><img src="image/credit.gif" align="absmiddle"> 本操作需要支付積分 $rncredit 個，您現在的積分 $space[credit] 個。<br><!--{/if}-->
+	<!--{if empty($_SCONFIG['namechange'])}-->您的真實姓名一經確認，將不再允許再次修改，請真實填寫。<br><!--{/if}-->
+	<!--{if $_SCONFIG['namecheck']}-->您填寫/修改真實姓名後，需要等待我們認證後才能有效，在認證通過之前，您將只能使用用戶名，並且一些操作可能會受到限制。<br><!--{/if}-->
+	<input type="text" id="name" name="name" value="<!--{eval echo stripslashes($space['name']);}-->" class="t_input" /> (請輸入2～5個漢字)
 	<!--{/if}-->
 	</td>
 	<td>&nbsp;</td>
 </tr>
 <!--{/if}-->
 <tr>
-	<th style="width:10em;">性别:</th>
+	<th style="width:10em;">性別:</th>
 	<td>
 	<!--{if empty($space[sex])}-->
 		<label for="sexm"><input id="sexm" type="radio" value="1" name="sex"$sexarr[1] />男</label> 
 		<label for="sexw"><input id="sexw" type="radio" value="2" name="sex"$sexarr[2] />女</label>
-		<span style="font-weight:bold;color:red;">(性别选择确定后，将不能再次修改)</span>
+		<span style="font-weight:bold;color:red;">(性別選擇確定後，將不能再次修改)</span>
 	<!--{else}-->
 		<!--{if $space[sex]==1}-->男<!--{else}-->女<!--{/if}-->
 	<!--{/if}-->
@@ -63,20 +63,20 @@
 	<td>&nbsp;</td>
 </tr>
 <tr>
-	<th style="width:10em;">婚恋状态:</th>
+	<th style="width:10em;">婚戀狀態:</th>
 	<td>
 		<select id="marry" name="marry">
 			<option value="0">&nbsp;</option>
-			<option value="1"$marryarr[1]>单身</option>
-			<option value="2"$marryarr[2]>非单身</option>
+			<option value="1"$marryarr[1]>單身</option>
+			<option value="2"$marryarr[2]>非單身</option>
 		</select>
 		<a href="cp.php?ac=friend&op=search&view=sex" target="_blank">&raquo; 查找男女朋友</a>
 	</td>
 	<td>
 		<select name="friend[marry]">
-			<option value="0"{$friendarr[marry][0]}>全用户可见</option>
-			<option value="1"{$friendarr[marry][1]}>仅好友可见</option>
-			<option value="3"{$friendarr[marry][3]}>仅自己可见</option>
+			<option value="0"{$friendarr[marry][0]}>全用戶可見</option>
+			<option value="1"{$friendarr[marry][1]}>僅好友可見</option>
+			<option value="3"{$friendarr[marry][3]}>僅自己可見</option>
 		</select>
 	</td>
 </tr>
@@ -99,9 +99,9 @@
 	</td>
 	<td>
 		<select name="friend[birth]">
-			<option value="0"{$friendarr[birth][0]}>全用户可见</option>
-			<option value="1"{$friendarr[birth][1]}>仅好友可见</option>
-			<option value="3"{$friendarr[birth][3]}>仅自己可见</option>
+			<option value="0"{$friendarr[birth][0]}>全用戶可見</option>
+			<option value="1"{$friendarr[birth][1]}>僅好友可見</option>
+			<option value="3"{$friendarr[birth][3]}>僅自己可見</option>
 		</select>
 	</td>
 </tr>
@@ -115,14 +115,14 @@
 	</td>
 	<td>
 		<select name="friend[blood]">
-			<option value="0"{$friendarr[blood][0]}>全用户可见</option>
-			<option value="1"{$friendarr[blood][1]}>仅好友可见</option>
-			<option value="3"{$friendarr[blood][3]}>仅自己可见</option>
+			<option value="0"{$friendarr[blood][0]}>全用戶可見</option>
+			<option value="1"{$friendarr[blood][1]}>僅好友可見</option>
+			<option value="3"{$friendarr[blood][3]}>僅自己可見</option>
 		</select>
 	</td>
 </tr>
 <tr>
-	<th>家乡:</th>
+	<th>家鄉:</th>
 	<td id="birthcitybox">
 		<script type="text/javascript" src="source/script_city.js"></script>
 		<script type="text/javascript">
@@ -132,13 +132,13 @@
 		
 		//-->
 		</script>
-		<a href="cp.php?ac=friend&op=search&view=birth" target="_blank">&raquo; 查找老乡</a>
+		<a href="cp.php?ac=friend&op=search&view=birth" target="_blank">&raquo; 查找老鄉</a>
 	</td>
 	<td>
 		<select name="friend[birthcity]">
-			<option value="0"{$friendarr[birthcity][0]}>全用户可见</option>
-			<option value="1"{$friendarr[birthcity][1]}>仅好友可见</option>
-			<option value="3"{$friendarr[birthcity][3]}>仅自己可见</option>
+			<option value="0"{$friendarr[birthcity][0]}>全用戶可見</option>
+			<option value="1"{$friendarr[birthcity][1]}>僅好友可見</option>
+			<option value="3"{$friendarr[birthcity][3]}>僅自己可見</option>
 		</select>
 	</td>
 </tr>
@@ -155,9 +155,9 @@
 	</td>
 	<td>
 		<select name="friend[residecity]">
-			<option value="0"{$friendarr[residecity][0]}>全用户可见</option>
-			<option value="1"{$friendarr[residecity][1]}>仅好友可见</option>
-			<option value="3"{$friendarr[residecity][3]}>仅自己可见</option>
+			<option value="0"{$friendarr[residecity][0]}>全用戶可見</option>
+			<option value="1"{$friendarr[residecity][1]}>僅好友可見</option>
+			<option value="3"{$friendarr[residecity][3]}>僅自己可見</option>
 		</select>
 	</td>
 </tr>
@@ -171,9 +171,9 @@
 	<td>
 		<select name="friend[field_{$value[fieldid]}]">
 		<!--{eval $field_friendarr = $friendarr["field_$value[fieldid]"];}-->
-			<option value="0"{$field_friendarr[0]}>全用户可见</option>
-			<option value="1"{$field_friendarr[1]}>仅好友可见</option>
-			<option value="3"{$field_friendarr[3]}>仅自己可见</option>
+			<option value="0"{$field_friendarr[0]}>全用戶可見</option>
+			<option value="1"{$field_friendarr[1]}>僅好友可見</option>
+			<option value="3"{$field_friendarr[3]}>僅自己可見</option>
 		</select>
 	</td>
 </tr>
@@ -182,7 +182,7 @@
 <tr>
 	<th style="width:10em;">&nbsp;</th>
 	<td>
-	<input type="submit" name="nextsubmit" value="继续下一项" class="submit" />
+	<input type="submit" name="nextsubmit" value="繼續下一項" class="submit" />
 	<input type="submit" name="profilesubmit" value="保存" class="submit" />
 	</td>
 	<td>&nbsp;</td>
@@ -200,19 +200,19 @@
 <table cellspacing="0" cellpadding="0" class="formtable">
 <tbody>
 <tr>
-	<th style="width:10em;">本网站的登录密码:</th>
+	<th style="width:10em;">本網站的登錄密碼:</th>
 	<td>
 		<input type="password" id="password" name="password" value="" class="t_input" />
-		<br>为了您的账号安全，更换新邮箱的时候，需要输入您在本网站的密码。
+		<br>為了您的賬號安全，更換新郵箱的時候，需要輸入您在本網站的密碼。
 	</td>
 	<td></td>
 </tr>
 <tr>
-	<th style="width:10em;">新邮箱:</th>
+	<th style="width:10em;">新郵箱:</th>
 	<td>
 		<input type="text" id="email" class="t_input" name="email" value="$space[email]" />
 		<!--{if $space['emailcheck']}-->
-		<br>注意：新填写的邮箱只有在验证激活之后，才可以生效。
+		<br>注意：新填寫的郵箱只有在驗證激活之後，才可以生效。
 		<!--{/if}-->
 	</td>
 	<td></td>
@@ -225,49 +225,49 @@
 <!--{else}-->
 <!--{if !$space[email]}-->
 <tr>
-	<th style="width:10em;">本网站的登录密码:</th>
+	<th style="width:10em;">本網站的登錄密碼:</th>
 	<td>
 		<input type="password" id="password" name="password" value="" class="t_input" />
-		<br>为了您的账号安全，填写邮箱的时候，需要输入您在本网站的密码。
+		<br>為了您的賬號安全，填寫郵箱的時候，需要輸入您在本網站的密碼。
 	</td>
 	<td></td>
 </tr>
 <!--{/if}-->
 <tr>
-	<th style="width:10em;">常用邮箱:</th>
+	<th style="width:10em;">常用郵箱:</th>
 	<td>
 		<!--{if $space[email]}-->
 			$space[email]<br>
 			<!--{if $space['emailcheck']}-->
-				当前邮箱已经验证激活 (<a href="$theurl&editemail=1">更换</a>)
+				當前郵箱已經驗證激活 (<a href="$theurl&editemail=1">更換</a>)
 			<!--{else}-->
-				邮箱等待验证中...<br>
-				系统已经向该邮箱发送了一封验证激活邮件，请查收邮件，进行验证激活。<br>
-				如果没有收到验证邮件，您可以<a href="$theurl&editemail=1">更换一个邮箱</a>，或者<a href="$theurl&resend=1">重新接收验证邮件</a>
+				郵箱等待驗證中...<br>
+				系統已經向該郵箱發送了一封驗證激活郵件，請查收郵件，進行驗證激活。<br>
+				如果沒有收到驗證郵件，您可以<a href="$theurl&editemail=1">更換一個郵箱</a>，或者<a href="$theurl&resend=1">重新接收驗證郵件</a>
 			<!--{/if}-->
 		<!--{else}-->
 			<input type="text" id="email" class="t_input" name="email" value="" />
-			<br>请准确填写，取回密码、获取通知的时候都会发送到该邮箱。
-			<br>系统同时会向该邮箱发送一封验证激活邮件，请注意查收。<br>
+			<br>請準確填寫，取回密碼、獲取通知的時候都會發送到該郵箱。
+			<br>系統同時會向該郵箱發送一封驗證激活郵件，請注意查收。<br>
 		<!--{/if}-->
 		<!--{if $space[newemail]}-->
-			<p>您要更换的新邮箱：<strong>$space[newemail]</strong> 需要激活后才能替换当前邮箱并生效。<br>
-			如果没有收到验证邮件，您可以<a href="$theurl&resend=1">重新接收验证邮件</a></p>
+			<p>您要更換的新郵箱：<strong>$space[newemail]</strong> 需要激活後才能替換當前郵箱並生效。<br>
+			如果沒有收到驗證郵件，您可以<a href="$theurl&resend=1">重新接收驗證郵件</a></p>
 		<!--{/if}-->
 	</td>
 	<td></td>
 </tr>
 <!--{/if}-->
 <tr>
-	<th style="width:10em;">手机:</th>
+	<th style="width:10em;">手機:</th>
 	<td>
 		<input type="text" class="t_input" name="mobile" value="$space[mobile]" /> 
 	</td>
 	<td>
 		<select name="friend[mobile]">
-			<option value="0"{$friendarr[mobile][0]}>全用户可见</option>
-			<option value="1"{$friendarr[mobile][1]}>仅好友可见</option>
-			<option value="3"{$friendarr[mobile][3]}>仅自己可见</option>
+			<option value="0"{$friendarr[mobile][0]}>全用戶可見</option>
+			<option value="1"{$friendarr[mobile][1]}>僅好友可見</option>
+			<option value="3"{$friendarr[mobile][3]}>僅自己可見</option>
 		</select>
 	</td>
 </tr>
@@ -278,9 +278,9 @@
 	</td>
 	<td>
 		<select name="friend[qq]">
-			<option value="0"{$friendarr[qq][0]}>全用户可见</option>
-			<option value="1"{$friendarr[qq][1]}>仅好友可见</option>
-			<option value="3"{$friendarr[qq][3]}>仅自己可见</option>
+			<option value="0"{$friendarr[qq][0]}>全用戶可見</option>
+			<option value="1"{$friendarr[qq][1]}>僅好友可見</option>
+			<option value="3"{$friendarr[qq][3]}>僅自己可見</option>
 		</select>
 	</td>
 </tr>
@@ -291,9 +291,9 @@
 	</td>
 	<td>
 		<select name="friend[msn]">
-			<option value="0"{$friendarr[msn][0]}>全用户可见</option>
-			<option value="1"{$friendarr[msn][1]}>仅好友可见</option>
-			<option value="3"{$friendarr[msn][3]}>仅自己可见</option>
+			<option value="0"{$friendarr[msn][0]}>全用戶可見</option>
+			<option value="1"{$friendarr[msn][1]}>僅好友可見</option>
+			<option value="3"{$friendarr[msn][3]}>僅自己可見</option>
 		</select>
 	</td>
 </tr>
@@ -301,7 +301,7 @@
 <tr>
 	<th style="width:10em;">&nbsp;</th>
 	<td>
-	<input type="submit" name="nextsubmit" value="继续下一项" class="submit" />
+	<input type="submit" name="nextsubmit" value="繼續下一項" class="submit" />
 	<input type="submit" name="profilesubmit" value="保存" class="submit" />
 	</td>
 	<td>&nbsp;</td>
@@ -313,9 +313,9 @@
 <!--{if $list}-->
 <table cellspacing="0" cellpadding="0" class="listtable">
 <tr class="title">
-	<td>学校/班级或院系</td>
-	<td>入学年份</td>
-	<td>隐私设置</td>
+	<td>學校/班級或院系</td>
+	<td>入學年份</td>
+	<td>隱私設置</td>
 	<td>操作</td>
 </tr>
 <!--{loop $list $key $value}-->
@@ -323,7 +323,7 @@
 	<td>$value[title]<br>$value[subtitle]</td>
 	<td>$value[startyear]</td>
 	<td>{$farr[$value[friend]]}</td>
-	<td><a href="$theurl&subop=delete&infoid=$value[infoid]">删除信息</a><br><a href="cp.php?ac=friend&op=search&searchmode=1&type=edu&title=$value[title_s]" target="_blank">寻找同学</a></td>
+	<td><a href="$theurl&subop=delete&infoid=$value[infoid]">刪除信息</a><br><a href="cp.php?ac=friend&op=search&searchmode=1&type=edu&title=$value[title_s]" target="_blank">尋找同學</a></td>
 </tr>
 <!--{/loop}-->
 </table>
@@ -333,24 +333,24 @@
 <table cellspacing="0" cellpadding="0" class="formtable">
 <!--{if $list}-->
 <caption>
-	<h2>添加新学校</h2>
+	<h2>添加新學校</h2>
 </caption>
 <!--{/if}-->
 <tbody id="oldtbody">
 <tr>
-	<th style="width:10em;">学校名称:</th>
+	<th style="width:10em;">學校名稱:</th>
 	<td>
 		<input type="text" name="title[]" value="" class="t_input">
 	</td>
 </tr>
 <tr>
-	<th>班级或院系:</th>
+	<th>班級或院系:</th>
 	<td>
 		<input type="text" name="subtitle[]" value="" class="t_input">
 	</td>
 </tr>
 <tr>
-	<th>入学年份:</th>
+	<th>入學年份:</th>
 	<td>
 		<select name="startyear[]">
 		$yearhtml
@@ -358,12 +358,12 @@
 	</td>
 </tr>
 <tr>
-	<th>隐私设置:</th>
+	<th>隱私設置:</th>
 	<td>
 		<select name="friend[]">
-			<option value="0">全用户可见</option>
-			<option value="1">仅好友可见</option>
-			<option value="3">仅自己可见</option>
+			<option value="0">全用戶可見</option>
+			<option value="1">僅好友可見</option>
+			<option value="3">僅自己可見</option>
 		</select>
 	</td>
 </tr>
@@ -373,12 +373,12 @@
 
 <tr>
 	<th style="width:10em;">&nbsp;</th>
-	<td><a href="javascript:;" onclick="add_tbody();">添加新的学校信息</a></td>
+	<td><a href="javascript:;" onclick="add_tbody();">添加新的學校信息</a></td>
 </tr>
 <tr>
 	<th style="width:10em;">&nbsp;</th>
 	<td>
-		<input type="submit" name="nextsubmit" value="继续下一项" class="submit" />
+		<input type="submit" name="nextsubmit" value="繼續下一項" class="submit" />
 		<input type="submit" name="profilesubmit" value="保存" class="submit" /></td>
 </tr>
 </table>
@@ -389,9 +389,9 @@
 <!--{if $list}-->
 <table cellspacing="0" cellpadding="0" class="listtable">
 <tr class="title">
-	<td>公司或机构/部门</td>
-	<td>工作时间</td>
-	<td>隐私设置</td>
+	<td>公司或機構/部門</td>
+	<td>工作時間</td>
+	<td>隱私設置</td>
 	<td>操作</td>
 </tr>
 <!--{loop $list $key $value}-->
@@ -401,10 +401,10 @@
 		{$value[startyear]}年{$value[startmonth]}月 ~ 
 		<!--{if $value[endyear]}-->{$value[endyear]}年<!--{/if}-->
 		<!--{if $value[endmonth]}-->{$value[endmonth]}月<!--{/if}-->
-		<!--{if !$value[endyear] && !$value[endmonth]}-->现在<!--{/if}-->
+		<!--{if !$value[endyear] && !$value[endmonth]}-->現在<!--{/if}-->
 	</td>
 	<td>{$farr[$value[friend]]}</td>
-	<td><a href="$theurl&subop=delete&infoid=$value[infoid]">删除信息</a><br><a href="cp.php?ac=friend&op=search&searchmode=1&type=work&title=$value[title_s]" target="_blank">寻找同事</a></td>
+	<td><a href="$theurl&subop=delete&infoid=$value[infoid]">刪除信息</a><br><a href="cp.php?ac=friend&op=search&searchmode=1&type=work&title=$value[title_s]" target="_blank">尋找同事</a></td>
 </tr>
 <!--{/loop}-->
 </table>
@@ -414,24 +414,24 @@
 <table cellspacing="0" cellpadding="0" class="formtable">
 <!--{if $list}-->
 <caption>
-	<h2>添加新公司或机构</h2>
+	<h2>添加新公司或機構</h2>
 </caption>
 <!--{/if}-->
 <tbody id="oldtbody">
 <tr>
-	<th style="width:10em;">公司或机构:</th>
+	<th style="width:10em;">公司或機構:</th>
 	<td>
 		<input type="text" name="title[]" value="" class="t_input">
 	</td>
 </tr>
 <tr>
-	<th>部门:</th>
+	<th>部門:</th>
 	<td>
 		<input type="text" name="subtitle[]" value="" class="t_input">
 	</td>
 </tr>
 <tr>
-	<th>工作时间:</th>
+	<th>工作時間:</th>
 	<td>
 		<select name="startyear[]">
 		$yearhtml
@@ -440,7 +440,7 @@
 		$monthhtml
 		</select> 月 ~ 
 		<select name="endyear[]">
-		<option value="">现在</option>
+		<option value="">現在</option>
 		$yearhtml
 		</select> 年
 		<select name="endmonth[]">
@@ -450,12 +450,12 @@
 	</td>
 </tr>
 <tr>
-	<th>隐私设置:</th>
+	<th>隱私設置:</th>
 	<td>
 		<select name="friend[]">
-			<option value="0">全用户可见</option>
-			<option value="1">仅好友可见</option>
-			<option value="3">仅自己可见</option>
+			<option value="0">全用戶可見</option>
+			<option value="1">僅好友可見</option>
+			<option value="3">僅自己可見</option>
 		</select>
 	</td>
 </tr>
@@ -465,12 +465,12 @@
 
 <tr>
 	<th style="width:10em;">&nbsp;</th>
-	<td><a href="javascript:;" onclick="add_tbody();">添加新的公司或机构</a></td>
+	<td><a href="javascript:;" onclick="add_tbody();">添加新的公司或機構</a></td>
 </tr>
 <tr>
 	<th style="width:10em;">&nbsp;</th>
 	<td>
-		<input type="submit" name="nextsubmit" value="继续下一项" class="submit" />
+		<input type="submit" name="nextsubmit" value="繼續下一項" class="submit" />
 		<input type="submit" name="profilesubmit" value="保存" class="submit" /></td>
 </tr>
 </table>
@@ -480,24 +480,24 @@
 <table cellspacing="0" cellpadding="0" class="formtable">
 <!--{eval 
 $infoarr = array(
-	'trainwith' => '我想结交',
-	'interest' => '兴趣爱好',
-	'book' => '喜欢的书籍',
-	'movie' => '喜欢的电影',
-	'tv' => '喜欢的电视',
-	'music' => '喜欢的音乐',
-	'game' => '喜欢的游戏',
-	'sport' => '喜欢的运动',
+	'trainwith' => '我想結交',
+	'interest' => '興趣愛好',
+	'book' => '喜歡的書籍',
+	'movie' => '喜歡的電影',
+	'tv' => '喜歡的電視',
+	'music' => '喜歡的音樂',
+	'game' => '喜歡的遊戲',
+	'sport' => '喜歡的運動',
 	'idol' => '偶像',
-	'motto' => '座右铭',
-	'wish' => '最近心愿',
-	'intro' => '我的简介'
+	'motto' => '座右銘',
+	'wish' => '最近心願',
+	'intro' => '我的簡介'
 );
 }-->
 <tr>
-	<th>栏目</th>
-	<td>内容</td>
-	<td>隐私设置</td>
+	<th>欄目</th>
+	<td>內容</td>
+	<td>隱私設置</td>
 </tr>
 
 <!--{loop $infoarr $key $value}-->
@@ -508,9 +508,9 @@ $infoarr = array(
 	</td>
 	<td>
 		<select name="info_friend[$key]">
-			<option value="0"{$friends[$key][0]}>全用户可见</option>
-			<option value="1"{$friends[$key][1]}>仅好友可见</option>
-			<option value="3"{$friends[$key][3]}>仅自己可见</option>
+			<option value="0"{$friends[$key][0]}>全用戶可見</option>
+			<option value="1"{$friends[$key][1]}>僅好友可見</option>
+			<option value="3"{$friends[$key][3]}>僅自己可見</option>
 		</select>
 	</td>
 </tr>

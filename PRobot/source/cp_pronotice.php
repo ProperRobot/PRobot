@@ -28,7 +28,7 @@ if(empty($pronotice)) {
 	}
 	
 	//实名认证
-	ckrealname('');
+	ckrealname('pronotice');
 	
 	//视频认证
 	ckvideophoto('pronotice');

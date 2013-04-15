@@ -1,0 +1,76 @@
+<!--{template header}-->
+
+<h2 class="title"><img src="image/app/pronotice.gif" />物业通知</h2>
+<div class="tabs_header">
+	<ul class="tabs">
+		<li><a href="cp.php?ac=pronotice"><span>發表新物业通知</span></a></li>
+		<li class="active"><a href="cp.php?ac=import1"><span>物业通知導入</span></a></li>
+		<li><a href="space.php?uid=$space[uid]&do=pronotice&view=me"><span>返回我的物业通知</span></a></li>
+	</ul>
+</div>
+
+<!--{if $results}-->
+
+<form method="post" action="cp.php?ac=import" class="c_form">
+<table cellspacing="0" cellpadding="0" class="formtable">
+<caption>
+	<h2><!--{if $incount}-->導入結果<!--{else}-->選擇要導入的物业通知<!--{/if}--></h2>
+	<!--{if $paycredit}-->
+	<p>使用本功能需要支付積分: $paycredit (您現在的積分數 <a href="cp.php?ac=credit">$space[credit]</a>)</p>
+	<!--{/if}-->
+</caption>
+
+<!--{loop $results $key $value}-->
+<tr>
+	<td><!--{if !$incount}--><input type="checkbox" name="ids[]" value="$key"><!--{/if}--> <!--{if $value[pnid]}--><a href="space.php?uid=$space[uid]&do=pronotice&id=$value[pnid]" target="_blank">$value[title]</a><!--{else}-->$value[title]<!--{/if}--></td>
+	<td>$value[dateCreated]</td>
+	<!--{if $incount}--><td>$value[status]</td><!--{/if}-->
+</tr>
+<!--{/loop}-->
+
+<!--{if !$incount}-->
+<tr>
+	<td colspan="3">
+	<input type="checkbox" id="chkall" name="chkall" onclick="checkAll(this.form, 'ids')">全選
+	<input type="submit" name="import2submit" value="導入" class="submit" />
+	<input type="submit" name="resubmit" value="重置" class="submit" />
+	</td>
+</tr>
+<!--{/if}-->
+
+</table>
+
+<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+
+<!--{else}-->
+
+<form method="post" action="cp.php?ac=import" class="c_form">
+<table cellspacing="0" cellpadding="0" class="formtable">
+	<caption>
+		<h2>物业通知導入</h2>
+		<p>本空間支持採用XML-RPC規範的MetaWepronotice API<br />
+		地址為: {$siteurl}xmlrpc.php<br />
+		通過本接口，你可以輕鬆的將你在非本站空間上面的物业通知批量搬入到當前空間上面來；<br />
+		這需要你原來的空間也要提供XMLRPC規範的API接口，詳情可以咨詢原來空間站點的管理員
+		</p>
+	</caption>
+	<!--{if $paycredit}-->
+	<tr><th width="120">需要積分</th><td>使用本功能需要支付積分: $paycredit (您現在的積分數 <a href="cp.php?ac=credit">$space[credit]</a>)</td></tr>
+	<!--{/if}-->
+	<tr><th width="120">原空間API訪問地址</th><td><input type="text" class="t_input" name="url" value="http://" size="40" />
+		<br />通常為類似 http://u.discuz.net/xmlrpc.php 這樣的URL鏈接
+		</td></tr>
+	<tr><th>原空間用戶名</th><td><input type="text" class="t_input" name="username" value="" /></td></tr>
+	<tr><th>原空間密碼</th><td><input type="password" class="t_input" name="password" value="" /></td></tr>
+	<tr><th>單次獲取物业通知數</th><td><!--{eval echo $_SCONFIG['importnum'];}--></td></tr>
+	<tr><th>&nbsp;</th><td><input type="submit" name="importsubmit" value="提交" class="submit" /></td></tr>
+</table>
+
+<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+	
+
+<!--{/if}-->
+
+<!--{template footer}-->

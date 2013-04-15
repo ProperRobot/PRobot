@@ -8,27 +8,27 @@ if(!defined('IN_UCHOME')) {
 	exit('Access Denied');
 }
 
-//判断用户是否设置了头像
+//判斷用戶是否設置了頭像
 include_once(S_ROOT.'./source/function_cp.php');
 $avatar_exists = trim(ckavatar($space['uid']));
 if(strlen($avatar_exists) < 1) {
-	showmessage('这个功能要求您的UCenter的Server端的 avatar.php 程序需要进行升级。<br>如果您是本站管理员，请通过下面的地址下载 avatar.php 文件的压缩包，并覆盖您的UCenter根目录中的同名文件即可。<br><a href="http://u.discuz.net/download/avatar.zip">http://u.discuz.net/download/avatar.zip</a>');
+	showmessage('這個功能要求您的UCenter的Server端的 avatar.php 程序需要進行升級。<br>如果您是本站管理員，請通過下面的地址下載 avatar.php 文件的壓縮包，並覆蓋您的UCenter根目錄中的同名文件即可。<br><a href="http://u.discuz.net/download/avatar.zip">http://u.discuz.net/download/avatar.zip</a>');
 }
 	
 if($avatar_exists) {
 
-	//任务完成
+	//任務完成
 	$task['done'] = 1;
 	
-	//更新用户头像标识位
+	//更新用戶頭像標識位
 	updatetable('space', array('avatar'=>1), array('uid'=>$space['uid']));
 	
-	//找热门异性有头像的用户
+	//找熱門異性有頭像的用戶
 	$wherearr = array();
 	$wherearr[] = "s.uid=sf.uid";
 	$wherearr[] = "s.avatar='1'";
 	if($space['sex'] == 2) {
-		$title = '帅哥';
+		$title = '帥哥';
 		$wherearr[] = "sf.sex='1'";
 	} else {
 		$title = '美女';
@@ -51,13 +51,13 @@ if($avatar_exists) {
 	realname_get();
 	
 	if($spaces) {
-		$task['result'] = '<p>找到'.$title.'朋友，推荐给您：</p>';
+		$task['result'] = '<p>找到'.$title.'朋友，推薦給您：</p>';
 		$task['result'] .= '<ul class="avatar_list">';
 		foreach ($spaces as $key => $value) {
 			$task['result'] .= '<li>
 			<div class="avatar48"><a href="space.php?uid='.$value['uid'].'" target="_blank">'.avatar($value['uid'], 'small').'</a></div>
 			<p><a href="space.php?uid='.$value['uid'].'" target="_blank" target="_blank">'.$_SN[$value['uid']].'</a></p>
-			<p class=\"time\"><a href="cp.php?ac=friend&op=add&uid='.$value['uid'].'" id="a_reside_friend_'.$key.'" onclick="ajaxmenu(event, this.id, 1)">加为好友</a></p>
+			<p class=\"time\"><a href="cp.php?ac=friend&op=add&uid='.$value['uid'].'" id="a_reside_friend_'.$key.'" onclick="ajaxmenu(event, this.id, 1)">加為好友</a></p>
 			</li>';
 		}
 		$task['result'] .= '</ul>';
@@ -65,11 +65,11 @@ if($avatar_exists) {
 
 } else {
 
-	//任务完成向导
-	$task['guide'] = '请按照以下的说明来参与本任务：
+	//任務完成嚮導
+	$task['guide'] = '請按照以下的說明來參與本任務：
 		<ul>
-		<li>1. <a href="cp.php?ac=avatar" target="_blank">新窗口打开个人头像设置页面</a>；</li>
-		<li>2. 在新打开的设置页面中，请选择您的照片进行上传编辑。</li>
+		<li>1. <a href="cp.php?ac=avatar" target="_blank">新窗口打開個人頭像設置頁面</a>；</li>
+		<li>2. 在新打開的設置頁面中，請選擇您的照片進行上傳編輯。</li>
 		</ul>';
 
 }

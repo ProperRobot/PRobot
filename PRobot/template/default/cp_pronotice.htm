@@ -1,0 +1,251 @@
+<!--{template header}-->
+
+<!--{if $_GET[op] == 'delete'}-->
+
+<h1>刪除日誌</h1>
+<a href="javascript:hideMenu();" class="float_del" title="關閉">關閉</a>
+<div class="popupmenu_inner">
+<form method="post" action="cp.php?ac=pronotice&op=delete&pnid=$pnid">
+	<p>確定刪除指定的通知嗎？</p>
+	<p class="btn_line">
+		<input type="hidden" name="refer" value="$_SGLOBAL[refer]" />
+		<input type="hidden" name="deletesubmit" value="true" />
+		<input type="submit" name="btnsubmit" value="確定" class="submit" />
+	</p>
+<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+</div>
+
+<!--{elseif $_GET[op] == 'edithot'}-->
+
+<h1>調整熱度</h1>
+<a href="javascript:hideMenu();" class="float_del" title="關閉">關閉</a>
+<div class="popupmenu_inner">
+<form method="post" action="cp.php?ac=pronotice&op=edithot&pnid=$pnid">
+	<p class="btn_line">
+		新的熱度：<input type="text" name="hot" value="$pronotice[hot]" size="5"> 
+		<input type="hidden" name="refer" value="$_SGLOBAL[refer]" />
+		<input type="hidden" name="hotsubmit" value="true" />
+		<input type="submit" name="btnsubmit" value="確定" class="submit" />
+	</p>
+<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+</div>
+
+<!--{else}-->
+
+<script language="javascript" src="image/editor/editor_function.js"></script>
+<script language="javascript" src="source/script_pronotice.js"></script>
+
+<!--{if $topic}-->
+	<!--{template cp_topic_menu}-->
+<!--{else}-->
+	<h2 class="title"><img src="image/app/pronotice.gif" />通知</h2>
+	<div class="tabs_header">
+		<ul class="tabs">
+			<!--{if $pronotice[pnid]}-->
+			<li class="active"><a href="cp.php?ac=pronotice&pnid=$pronotice[pnid]"><span>編輯通知</span></a></li>
+			<!--{/if}-->
+			<li<!--{if empty($pronotice[pnid])}--> class="active"<!--{/if}-->><a href="cp.php?ac=pronotice"><span>發表新通知</span></a></li>
+			<li><a href="cp.php?ac=import"><span>通知導入</span></a></li>
+			<li><a href="space.php?uid=$space[uid]&do=pronotice&view=me"><span>返回我的通知</span></a></li>
+		</ul>
+	</div>
+<!--{/if}-->
+
+<div class="c_form">
+
+	<style type="text/css">
+		.userData {behavior:url(#default#userdata);}
+	</style>
+
+
+	<form method="post" action="cp.php?ac=pronotice&pnid=$pronotice[pnid]" enctype="multipart/form-data">
+		<table cellspacing="4" cellpadding="4" width="100%" class="infotable">
+			<tr>
+				<td>
+					<select name="classid" id="classid" onchange="addSort(this)">
+						<option value="0">選擇分類</option>
+						<!--{loop $classarr $value}-->
+						<!--{if $value['classid'] == $pronotice['classid']}-->
+						<option value="$value[classid]" selected>$value[classname]</option>
+						<!--{else}-->
+						<option value="$value[classid]">$value[classname]</option>
+						<!--{/if}-->
+						<!--{/loop}-->
+						<!--{if !$pronotice['uid'] || $pronotice['uid']==$_SGLOBAL['supe_uid']}--><option value="addoption" style="color:red;">+新建分類</option><!--{/if}-->
+					</select>
+					<input type="text" class="t_input" id="subject" name="subject" value="$pronotice[subject]" size="60" onblur="relatekw();" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a id="doodleBox" href="magic.php?mid=doodle&showid=pronotice_doodle&target=uchome-ttHtmlEditor&from=editor" style="display:none"></a>
+				<textarea class="userData" name="message" id="uchome-ttHtmlEditor" style="height:100%;width:100%;display:none;border:0px">$pronotice[message]</textarea>
+				<iframe src="editor.php?charset=$_SC[charset]&allowhtml=$allowhtml&doodle=<!--{if isset($_SGLOBAL[magic][doodle])}-->1<!--{/if}-->" name="uchome-ifrHtmlEditor" id="uchome-ifrHtmlEditor" scrolling="no" border="0" frameborder="0" style="width:100%;border: 1px solid #C5C5C5;" height="400"></iframe>
+				</td>
+			</tr>
+		</table>
+		<table cellspacing="4" cellpadding="4" width="100%" class="infotable">
+			<tr>
+				<th width="100">標籤</th>
+				<td><input type="text" class="t_input" size="40" id="tag" name="tag" value="$pronotice[tag]"> <input type="button" name="clickbutton[]" value="自動獲取" class="button" onclick="relatekw();"></td>
+			</tr>
+			
+			<!--{if $pronotice['uid'] && $pronotice['uid']!=$_SGLOBAL['supe_uid']}-->
+			<!--{eval $selectgroupstyle='display:none';}-->
+			<tbody style="display:none;">
+			<!--{/if}-->
+			<tr>
+				<th>隱私設置</th>
+				<td>
+					<select name="friend" onchange="passwordShow(this.value);">
+						<option value="0"$friendarr[0]>全站用戶可見</option>
+						<option value="1"$friendarr[1]>全好友可見</option>
+						<option value="2"$friendarr[2]>僅指定的好友可見</option>
+						<option value="3"$friendarr[3]>僅自己可見</option>
+						<option value="4"$friendarr[4]>憑密碼查看</option>
+					</select>
+					<span id="span_password" style="$passwordstyle">密碼:<input type="text" name="password" value="$pronotice[password]" size="10" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')"></span>
+					<input type="checkbox" name="noreply" value="1"<!--{if $pronotice[noreply]}--> checked<!--{/if}-->> 不允許評論
+				</td>
+			</tr>
+			<!--{if $pronotice['uid'] && $pronotice['uid']!=$_SGLOBAL['supe_uid']}--></tbody><!--{/if}-->
+			<tbody id="tb_selectgroup" style="$selectgroupstyle">
+			<tr>
+				<th>指定好友</th>
+				<td><select name="selectgroup" onchange="getgroup(this.value);">
+					<option value="">從好友組選擇好友</option>
+					<!--{loop $groups $key $value}-->
+					<option value="$key">$value</option>
+					<!--{/loop}-->
+					</select> 多次選擇會累加到下面的好友名單</td>
+			</tr>
+			<tr>
+				<th>&nbsp;</th>
+				<td>
+				<textarea name="target_names" id="target_names" style="width:85%;" rows="3">$pronotice[target_names]</textarea>
+				<br>(可以填寫多個好友名，請用空格進行分割)</td>
+			</tr>
+			</tbody>
+			
+			
+			<!--{if checkperm('managepronotice')}-->
+			<tr>
+				<th width="100">熱度</th>
+				<td>
+					<input type="text" class="t_input" name="hot" id="hot" value="$pronotice[hot]" size="5">
+				</td>
+			</tr>
+			<!--{/if}-->
+			
+			<!--{if checkperm('seccode')}-->
+			<!--{if $_SCONFIG['questionmode']}-->
+			<tr>
+				<th style="vertical-align: top;">請回答驗證問題</th>
+				<td>
+					<p><!--{eval question();}--></p>
+					<input type="text" id="seccode" name="seccode" value="" size="15" class="t_input" />
+				</td>
+			</tr>
+			<!--{else}-->
+			<tr>
+				<th style="vertical-align: top;">請填寫驗證碼</th>
+				<td>
+					<script>seccode();</script>
+					<p>請輸入上面的4位字母或數字，看不清可<a href="javascript:updateseccode()">更換一張</a></p>
+					<input type="text" id="seccode" name="seccode" value="" size="15" class="t_input" />
+				</td>
+			</tr>
+			<!--{/if}-->
+			<!--{/if}-->
+
+			<tr>
+				<th width="100">動態選項</th>
+				<td>
+					<input type="checkbox" name="makefeed" id="makefeed" value="1"<!--{if ckprivacy('pronotice', 1)}--> checked<!--{/if}-->> 產生動態 (<a href="cp.php?ac=privacy#feed" target="_blank">更改默認設置</a>)
+				</td>
+			</tr>			
+		</table>
+		<input type="hidden" name="pronoticesubmit" value="true" />
+		<input type="button" id="pronoticebutton" name="pronoticebutton" value="提交發佈" onclick="validate(this);" style="display: none;" />
+		<input type="hidden" name="topicid" value="$_GET[topicid]" />
+		<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	</form>
+
+	<!--{if !$_SGLOBAL[inajax] && (!$pronotice['uid'] || $pronotice['uid']==$_SGLOBAL['supe_uid'])}-->
+	<table cellspacing="4" cellpadding="4" width="100%" class="infotable">
+		<tr><th width="100">圖片</th><td>
+		<input type="button" name="clickbutton[]" value="上傳圖片" class="button" onclick="edit_album_show('pic')">
+		<input type="button" name="clickbutton[]" value="插入圖片" class="button" onclick="edit_album_show('album')">
+		</td></tr>
+	</table>
+	<!--{/if}-->
+
+	<table cellspacing="4" cellpadding="4" width="100%" id="uchome-edit-pic" class="infotable" style="display:none;">
+		<tr>
+			<th width="100">&nbsp;</th>
+			<td>
+				<strong>選擇圖片</strong>: 
+				<table summary="Upload" cellspacing="2" cellpadding="0">
+					<tbody id="attachbodyhidden" style="display:none">
+						<tr>
+							<td>
+								<form method="post" id="upload" action="cp.php?ac=upload" enctype="multipart/form-data" target="uploadframe" style="background: transparent;">
+									<input type="file" name="attach" style="border: 1px solid #CCC;" />
+									<span id="localfile"></span>
+									<input type="hidden" name="uploadsubmit" id="uploadsubmit" value="true" />
+									<input type="hidden" name="albumid" id="albumid" value="0" />
+									<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+								</form>
+							</td>
+						</tr>
+					</tbody>
+					<tbody id="attachbody"></tbody>
+				</table>
+				<strong>存儲相冊</strong>: 
+				<table cellspacing="2" cellpadding="0">
+					<tr>
+						<td>
+							<select name="albumid" id="uploadalbum" onchange="addSort(this)">
+								<option value="-1">請選擇相冊</option>
+								<option value="-1">默認相冊</option>
+								<!--{loop $albums $value}-->
+								<option value="$value[albumid]">$value[albumname]</option>
+								<!--{/loop}-->
+								<option value="addoption" style="color:red;">+新建相冊</option>
+							</select>
+							<script src="source/script_upload.js" type="text/javascript"></script>
+							<iframe id="uploadframe" name="uploadframe" width="0" height="0" marginwidth="0" frameborder="0" src="about:blank"></iframe>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	<table cellspacing="4" cellpadding="4" width="100%" class="infotable" id="uchome-edit-album" style="display:none;">
+		<tr>
+			<th width="100">&nbsp;</th>
+			<td>
+				選擇相冊: <select name="view_albumid" onchange="picView(this.value)">
+					<option value="none">選擇一個相冊</option>
+					<option value="0">默認相冊</option>
+					<!--{loop $albums $value}-->
+					<option value="$value[albumid]">$value[albumname]</option>
+					<!--{/loop}-->
+				</select> (點擊圖片可以插入到內容中)
+				<div id="albumpic_body"></div>
+			</td>
+		</tr>
+	</table>
+	<table cellspacing="4" cellpadding="4" width="100%" class="infotable">
+		<tr>
+			<th width="100">&nbsp;</th>
+			<td>
+			<input type="button" id="issuance" onclick="document.getElementById('pronoticebutton').click();" value="保存發佈" class="submit" /></td>
+		</tr>
+	</table>
+</div>
+
+<!--{/if}-->
+<!--{template footer}-->

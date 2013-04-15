@@ -171,6 +171,46 @@ if($_GET['op'] == 'delete') {
 			$note_message = cplang('note_share_album', array("space.php?uid=$album[uid]&do=album&id=$album[albumid]", $album['albumname']));
 			
 			break;
+		case 'pronotice':
+			$query = $_SGLOBAL['db']->query("SELECT b.*,bf.message,bf.hotuser FROM ".tname('pronotice')." b
+				LEFT JOIN ".tname('pronoticefield')." bf ON bf.pnid=b.pnid
+				WHERE b.pnid='$id'");
+			if(!$pronotice = $_SGLOBAL['db']->fetch_array($query)) {
+				showmessage('pronotice_does_not_exist');
+			}
+			if($pronotice['uid'] == $space['uid']) {
+				showmessage('share_not_self');
+			}
+			if($pronotice['friend']) {
+				showmessage('logs_can_not_share');
+			}
+			//黑名单
+			if(isblacklist($pronotice['uid'])) {
+				showmessage('is_blacklist');
+			}
+
+			//实名
+			realname_set($pronotice['uid'], $pronotice['username']);
+			realname_get();
+
+			$arr['title_template'] = cplang('share_pronotice');
+			$arr['body_template'] = '<b>{subject}</b><br>{username}<br>{message}';
+			$arr['body_data'] = array(
+				'subject' => "<a href=\"space.php?uid=$pronotice[uid]&do=pronotice&id=$pronotice[pnid]\">$pronotice[subject]</a>",
+				'username' => "<a href=\"space.php?uid=$pronotice[uid]\">".$_SN[$pronotice['uid']]."</a>",
+				'message' => getstr($pronotice['message'], 150, 0, 1, 0, 0, -1)
+			);
+			if($pronotice['pic']) {
+				$arr['image'] = pic_cover_get($pronotice['pic'], $pronotice['picflag']);
+				$arr['image_link'] = "space.php?uid=$pronotice[uid]&do=pronotice&id=$pronotice[pnid]";
+			}
+			//通知
+			$note_uid = $pronotice['uid'];
+			$note_message = cplang('note_share_pronotice', array("space.php?uid=$pronotice[uid]&do=pronotice&id=$pronotice[pnid]", $pronotice['subject']));
+			
+			$hotarr = array('pnid', $pronotice['pnid'], $pronotice['hotuser']);
+			
+			break;
 		case 'pic':
 			$query = $_SGLOBAL['db']->query("SELECT album.username, album.albumid, album.albumname, album.friend, pic.*, pf.*
 				FROM ".tname('pic')." pic
@@ -282,10 +322,10 @@ if($_GET['op'] == 'delete') {
 			}
 
 			$arr['title_template'] = cplang('share_tag');
-			$arr['body_template'] = '<b>{tagname}</b><br>'.cplang('share_tag_blognum');
+			$arr['body_template'] = '<b>{tagname}</b><br>'.cplang('share_tag_pronoticenum');
 			$arr['body_data'] = array(
 				'tagname' => "<a href=\"space.php?do=tag&id=$tag[tagid]\">$tag[tagname]</a>",
-				'blognum' => $tag['blognum']
+				'pronoticenum' => $tag['pronoticenum']
 			);
 			$arr['image'] = '';
 			$arr['image_link'] = '';

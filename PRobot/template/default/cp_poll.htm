@@ -2,8 +2,8 @@
 
 <!--{if $op == 'addopt'}-->
 
-<h1>添加投票项</h1>
-<a href="javascript:hideMenu();" class="float_del" title="关闭">关闭</a>
+<h1>添加投票項</h1>
+<a href="javascript:hideMenu();" class="float_del" title="關閉">關閉</a>
 <div class="popupmenu_inner" id="$pid">
 	<form id="add_option_{$pid}" name="add_option_{$pid}" method="post" action="cp.php?ac=poll&op=addopt&pid=$pid">
 		<div id="__add_option_{$pid}">
@@ -11,7 +11,7 @@
 				<tr>
 					<td>
 			
-						<label for="newoption">请输入新增的投票候选项：</label><br />
+						<label for="newoption">請輸入新增的投票候選項：</label><br />
 						<input type="text" class="t_input" id="newoption" name="newoption" value="" size="50"/>
 					</td>
 				</tr>
@@ -30,15 +30,15 @@
 
 <!--{elseif $op=='delete'}-->
 
-<h1>删除投票</h1>
-<a href="javascript:hideMenu();" class="float_del" title="关闭">关闭</a>
+<h1>刪除投票</h1>
+<a href="javascript:hideMenu();" class="float_del" title="關閉">關閉</a>
 <div class="popupmenu_inner">
 	<form method="post" action="cp.php?ac=poll&op=delete&pid=$pid">
-		<p>确定删除指定的投票吗？</p>
+		<p>確定刪除指定的投票嗎？</p>
 		<p class="btn_line">
 			<input type="hidden" name="refer" value="$_SGLOBAL[refer]" />
 			<input type="hidden" name="deletesubmit" value="true" />
-			<input type="submit" name="btnsubmit" value="确定" class="submit" />
+			<input type="submit" name="btnsubmit" value="確定" class="submit" />
 		</p>
 	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
 	</form>
@@ -46,15 +46,15 @@
 
 <!--{elseif $op=='endreward'}-->
 
-<h1>终止悬赏</h1>
-<a href="javascript:hideMenu();" class="float_del" title="关闭">关闭</a>
+<h1>終止懸賞</h1>
+<a href="javascript:hideMenu();" class="float_del" title="關閉">關閉</a>
 <div class="popupmenu_inner">
 	<form method="post" action="cp.php?ac=poll&op=endreward&pid=$pid">
-		<p>终止悬赏后，剩余的积分打回您的帐户<br>确定继续吗？</p>
+		<p>終止懸賞後，剩餘的積分打回您的帳戶<br>確定繼續嗎？</p>
 		<p class="btn_line">
 			<input type="hidden" name="refer" value="$_SGLOBAL[refer]" />
 			<input type="hidden" name="endrewardsubmit" value="true" />
-			<input type="submit" name="btnsubmit" value="确定" class="submit" />
+			<input type="submit" name="btnsubmit" value="確定" class="submit" />
 		</p>
 	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
 	</form>
@@ -62,15 +62,15 @@
 
 <!--{elseif $op == 'edithot'}-->
 
-<h1>调整热度</h1>
-<a href="javascript:hideMenu();" class="float_del" title="关闭">关闭</a>
+<h1>調整熱度</h1>
+<a href="javascript:hideMenu();" class="float_del" title="關閉">關閉</a>
 <div class="popupmenu_inner">
 <form method="post" action="cp.php?ac=poll&op=edithot&pid=$pid">
 	<p class="btn_line">
-		新的热度：<input type="text" name="hot" value="$poll[hot]" size="5"> 
+		新的熱度：<input type="text" name="hot" value="$poll[hot]" size="5"> 
 		<input type="hidden" name="refer" value="$_SGLOBAL[refer]" />
 		<input type="hidden" name="hotsubmit" value="true" />
-		<input type="submit" name="btnsubmit" value="确定" class="submit" />
+		<input type="submit" name="btnsubmit" value="確定" class="submit" />
 	</p>
 <input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
 </form>
@@ -78,8 +78,8 @@
 
 <!--{elseif $op == 'addreward'}-->
 
-<h1>追加投票悬赏</h1>
-<a href="javascript:hideMenu();" class="float_del" title="关闭">关闭</a>
+<h1>追加投票懸賞</h1>
+<a href="javascript:hideMenu();" class="float_del" title="關閉">關閉</a>
 <div class="popupmenu_inner" id="$pid">
 	<form id="add_addreward_{$pid}" name="add_addreward_{$pid}" method="post" action="cp.php?ac=poll&op=addreward&pid=$pid">
 		<div id="__add_addreward_{$pid}">
@@ -87,15 +87,15 @@
 				<tr>
 					<td>
 			
-						<label for="addcredit">追加悬赏总额：</label>
-						<input type="text" class="t_input" id="addcredit" name="addcredit" value="" size="10"/> 范围：0~$space[credit]
+						<label for="addcredit">追加懸賞總額：</label>
+						<input type="text" class="t_input" id="addcredit" name="addcredit" value="" size="10"/> 範圍：0~$space[credit]
 					</td>
 				</tr>
 				<!--{if $maxreward}-->
 				<tr>
 					<td>
-						<label for="addpercredit">追加每人悬赏：</label>
-						<input type="text" class="t_input" id="addpercredit" name="addpercredit" value="" size="10"/> 范围：0~$maxreward
+						<label for="addpercredit">追加每人懸賞：</label>
+						<input type="text" class="t_input" id="addpercredit" name="addpercredit" value="" size="10"/> 範圍：0~$maxreward
 					</td>
 				</tr>
 				<!--{/if}-->
@@ -115,14 +115,14 @@
 <!--{elseif $op=='modify'}-->
 
 
-<h1>修改投票结束时间</h1>
-<a href="javascript:hideMenu();" class="float_del" title="关闭">关闭</a>
+<h1>修改投票結束時間</h1>
+<a href="javascript:hideMenu();" class="float_del" title="關閉">關閉</a>
 <div class="popupmenu_inner" id="expiration_$pid">
 <form id="modify_expiration_{$pid}" name="modify_expiration_{$pid}" method="post" action="cp.php?ac=poll&op=modify&pid=$pid">
 <table>
 	<tr>
 		<td>
-			<label for="expiration">请输入新的结束时间：</label><br />
+			<label for="expiration">請輸入新的結束時間：</label><br />
 			<input type="text" class="t_input" id="expiration" name="expiration" readonly value="<!--{date('Y-m-d', $poll[expiration]?$poll[expiration]:$_SGLOBAL[timestamp]+2592000)}-->" size="30" onclick="showcalendar(event, this, 0, '<!--{date('Y-m-d',$_SGLOBAL[timestamp])}-->')"/>
 		</td>
 	</tr>
@@ -141,15 +141,15 @@
 <!--{elseif $op=='summary'}-->
 
 
-<h1>投票总结</h1>
-<a href="javascript:hideMenu();" class="float_del" title="关闭">关闭</a>
+<h1>投票總結</h1>
+<a href="javascript:hideMenu();" class="float_del" title="關閉">關閉</a>
 <div class="popupmenu_inner" id="summary_$pid">
 <form id="edit_summary_{$pid}" name="edit_summary_{$pid}" method="post" action="cp.php?ac=poll&op=summary&pid=$pid">
 <table>
 	<tr>
 		<td>
 
-			<label for="message">请输入对此次投票的总结：</label>
+			<label for="message">請輸入對此次投票的總結：</label>
 			<a href="###" id="editface_{$pid}" onclick="showFace(this.id, 'summary');return false;"><img src="image/facelist.gif" align="absmiddle" /></a>
 			<img src="image/zoomin.gif" onmouseover="this.style.cursor='pointer'" onclick="zoomTextarea('summary', 1)">
 
@@ -183,11 +183,11 @@
 			<!--{else}-->
 			<a href="space.php?uid=$value[uid]">{$_SN[$value[uid]]}</a>
 			<!--{/if}-->
-			<!--{date('Y-m-d H:i:s',$value[dateline],1)}--> 投票给 $value[option]
+			<!--{date('Y-m-d H:i:s',$value[dateline],1)}--> 投票給 $value[option]
 		</li>
 	<!--{/loop}-->
 	<!--{else}-->
-		<li>暂时没有相关<!--{if $_GET[filtrate]=='we'}-->好友<!--{/if}-->投票记录</li>
+		<li>暫時沒有相關<!--{if $_GET[filtrate]=='we'}-->好友<!--{/if}-->投票記錄</li>
 	<!--{/if}-->
 	</ul>
 	<!--{if $multi}--><div class="page">$multi</div><br/><!--{/if}-->
@@ -199,14 +199,14 @@
 <h2 class="title"><img src="image/app/poll.gif" />投票</h2>
 <div class="tabs_header">
 	<ul class="tabs">
-		<li><a href="cp.php?ac=poll"><span>发起新投票</span></a></li>
-		<li class="active"><a href="cp.php?ac=poll&op=invite&pid=$poll[pid]"><span>邀请好友</span></a></li>
+		<li><a href="cp.php?ac=poll"><span>發起新投票</span></a></li>
+		<li class="active"><a href="cp.php?ac=poll&op=invite&pid=$poll[pid]"><span>邀請好友</span></a></li>
 		<li><a href="space.php?uid=$poll[uid]&do=poll&pid=$poll[pid]"><span>返回投票</span></a></li>
 	</ul>
 </div>
 <div id="content" style="width: 640px;">
 	<div class="h_status">
-		您可以邀请下列好友来参与<a href="space.php?uid=$poll[uid]&do=poll&pid=$poll[pid]">《$poll[subject]》</a>投票
+		您可以邀請下列好友來參與<a href="space.php?uid=$poll[uid]&do=poll&pid=$poll[pid]">《$poll[subject]》</a>投票
 	</div>
 	
 	<div class="h_status">
@@ -217,24 +217,24 @@
 				<p>
 				<a href="space.php?uid=$value[fuid]" title="{$_SN[$value[fuid]]}">{$_SN[$value[fuid]]}</a>
 				</p>
-				<p><!--{if empty($invitearr[$value[fuid]])}--><input type="checkbox" name="ids[]" value="$value[fuid]">选定<!--{else}-->已邀请<!--{/if}--></p>
+				<p><!--{if empty($invitearr[$value[fuid]])}--><input type="checkbox" name="ids[]" value="$value[fuid]">選定<!--{else}-->已邀請<!--{/if}--></p>
 			</li>
 		<!--{/loop}-->
 		</ul>
 		<div class="page">$multi</div>
 		<!--{else}-->
-		<div class="c_form">还没有好友。</div>
+		<div class="c_form">還沒有好友。</div>
 		<!--{/if}-->
 	</div>
 	<p>
-		<input type="checkbox" id="chkall" name="chkall" onclick="checkAll(this.form, 'ids')">全选 &nbsp;
-		<input type="submit" name="invitesubmit" value="邀请" class="submit" />
+		<input type="checkbox" id="chkall" name="chkall" onclick="checkAll(this.form, 'ids')">全選 &nbsp;
+		<input type="submit" name="invitesubmit" value="邀請" class="submit" />
 	</p>
 </div>
 
 <div id="sidebar" style="width: 150px;">
 	<div class="cat">
-		<h3>好友分类</h3>
+		<h3>好友分類</h3>
 		<ul class="post_list line_list">
 			<li<!--{if $_GET[group]==-1}--> class="current"<!--{/if}-->><a href="cp.php?ac=poll&pid=$poll[pid]&op=invite&group=-1">全部好友</a></li>
 			<!--{loop $groups $key $value}-->
@@ -254,7 +254,7 @@
 	<h2 class="title"><img src="image/app/poll.gif" />投票</h2>
 	<div class="tabs_header">
 		<ul class="tabs">
-			<li class="active"><a href="cp.php?ac=poll"><span>发起新投票</span></a></li>
+			<li class="active"><a href="cp.php?ac=poll"><span>發起新投票</span></a></li>
 			<li><a href="space.php?do=poll&view=me"><span>返回我的投票</span></a></li>
 		</ul>
 	</div>
@@ -265,14 +265,14 @@
 	<form id="addnewpoll" name="addnewpoll" method="post" action="cp.php?ac=poll">
 		<table cellspacing="4" cellpadding="4" width="100%" class="infotable">
 			<tr>
-				<th width="80">投票主题</th>
+				<th width="80">投票主題</th>
 				<td>
 					<input type="text" class="t_input" style="width:450px;" id="subject" name="subject" value=""> <br/>
-					<a id="addtip" href="javascript:;" onclick="initIntro();" onfocus="this.blur();">添加投票详细说明</a>
+					<a id="addtip" href="javascript:;" onclick="initIntro();" onfocus="this.blur();">添加投票詳細說明</a>
 				</td>
 			</tr>
 			<tr id="intropoll" style="display:none">
-				<th>详细说明</th>
+				<th>詳細說明</th>
 				<td><textarea id="message" style="padding: 3px 2px;width:450px;height:50px;" name="message"></textarea> </td>
 			</tr>
 			<tr>
@@ -284,26 +284,26 @@
 			<tbody id="moreoption" style="display: none;">
 			<!--{/if}-->
 			<tr>
-				<th>候选项{$val}</th>
+				<th>候選項{$val}</th>
 				<td>
 					<input type="text" class="t_input"  style="width:450px;" name="option[]" value="" maxlength="120">
 					<!--{if $val==10}-->
-					<div><a id="moretip" href="javascript:;" onclick="showMoreOption();" onfocus="this.blur();">增加更多选项</a></div>
+					<div><a id="moretip" href="javascript:;" onclick="showMoreOption();" onfocus="this.blur();">增加更多選項</a></div>
 					<!--{/if}-->
 				</td>
 			</tr>
 			<!--{/loop}-->
 			</tbody>
 			<tr>
-				<th>可投选项</th>
+				<th>可投選項</th>
 				<td>
 					<select name="maxchoice">
 						<!--{loop $option $key $val}-->
 							<option value="$val">
 								<!--{if $val==1}-->
-								单选
+								單選
 								<!--{else}-->
-								可多选，最多{$val}项
+								可多選，最多{$val}項
 								<!--{/if}-->
 							</option>
 						<!--{/loop}-->
@@ -311,7 +311,7 @@
 				</td>
 			</tr>
 			<tr>
-				<th>截止时间</th>
+				<th>截止時間</th>
 				<td>
 					<script type="text/javascript" src="source/script_calendar.js" charset="$_SC[charset]"></script>
 					<input type="text" class="t_input" size="16" id="expiration" readonly name="expiration" value="" onclick="showcalendar(event, this, 0, '<!--{date('Y-m-d',$_SGLOBAL[timestamp])}-->')" />
@@ -326,14 +326,14 @@
 				</td>
 			</tr>
 			<tr>
-				<th>评论限制</th>
+				<th>評論限制</th>
 				<td>
 					<input type="radio" name="noreply" value="0" checked />不限制 
-					<input type="radio" name="noreply" value="1" />仅限好友
+					<input type="radio" name="noreply" value="1" />僅限好友
 				</td>
 			</tr>
 			<tr>
-				<th>悬赏投票</th>
+				<th>懸賞投票</th>
 				<td>
 					<input type="radio" name="reward" value="0" checked onclick="initReward(this.value);" />否
 					<input type="radio" name="reward" value="1" onclick="initReward(this.value);" />是
@@ -341,22 +341,22 @@
 			</tr>
 			<tbody id="rewardlist" style="display: none;">
 				<tr>
-					<th>悬赏总额</th>
+					<th>懸賞總額</th>
 					<td>
-						<input type="text" class="t_input" size="16" id="credit" name="credit" value="" maxlength="60"> 范围：1~$space[credit]
+						<input type="text" class="t_input" size="16" id="credit" name="credit" value="" maxlength="60"> 範圍：1~$space[credit]
 					</td>
 				</tr>
 				<tr>
-					<th>每人悬赏</th>
+					<th>每人懸賞</th>
 					<td>
-						<input type="text" class="t_input" size="16" id="percredit" name="percredit" value="" maxlength="60"> 范围：1~$_SCONFIG[maxreward]
+						<input type="text" class="t_input" size="16" id="percredit" name="percredit" value="" maxlength="60"> 範圍：1~$_SCONFIG[maxreward]
 					</td>
 				</tr>
 			</tbody>
 			<!--{if checkperm('seccode')}-->
 				<!--{if $_SCONFIG['questionmode']}-->
 				<tr>
-					<th style="vertical-align: top;" width="90">请回答验证问题</th>
+					<th style="vertical-align: top;" width="90">請回答驗證問題</th>
 					<td>
 						<p><!--{eval question();}--></p>
 						<input type="text" id="seccode" name="seccode" value="" size="15" class="t_input" />
@@ -364,10 +364,10 @@
 				</tr>
 				<!--{else}-->
 				<tr>
-					<th style="vertical-align: top;" width="90">请填写验证码</th>
+					<th style="vertical-align: top;" width="90">請填寫驗證碼</th>
 					<td>
 						<script>seccode();</script>
-						<p>请输入上面的4位字母或数字，看不清可<a href="javascript:updateseccode()">更换一张</a></p>
+						<p>請輸入上面的4位字母或數字，看不清可<a href="javascript:updateseccode()">更換一張</a></p>
 						<input type="text" id="seccode" name="seccode" value="" size="15" class="t_input" />
 					</td>
 				</tr>
@@ -375,9 +375,9 @@
 			<!--{/if}-->
 			
 			<tr>
-				<th>动态选项</th>
+				<th>動態選項</th>
 				<td>
-					<input type="checkbox" name="makefeed" id="makefeed" value="1"<!--{if ckprivacy('poll', 1)}--> checked<!--{/if}-->> 产生动态 (<a href="cp.php?ac=privacy#feed" target="_blank">更改默认设置</a>)
+					<input type="checkbox" name="makefeed" id="makefeed" value="1"<!--{if ckprivacy('poll', 1)}--> checked<!--{/if}-->> 產生動態 (<a href="cp.php?ac=privacy#feed" target="_blank">更改默認設置</a>)
 				</td>
 			</tr>
 			
@@ -387,7 +387,7 @@
 					<input type="hidden" name="pollsubmit" id="pollsubmit" value="true" />
 					<input type="hidden" name="topicid" value="$_GET[topicid]" />
 					<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
-					<input type="submit" name="addpollsubmit" id="addpollsubmit" value="发起投票" class="submit" onclick="validate(this);return false;" />
+					<input type="submit" name="addpollsubmit" id="addpollsubmit" value="發起投票" class="submit" onclick="validate(this);return false;" />
 					<div id="__addnewpoll"></div>
 				</td>
 			</tr>
@@ -400,12 +400,12 @@
 			if(introObj.style.display == 'none') {
 				introObj.style.display = '';
 				
-				tipObj.innerHTML = "隐藏投票详细说明";
+				tipObj.innerHTML = "隱藏投票詳細說明";
 			} else {
-				if (($('message').value.length == 0) || (confirm("详细说明将被清空，你确定要隐藏吗？"))) {
+				if (($('message').value.length == 0) || (confirm("詳細說明將被清空，你確定要隱藏嗎？"))) {
 					introObj.style.display = 'none';
 					$('message').value = '';
-					tipObj.innerHTML = "添加投票详细说明";
+					tipObj.innerHTML = "添加投票詳細說明";
 				}
 			}
 		}
@@ -428,7 +428,7 @@
 		    if (subject) {
 		    	var slen = strlen(subject.value);
 		        if (slen < 1 || slen > 80) {
-		            alert("标题长度(1~80字符)不符合要求");
+		            alert("標題長度(1~80字符)不符合要求");
 		            subject.focus();
 		            return false;
 		        }
@@ -437,7 +437,7 @@
 		    var makefeed = $('makefeed');
 		    if(makefeed) {
 		    	if(makefeed.checked == false) {
-		    		if(!confirm("友情提醒：您确定此次发布不产生动态吗？\n有了动态，好友才能及时看到你的更新。")) {
+		    		if(!confirm("友情提醒：您確定此次發佈不產生動態嗎？\n有了動態，好友才能及時看到你的更新。")) {
 		    			return false;
 		    		}
 		    	}
@@ -451,29 +451,29 @@
 				}
 			}
 			if(optionCount<2) {
-				alert('请至少添加两个候选项！');
+				alert('請至少添加兩個候選項！');
 				return false;
 			}
 			var maxCredit = $space[credit];
 			var maxPercredit = $_SCONFIG[maxreward];
-			//验证悬赏投票设置
+			//驗證懸賞投票設置
 			var credit = parseInt($('credit').value.Trim());
 			var percredit = parseInt($('percredit').value.Trim());
 			if(credit || percredit) {
 				if(!credit) {
-					alert("请正确填写悬赏总额");
+					alert("請正確填寫懸賞總額");
 					return false;
 				} else if(!percredit) {
-					alert("请正确填写每人悬赏积分");
+					alert("請正確填寫每人懸賞積分");
 					return false;
 				} else if(credit > maxCredit) {
-					alert("悬赏总额应在:1~"+maxCredit+"之间取值");
+					alert("懸賞總額應在:1~"+maxCredit+"之間取值");
 					return false;
 				} else if(maxPercredit && percredit > maxPercredit) {
-					alert("每人悬赏应在:1~"+maxPercredit+"之间取值");
+					alert("每人懸賞應在:1~"+maxPercredit+"之間取值");
 					return false;
 				} else if(credit < percredit) {
-					alert("每人悬赏不能高于悬赏总额");
+					alert("每人懸賞不能高於懸賞總額");
 					return false;
 				}
 			}
@@ -483,7 +483,7 @@
 			if($('expiration').value.Trim() != "") {
 				var expiration = parsedate($('expiration').value.Trim());
 				if(expiration < nowDate) {
-					alert("过期时间不能小于当前时间");
+					alert("過期時間不能小於當前時間");
 					return false;
 				}
 			}

@@ -2,14 +2,14 @@
 
 <!--{if $_GET['op'] == 'delete'}-->
 
-<h1>删除记录</h1>
-<a href="javascript:hideMenu();" class="float_del" title="关闭">关闭</a>
+<h1>刪除記錄</h1>
+<a href="javascript:hideMenu();" class="float_del" title="關閉">關閉</a>
 <div class="popupmenu_inner" id="__doingform_{$doid}_{$id}">
 <form method="post" id="doingform_{$doid}_{$id}" name="doingform" action="cp.php?ac=doing&op=delete&doid=$doid&id=$_GET[id]">
-	<p>确定删除该记录吗？</p>
+	<p>確定刪除該記錄嗎？</p>
 	<p class="btn_line">
 		<input type="hidden" name="refer" value="$_SGLOBAL[refer]">
-		<button name="deletesubmit" type="submit" class="submit" value="true">确定</button>
+		<button name="deletesubmit" type="submit" class="submit" value="true">確定</button>
 	</p>
 	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
 </form>
@@ -26,7 +26,7 @@
 		<a href="#" id="do_face_{$doid}_{$id}" title="插入表情" onclick="showFace(this.id, 'do_message_{$doid}_{$id}');return false;"><img src="image/facelist.gif" align="absmiddle" /></a>
 		<input type="text" id="do_message_{$doid}_{$id}" name="message" size="35" class="t_input" onkeydown="return ctrlEnter(event, 'docommform_btn_{$doid}_{$id}', 1);">
 		<input type="hidden" name="commentsubmit" value="true" />
-		<input type="button" name="do_button" class="submit" id="docommform_btn_{$doid}_{$id}" onclick="ajaxpost('docommform_{$doid}_{$id}', 'docomment_get', 1)" value="回复">
+		<input type="button" name="do_button" class="submit" id="docommform_btn_{$doid}_{$id}" onclick="ajaxpost('docommform_{$doid}_{$id}', 'docomment_get', 1)" value="回復">
 		<button type="button" name="btncancel" class="button" onclick="docomment_form_close($doid, $id);">取消</button>
 		<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
 	</form>

@@ -7,33 +7,33 @@
 		<div class="bdrcontent">	
 			<table cellspacing="0" cellpadding="0" class="formtable" border="0">
 			<tr>				
-				<th width="80">时间</th>
+				<th width="80">時間</th>
 				<td>$log[dateline]</td>
 			</tr>
 				<th>IP</th>
 				<td>$log[ip]</td>
 			</tr>
-				<th>用户</th>
+				<th>用戶</th>
 				<td><a href="space.php?uid=$log[uid]" target="_blank">$_SN[$log[uid]]</a></td>
 			</tr>
-				<th>链接</th>
+				<th>鏈接</th>
 				<td>$log[link]</td>
 			</tr>
 			<!--{if $log[get]}-->
 			</tr>
-				<th>GET数据</th>
+				<th>GET數據</th>
 				<td>$log[get]</td>
 			</tr>
 			<!--{/if}-->
 			<!--{if $log[post]}-->
 			</tr>
-				<th>POST数据</th>
+				<th>POST數據</th>
 				<td>$log[post]</td>
 			</tr>
 			<!--{/if}-->
 			<!--{if $log[extra]}-->
 			<tr>
-				<th>参考信息</th>
+				<th>參考信息</th>
 				<td>$log[extra]</td>
 			</tr>
 			<!--{/if}-->
@@ -50,10 +50,10 @@
 			<div class="block style4">				
 				<table cellspacing="3" cellpadding="3">				
 				<tr>
-					<th>选择log文件</th>
+					<th>選擇log文件</th>
 					<td colspan="3">
 					<select name="file">
-						<option value="">选择文件</option>	
+						<option value="">選擇文件</option>	
 						<!--{loop $logfiles $value}-->
 						<option value="$value"<!--{if $_GET[file]==$value}--> selected=""<!--{/if}-->>$value</option>
 						<!--{/loop}-->				
@@ -62,7 +62,7 @@
 				</tr>
 				<tr>
 				<tr>
-					<td>用户UID</td>
+					<td>用戶UID</td>
 					<td>
 						<input type="text" name="uid" value="$_GET[uid]" />
 					</td>
@@ -71,7 +71,7 @@
 						<input type="text" name="ip" value="$_GET[ip]" />
 					</td>
 				</tr>
-				<th>记录时间</th>
+				<th>記錄時間</th>
 					<td colspan="3">
 						<script type="text/javascript" src="source/script_calendar.js" charset="$_SC[charset]"></script>
 						<input type="text" name="starttime" value="$_GET[starttime]" onclick="showcalendar(event,this,1)"/> ~
@@ -79,7 +79,7 @@
 					</td>
 				</tr>
 				<tr>
-					<th>关键词</th>
+					<th>關鍵詞</th>
 					<td colspan="3">
 						<input type="text" name="keysearch" value="$_GET[keysearch]" />
 						<input type="submit" name="searchsubmit" value="搜索" class="submit">
@@ -92,10 +92,10 @@
 		<div class="bdrcontent">		
 			<table cellspacing="0" cellpadding="0" class="formtable" border="0">
 			<tr>				
-				<th width="160">时间</th>
+				<th width="160">時間</th>
 				<th width="120">IP</th>
-				<th width="120">用户</th>
-				<th>链接</th>
+				<th width="120">用戶</th>
+				<th>鏈接</th>
 				<th width="60">操作</th>
 			</tr>			
 			<!--{loop $list $value}-->
@@ -104,10 +104,10 @@
 				<td><a href="admincp.php?ac=log&file=$_GET[file]&uid=$_GET[uid]&ip=$value[ip]&starttime=$_GET[starttime]&endtime=$_GET[endtime]&keysearch=$_GET[keysearch]">$value[ip]</a></td>
 				<td>
 					<a href="admincp.php?ac=log&file=$_GET[file]&uid=$value[uid]&ip=$_GET[ip]&starttime=$_GET[starttime]&endtime=$_GET[endtime]&keysearch=$_GET[keysearch]">$_SN[$value[uid]]</a>
-					<p class="gray"><a href="space.php?uid=$value[uid]" target="_blank">空间</a></p>
+					<p class="gray"><a href="space.php?uid=$value[uid]" target="_blank">空間</a></p>
 				</td>
 				<td>$value[link]</td>
-				<td><a href="admincp.php?ac=log&op=view&file=$_GET[file]&line=$value[line]">详细</a></td>
+				<td><a href="admincp.php?ac=log&op=view&file=$_GET[file]&line=$value[line]">詳細</a></td>
 			</tr>
 			<!--{/loop}-->
 			</table>			
@@ -116,7 +116,7 @@
 			<div class="pages">$multi</div>
 		</div>
 	<!--{else}-->
-		<div class="bdrcontent"><p>没有相关记录</p></div>
+		<div class="bdrcontent"><p>沒有相關記錄</p></div>
 	<!--{/if}-->	
 <!--{/if}-->
 	</div>

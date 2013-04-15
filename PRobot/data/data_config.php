@@ -45,6 +45,7 @@ $_SCONFIG=Array
 	'name_allowpoke' => 1,
 	'name_allowdoing' => 1,
 	'name_allowblog' => '0',
+	'name_allowpronotice' => '0',
 	'name_allowalbum' => '0',
 	'name_allowthread' => '0',
 	'name_allowshare' => '0',
@@ -100,12 +101,13 @@ $_SCONFIG=Array
 			'click' => 1
 			)
 		),
-	'cronnextrun' => 1364924819,
+	'cronnextrun' => 1365988020,
 	'my_status' => '0',
 	'uniqueemail' => 1,
 	'updatestat' => 1,
 	'my_showgift' => 1,
 	'topcachetime' => 60,
-	'newspacenum' => 3
+	'newspacenum' => 3,
+	'sitekey' => '37aef49Z2r7U28Zh'
 	)
 ?>

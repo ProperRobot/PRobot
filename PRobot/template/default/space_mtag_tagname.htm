@@ -1,10 +1,10 @@
 <!--{template header}-->
 
-<h2 class="title"><img src="image/app/mtag.gif" />群组</h2>
+<h2 class="title"><img src="image/app/mtag.gif" />群組</h2>
 <div class="tabs_header">
 	<ul class="tabs">
-		<li class="active"><a href="#"><span>访问群组</span></a></li>
-		<li><a href="space.php?do=mtag&view=me"><span>返回我的群组</span></a></li>
+		<li class="active"><a href="#"><span>訪問群組</span></a></li>
+		<li><a href="space.php?do=mtag&view=me"><span>返回我的群組</span></a></li>
 	</ul>
 </div>
 
@@ -12,21 +12,21 @@
 
 <table cellspacing="0" cellpadding="0" class="formtable">
 	<caption>
-		<h2>选择访问群组</h2>
-		<p>您要访问的群组当前有多个，请根据自己的喜好，选择一个群组进行访问。</p>
+		<h2>選擇訪問群組</h2>
+		<p>您要訪問的群組當前有多個，請根據自己的喜好，選擇一個群組進行訪問。</p>
 	</caption>
 	<!--{loop $taglist $value}-->
 	<tr>
 		<td><a href="space.php?do=mtag&tagid=$value[tagid]" style="font-size:14px;" target="_blank">$value[tagname]</a></td>
 		<td>{$_SGLOBAL[profield][$value[fieldid]][title]}</td>
-		<td>$value[membernum] 位成员</td>
+		<td>$value[membernum] 位成員</td>
 		<td>
-			<a href="space.php?do=mtag&tagid=$value[tagid]" target="_blank">立即访问本群组</a>
+			<a href="space.php?do=mtag&tagid=$value[tagid]" target="_blank">立即訪問本群組</a>
 			<span class="pipe">|</span>
 			<!--{if $value['joinperm'] < 2}-->
-			<a href="cp.php?ac=mtag&op=join&tagid=$value[tagid]" id="mtag_like_$value[tagid]" onclick="ajaxmenu(event, this.id)">选择加入该群组</a>
+			<a href="cp.php?ac=mtag&op=join&tagid=$value[tagid]" id="mtag_like_$value[tagid]" onclick="ajaxmenu(event, this.id)">選擇加入該群組</a>
 			<!--{else}-->
-			<strong>本群组需要群主邀请才可加入</strong>
+			<strong>本群組需要群主邀請才可加入</strong>
 			<!--{/if}-->
 		</td>
 	</tr>
@@ -39,15 +39,15 @@
 <input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
 <table cellspacing="0" cellpadding="0" class="formtable">
 	<caption>
-		<h2>创建群组: $tagname</h2>
-		<p>您要访问的群组现在还没有创建，您可以来创建这个群组，并邀请好友来访问。</p>
+		<h2>創建群組: $tagname</h2>
+		<p>您要訪問的群組現在還沒有創建，您可以來創建這個群組，並邀請好友來訪問。</p>
 	</caption>
 	<tr>
-		<th width="120">群组名称</th>
+		<th width="120">群組名稱</th>
 		<td>$tagname</td>
 	</tr>
 	<tr>
-		<th width="120">群组分类</th>
+		<th width="120">群組分類</th>
 		<td>
 		<select name="fieldid">
 		<!--{loop $fields $value}-->
@@ -59,7 +59,7 @@
 	<tr>
 		<td></td><td>
 			<input type="hidden" name="tagname" value="$tagname">
-			<input type="submit" name="textsubmit" value="创建群组" class="submit">
+			<input type="submit" name="textsubmit" value="創建群組" class="submit">
 		</td>
 	</tr>
 </table>

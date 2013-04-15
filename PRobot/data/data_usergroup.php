@@ -5,13 +5,13 @@ $_SGLOBAL['grouptitle']=Array
 	7 => Array
 		(
 		'grouptitle' => '高级会员',
-		'color' => '',
+		'color' => '0',
 		'icon' => ''
 		),
 	6 => Array
 		(
 		'grouptitle' => '中级会员',
-		'color' => '',
+		'color' => '0',
 		'icon' => ''
 		),
 	1 => Array
@@ -35,25 +35,25 @@ $_SGLOBAL['grouptitle']=Array
 	5 => Array
 		(
 		'grouptitle' => '普通会员',
-		'color' => '',
-		'icon' => ''
+		'color' => '0',
+		'icon' => '0'
 		),
 	8 => Array
 		(
 		'grouptitle' => '禁止发言',
-		'color' => '',
+		'color' => 1,
 		'icon' => ''
 		),
 	9 => Array
 		(
 		'grouptitle' => '禁止访问',
-		'color' => '',
+		'color' => 1,
 		'icon' => ''
 		),
 	4 => Array
 		(
 		'grouptitle' => '受限会员',
-		'color' => '',
+		'color' => 1,
 		'icon' => ''
 		)
 	)

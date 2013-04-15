@@ -14,39 +14,39 @@
 		
 			<div style="padding:5px 0;">$topic[message]</div>
 			<ul>
-				<li class="gray">发起作者: <a href="space.php?uid=$topic[uid]">{$_SN[$topic[uid]]}</a></li>
-				<li class="gray">发起时间: $topic[dateline]</li>
-				<!--{if $topic[endtime]}--><li class="gray">参与截止: $topic[endtime]</li><!--{/if}-->
+				<li class="gray">發起作者: <a href="space.php?uid=$topic[uid]">{$_SN[$topic[uid]]}</a></li>
+				<li class="gray">發起時間: $topic[dateline]</li>
+				<!--{if $topic[endtime]}--><li class="gray">參與截止: $topic[endtime]</li><!--{/if}-->
 				<!--{if $topic[joinnum]}-->
-				<li class="gray">参与人次: $topic[joinnum]</li>
+				<li class="gray">參與人次: $topic[joinnum]</li>
 				<!--{/if}-->
-				<li class="gray">最后参与: $topic[lastpost]</li>
+				<li class="gray">最後參與: $topic[lastpost]</li>
 			</ul>
 			
 			<!--{if $topic[allowjoin]}-->
-			<a href="$topic[joinurl]" class="feed_po" id="hot_add" onmouseover="showMenu(this.id)">凑个热闹</a>
+			<a href="$topic[joinurl]" class="feed_po" id="hot_add" onmouseover="showMenu(this.id)">湊個熱鬧</a>
 			<ul id="hot_add_menu" class="dropmenu_drop" style="display:none;">
 				<!--{if in_array('blog', $topic['jointype'])}-->
-				<li><a href="cp.php?ac=blog&topicid=$topicid">发表日志</a></li>
+				<li><a href="cp.php?ac=blog&topicid=$topicid">發表日誌</a></li>
 				<!--{/if}-->
 				<!--{if in_array('pic', $topic['jointype'])}-->
-				<li><a href="cp.php?ac=upload&topicid=$topicid">上传图片</a></li>
+				<li><a href="cp.php?ac=upload&topicid=$topicid">上傳圖片</a></li>
 				<!--{/if}-->
 				<!--{if in_array('thread', $topic['jointype'])}-->
-				<li><a href="cp.php?ac=thread&topicid=$topicid">发起话题</a></li>
+				<li><a href="cp.php?ac=thread&topicid=$topicid">發起話題</a></li>
 				<!--{/if}-->
 				<!--{if in_array('poll', $topic['jointype'])}-->
-				<li><a href="cp.php?ac=poll&topicid=$topicid">发起投票</a></li>
+				<li><a href="cp.php?ac=poll&topicid=$topicid">發起投票</a></li>
 				<!--{/if}-->
 				<!--{if in_array('event', $topic['jointype'])}-->
-				<li><a href="cp.php?ac=event&topicid=$topicid">发起活动</a></li>
+				<li><a href="cp.php?ac=event&topicid=$topicid">發起活動</a></li>
 				<!--{/if}-->
 				<!--{if in_array('share', $topic['jointype'])}-->
 				<li><a href="cp.php?ac=share&topicid=$topicid">添加分享</a></li>
 				<!--{/if}-->
 			</ul>
 			<!--{else}-->
-			<p class="r_option">该热闹已经截止</p>
+			<p class="r_option">該熱鬧已經截止</p>
 			<!--{/if}-->
 		</td>
 	</tr></table>

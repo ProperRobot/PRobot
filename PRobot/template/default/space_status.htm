@@ -4,7 +4,7 @@
 	
 <div id="mood_form">
 	<form method="post" action="cp.php?ac=doing" id="mood_addform">
-		<div id="mood_statusinput" class="statusinput"><textarea name="message" id="mood_message" onclick="statusFace();" onkeydown="if(event.keyCode == 13 ){ event.returnValue=false;event.cancel = true;$('mood_add').click();$('mood_message').value='';this.blur(); };" >你可以更新状态, 让好友们知道你在做什么...</textarea></div>
+		<div id="mood_statusinput" class="statusinput"><textarea name="message" id="mood_message" onclick="statusFace();" onkeydown="if(event.keyCode == 13 ){ event.returnValue=false;event.cancel = true;$('mood_add').click();$('mood_message').value='';this.blur(); };" >你可以更新狀態, 讓好友們知道你在做什麼...</textarea></div>
 		<div class="statussubmit">
 			<input type="button" id="mood_add" name="add" value="更新" class="submit" style="display:none;" onclick="ajaxpost('mood_addform', 'reloadMood');$('mood_message').value='';" />
 			<input type="hidden" name="addsubmit" value="true" />
@@ -18,7 +18,7 @@
 
 <script type="text/javascript">
 	function statusFace() {
-		if($('mood_message').value == '你可以更新状态, 让好友们知道你在做什么...'){
+		if($('mood_message').value == '你可以更新狀態, 讓好友們知道你在做什麼...'){
 			$('mood_message').value = '';
 		}
 		$('mood_statusinput').style.zIndex = '20005';
@@ -62,7 +62,7 @@
 			faceDiv.appendChild(faceul);
 			$('append_parent').appendChild(faceDiv);
 		}
-		//定位菜单
+		//定位菜單
 		setMenuPosition('mood_message', 0);
 		div.style.display = '';
 	}
@@ -73,7 +73,7 @@
 		$('mood_add').style.display = 'none';
 		$('mood_statusinput').className = 'statusinput';
 		if($('mood_message').value == ''){
-			$('mood_message').value = '你可以更新状态, 让好友们知道你在做什么...';
+			$('mood_message').value = '你可以更新狀態, 讓好友們知道你在做什麼...';
 		}
 		$('mood_statusinput').style.zIndex = '1';
 	}
@@ -90,7 +90,7 @@
 		x.get('cp.php?ac=doing&op=getmood', function(s){
 			$('mood_mystatus').innerHTML = s;
 		});
-		//提示获得积分
+		//提示獲得積分
 		showreward();
 		hiddenstatus();
 	}

@@ -6,17 +6,17 @@
 	<form method="post" action="cp.php?ac=domain&op=">
 	<table cellspacing="0" cellpadding="0" class="formtable">
 		<caption>
-			<h2>空间域名</h2>
-			<p>域名可使用最少 $domainlength 个 ，最多 30 个的字母或数字组合，且必须字母开头。</p>
+			<h2>空間域名</h2>
+			<p>域名可使用最少 $domainlength 個 ，最多 30 個的字母或數字組合，且必須字母開頭。</p>
 		</caption>
 		<!--{if $space[domain] && $dcredit}-->
 		<tr>
-			<th width="100">积分</th>
-			<td><img src="image/credit.gif" align="absmiddle"> 修改域名将需要支付积分 $dcredit 个，您现在有积分 $space[credit] 个</td>
+			<th width="100">積分</th>
+			<td><img src="image/credit.gif" align="absmiddle"> 修改域名將需要支付積分 $dcredit 個，您現在有積分 $space[credit] 個</td>
 		</tr>
 		<!--{/if}-->
 		<tr>
-			<th width="100">空间域名</th>
+			<th width="100">空間域名</th>
 			<td>http://<input type="text" name="domain" value="$space[domain]" size="10" class="t_input" />.{$_SCONFIG[domainroot]}</td>
 		</tr>
 		<tr>

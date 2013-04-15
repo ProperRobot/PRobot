@@ -2,12 +2,12 @@
 
 <!--{if $_GET['op'] == 'edit'}-->
 
-<h1>修改分类</h1>
-<a href="javascript:hideMenu();" class="float_del" title="关闭">关闭</a>
+<h1>修改分類</h1>
+<a href="javascript:hideMenu();" class="float_del" title="關閉">關閉</a>
 <div class="popupmenu_inner" id="$classid">
 <form id="classform" name="classform" method="post" action="cp.php?ac=class&op=edit&classid=$classid">
 	<p>
-		<label for="classname">新分类名：</label>
+		<label for="classname">新分類名：</label>
 		<input type="text" id="classname" name="classname" value="$class[classname]" size="10"></td>
 	</p>
 	<p class="btn_line">
@@ -25,18 +25,18 @@
 
 <!--{elseif $_GET['op'] == 'delete'}-->
 
-<h1>删除分类</h1>
-<a href="javascript:hideMenu();" class="float_del" title="关闭">关闭</a>
+<h1>刪除分類</h1>
+<a href="javascript:hideMenu();" class="float_del" title="關閉">關閉</a>
 <div class="popupmenu_inner" id="$classid">
 	<form id="classform" name="classform" method="post" action="cp.php?ac=class&op=delete&classid=$classid">
-	<p>确定删除指定的分类吗？</p>
+	<p>確定刪除指定的分類嗎？</p>
 	<p class="btn_line">
 		<input type="hidden" name="refer" value="$_SGLOBAL[refer]" />
 		<!--{if $_SGLOBAL[inajax]}-->
 		<input type="hidden" name="deletesubmit" value="true" />
-		<input type="submit" name="deletesubmit_btn" value="确定" class="submit" />
+		<input type="submit" name="deletesubmit_btn" value="確定" class="submit" />
 		<!--{else}-->
-		<input type="submit" name="deletesubmit" value="确定" class="submit" />
+		<input type="submit" name="deletesubmit" value="確定" class="submit" />
 		<!--{/if}-->
 	</p>
 	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />

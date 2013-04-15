@@ -4,8 +4,8 @@ $_SGLOBAL['app']=Array
 	(
 	1 => Array
 		(
-		'name' => '个人家园',
-		'url' => 'http://localhost/uchome',
+		'name' => '個人家園',
+		'url' => 'http://localhost:8080/uchome',
 		'type' => 'UCHOME',
 		'open' => '0',
 		'icon' => 'uchome'

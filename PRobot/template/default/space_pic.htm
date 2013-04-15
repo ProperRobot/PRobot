@@ -1,16 +1,16 @@
 
 <div class="h_status">
 	<div class="r_option">
-		<a href="$theurl&goto=up">上一张</a><span class="pipe">|</span>
-		<a href="$theurl&goto=down" id="nextlink">下一张</a><span class="pipe">|</span>
+		<a href="$theurl&goto=up">上一張</a><span class="pipe">|</span>
+		<a href="$theurl&goto=down" id="nextlink">下一張</a><span class="pipe">|</span>
 		<!--{if $_GET['play']}-->
 		<a href="javascript:;" id="playid" onclick="playNextPic(false);">停止播放</a>
 		<!--{else}-->
-		<a href="javascript:;" id="playid" onclick="playNextPic(true);">幻灯播放</a>
+		<a href="javascript:;" id="playid" onclick="playNextPic(true);">幻燈播放</a>
 		<!--{/if}--><span id="displayNum"></span>
 	</div>
 
-	<!--{if $album[picnum]}-->当前第 $sequence 张<span class="pipe">|</span>共 $album[picnum] 张图片<!--{/if}-->&nbsp;
+	<!--{if $album[picnum]}-->當前第 $sequence 張<span class="pipe">|</span>共 $album[picnum] 張圖片<!--{/if}-->&nbsp;
 	<!--{if $album['friend']}-->
 	<span class="locked gray">{$friendsname[$value[friend]]}</span>
 	<!--{/if}-->
@@ -48,17 +48,17 @@
 		<!--{if $topic}-->
 		<p>
 			<img src="image/app/topic.gif" align="absmiddle">
-			凑个热闹：<a href="space.php?do=topic&topicid=$topic[topicid]">$topic[subject]</a></p>
+			湊個熱鬧：<a href="space.php?do=topic&topicid=$topic[topicid]">$topic[subject]</a></p>
 		<!--{/if}-->
 
 		<!--{if $do!='event' && $event[title]}-->
-		<p>来自活动：<a href="space.php?do=event&id=$event[eventid]&view=pic">$event[title]</a></p>
+		<p>來自活動：<a href="space.php?do=event&id=$event[eventid]&view=pic">$event[title]</a></p>
 		<!--{/if}-->
 
 		<p class="gray">
-			<!--{if $pic[hot]}--><span class="hot"><em>热</em>$pic[hot]</span><!--{/if}-->
+			<!--{if $pic[hot]}--><span class="hot"><em>熱</em>$pic[hot]</span><!--{/if}-->
 			<!--{if $do=='event'}--><a href="space.php?uid=$pic[uid]" target="_blank">$_SN[$pic[uid]]</a><!--{/if}-->
-			上传于 <!--{date('Y-m-d H:i',$pic[dateline])}--> ($pic[size])
+			上傳於 <!--{date('Y-m-d H:i',$pic[dateline])}--> ($pic[size])
 		</p>
 
 		<!--{if isset($_GET['exif'])}-->
@@ -67,7 +67,7 @@
 					<!--{if $value}--><p>$key : $value</p><!--{/if}-->
 				<!--{/loop}-->
 			<!--{else}-->
-				<p>无EXIF信息</p>
+				<p>無EXIF信息</p>
 			<!--{/if}-->
 		<!--{/if}-->
 	</div>
@@ -75,7 +75,7 @@
 
 	<table width="100%">
 	<tr><td align="left">
-		<a href="$pic[pic]" target="_blank">查看原图</a>
+		<a href="$pic[pic]" target="_blank">查看原圖</a>
 		<!--{if !isset($_GET['exif'])}-->
 		<span class="pipe">|</span><a href="$theurl&exif">查看EXIF信息</a>
 		<!--{/if}-->
@@ -93,19 +93,19 @@
 			<!--{/if}-->
 			<span class="pipe">|</span>
 		<!--{/if}-->
-		<a href="cp.php?ac=album&op=editpic&albumid=$pic[albumid]&picid=$pic[picid]">管理图片</a><span class="pipe">|</span>
+		<a href="cp.php?ac=album&op=editpic&albumid=$pic[albumid]&picid=$pic[picid]">管理圖片</a><span class="pipe">|</span>
 		<!--{/if}-->
 
 		<!--{if $_SGLOBAL[supe_uid] == $pic[uid] || checkperm('managealbum')}-->
-		<a href="cp.php?ac=album&op=edittitle&albumid=$pic[albumid]&picid=$pic[picid]" id="a_set_title" onclick="ajaxmenu(event, this.id)">编辑说明</a><span class="pipe">|</span>
-		<a href="cp.php?ac=topic&op=join&id=$pic[picid]&idtype=picid" id="a_topicjoin_$pic[picid]" onclick="ajaxmenu(event, this.id)">凑热闹</a><span class="pipe">|</span>
-		<a href="admincp.php?ac=pic&picid=$pic[picid]" target="_blank">删除</a><span class="pipe">|</span>
+		<a href="cp.php?ac=album&op=edittitle&albumid=$pic[albumid]&picid=$pic[picid]" id="a_set_title" onclick="ajaxmenu(event, this.id)">編輯說明</a><span class="pipe">|</span>
+		<a href="cp.php?ac=topic&op=join&id=$pic[picid]&idtype=picid" id="a_topicjoin_$pic[picid]" onclick="ajaxmenu(event, this.id)">湊熱鬧</a><span class="pipe">|</span>
+		<a href="admincp.php?ac=pic&picid=$pic[picid]" target="_blank">刪除</a><span class="pipe">|</span>
 		<!--{/if}-->
 
 		<!--{if checkperm('managealbum')}-->
-		<a href="cp.php?ac=album&picid=$pic[picid]&op=edithot" id="a_hot_$pic[picid]" onclick="ajaxmenu(event, this.id)">热度</a><span class="pipe">|</span>
+		<a href="cp.php?ac=album&picid=$pic[picid]&op=edithot" id="a_hot_$pic[picid]" onclick="ajaxmenu(event, this.id)">熱度</a><span class="pipe">|</span>
 		<!--{/if}-->
-		<a href="cp.php?ac=common&op=report&idtype=picid&id=$pic[picid]" id="a_report" onclick="ajaxmenu(event, this.id, 1)">举报</a>
+		<a href="cp.php?ac=common&op=report&idtype=picid&id=$pic[picid]" id="a_report" onclick="ajaxmenu(event, this.id, 1)">舉報</a>
 	</td></tr>
 	</table>
 </div>
@@ -117,12 +117,12 @@
 
 <div style="padding-top:20px; width:100%; overflow:hidden;" id="pic_comment">
 
-	<h2>评论</h2>
+	<h2>評論</h2>
 	<div class="page">$multi</div>
 	<div class="comments_list" id="comment">
 		<!--{if $cid}-->
 		<div class="notice">
-			当前只显示与你操作相关的单个评论，<a href="$theurl#comment">点击此处查看全部评论</a>
+			當前只顯示與你操作相關的單個評論，<a href="$theurl#comment">點擊此處查看全部評論</a>
 		</div>
 		<!--{/if}-->
 
@@ -139,7 +139,7 @@
 				<td>
 					<a href="###" id="comment_face" onclick="showFace(this.id, 'comment_message');return false;"><img src="image/facelist.gif" align="absmiddle" /></a>
 					<!--{if $_SGLOBAL['magic']['doodle']}-->
-					<a id="a_magic_doodle" href="magic.php?mid=doodle&showid=comment_doodle&target=comment_message" onclick="ajaxmenu(event, this.id, 1)"><img src="image/magic/doodle.small.gif" class="magicicon" />涂鸦板</a>
+					<a id="a_magic_doodle" href="magic.php?mid=doodle&showid=comment_doodle&target=comment_message" onclick="ajaxmenu(event, this.id, 1)"><img src="image/magic/doodle.small.gif" class="magicicon" />塗鴉板</a>
 					<!--{/if}-->
 					<br />
 					<textarea id="comment_message" onkeydown="ctrlEnter(event, 'commentsubmit_btn');" name="message" rows="5" cols="60" style="width: 380px;"></textarea>
@@ -151,7 +151,7 @@
 				<input type="hidden" name="id" value="$picid">
 				<input type="hidden" name="idtype" value="picid">
 				<input type="hidden" name="commentsubmit" value="true">
-				<input type="button" id="commentsubmit_btn" name="commentsubmit_btn" class="submit" value="评论" onclick="ajaxpost('quickcommentform_{$picid}', 'comment_add')" />
+				<input type="button" id="commentsubmit_btn" name="commentsubmit_btn" class="submit" value="評論" onclick="ajaxpost('quickcommentform_{$picid}', 'comment_add')" />
 				<span id="__quickcommentform_{$picid}"></span>
 				</td>
 			</tr>
@@ -189,7 +189,7 @@
 			if(endPlay) {
 				$('playid').innerHTML = '重新播放';
 			} else {
-				$('playid').innerHTML = '幻灯播放';
+				$('playid').innerHTML = '幻燈播放';
 			}
 			$('displayNum').innerHTML = '';
 			window.clearInterval(timerId);

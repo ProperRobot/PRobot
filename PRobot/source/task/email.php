@@ -10,17 +10,17 @@ if(!defined('IN_UCHOME')) {
 
 if($space['emailcheck']) {
 
-	$task['done'] = 1;//任务完成
+	$task['done'] = 1;//任務完成
 
 } else {
 
-	//任务完成向导
+	//任務完成嚮導
 	$task['guide'] = '
-		<strong>请按照以下的说明来参与本任务：</strong>
+		<strong>請按照以下的說明來參與本任務：</strong>
 		<ul>
-		<li><a href="cp.php?ac=profile&op=contact" target="_blank">新窗口打开账号设置页面</a>；</li>
-		<li>在新打开的设置页面中，将自己的邮箱真实填写，并点击“验证邮箱”按钮；</li>
-		<li>几分钟后，系统会给你发送一封邮件，收到邮件后，请按照邮件的说明，访问邮件中的验证链接就可以了。</li>
+		<li><a href="cp.php?ac=profile&op=contact" target="_blank">新窗口打開賬號設置頁面</a>；</li>
+		<li>在新打開的設置頁面中，將自己的郵箱真實填寫，並點擊「驗證郵箱」按鈕；</li>
+		<li>幾分鐘後，系統會給你發送一封郵件，收到郵件後，請按照郵件的說明，訪問郵件中的驗證鏈接就可以了。</li>
 		</ul>';
 
 }

@@ -2,19 +2,19 @@
 <!--{template cp_header}-->
 
 <div class="l_status c_form">
-	<a href="cp.php?ac=credit"$cat_actives[base]>我的积分</a><span class="pipe">|</span>
-	<a href="cp.php?ac=credit&op=rule"$cat_actives[rule]>积分规则</a><span class="pipe">|</span>
-	<a href="cp.php?ac=credit&op=usergroup"$cat_actives[usergroup]>用户组规则</a><span class="pipe">|</span>
-	<a href="cp.php?ac=credit&op=exchange"$cat_actives[exchange]>积分兑换</a>
+	<a href="cp.php?ac=credit"$cat_actives[base]>我的積分</a><span class="pipe">|</span>
+	<a href="cp.php?ac=credit&op=rule"$cat_actives[rule]>積分規則</a><span class="pipe">|</span>
+	<a href="cp.php?ac=credit&op=usergroup"$cat_actives[usergroup]>用戶組規則</a><span class="pipe">|</span>
+	<a href="cp.php?ac=credit&op=exchange"$cat_actives[exchange]>積分兌換</a>
 </div>
 
 <!--{eval
 	$_TPL['cycletype'] = array(
 		'0' => '一次性',
 		'1' => '每天',
-		'2' => '整点',
-		'3' => '间隔分钟',
-		'4' => '不限周期'
+		'2' => '整點',
+		'3' => '間隔分鐘',
+		'4' => '不限週期'
 	);
 }-->
 
@@ -23,57 +23,57 @@
 
 	<table cellspacing="0" cellpadding="0" class="formtable">
 		<tr>
-			<th width="150">经验值:</th>
+			<th width="150">經驗值:</th>
 			<td><span style="color:green;font-size:14px;">$space[experience]</span> <!--{eval echo getstar($space[experience]);}--></td>
 		</tr>
 		<tr><th width="150">&nbsp;</th><td class="gray">
-			经验每满 <strong>$_SCONFIG[starcredit]</strong> 个，就会增加一个图标 <img src="image/star_level1.gif" align="absmiddle"><br>
-			每满 <strong>$_SCONFIG[starlevelnum]</strong> 个当前图标就升级为 <strong>1</strong> 个高一等级图标<br>
-			图标等级由低到高为：<!--{eval for($i=1;$i<11;$i++){}--><img src="image/star_level{$i}.gif"><!--{eval }}--></td></tr>
+			經驗每滿 <strong>$_SCONFIG[starcredit]</strong> 個，就會增加一個圖標 <img src="image/star_level1.gif" align="absmiddle"><br>
+			每滿 <strong>$_SCONFIG[starlevelnum]</strong> 個當前圖標就升級為 <strong>1</strong> 個高一等級圖標<br>
+			圖標等級由低到高為：<!--{eval for($i=1;$i<11;$i++){}--><img src="image/star_level{$i}.gif"><!--{eval }}--></td></tr>
 		<tr>
-			<th width="150">用户组:</th>
+			<th width="150">用戶組:</th>
 			<td>
 				<span<!--{eval g_color($space[groupid]);}-->>$space[grouptitle]</span>
 				<!--{eval g_icon($space[groupid]);}-->
 			</td>
 		</tr>
 		<tr>
-			<th width="150">积分数:</th>
+			<th width="150">積分數:</th>
 			<td>
 			<img src="image/credit.gif">
 			<span style="color:red;font-size:14px;">$space[credit]</span>
 			<span class="gray">(<a href="space.php?do=top&view=credit">查看排名</a>)</span>
 			</td>
 		</tr>
-		<tr><th>访问量:</th>
+		<tr><th>訪問量:</th>
 			<td>$space[viewnum] 
 			<span class="gray">(<a href="space.php?do=top&view=viewnum">查看排名</a>)</span>
 			</td></tr>
-		<tr><th>创建时间:</th><td><!--{date('Y-m-d',$space[dateline],1)}--></td></tr>
-		<tr><th>上次登录:</th><td><!--{date('Y-m-d',$space[lastlogin],1)}--></td></tr>
-		<tr><th>最后更新:</th><td><!--{date('Y-m-d',$space[updatetime],1)}--></td></tr>
+		<tr><th>創建時間:</th><td><!--{date('Y-m-d',$space[dateline],1)}--></td></tr>
+		<tr><th>上次登錄:</th><td><!--{date('Y-m-d',$space[lastlogin],1)}--></td></tr>
+		<tr><th>最後更新:</th><td><!--{date('Y-m-d',$space[updatetime],1)}--></td></tr>
 
 		<tr>
-			<th>空间容量:</th>
-			<td> 最大空间 $maxattachsize, 已用 $space[attachsize] ({$percent}%)</td>
+			<th>空間容量:</th>
+			<td> 最大空間 $maxattachsize, 已用 $space[attachsize] ({$percent}%)</td>
 		</tr>
-		<!--{if $space[haveattachsize]}--><tr><th>剩余空间:</th><td>$space[haveattachsize]</td></tr><!--{/if}-->
+		<!--{if $space[haveattachsize]}--><tr><th>剩餘空間:</th><td>$space[haveattachsize]</td></tr><!--{/if}-->
 	</table>
 	<br>
 
 	<table cellspacing="0" cellpadding="0" class="listtable">
 		<caption>
-			<h2>获得积分历史</h2>
-			<p>显示你获得积分的动作列表，奖励积分值与经验值只记录最后一次获得的奖励</p>
+			<h2>獲得積分歷史</h2>
+			<p>顯示你獲得積分的動作列表，獎勵積分值與經驗值只記錄最後一次獲得的獎勵</p>
 		</caption>
 		<thead>
 		<tr class="title">
-			<td>动作名称</td>
-			<td align="center">总次数</td>
-			<td align="center">周期次数</td>
-			<td align="center">单次积分</td>
-			<td align="center">单次经验值</td>
-			<td align="center">最后奖励时间</td>
+			<td>動作名稱</td>
+			<td align="center">總次數</td>
+			<td align="center">週期次數</td>
+			<td align="center">單次積分</td>
+			<td align="center">單次經驗值</td>
+			<td align="center">最後獎勵時間</td>
 		</tr>
 		</thead>
 		<!--{if $list}-->
@@ -89,7 +89,7 @@
 		<!--{/loop}-->
 		<!--{else}-->
 		<tr>
-			<td colspan="6">暂时没有获务任何积分</td>
+			<td colspan="6">暫時沒有獲務任何積分</td>
 		</tr>
 		<!--{/if}-->
 		<!--{if $multi}-->
@@ -104,20 +104,20 @@
 	<form method="post" action="cp.php?ac=credit&op=exchange">
 	<table cellspacing="0" cellpadding="0" class="formtable">
 	<caption>
-		<h2>积分兑换</h2>
-		<p>您可以将自己的积分兑换到本站其他的应用（比如论坛）里面。</p>
+		<h2>積分兌換</h2>
+		<p>您可以將自己的積分兌換到本站其他的應用（比如論壇）裡面。</p>
 	</caption>
-	<tr><th width="150">目前您的积分数:</th><td> $space[credit]</td></tr>
+	<tr><th width="150">目前您的積分數:</th><td> $space[credit]</td></tr>
 	<tr>
-		<th><label for="password">密码</label>:</th>
+		<th><label for="password">密碼</label>:</th>
 		<td><input type="password" name="password" class="t_input" /></td>
 	</tr>
 	<tr>
-		<th>支出积分:</th>
+		<th>支出積分:</th>
 		<td><input type="text" id="amount" name="amount" value="0" class="t_input" onkeyup="calcredit();" /></td>
 	</tr>
 	<tr>
-		<th>兑换成:</th>
+		<th>兌換成:</th>
 		<td>
 			<input type="text" id="desamount" value="0" class="t_input" disabled />&nbsp;&nbsp;
 			<select name="tocredits" id="tocredits" onChange="calcredit();">
@@ -130,10 +130,10 @@
 		</td>
 	</tr>
 	<tr>
-		<th>兑换比率:</th>
-		<td><span class="bold">1</span>&nbsp;<span id="orgcreditunit">积分</span><span id="orgcredittitle"></span>&nbsp;兑换&nbsp;<span class="bold" id="descreditamount"></span>&nbsp;<span id="descreditunit"></span><span id="descredittitle"></span></td>
+		<th>兌換比率:</th>
+		<td><span class="bold">1</span>&nbsp;<span id="orgcreditunit">積分</span><span id="orgcredittitle"></span>&nbsp;兌換&nbsp;<span class="bold" id="descreditamount"></span>&nbsp;<span id="descreditunit"></span><span id="descredittitle"></span></td>
 	</tr>
-	<tr><th>&nbsp;</th><td><input type="submit" name="exchangesubmit" value="兑换积分" class="submit"></td></tr>
+	<tr><th>&nbsp;</th><td><input type="submit" name="exchangesubmit" value="兌換積分" class="submit"></td></tr>
 	</table>
 	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
 	</form>
@@ -162,20 +162,20 @@
 	<!--{if $list}-->
 	<table cellspacing="0" cellpadding="0" class="listtable">
 		<caption>
-			<h2>积分奖励规则</h2>
-			<p>进行以下事件动作，会得到积分奖励。不过，在一个周期内，您最多得到的奖励次数有限制。</p>
+			<h2>積分獎勵規則</h2>
+			<p>進行以下事件動作，會得到積分獎勵。不過，在一個週期內，您最多得到的獎勵次數有限制。</p>
 		</caption>
 		<tr class="title">
-			<td>动作名称</td>
-			<td align="center">周期范围</td>
-			<td align="center">周期内最多奖励次数</td>
-			<td align="center" width="100">单次奖励分值</td>
+			<td>動作名稱</td>
+			<td align="center">週期範圍</td>
+			<td align="center">週期內最多獎勵次數</td>
+			<td align="center" width="100">單次獎勵分值</td>
 		</tr>
 		<!--{loop $list $key $value}-->
 		<tr<!--{if $key%2==0}--> class="line"<!--{/if}-->>
 			<td>$value[rulename]</td>
 			<td align="center">$_TPL[cycletype][$value[cycletype]]</td>
-			<td align="center"><!--{if $value[rewardnum]}-->$value[rewardnum]<!--{else}-->不限次数<!--{/if}--></td>
+			<td align="center"><!--{if $value[rewardnum]}-->$value[rewardnum]<!--{else}-->不限次數<!--{/if}--></td>
 			<td align="center">$value[credit]</td>
 		</tr>
 		<!--{/loop}-->
@@ -186,12 +186,12 @@
 	<br>
 	<table cellspacing="0" cellpadding="0" class="listtable">
 		<caption>
-			<h2>积分扣减规则</h2>
-			<p>以下事件动作发生时，会扣减积分。其中，自己发布的信息自己删除，不扣减积分，被管理员删除才会扣减积分。</p>
+			<h2>積分扣減規則</h2>
+			<p>以下事件動作發生時，會扣減積分。其中，自己發佈的信息自己刪除，不扣減積分，被管理員刪除才會扣減積分。</p>
 		</caption>
 		<tr class="title">
-			<th>动作名称</th>
-			<th align="center">单次扣减分值</th>
+			<th>動作名稱</th>
+			<th align="center">單次扣減分值</th>
 		</tr>
 		<!--{loop $list2 $key $value}-->
 		<tr<!--{if $key%2==0}--> class="line"<!--{/if}-->>
@@ -206,12 +206,12 @@
 
 	<table cellspacing="0" cellpadding="0" class="listtable">
 	<caption>
-		<h2>普通用户组</h2>
-		<p>随着您的经验值的提高，您的用户组所拥有的权限也会越多。</p>
+		<h2>普通用戶組</h2>
+		<p>隨著您的經驗值的提高，您的用戶組所擁有的權限也會越多。</p>
 	</caption>
 	<tr class="title">
-		<th width="150">用户组名</th>
-		<td>经验值范围</td>
+		<th width="150">用戶組名</th>
+		<td>經驗值範圍</td>
 	</tr>
 	<!--{loop $groups $value}-->
 	<tr>
@@ -223,12 +223,12 @@
 	
 	<table cellspacing="0" cellpadding="0" class="listtable">
 	<caption>
-		<h2>特殊用户组</h2>
-		<p>不受经验值限制。</p>
+		<h2>特殊用戶組</h2>
+		<p>不受經驗值限制。</p>
 	</caption>
 	<tr class="title">
-		<th width="150">用户组名</th>
-		<td>经验值范围</td>
+		<th width="150">用戶組名</th>
+		<td>經驗值範圍</td>
 	</tr>
 	<!--{loop $s_groups $value}-->
 	<tr>

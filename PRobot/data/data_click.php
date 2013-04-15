@@ -12,19 +12,11 @@ $_SGLOBAL['click']=Array
 			'idtype' => 'blogid',
 			'displayorder' => '0'
 			),
-		5 => Array
+		2 => Array
 			(
-			'clickid' => 5,
-			'name' => '鸡蛋',
-			'icon' => 'jidan.gif',
-			'idtype' => 'blogid',
-			'displayorder' => '0'
-			),
-		4 => Array
-			(
-			'clickid' => 4,
-			'name' => '鲜花',
-			'icon' => 'xianhua.gif',
+			'clickid' => 2,
+			'name' => '雷人',
+			'icon' => 'leiren.gif',
 			'idtype' => 'blogid',
 			'displayorder' => '0'
 			),
@@ -36,22 +28,30 @@ $_SGLOBAL['click']=Array
 			'idtype' => 'blogid',
 			'displayorder' => '0'
 			),
-		2 => Array
+		4 => Array
 			(
-			'clickid' => 2,
-			'name' => '雷人',
-			'icon' => 'leiren.gif',
+			'clickid' => 4,
+			'name' => '鲜花',
+			'icon' => 'xianhua.gif',
+			'idtype' => 'blogid',
+			'displayorder' => '0'
+			),
+		5 => Array
+			(
+			'clickid' => 5,
+			'name' => '鸡蛋',
+			'icon' => 'jidan.gif',
 			'idtype' => 'blogid',
 			'displayorder' => '0'
 			)
 		),
 	'tid' => Array
 		(
-		14 => Array
+		12 => Array
 			(
-			'clickid' => 14,
-			'name' => '鲜花',
-			'icon' => 'xianhua.gif',
+			'clickid' => 12,
+			'name' => '迷惑',
+			'icon' => 'mihuo.gif',
 			'idtype' => 'tid',
 			'displayorder' => '0'
 			),
@@ -63,11 +63,19 @@ $_SGLOBAL['click']=Array
 			'idtype' => 'tid',
 			'displayorder' => '0'
 			),
-		12 => Array
+		14 => Array
 			(
-			'clickid' => 12,
-			'name' => '迷惑',
-			'icon' => 'mihuo.gif',
+			'clickid' => 14,
+			'name' => '鲜花',
+			'icon' => 'xianhua.gif',
+			'idtype' => 'tid',
+			'displayorder' => '0'
+			),
+		15 => Array
+			(
+			'clickid' => 15,
+			'name' => '鸡蛋',
+			'icon' => 'jidan.gif',
 			'idtype' => 'tid',
 			'displayorder' => '0'
 			),
@@ -78,13 +86,48 @@ $_SGLOBAL['click']=Array
 			'icon' => 'gaoxiao.gif',
 			'idtype' => 'tid',
 			'displayorder' => '0'
-			),
-		15 => Array
+			)
+		),
+	'pnid' => Array
+		(
+		16 => Array
 			(
-			'clickid' => 15,
+			'clickid' => 16,
+			'name' => '路过',
+			'icon' => 'luguo.gif',
+			'idtype' => 'pnid',
+			'displayorder' => '0'
+			),
+		17 => Array
+			(
+			'clickid' => 17,
+			'name' => '雷人',
+			'icon' => 'leiren.gif',
+			'idtype' => 'pnid',
+			'displayorder' => '0'
+			),
+		18 => Array
+			(
+			'clickid' => 18,
+			'name' => '握手',
+			'icon' => 'woshou.gif',
+			'idtype' => 'pnid',
+			'displayorder' => '0'
+			),
+		19 => Array
+			(
+			'clickid' => 19,
+			'name' => '鲜花',
+			'icon' => 'xianhua.gif',
+			'idtype' => 'pnid',
+			'displayorder' => '0'
+			),
+		20 => Array
+			(
+			'clickid' => 20,
 			'name' => '鸡蛋',
 			'icon' => 'jidan.gif',
-			'idtype' => 'tid',
+			'idtype' => 'pnid',
 			'displayorder' => '0'
 			)
 		),
@@ -98,19 +141,11 @@ $_SGLOBAL['click']=Array
 			'idtype' => 'picid',
 			'displayorder' => '0'
 			),
-		9 => Array
+		6 => Array
 			(
-			'clickid' => 9,
-			'name' => '鲜花',
-			'icon' => 'xianhua.gif',
-			'idtype' => 'picid',
-			'displayorder' => '0'
-			),
-		8 => Array
-			(
-			'clickid' => 8,
-			'name' => '雷人',
-			'icon' => 'leiren.gif',
+			'clickid' => 6,
+			'name' => '漂亮',
+			'icon' => 'piaoliang.gif',
 			'idtype' => 'picid',
 			'displayorder' => '0'
 			),
@@ -122,57 +157,22 @@ $_SGLOBAL['click']=Array
 			'idtype' => 'picid',
 			'displayorder' => '0'
 			),
-		6 => Array
+		8 => Array
 			(
-			'clickid' => 6,
-			'name' => '漂亮',
-			'icon' => 'piaoliang.gif',
+			'clickid' => 8,
+			'name' => '雷人',
+			'icon' => 'leiren.gif',
+			'idtype' => 'picid',
+			'displayorder' => '0'
+			),
+		9 => Array
+			(
+			'clickid' => 9,
+			'name' => '鲜花',
+			'icon' => 'xianhua.gif',
 			'idtype' => 'picid',
 			'displayorder' => '0'
 			)
 		)
-	'pnid' => Array
-		(
-		16 => Array
-			(
-			'clickid' => 1,
-			'name' => '路过',
-			'icon' => 'luguo.gif',
-			'idtype' => 'pnid',
-			'displayorder' => '0'
-			),
-		20 => Array
-			(
-			'clickid' => 5,
-			'name' => '鸡蛋',
-			'icon' => 'jidan.gif',
-			'idtype' => 'pnid',
-			'displayorder' => '0'
-			),
-		19 => Array
-			(
-			'clickid' => 4,
-			'name' => '鲜花',
-			'icon' => 'xianhua.gif',
-			'idtype' => 'pnid',
-			'displayorder' => '0'
-			),
-		18 => Array
-			(
-			'clickid' => 3,
-			'name' => '握手',
-			'icon' => 'woshou.gif',
-			'idtype' => 'pnid',
-			'displayorder' => '0'
-			),
-		17 => Array
-			(
-			'clickid' => 2,
-			'name' => '雷人',
-			'icon' => 'leiren.gif',
-			'idtype' => 'pnid',
-			'displayorder' => '0'
-			)
-		),
 	)
 ?>

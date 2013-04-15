@@ -2,14 +2,14 @@
 
 <!--{if $_GET['op'] == 'delete'}-->
 
-	<h1>删除热闹</h1>
-	<a href="javascript:hideMenu();" class="float_del" title="关闭">关闭</a>
+	<h1>刪除熱鬧</h1>
+	<a href="javascript:hideMenu();" class="float_del" title="關閉">關閉</a>
 	<div class="popupmenu_inner" id="__topicform_{$topicid}">
 	<form id="topicform_{$topicid}" name="topicform_{$topicid}" method="post" action="cp.php?ac=topic&op=delete&topicid=$topicid">
-		<p>确定删除指定的热闹吗？</p>
+		<p>確定刪除指定的熱鬧嗎？</p>
 		<p class="btn_line">
 			<input type="hidden" name="refer" value="$_SGLOBAL[refer]" />
-			<input type="submit" name="deletesubmit" value="确定" class="submit" />
+			<input type="submit" name="deletesubmit" value="確定" class="submit" />
 		</p>
 		<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
 	</form>
@@ -18,17 +18,17 @@
 <!--{elseif $_GET['op'] == 'ignore'}-->
 
 	<h1>剔除信息</h1>
-	<a href="javascript:hideMenu();" class="float_del" title="关闭">关闭</a>
+	<a href="javascript:hideMenu();" class="float_del" title="關閉">關閉</a>
 	<div class="popupmenu_inner" id="__topicform_{$topicid}">
 	<form id="topicform_{$topicid}" name="topicform_{$topicid}" method="post" action="cp.php?ac=topic&op=join&topicid=$_GET[topicid]&id=$_GET[id]&idtype=$_GET[idtype]">
 		<p>
-			确定要将其从此热闹中剔除吗？<br>
-			这并不会删除该数据。
+			確定要將其從此熱鬧中剔除嗎？<br>
+			這並不會刪除該數據。
 		</p>
 		<p class="btn_line">
 			<input type="hidden" name="refer" value="$_SGLOBAL[refer]" />
 			<input type="hidden" name="newtopicid" value="0">
-			<input type="submit" name="joinsubmit" value="确定" class="submit" />
+			<input type="submit" name="joinsubmit" value="確定" class="submit" />
 		</p>
 		<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
 	</form>
@@ -37,12 +37,12 @@
 	
 <!--{elseif $_GET['op'] == 'join'}-->
 
-	<h1>凑个热闹</h1>
-	<a href="javascript:hideMenu();" class="float_del" title="关闭">关闭</a>
+	<h1>湊個熱鬧</h1>
+	<a href="javascript:hideMenu();" class="float_del" title="關閉">關閉</a>
 	<div class="popupmenu_inner" id="__topicjoinform">
 	<form id="topicjoinform" name="topicjoinform" method="post" action="cp.php?ac=topic&op=join&id=$_GET[id]&idtype=$_GET[idtype]">
 		<p>
-			选择个热闹：<br>
+			選擇個熱鬧：<br>
 			<select name="newtopicid">
 			<option value="">&nbsp;</option>
 			<!--{loop $tlist $value}-->
@@ -52,7 +52,7 @@
 		</p>
 		<p class="btn_line">
 			<input type="hidden" name="refer" value="$_SGLOBAL[refer]" />
-			<input type="submit" name="joinsubmit" value="确定" class="submit" />
+			<input type="submit" name="joinsubmit" value="確定" class="submit" />
 		</p>
 		<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
 	</form>
@@ -60,15 +60,15 @@
 
 <!--{else}-->
 
-	<h2 class="title"><img src="image/app/topic.gif" />热闹</h2>
+	<h2 class="title"><img src="image/app/topic.gif" />熱鬧</h2>
 	<div class="tabs_header">
 		<ul class="tabs">
-			<li class="active"><a href="cp.php?ac=topic"><span>添加新热闹</span></a></li>
-			<li><a href="space.php?do=topic"><span>返回热闹列表</span></a></li>
+			<li class="active"><a href="cp.php?ac=topic"><span>添加新熱鬧</span></a></li>
+			<li><a href="space.php?do=topic"><span>返回熱鬧列表</span></a></li>
 		</ul>
 		<!--{if $_SGLOBAL[refer]}-->
 		<div class="r_option">
-			<a  href="$_SGLOBAL[refer]">&laquo; 返回上一页</a>
+			<a  href="$_SGLOBAL[refer]">&laquo; 返回上一頁</a>
 		</div>
 		<!--{/if}-->
 	</div>
@@ -77,13 +77,13 @@
 		<form method="post" action="cp.php?ac=topic&topicid=$topicid" enctype="multipart/form-data">
 		<table cellspacing="4" cellpadding="4" width="100%" class="infotable">
 			<tr>
-				<th width="100">热闹标题</th>
+				<th width="100">熱鬧標題</th>
 				<td>
 					<input type="text" name="subject" value="$topic[subject]" size="80" />
 				</td>
 			</tr>
 			<tr>
-				<th>热闹图片</th>
+				<th>熱鬧圖片</th>
 				<td>
 					<table><tr>
 					<!--{if $topic['pic']}-->
@@ -94,25 +94,25 @@
 				</td>
 			</tr>
 			<tr>
-				<th>热闹说明</th>
+				<th>熱鬧說明</th>
 				<td>
 					<textarea name="message" rows="8" cols="80">$topic[message]</textarea>
 				</td>
 			</tr>
 			<tr>
-				<th>允许参与方式</th>
+				<th>允許參與方式</th>
 				<td>
-					<input type="checkbox" name="jointype[]" value="blog"$jointypes[blog]>日志
-					<input type="checkbox" name="jointype[]" value="pic"$jointypes[pic]>图片
-					<input type="checkbox" name="jointype[]" value="thread"$jointypes[thread]>话题
+					<input type="checkbox" name="jointype[]" value="blog"$jointypes[blog]>日誌
+					<input type="checkbox" name="jointype[]" value="pic"$jointypes[pic]>圖片
+					<input type="checkbox" name="jointype[]" value="thread"$jointypes[thread]>話題
 					<input type="checkbox" name="jointype[]" value="poll"$jointypes[poll]>投票
-					<input type="checkbox" name="jointype[]" value="event"$jointypes[event]>活动
+					<input type="checkbox" name="jointype[]" value="event"$jointypes[event]>活動
 					<input type="checkbox" name="jointype[]" value="share"$jointypes[share]>分享
 				</td>
 			</tr>
 			
 			<tr>
-				<th>允许参与的用户组</th>
+				<th>允許參與的用戶組</th>
 				<td>
 				<!--{eval $i=0;}-->
 				<table><tr>
@@ -128,11 +128,11 @@
 			</tr>
 			
 			<tr>
-				<th>允许参与结束日期</th>
+				<th>允許參與結束日期</th>
 				<td>
 					<script type="text/javascript" src="source/script_calendar.js" charset="$_SC[charset]"></script>
 					<input type="text" name="endtime" value="$topic[endtime]" id="endtime" onclick="showcalendar(event,this,1,'$topic[endtime]', '$topic[endtime]')">
-					<br>为空则不限制。到期后，该热闹将只能浏览，不再允许参与。
+					<br>為空則不限制。到期後，該熱鬧將只能瀏覽，不再允許參與。
 				</td>
 			</tr>
 

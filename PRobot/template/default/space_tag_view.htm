@@ -1,12 +1,12 @@
-<!--{eval $_TPL['titles'] = array($tag['tagname'], '标签');}-->
+<!--{eval $_TPL['titles'] = array($tag['tagname'], '標籤');}-->
 <!--{template header}-->
 
-<h2 class="title">标签 - $tag[tagname] ($tag[blognum] 篇日志)</h2>
+<h2 class="title">標籤 - $tag[tagname] ($tag[blognum] 篇日誌)</h2>
 <div class="tabs_header">
 	<a href="cp.php?ac=share&type=tag&id=$tag[tagid]" id="a_share" onclick="ajaxmenu(event, this.id, 1)" class="a_share">分享</a>
 	<ul class="tabs">
-		<li class="active"><a href="space.php?do=tag&id=$tag[tagid]"><span>日志列表</span></a></li>
-		<li><a href="space.php?do=tag"><span>返回标签列表</span></a></li>
+		<li class="active"><a href="space.php?do=tag&id=$tag[tagid]"><span>日誌列表</span></a></li>
+		<li><a href="space.php?do=tag"><span>返回標籤列表</span></a></li>
 	</ul>
 </div>
 
@@ -14,9 +14,9 @@
 	<table cellspacing="0" cellpadding="0" class="infotable">
 		<thead>
 			<tr>
-				<td class="subject">标题</td>
-				<td class="author">作者(回复数)</td>
-				<td class="lastpost">发布时间</td>
+				<td class="subject">標題</td>
+				<td class="author">作者(回複數)</td>
+				<td class="lastpost">發佈時間</td>
 			</tr>
 		</thead>
 		<!--{loop $list $key $value}-->
@@ -29,7 +29,7 @@
 	</table>
 	
 	<!--{if $prinum}-->
-	<div class="notice">本页有 $prinum 篇日志因隐私设置而隐藏</div>
+	<div class="notice">本頁有 $prinum 篇日誌因隱私設置而隱藏</div>
 	<!--{/if}-->
 	
 	<div class="page">$multi</div>

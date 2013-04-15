@@ -11,11 +11,11 @@ URL: http://www.comsenz.com
 
 #cp_content { margin: 1em 0;}
 
-/*细线边框区域*/
+/*細線邊框區域*/
 .bdrcontent { padding: 1em; border: 1px solid #FF8E00; zoom: 1; }
 	.bdrcontent th { font-weight:bold; }
 
-/*粗边框区域*/
+/*粗邊框區域*/
 .block { margin-bottom: 10px; padding: 0.5em 1em; border: 1px solid #EFF5F8; }
 	.block h2 { margin: 0.5em 0; color: #363636; font-size: 1.17em; }
 	.block p { margin: 0.5em 0; }
@@ -31,7 +31,7 @@ URL: http://www.comsenz.com
 					
 
 		
-/*分页*/
+/*分頁*/
 .pages { margin-top: 10px; }
 	.pages * { float: left; padding: 0 4px; border: 1px solid #CDCDCD; margin-right: 5px; background: #FFF; font-style: normal; }
 	
@@ -43,11 +43,11 @@ URL: http://www.comsenz.com
 	.footactions .pages { float: right; }
 
 	
-/*标题右浮动 Digg 按钮*/
+/*標題右浮動 Digg 按鈕*/
 .titlel { float: left; margin-right: 0.83em; margin-top: 0.5em; }
 .titler { position: absolute; right: 1em; top: 0.5em; z-index: 1; }
 
-/*各种区域样式*/
+/*各種區域樣式*/
 .style1 { border-color: #EBE6C9; background: #FCF9E6; }
 .style2 { border-color: #EAF6D2; }
 .style3 { border-color: #EDEDED; }
@@ -63,7 +63,7 @@ URL: http://www.comsenz.com
 	.noline a { text-decoration: none !important; border: none; }
 .footmargin { margin-bottom: 10px; }
 
-/*用于表单的表格*/
+/*用於表單的表格*/
 .formtable { width: 100%; table-layout: fixed; }
 	.formtable th { text-align: left; font-weight: bold; color: #333333; }
 	.formtable th, .formtable td { padding: 0.5em 0; border-bottom: 1px solid #F2F2F2; vertical-align: top; line-height:1.5em; }
@@ -76,7 +76,7 @@ URL: http://www.comsenz.com
 	#footer p { font-size: 0.83em; }
 	#footer .menu a { padding: 0 1em; }
 
-/*目录列表*/
+/*目錄列表*/
 .folder li { padding-left: 1em; }
 	.folder .active { font-weight:bold; padding-left: 1em; }
 	

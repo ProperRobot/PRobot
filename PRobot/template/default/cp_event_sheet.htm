@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=$_SC[charset]" />
 <meta http-equiv="x-ua-compatible" content="ie=7" />
-	<title>$event[title] 签到表</title>
+	<title>$event[title] 簽到表</title>
 	<style type="text/css">
 		body{font-size: 12px;}
 		h1{text-align:center; font-size: 18px;}
@@ -14,26 +14,26 @@
 	</style>
 </head>
 <body>
-	<h1>$event[title] 签到表</h1>
+	<h1>$event[title] 簽到表</h1>
 	<table border="0" cellpadding="5" cellspacing="1">
 		<tbody>
 			<tr>
 				<!--{if $_POST[avatarbig]}-->
-				<th>头像</th>
+				<th>頭像</th>
 				<!--{/if}-->
 				<!--{if $_POST[avatarsmall]}-->
-				<th>头像</th>
+				<th>頭像</th>
 				<!--{/if}-->
 				<!--{if $_POST[username]}-->
 				<th>姓名</th>
 				<!--{/if}-->
 				<!--{if $_POST[fellow]}-->
-				<th>携带人数</th>
+				<th>攜帶人數</th>
 				<!--{/if}-->
 				<!--{if $_POST[template]}-->
-				<th>报名信息</th>
+				<th>報名信息</th>
 				<!--{/if}-->
-				<th>签到</th>
+				<th>簽到</th>
 			</tr>
 			<!--{loop $members $value}-->
 			<tr>
@@ -44,7 +44,7 @@
 				<td><!--{avatar($value[uid])}--></td>
 				<!--{/if}-->
 				<!--{if $_POST[username]}-->
-				<td>$_SN[$value[uid]]<!--{if $value[status]>=3}-->（组织者）<!--{/if}--></td>
+				<td>$_SN[$value[uid]]<!--{if $value[status]>=3}-->（組織者）<!--{/if}--></td>
 				<!--{/if}-->
 				<!--{if $_POST[fellow]}-->
 				<td>$value[fellow]</td>

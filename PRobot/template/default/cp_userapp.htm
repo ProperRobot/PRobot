@@ -1,13 +1,13 @@
-<!--{eval $_TPL['titles'] = array('管理我的应用');}-->
+<!--{eval $_TPL['titles'] = array('管理我的應用');}-->
 <!--{template header}-->
 
 <!--{if $_GET['op'] == 'menu'}-->
 
-<h2 class="title"><img src="image/app/setting.gif">管理我的应用</h2>
+<h2 class="title"><img src="image/app/setting.gif">管理我的應用</h2>
 <div class="tabs_header">
 	<ul class="tabs">
-		<li class="active"><a href="cp.php?ac=userapp&op=menu"><span>管理我的应用</span></a></li>
-		<li class="null"><a href="cp.php?ac=userapp&my_suffix=%2Fapp%2Flist">添加新应用</a></li>
+		<li class="active"><a href="cp.php?ac=userapp&op=menu"><span>管理我的應用</span></a></li>
+		<li class="null"><a href="cp.php?ac=userapp&my_suffix=%2Fapp%2Flist">添加新應用</a></li>
 	</ul>
 </div>
 
@@ -29,7 +29,7 @@
 </style>
 <!--{if $my_default_userapp}-->
 <div class="DragBox mt15" style="padding-left:30px;padding-bottom:0px;background:none;">
-	<div class="l_option" style="width:350px;">默认应用</div>
+	<div class="l_option" style="width:350px;">默認應用</div>
 	<div class="l_option" style="width:100px;">&nbsp;</div>
 	<div class="l_option" style="width:50px;">&nbsp;</div>
 </div>
@@ -37,7 +37,7 @@
 	<!--{loop $my_default_userapp $value}-->
 	<div class="DragBox mt15" style="padding-left:30px;padding-bottom:0px;background:none;">
 		<div class="l_option" style="width:350px;"><img src="http://appicon.manyou.com/icons/$value[appid]"> <a href="userapp.php?id=$value[appid]">$value[appname]</a></div>
-		<div class="l_option" style="width:100px;"><a href="cp.php?ac=userapp&amp;my_suffix=%2Fuserapp%2FmodifyPrivacy%3FappId%3D$value[appid]">编辑设置</a></div>
+		<div class="l_option" style="width:100px;"><a href="cp.php?ac=userapp&amp;my_suffix=%2Fuserapp%2FmodifyPrivacy%3FappId%3D$value[appid]">編輯設置</a></div>
 		<div class="l_option" style="width:50px;">
 			<a href="cp.php?ac=userapp&op=deleteapp&appid=$value[appid]" id="del_default_app_$value[appid]" onclick="ajaxmenu(event, this.id)">移除</a>
 		</div>
@@ -53,7 +53,7 @@
 	
 	
 	<div class="DragBox mt15" style="padding-left:30px;padding-bottom:0px;background:none;">
-		<div class="l_option" style="width:350px;">我的应用</div>
+		<div class="l_option" style="width:350px;">我的應用</div>
 		<div class="l_option" style="width:100px;">&nbsp;</div>
 		<div class="l_option" style="width:50px;">&nbsp;</div>
 	</div>
@@ -64,11 +64,11 @@
 				<!--{loop $my_userapp $key $value}-->
 					<div class="DragBox" overclass="OverDragBox"  dragclass="DragDragBox" id="$key" style="padding-bottom:0;">
 						<div class="l_option" style="width:350px;">
-							<img src="http://appicon.manyou.com/icons/$value[appid]"> <a href="userapp.php?id=$value[appid]">$value[appname]</a>(<a href="cp.php?ac=userapp&my_suffix=%2Fuserapp%2Fabout%3FappId%3D$value[appid]" target="_blank">介绍</a>)
+							<img src="http://appicon.manyou.com/icons/$value[appid]"> <a href="userapp.php?id=$value[appid]">$value[appname]</a>(<a href="cp.php?ac=userapp&my_suffix=%2Fuserapp%2Fabout%3FappId%3D$value[appid]" target="_blank">介紹</a>)
 							<input type="hidden" name="order[]" value="$value[appid]">
 						</div>
 						<div class="l_option" style="width:100px;">
-							<a href="cp.php?ac=userapp&amp;my_suffix=%2Fuserapp%2FmodifyPrivacy%3FappId%3D$value[appid]">编辑设置</a>
+							<a href="cp.php?ac=userapp&amp;my_suffix=%2Fuserapp%2FmodifyPrivacy%3FappId%3D$value[appid]">編輯設置</a>
 						</div>
 						<div class="l_option" style="width:50px;">
 							<a href="cp.php?ac=userapp&op=deleteapp&appid=$value[appid]" id="del_app_$value[appid]" onclick="ajaxmenu(event, this.id)">移除</a>
@@ -82,7 +82,7 @@
 		
 	<center>
 	<br>
-	左侧菜单显示个性应用的数量
+	左側菜單顯示個性應用的數量
 	<select name="menunum">
 		<option value="5"$menunum[5]>5</option>
 		<option value="10"$menunum[10]>10</option>
@@ -92,35 +92,35 @@
 		<option value="30"$menunum[30]>30</option>
 		<option value="999"$menunum[999]>全部</option>
 	</select> &nbsp;
-	<input type="submit" name="ordersubmit" value="保存设置" class="submit" /></center>
+	<input type="submit" name="ordersubmit" value="保存設置" class="submit" /></center>
 	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
 	</form>
 <!--{else}-->
-	<div class="c_form">还没有可以自定义的应用菜单，请先<a href="cp.php?ac=userapp&my_suffix=%2Fapp%2Flist">添加新应用</a></div>
+	<div class="c_form">還沒有可以自定義的應用菜單，請先<a href="cp.php?ac=userapp&my_suffix=%2Fapp%2Flist">添加新應用</a></div>
 <!--{/if}-->
 </div>
 
 <div id="sidebar">
 	<div class="c_mgs"><div class="ye_r_t"><div class="ye_l_t"><div class="ye_r_b"><div class="ye_l_b">
 		<strong>使用助手</strong>：
-		<br>1.您可以自由拖拽 <img src="image/drag.gif" /> 排列应用顺序；
-		<br>2.排列越上面的应用在菜单中显示的越靠前；
-		<br>3.您可以管理您已经添加的应用，可以设置某个应用的权限、移除某个应用；
-		<br>4.如果您要管理您的空间、日志、相册等隐私，请到您的空间隐私设置；
-		<br>5.默认应用只能进行相关设置与移除，但移除后仍然会显示在你的左侧菜单中。
+		<br>1.您可以自由拖拽 <img src="image/drag.gif" /> 排列應用順序；
+		<br>2.排列越上面的應用在菜單中顯示的越靠前；
+		<br>3.您可以管理您已經添加的應用，可以設置某個應用的權限、移除某個應用；
+		<br>4.如果您要管理您的空間、日誌、相冊等隱私，請到您的空間隱私設置；
+		<br>5.默認應用只能進行相關設置與移除，但移除後仍然會顯示在你的左側菜單中。
 	</div></div></div></div></div>
 </div>
 
 <!--{elseif $_GET['op'] == 'deleteapp'}-->
 
-<h1>移除应用</h1>
-<a href="javascript:hideMenu();" class="float_del" title="关闭">关闭</a>
+<h1>移除應用</h1>
+<a href="javascript:hideMenu();" class="float_del" title="關閉">關閉</a>
 <div class="popupmenu_inner" id="$_GET[appId]">
 	<form id="reportform" name="reportform" method="post" action="cp.php?ac=userapp&my_suffix=%2Fuserapp%2Funinstall%3FappId%3D$_GET[appid]">
-		<p>移除后，您的个人主页、开始菜单、管理我的应用<br/>将不会显示此应用，您以后需要重新添加才能使用。<br>确定继续吗？</p>
+		<p>移除後，您的個人主頁、開始菜單、管理我的應用<br/>將不會顯示此應用，您以後需要重新添加才能使用。<br>確定繼續嗎？</p>
 		<p class="btn_line">
 			<input type="hidden" name="refer" value="$_SGLOBAL[refer]" />
-			<input type="submit" name="delappsubmit" value="确定" class="submit" />
+			<input type="submit" name="delappsubmit" value="確定" class="submit" />
 		</p>
 	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
 	</form>
@@ -171,10 +171,10 @@ function setTitle(x) {
 
 
 <div id="mx2note" style="display:none; padding:150px 0 150px 0; margin:1px; text-align:center; background-color:#FFFFBF;  font-size:12px; line-height:14px; color:#DB0000; letter-spacing:1px;">
-	本页面暂时不支持遨游2浏览器, 请您使用IE或Firefox, 我们对由此给您带来的不便深表歉意
+	本頁面暫時不支持遨遊2瀏覽器, 請您使用IE或Firefox, 我們對由此給您帶來的不便深表歉意
 </div>
 <div id="loading" style="display:block; padding:100px 0 100px 0;text-align:center;color:#999999;font-size:12px;">
-	<img src="image/my/loading.gif" alt="loading..." style="position:relative;top:11px;"/>  页面加载中...
+	<img src="image/my/loading.gif" alt="loading..." style="position:relative;top:11px;"/>  頁面加載中...
 </div>
 
 <!--{/if}-->

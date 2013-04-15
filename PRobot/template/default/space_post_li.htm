@@ -10,11 +10,11 @@
 			<div class="title">
 				<div class="r_option">
 					<!--{if $mtag[grade]>=8 || $value[uid]==$_SGLOBAL[supe_uid] || ($eventid && $userevent[status]>=3)}-->
-					<a href="cp.php?ac=thread&op=edit&pid=$value[pid]" id="p_$value[pid]_edit" onclick="ajaxmenu(event, this.id, 1)">编辑</a>
-					<a href="cp.php?ac=thread&op=delete&pid=$value[pid]&tagid=$thread[tagid]" id="p_$value[pid]_delete" onclick="ajaxmenu(event, this.id)">删除</a>
+					<a href="cp.php?ac=thread&op=edit&pid=$value[pid]" id="p_$value[pid]_edit" onclick="ajaxmenu(event, this.id, 1)">編輯</a>
+					<a href="cp.php?ac=thread&op=delete&pid=$value[pid]&tagid=$thread[tagid]" id="p_$value[pid]_delete" onclick="ajaxmenu(event, this.id)">刪除</a>
 					<!--{/if}-->
-					<!--{if $value[uid]!=$_SGLOBAL[supe_uid] && (($mtag[allowpost] && !$eventid) || ($eventid && $userevent[status]>1))}--><a href="cp.php?ac=thread&op=reply&pid=$value[pid]" id="p_$value[pid]_reply" onclick="ajaxmenu(event, this.id, 1)">回复</a> <!--{/if}-->
-					<a href="cp.php?ac=common&op=report&idtype=post&id=$value[pid]" id="a_report_$value[pid]" onclick="ajaxmenu(event, this.id, 1)">举报</a>
+					<!--{if $value[uid]!=$_SGLOBAL[supe_uid] && (($mtag[allowpost] && !$eventid) || ($eventid && $userevent[status]>1))}--><a href="cp.php?ac=thread&op=reply&pid=$value[pid]" id="p_$value[pid]_reply" onclick="ajaxmenu(event, this.id, 1)">回復</a> <!--{/if}-->
+					<a href="cp.php?ac=common&op=report&idtype=post&id=$value[pid]" id="a_report_$value[pid]" onclick="ajaxmenu(event, this.id, 1)">舉報</a>
 					<span class="gray">#$value[num]</span>
 				</div>
 				<a href="space.php?uid=$value[uid]">{$_SN[$value[uid]]}</a> 

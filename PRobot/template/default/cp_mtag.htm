@@ -3,20 +3,20 @@
 <!--{if $_GET[op]=='manage'}-->
 
 	<!--{if $_GET['subop'] != 'member'}-->
-	<h2 class="title"><img src="image/app/mtag.gif" />群组 - $mtag[tagname]</h2>
+	<h2 class="title"><img src="image/app/mtag.gif" />群組 - $mtag[tagname]</h2>
 	<div class="tabs_header">
 		<ul class="tabs">
 		<!--{if $mtag['grade'] >= 8}-->
-			<li$actives[base]><a href="cp.php?ac=mtag&op=manage&tagid=$mtag[tagid]&subop=base"><span>基本设置</span></a></li>
+			<li$actives[base]><a href="cp.php?ac=mtag&op=manage&tagid=$mtag[tagid]&subop=base"><span>基本設置</span></a></li>
 		<!--{/if}-->
 		<!--{if $mtag['allowinvite']}-->
-			<li$actives[invite]><a href="cp.php?ac=mtag&op=manage&tagid=$mtag[tagid]&subop=invite"><span>邀请好友</span></a></li>
+			<li$actives[invite]><a href="cp.php?ac=mtag&op=manage&tagid=$mtag[tagid]&subop=invite"><span>邀請好友</span></a></li>
 		<!--{/if}-->
 		<!--{if $mtag['grade'] >= 8}-->
-			<li$actives[members]><a href="cp.php?ac=mtag&op=manage&tagid=$mtag[tagid]&subop=members"><span>成员管理</span></a></li>
-			<li$actives[thread]><a href="cp.php?ac=mtag&op=manage&tagid=$mtag[tagid]&subop=thread"><span>话题批量管理</span></a></li>
+			<li$actives[members]><a href="cp.php?ac=mtag&op=manage&tagid=$mtag[tagid]&subop=members"><span>成員管理</span></a></li>
+			<li$actives[thread]><a href="cp.php?ac=mtag&op=manage&tagid=$mtag[tagid]&subop=thread"><span>話題批量管理</span></a></li>
 		<!--{/if}-->
-		<li><a href="space.php?do=mtag&tagid=$mtag[tagid]"><span>返回群组首页</span></a></li>
+		<li><a href="space.php?do=mtag&tagid=$mtag[tagid]"><span>返回群組首頁</span></a></li>
 		</ul>
 		<!--{if ($actives[members] || $mtag['allowinvite']) && ($_GET['subop'] == 'invite' || $_GET['subop'] == 'members')}-->
 		<script>
@@ -28,7 +28,7 @@
 			<div style="float:right;margin:0 6px 5px 0;">
 				<table cellspacing="0" cellpadding="0">
 					<tr>
-						<td style="padding: 0;"><input type="text" id="key" name="key" value="搜索成员" onfocus="if(this.value=='搜索成员')this.value='';" class="t_input" tabindex="1" style="width: 160px; border-right: none;" /></td>
+						<td style="padding: 0;"><input type="text" id="key" name="key" value="搜索成員" onfocus="if(this.value=='搜索成員')this.value='';" class="t_input" tabindex="1" style="width: 160px; border-right: none;" /></td>
 						<td style="padding: 0;"><a href="javascript:searchUser();"><img src="image/search_btn.gif" alt="搜索" /></a></td>
 					</tr>
 				</table>
@@ -51,75 +51,75 @@
 	
 	<table cellspacing="4" cellpadding="4" class="formtable">
 	<tr>
-		<th width="100">群组名</th>
+		<th width="100">群組名</th>
 		<td>$mtag[tagname]</td>
 	</tr>
 	<tr>
-		<th width="100"><label for="pic">封面图片</label></th>
-		<td><input id="pic" type="text" name="pic" value="$mtag[pic]" size="80" class="t_input" /><br />请输入 http:// 开头的图片URL地址</td>
+		<th width="100"><label for="pic">封面圖片</label></th>
+		<td><input id="pic" type="text" name="pic" value="$mtag[pic]" size="80" class="t_input" /><br />請輸入 http:// 開頭的圖片URL地址</td>
 	</tr>
 	<tr>
 		<th>
-			<label for="announcement">群组公告</label>
+			<label for="announcement">群組公告</label>
 		</th>
 		<td>
 			<textarea id="announcement" name="announcement" cols="80" rows="5">$mtag[announcement]</textarea>
-			<p class="gray">最多可以输入<strong>5000</strong> 个字符,多出的部分将被自动删除</p>	
+			<p class="gray">最多可以輸入<strong>5000</strong> 個字符,多出的部分將被自動刪除</p>	
 		</td>
 	</tr>
 	
 	<!--{if $mtag[grade]==9}-->
 	<!--{if $field['manualmember']}-->
 	<tr>
-		<th width="100">加入权限</th>
+		<th width="100">加入權限</th>
 		<td>
 			<select name="joinperm">
-			<option value="0"$joinperms[0]>公开(允许所有人可加入)</option>
-			<option value="1"$joinperms[1]>审核(需要经批准后才可加入)</option>
-			<option value="2"$joinperms[2]>私密(只允许群主邀请加入)</option>
+			<option value="0"$joinperms[0]>公開(允許所有人可加入)</option>
+			<option value="1"$joinperms[1]>審核(需要經批准後才可加入)</option>
+			<option value="2"$joinperms[2]>私密(只允許群主邀請加入)</option>
 			</select>
 		</td>
 	</tr>
 	<!--{else}-->
 	<tr>
-		<th width="100">加入权限</th>
-		<td>公开(允许所有人可加入)</td>
+		<th width="100">加入權限</th>
+		<td>公開(允許所有人可加入)</td>
 	</tr>
 	<!--{/if}-->
 	<tr>
-		<th width="100">浏览权限</th>
+		<th width="100">瀏覽權限</th>
 		<td>
 			<select name="viewperm">
-			<option value="0"$viewperms[0]>公开(所有人可浏览)</option>
-			<option value="1"$viewperms[1]>封闭(只对会员可见)</option>
+			<option value="0"$viewperms[0]>公開(所有人可瀏覽)</option>
+			<option value="1"$viewperms[1]>封閉(只對會員可見)</option>
 			</select>
-			<br>为了保护隐私，当群组的浏览权限设置为封闭时，成员的发帖或回帖操作将不产生个人动态。
+			<br>為了保護隱私，當群組的瀏覽權限設置為封閉時，成員的發帖或回帖操作將不產生個人動態。
 		</td>
 	</tr>
 	<tr>
-		<th width="100">发新话题权限</th>
+		<th width="100">發新話題權限</th>
 		<td>
 			<select name="threadperm">
-			<option value="0"$threadperms[0]>需成为会员才可发话题</option>
-			<option value="1"$threadperms[1]>所有人可发话题</option>
+			<option value="0"$threadperms[0]>需成為會員才可發話題</option>
+			<option value="1"$threadperms[1]>所有人可發話題</option>
 			</select>
 		</td>
 	</tr>
 	<tr>
-		<th width="100">回帖权限</th>
+		<th width="100">回帖權限</th>
 		<td>
 			<select name="postperm">
-			<option value="0"$postperms[0]>需成为会员才可回帖</option>
+			<option value="0"$postperms[0]>需成為會員才可回帖</option>
 			<option value="1"$postperms[1]>所有人可回帖</option>
 			</select>
 		</td>
 	</tr>
 	
 	<tr>
-		<th>招纳群主</th>
+		<th>招納群主</th>
 		<td>
-			<input type="radio" name="closeapply" value="0" $closeapply[0]/> 开启
-			<input type="radio" name="closeapply" value="1" $closeapply[1]/> 关闭
+			<input type="radio" name="closeapply" value="0" $closeapply[0]/> 開啟
+			<input type="radio" name="closeapply" value="1" $closeapply[1]/> 關閉
 		</td>
 	</tr>
 	<!--{/if}-->
@@ -137,8 +137,8 @@
 	<table cellspacing="0" cellpadding="0" class="formtable">
 	<tr>
 		<td>
-		请登录管理平台，来对群组的话题、回帖进行批量删除、精华、置顶等操作。<br>
-		<br><a href="admincp.php?ac=thread&&perpage=20&tagid=$mtag[tagid]&searchsubmit=1" class="submit">话题管理</a> &nbsp; 
+		請登錄管理平台，來對群組的話題、回帖進行批量刪除、精華、置頂等操作。<br>
+		<br><a href="admincp.php?ac=thread&&perpage=20&tagid=$mtag[tagid]&searchsubmit=1" class="submit">話題管理</a> &nbsp; 
 		<a href="admincp.php?ac=post&&perpage=20&tagid=$mtag[tagid]&searchsubmit=1" class="submit">回帖管理</a>
 		</td>
 	</tr>
@@ -148,7 +148,7 @@
 	
 	<div id="content" style="width: 640px;">
 		<div class="h_status">
-			您可以给未加入本群组的好友们发送邀请。
+			您可以給未加入本群組的好友們發送邀請。
 		</div>
 	
 	<!--{if $list}-->
@@ -157,26 +157,26 @@
 			<!--{loop $list $value}-->
 				<li><div class="avatar48"><a href="space.php?uid=$value[fuid]" title="{$_SN[$value[fuid]]}"><!--{avatar($value[fuid],small)}--></a></div>
 					<p><a href="space.php?uid=$value[fuid]" title="{$_SN[$value[fuid]]}">{$_SN[$value[fuid]]}</a></p>
-					<p><!--{if empty($joins[$value[fuid]])}--><input type="checkbox" name="ids[]" value="$value[fuid]">选定<!--{else}-->已邀请<!--{/if}--></p>
+					<p><!--{if empty($joins[$value[fuid]])}--><input type="checkbox" name="ids[]" value="$value[fuid]">選定<!--{else}-->已邀請<!--{/if}--></p>
 				</li>
 			<!--{/loop}-->
 			</ul>
 			<div class="page">$multi</div>
 		</div>
 		<p>
-			<input type="checkbox" id="chkall" name="chkall" onclick="checkAll(this.form, 'ids')">全选 &nbsp;
-			<input type="submit" name="invitesubmit" value="邀请" class="submit" />
+			<input type="checkbox" id="chkall" name="chkall" onclick="checkAll(this.form, 'ids')">全選 &nbsp;
+			<input type="submit" name="invitesubmit" value="邀請" class="submit" />
 		</p>
 	
 	<!--{else}-->
-		<div class="c_form">还没有好友。</div>
+		<div class="c_form">還沒有好友。</div>
 	<!--{/if}-->
 
 	</div>
 	
 	<div id="sidebar" style="width: 150px;">
 	<div class="cat">
-		<h3>好友分类</h3>
+		<h3>好友分類</h3>
 		<ul class="post_list line_list">
 			<li<!--{if $_GET[group]==-1}--> class="current"<!--{/if}-->><a href="cp.php?ac=mtag&tagid=$mtag[tagid]&op=manage&subop=invite&group=-1">全部好友</a></li>
 			<!--{loop $groups $key $value}-->
@@ -191,7 +191,7 @@
 	<div id="content" style="width: 640px;">
 	
 	<div class="h_status">
-		选择相应的用户进行用户等级变更。
+		選擇相應的用戶進行用戶等級變更。
 	</div>
 	
 	<div class="h_status">
@@ -200,28 +200,28 @@
 		<!--{loop $list $value}-->
 			<li><div class="avatar48"><a href="space.php?uid=$value[uid]" target="_blank"><!--{avatar($value[uid],small)}--></a></div>
 				<p><a href="space.php?uid=$value[uid]">{$_SN[$value[uid]]}</a></p>
-				<p><input type="checkbox" name="ids[]" value="$value[uid]">选定</p>
+				<p><input type="checkbox" name="ids[]" value="$value[uid]">選定</p>
 			</li>
 		<!--{/loop}-->
 		</ul>
 		<div class="page">$multi</div>
 		<!--{else}-->
-		<div class="c_form">还没有相关成员。</div>
+		<div class="c_form">還沒有相關成員。</div>
 		<!--{/if}-->
 	</div>
 	<p>
-		<input type="checkbox" id="chkall" name="chkall" onclick="checkAll(this.form, 'ids')">全选 &nbsp;
-		设为：
+		<input type="checkbox" id="chkall" name="chkall" onclick="checkAll(this.form, 'ids')">全選 &nbsp;
+		設為：
 		<select name="newgrade">
 			<!--{if $mtag[grade]==9}-->
 			<option value="9">主群主</option>
 			<option value="8">副群主</option>
 			<!--{/if}-->
-			<option value="1">明星成员</option>
-			<option value="0">普通成员</option>
-			<option value="-1">禁止发言</option>
-			<option value="-2">待审核成员</option>
-			<option value="-9">踢出群组</option>
+			<option value="1">明星成員</option>
+			<option value="0">普通成員</option>
+			<option value="-1">禁止發言</option>
+			<option value="-2">待審核成員</option>
+			<option value="-9">踢出群組</option>
 		</select>  &nbsp;
 		<input type="submit" name="memberssubmit" value="提交" class="submit" />
 	</p>
@@ -229,38 +229,38 @@
 	
 	<div id="sidebar" style="width: 150px;">
 	<div class="cat">
-		<h3>成员级别</h3>
+		<h3>成員級別</h3>
 		<ul class="post_list line_list">
-			<li<!--{if $_GET[grade]==-2}--> class="current"<!--{/if}-->><a href="cp.php?ac=mtag&op=manage&tagid=$mtag[tagid]&subop=members&grade=-2">待审核</a></li>
-			<li<!--{if $_GET[grade]==0}--> class="current"<!--{/if}-->><a href="cp.php?ac=mtag&op=manage&tagid=$mtag[tagid]&subop=members&grade=0">普通成员</a></li>
+			<li<!--{if $_GET[grade]==-2}--> class="current"<!--{/if}-->><a href="cp.php?ac=mtag&op=manage&tagid=$mtag[tagid]&subop=members&grade=-2">待審核</a></li>
+			<li<!--{if $_GET[grade]==0}--> class="current"<!--{/if}-->><a href="cp.php?ac=mtag&op=manage&tagid=$mtag[tagid]&subop=members&grade=0">普通成員</a></li>
 			<li<!--{if $_GET[grade]==9}--> class="current"<!--{/if}-->><a href="cp.php?ac=mtag&op=manage&tagid=$mtag[tagid]&subop=members&grade=9">群主</a></li>
 			<li<!--{if $_GET[grade]==8}--> class="current"<!--{/if}-->><a href="cp.php?ac=mtag&op=manage&tagid=$mtag[tagid]&subop=members&grade=8">副群主</a></li>
-			<li<!--{if $_GET[grade]==1}--> class="current"<!--{/if}-->><a href="cp.php?ac=mtag&op=manage&tagid=$mtag[tagid]&subop=members&grade=1">明星成员</a></li>
-			<li<!--{if $_GET[grade]==-1}--> class="current"<!--{/if}-->><a href="cp.php?ac=mtag&op=manage&tagid=$mtag[tagid]&subop=members&grade=-1">禁言成员</a></li>
+			<li<!--{if $_GET[grade]==1}--> class="current"<!--{/if}-->><a href="cp.php?ac=mtag&op=manage&tagid=$mtag[tagid]&subop=members&grade=1">明星成員</a></li>
+			<li<!--{if $_GET[grade]==-1}--> class="current"<!--{/if}-->><a href="cp.php?ac=mtag&op=manage&tagid=$mtag[tagid]&subop=members&grade=-1">禁言成員</a></li>
 		</ul>
 	</div>
 	</div>
 	
 	<!--{elseif $_GET['subop'] == 'member'}-->
 	
-	<h1>管理成员</h1>
-	<a href="javascript:hideMenu();" title="关闭" class="float_del">关闭</a>
+	<h1>管理成員</h1>
+	<a href="javascript:hideMenu();" title="關閉" class="float_del">關閉</a>
 	<div id="$_GET[uid]" class="popupmenu_inner">
-	<p>选择一个新身份：</p>
+	<p>選擇一個新身份：</p>
 	<p>
 		<select name="grade">
 			<option value="9"$grades[9]>主群主</option>
 			<option value="8"$grades[8]>副群主</option>
-			<option value="1"$grades[1]>明星成员</option>
-			<option value="0"$grades[0]>普通成员</option>
-			<option value="-1"$grades[-1]>禁止发言</option>
-			<option value="-2"$grades[-2]>待审核成员</option>
-			<option value="-9">踢出群组</option>
+			<option value="1"$grades[1]>明星成員</option>
+			<option value="0"$grades[0]>普通成員</option>
+			<option value="-1"$grades[-1]>禁止發言</option>
+			<option value="-2"$grades[-2]>待審核成員</option>
+			<option value="-9">踢出群組</option>
 		</select>
 	</p>
 	<p class="btn_line">
 		<input type="hidden" name="refer" value="$_SGLOBAL[refer]">
-		<button name="membersubmit" type="submit" class="submit" value="true">确定</button>
+		<button name="membersubmit" type="submit" class="submit" value="true">確定</button>
 	</p>
 	</div>
 	
@@ -271,19 +271,19 @@
 
 <!--{elseif $_GET[op]=='mtaginvite'}-->
 	
-	<h2 class="title"><img src="image/app/mtag.gif" />群组邀请</h2>
+	<h2 class="title"><img src="image/app/mtag.gif" />群組邀請</h2>
 	<div class="tabs_header">
 		<ul class="tabs">
-			<li class="active"><a href="cp.php?ac=mtag&op=mtaginvite"><span>群组邀请</span></a></li>
-			<li><a href="space.php?do=mtag&view=me"><span>返回我的群组</span></a></li>
+			<li class="active"><a href="cp.php?ac=mtag&op=mtaginvite"><span>群組邀請</span></a></li>
+			<li><a href="space.php?do=mtag&view=me"><span>返回我的群組</span></a></li>
 		</ul>
 	</div>
 	
 	<div class="h_status">
-		您的好友邀请您加入以下群组
+		您的好友邀請您加入以下群組
 		<!--{if $invites}-->
 			<span class="pipe">|</span>
-			<a href="cp.php?ac=mtag&op=inviteconfirm&tagid=0&r=0"><span>忽略所有邀请</span></a>
+			<a href="cp.php?ac=mtag&op=inviteconfirm&tagid=0&r=0"><span>忽略所有邀請</span></a>
 		<!--{/if}-->
 	</div>
 	
@@ -297,11 +297,11 @@
 			<td class="h_status">
 				<p><a href="space.php?do=mtag&tagid=$value[tagid]" target="_blank" style="font-size:14px;font-weight:bold;">$value[tagname]</a></p>
 				<div id="tag_$value[tagid]" style="padding:0.5em 0 0.5em 0;">
-					<p>已有 $value[membernum] 人<!--{if $value[viewperm]}-->, 只对会员开放浏览<!--{/if}-->, 所属分类: $value[title]</p>
-					邀请好友：<a href="space.php?uid=$value[fromuid]" target="_blank">{$_SN[$value[fromuid]]}</a>
-					<br>邀请时间：<!--{date('Y-m-d H:i', $value[dateline], 1)}-->
+					<p>已有 $value[membernum] 人<!--{if $value[viewperm]}-->, 只對會員開放瀏覽<!--{/if}-->, 所屬分類: $value[title]</p>
+					邀請好友：<a href="space.php?uid=$value[fromuid]" target="_blank">{$_SN[$value[fromuid]]}</a>
+					<br>邀請時間：<!--{date('Y-m-d H:i', $value[dateline], 1)}-->
 					<p style="padding:1em 0 0 0;">
-					<a href="cp.php?ac=mtag&op=inviteconfirm&tagid=$value[tagid]&r=1" class="submit" onclick="ajaxget(this.href, 'tag_$value[tagid]');return false;">确认邀请</a> 
+					<a href="cp.php?ac=mtag&op=inviteconfirm&tagid=$value[tagid]&r=1" class="submit" onclick="ajaxget(this.href, 'tag_$value[tagid]');return false;">確認邀請</a> 
 					<a href="cp.php?ac=mtag&op=inviteconfirm&tagid=$value[tagid]&r=0" class="button" onclick="ajaxget(this.href, 'tag_$value[tagid]');return false;">忽略</a>
 					</p>
 				</div>
@@ -310,18 +310,18 @@
 		<!--{/loop}-->
 		</table>
 		<!--{else}-->
-		暂时没有新的群组邀请。
+		暫時沒有新的群組邀請。
 		<!--{/if}-->
 	
 	</div>	
 
 <!--{elseif $_GET[op]=='join'}-->
 	
-	<h1>加入群组</h1>
-	<a href="javascript:hideMenu();" class="float_del" title="关闭">关闭</a>
+	<h1>加入群組</h1>
+	<a href="javascript:hideMenu();" class="float_del" title="關閉">關閉</a>
 	<div class="popupmenu_inner" id="__joinform_{$tagid}">
 	<form id="joinform_{$tagid}" name="joinform_{$tagid}" method="post" action="cp.php?ac=mtag&op=join&tagid=$tagid">
-		<p>确定加入该群组吗？</p>
+		<p>確定加入該群組嗎？</p>
 		<p class="btn_line">
 			<input type="hidden" name="refer" value="$_SGLOBAL[refer]" />
 			<input type="submit" name="joinsubmit" value="加入" class="submit" />
@@ -332,11 +332,11 @@
 
 <!--{elseif $_GET[op]=='out'}-->
 	
-	<h1>退出群组</h1>
-	<a href="javascript:hideMenu();" class="float_del" title="关闭">关闭</a>
+	<h1>退出群組</h1>
+	<a href="javascript:hideMenu();" class="float_del" title="關閉">關閉</a>
 	<div class="popupmenu_inner" id="__outform">
 	<form id="outform" name="outform" method="post" action="cp.php?ac=mtag&op=out&tagid=$mtag[tagid]">
-		<p>确定要退出该群组吗？</p>
+		<p>確定要退出該群組嗎？</p>
 		<p class="btn_line">
 			<input type="hidden" name="refer" value="$_SGLOBAL[refer]" />
 			<input type="submit" name="outsubmit" value="退出" class="submit" />
@@ -347,12 +347,12 @@
 
 <!--{elseif $_GET[op]=='apply'}-->
 	
-	<h1>申请群主</h1>
-	<a href="javascript:hideMenu();" class="float_del" title="关闭">关闭</a>
+	<h1>申請群主</h1>
+	<a href="javascript:hideMenu();" class="float_del" title="關閉">關閉</a>
 	<div class="popupmenu_inner" id="__pmapplyform_{$tagid}">
 	<form id="pmapplyform_{$tagid}" name="pmapplyform_{$tagid}" method="post" action="cp.php?ac=mtag&op=apply&tagid=$tagid">
 		<table cellspacing="0" cellpadding="3">
-			<tr><td>请输入您申请群主的理由，您的申请会以短消息的方式发送给群主管理员。</td></tr>
+			<tr><td>請輸入您申請群主的理由，您的申請會以短消息的方式發送給群主管理員。</td></tr>
 			<tr>
 				<td><textarea id="message" name="message" cols="40" rows="4" tabindex="3" style="width: 400px; height: 150px;" onkeydown="ctrlEnter(event, 'pmsubmit_btn');"></textarea></td>
 			</tr>
@@ -362,9 +362,9 @@
 				<input type="hidden" name="pmsubmit" value="true" />
 				<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
 				<!--{if $_SGLOBAL[inajax]}-->
-				<input type="button" name="pmsubmit_btn" id="pmsubmit_btn" value="申请" class="submit" onclick="ajaxpost('pmapplyform_{$tagid}','',2000)" />
+				<input type="button" name="pmsubmit_btn" id="pmsubmit_btn" value="申請" class="submit" onclick="ajaxpost('pmapplyform_{$tagid}','',2000)" />
 				<!--{else}-->
-				<input type="submit" name="pmsubmit_btn" id="pmsubmit_btn" value="申请" class="submit" />
+				<input type="submit" name="pmsubmit_btn" id="pmsubmit_btn" value="申請" class="submit" />
 				<!--{/if}-->
 				</td>
 			</tr>
@@ -375,11 +375,11 @@
 
 <!--{else}-->
 	
-	<h2 class="title"><img src="image/app/mtag.gif" />群组</h2>
+	<h2 class="title"><img src="image/app/mtag.gif" />群組</h2>
 	<div class="tabs_header">
 		<ul class="tabs">
-			<li class="active"><a href="cp.php?ac=mtag"><span>创建新群组</span></a></li>
-			<li><a href="space.php?do=mtag&view=me"><span>返回我的群组</span></a></li>
+			<li class="active"><a href="cp.php?ac=mtag"><span>創建新群組</span></a></li>
+			<li><a href="space.php?do=mtag&view=me"><span>返回我的群組</span></a></li>
 		</ul>
 	</div>
 
@@ -388,15 +388,15 @@
 	<div class="c_form">
 	<table cellspacing="0" cellpadding="0" class="formtable">
 		<caption>
-			<h2>您已经成功加入以下群组</h2>
-			<p>现在，您就可以立即访问以下群组，与志同道合的朋友一起交流话题了。</p>
+			<h2>您已經成功加入以下群組</h2>
+			<p>現在，您就可以立即訪問以下群組，與志同道合的朋友一起交流話題了。</p>
 		</caption>
 		<!--{loop $mtags $value}-->
 		<tr>
 			<td><a href="space.php?do=mtag&tagid=$value[tagid]" target="_blank">$value[tagname]</a></td>
 			<td>{$value[title]}</td>
-			<td>$value[membernum] 位成员</td>
-			<td><a href="space.php?do=mtag&tagid=$value[tagid]" class="submit">立即访问本群组</a></td>
+			<td>$value[membernum] 位成員</td>
+			<td><a href="space.php?do=mtag&tagid=$value[tagid]" class="submit">立即訪問本群組</a></td>
 		</tr>
 		<!--{/loop}-->
 	</table>
@@ -409,9 +409,9 @@
 		<div class="c_form">
 		<table cellspacing="0" cellpadding="0" class="formtable">
 			<tr><td width="90"><div class="threadimg60"><img src="$findmtag[pic]" width="60" height="60"></div></td><td>
-				群组 <a href="space.php?do=mtag&tagid=$findmtag[tagid]" target="_blank">$findmtag[tagname]</a> 已经存在
-				<br>已有 $findmtag[membernum] 人参与
-				<br><br><a href="space.php?do=mtag&tagid=$findmtag[tagid]" class="submit">访问群组</a>
+				群組 <a href="space.php?do=mtag&tagid=$findmtag[tagid]" target="_blank">$findmtag[tagname]</a> 已經存在
+				<br>已有 $findmtag[membernum] 人參與
+				<br><br><a href="space.php?do=mtag&tagid=$findmtag[tagid]" class="submit">訪問群組</a>
 			</td></tr>
 		</table>
 		</div>
@@ -423,20 +423,20 @@
 		<!--{if $likemtags}-->
 		<table cellspacing="0" cellpadding="0" class="formtable">
 			<caption>
-				<h2>相似热门群组推荐</h2>
-				<p>以下热门的群组与您要创建的群组很接近，您可以不用创建新群组，而选择直接加入热门群组来与更多人一起讨论话题。</p>
+				<h2>相似熱門群組推薦</h2>
+				<p>以下熱門的群組與您要創建的群組很接近，您可以不用創建新群組，而選擇直接加入熱門群組來與更多人一起討論話題。</p>
 			</caption>
 			<!--{loop $likemtags $value}-->
 			<tr>
 				<td><a href="space.php?do=mtag&tagid=$value[tagid]" target="_blank">$value[tagname]</a></td>
-				<td>$value[membernum] 位成员</td>
+				<td>$value[membernum] 位成員</td>
 				<td>
-					<a href="space.php?do=mtag&tagid=$value[tagid]" target="_blank">立即访问本群组</a>
+					<a href="space.php?do=mtag&tagid=$value[tagid]" target="_blank">立即訪問本群組</a>
 					<span class="pipe">|</span>
 					<!--{if $value['joinperm'] < 2}-->
-					<a href="cp.php?ac=mtag&op=join&tagid=$value[tagid]" id="mtag_like_$value[tagid]" onclick="ajaxmenu(event, this.id)">选择加入该群组</a>
+					<a href="cp.php?ac=mtag&op=join&tagid=$value[tagid]" id="mtag_like_$value[tagid]" onclick="ajaxmenu(event, this.id)">選擇加入該群組</a>
 					<!--{else}-->
-					<strong>本群组需要群主邀请才可加入</strong>
+					<strong>本群組需要群主邀請才可加入</strong>
 					<!--{/if}-->
 				</td>
 			</tr>
@@ -446,14 +446,14 @@
 		
 		<table cellspacing="0" cellpadding="0" class="formtable">
 			<caption>
-				<h2>确认创建新群组吗？</h2>
+				<h2>確認創建新群組嗎？</h2>
 			</caption>
 			<tr>
-				<th width="120">要创建的群组名称</th>
+				<th width="120">要創建的群組名稱</th>
 				<td>$newtagname</td>
 			</tr>
 			<tr>
-				<th width="120">群组分类</th>
+				<th width="120">群組分類</th>
 				<td>$profield[title]</td>
 			</tr>
 			<tr>
@@ -461,7 +461,7 @@
 					<input type="hidden" name="tagname" value="$newtagname">
 					<input type="hidden" name="fieldid" value="$fieldid">
 					<input type="hidden" name="joinmode" value="1">
-					<input type="submit" id="textsubmit" name="textsubmit" value="创建群组" class="submit"></td>
+					<input type="submit" id="textsubmit" name="textsubmit" value="創建群組" class="submit"></td>
 			</tr>
 		</table>
 		</form>
@@ -474,15 +474,15 @@
 	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
 	<table cellspacing="6" cellpadding="6" class="formtable">
 	<caption>
-		<h2>创建自己的新群组</h2>
-		<p>您可以自由创建一个属于自己的群组，并邀请好友，前来进行交流讨论。</p>
+		<h2>創建自己的新群組</h2>
+		<p>您可以自由創建一個屬於自己的群組，並邀請好友，前來進行交流討論。</p>
 	</caption>
 	<tr>
-		<th width="120">要创建的群组名</th>
+		<th width="120">要創建的群組名</th>
 		<td><input type="text" name="tagname" value="" class="t_input"></td>
 	</tr>
 	<tr>
-		<th>选择一个合适的分类</th>
+		<th>選擇一個合適的分類</th>
 		<td>
 		<select name="fieldid">
 		<!--{loop $textarr $value}-->
@@ -493,7 +493,7 @@
 	</tr>
 	<tr>
 		<th>&nbsp;</th>
-		<td><input type="submit" name="textsubmit" value="创建群组" class="submit"></td>
+		<td><input type="submit" name="textsubmit" value="創建群組" class="submit"></td>
 	</tr>
 	</table>
 	</form>
@@ -504,8 +504,8 @@
 	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
 	<table cellspacing="6" cellpadding="6" class="formtable">
 	<caption>
-		<h2>加入站点固定群组</h2>
-		<p>您可以选择加入感兴趣的站点群组，与更多志同道合的朋友一起讨论相关话题。<br>对于已经加入的群组，如果您想取消选择，请访问相应群组首页后选择“退出群组”操作。</p>
+		<h2>加入站點固定群組</h2>
+		<p>您可以選擇加入感興趣的站點群組，與更多志同道合的朋友一起討論相關話題。<br>對於已經加入的群組，如果您想取消選擇，請訪問相應群組首頁後選擇「退出群組」操作。</p>
 	</caption>
 	<!--{loop $choicearr $fid $value}-->
 	<tr>
@@ -531,7 +531,7 @@
 	<!--{/loop}-->
 	<tr>
 		<th>&nbsp;</th>
-		<td><input type="submit" name="choicesubmit" value="加入群组" class="submit"></td>
+		<td><input type="submit" name="choicesubmit" value="加入群組" class="submit"></td>
 	</tr>
 	</table>
 	</form>
@@ -540,18 +540,18 @@
 	<form method="get" action="space.php" class="c_form">
 	<table cellspacing="6" cellpadding="6" class="formtable">
 	<caption>
-		<h2>搜索现有群组</h2>
-		<p>可以搜索一下，看看有没有自己感兴趣的群组，并申请成为成员。</p>
+		<h2>搜索現有群組</h2>
+		<p>可以搜索一下，看看有沒有自己感興趣的群組，並申請成為成員。</p>
 	</caption>
 	<tr>
-		<th width="120">搜索群组名</th>
+		<th width="120">搜索群組名</th>
 		<td>
 		<input name="searchkey" value="" class="t_input" type="text">
 		</td>
 	</tr>
 	<tr>
 		<th>&nbsp;</th>
-		<td><input name="searchsubmit" value="搜索群组" class="submit" type="submit"></td>
+		<td><input name="searchsubmit" value="搜索群組" class="submit" type="submit"></td>
 	</tr>
 	</table>
 	<input type="hidden" name="searchmode" value="1" />

@@ -53,6 +53,23 @@ $_SGLOBAL['task']=Array
 		'credit' => 5,
 		'displayorder' => 3
 		),
+	8 => Array
+		(
+		'taskid' => 8,
+		'available' => 1,
+		'name' => '发表自己的第一篇通知',
+		'note' => '现在，就写下自己的第一篇通知吧。<br>与大家一起分享自己的生活感悟。',
+		'num' => '0',
+		'maxnum' => '0',
+		'image' => 'image/task/pronotice.gif',
+		'filename' => 'pronotice.php',
+		'starttime' => '0',
+		'endtime' => '0',
+		'nexttime' => '0',
+		'nexttype' => '',
+		'credit' => 5,
+		'displayorder' => 3
+		),
 	4 => Array
 		(
 		'taskid' => 4,

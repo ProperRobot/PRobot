@@ -1,34 +1,34 @@
 <!--{template header}-->
-<h2 class="title"><a href="do.php?ac=stat">站点趋势统计</a></h2>
+<h2 class="title"><a href="do.php?ac=stat">站點趨勢統計</a></h2>
 
 <table cellspacing="0" cellpadding="0" class="formtable">
 	<caption>
-		<h2>统计分类</h2>
-		<p>站点趋势统计系统，会记录每日站点的发展概况。通过每日的趋势变化，为站长运营站点提供科学的数据基础。</p>
+		<h2>統計分類</h2>
+		<p>站點趨勢統計系統，會記錄每日站點的發展概況。通過每日的趨勢變化，為站長運營站點提供科學的數據基礎。</p>
 	</caption>
 	<tr><td>
 	<ul class="line_list">
 		<li>
-			<strong>基础数据</strong>：
-			<a href="do.php?ac=stat"$actives[all]>综合概况</a> &nbsp;
+			<strong>基礎數據</strong>：
+			<a href="do.php?ac=stat"$actives[all]>綜合概況</a> &nbsp;
 			<!--{loop $cols['login'] $value}-->
 			<a href="do.php?ac=stat&type=$value"$actives[$value]><!--{eval echo cplang("do_stat_$value");}--></a> &nbsp;
 			<!--{/loop}-->
 		</li>
 		<li>
-			<strong>信息发布</strong>：
+			<strong>信息發佈</strong>：
 			<!--{loop $cols['add'] $value}-->
 			<a href="do.php?ac=stat&type=$value"$actives[$value]><!--{eval echo cplang("do_stat_$value");}--></a> &nbsp;
 			<!--{/loop}-->
 		</li>
 		<li>
-			<strong>信息互动</strong>：
+			<strong>信息互動</strong>：
 			<!--{loop $cols['comment'] $value}-->
 			<a href="do.php?ac=stat&type=$value"$actives[$value]><!--{eval echo cplang("do_stat_$value");}--></a> &nbsp;
 			<!--{/loop}-->
 		</li>
 		<li>
-			<strong>用户互动</strong>：
+			<strong>用戶互動</strong>：
 			<!--{loop $cols['space'] $value}-->
 			<a href="do.php?ac=stat&type=$value"$actives[$value]><!--{eval echo cplang("do_stat_$value");}--></a> &nbsp;
 			<!--{/loop}-->
@@ -41,17 +41,17 @@
 <table cellspacing="0" cellpadding="0" class="formtable">
 	<!--{if $type=='all'}-->
 	<caption>
-		<h2>综合概况</h2>
+		<h2>綜合概況</h2>
 		<p>
-		这里看到的是站点的综合概况发展统计。(需要至少统计2天后才有效)
+		這裡看到的是站點的綜合概況發展統計。(需要至少統計2天後才有效)
 		</p>
 	</caption>
 	<tr><td>
 	<ul class="line_list">
-		<li><strong>来访用户</strong>：指的是每天访问本站的唯一用户数。一个用户访问多次，也只算一次；</li>
-		<li><strong>信息发布</strong>：指的是每天发布记录、日志、图片、话题、投票、活动和分享的总数量；</li>
-		<li><strong>信息互动</strong>：指的是每天进行以上信息互相评论和表态、参加投票、参与活动的互动总数量；</li>
-		<li><strong>用户互动</strong>：指的是每天用户之间互相留言、打招呼的互动总数量；</li>
+		<li><strong>來訪用戶</strong>：指的是每天訪問本站的唯一用戶數。一個用戶訪問多次，也只算一次；</li>
+		<li><strong>信息發佈</strong>：指的是每天發佈記錄、日誌、圖片、話題、投票、活動和分享的總數量；</li>
+		<li><strong>信息互動</strong>：指的是每天進行以上信息互相評論和表態、參加投票、參與活動的互動總數量；</li>
+		<li><strong>用戶互動</strong>：指的是每天用戶之間互相留言、打招呼的互動總數量；</li>
 	</ul>
 	</td></tr>
 	<!--{else}-->

@@ -1,0 +1,204 @@
+﻿<!--{eval $_TPL['titles'] = array('日誌');}-->
+<!--{eval $friendsname = array(1 => '僅好友可見',2 => '指定好友可見',3 => '僅自己可見',4 => '憑密碼可見');}-->
+
+<!--{template header}-->
+
+<!--{if !empty($_SGLOBAL[inajax])}-->
+	<div id="space_pronotice" class="feed">
+		<h3 class="feed_header">
+			<a href="cp.php?ac=pronotice" class="r_option" target="_blank">發表物业通知</a>
+			物业通知(共 $count 篇)
+		</h3>
+		<!--{if $count}-->
+		<ul class="line_list">
+		<!--{loop $list $value}-->
+			<li>
+				<span class="gray r_option"><!--{date('m-d H:i',$value[dateline],1)}--></span>
+				<h4><a href="space.php?uid=$space[uid]&do=pronotice&id=$value[pnid]" target="_blank" <!--{if $value[magiccolor]}--> class="magiccolor$value[magiccolor]"<!--{/if}-->>$value[subject]</a></h4>
+				<div class="detail">
+					$value[message]
+				</div>
+			</li>
+		<!--{/loop}-->
+		</ul>
+		<!--{if $pricount}-->
+		<div class="c_form">本頁有 $pricount 篇物业通知因作者的隱私設置而隱藏</div>
+		<!--{/if}-->
+		<div class="page">$multi</div>
+		<!--{else}-->
+		<div class="c_form">還沒有相關的物业通知。</div>
+		<!--{/if}-->
+	</div>
+<!--{else}-->
+
+<!--{if $space[self]}-->
+<div class="searchbar floatright">
+<form method="get" action="space.php">
+	<input name="searchkey" value="" size="15" class="t_input" type="text">
+	<input name="searchsubmit" value="搜索物业通知" class="submit" type="submit">
+	<input type="hidden" name="searchmode" value="1" />
+	<input type="hidden" name="do" value="pronotice" />
+	<input type="hidden" name="view" value="all" />
+	<input type="hidden" name="orderby" value="dateline" />
+</form>
+</div>
+<h2 class="title"><img src="image/app/pronotice.gif" />物业通知</h2>
+<div class="tabs_header">
+	<ul class="tabs">
+		<!--{if $space[friendnum]}--><li$actives[we]><a href="space.php?uid=$space[uid]&do=$do&view=we"><span>好友最新物业通知</span></a></li><!--{/if}-->
+		<li$actives[all]><a href="space.php?uid=$space[uid]&do=$do&view=all"><span>大家的物业通知</span></a></li>
+		<li$actives[me]><a href="space.php?uid=$space[uid]&do=$do&view=me"><span>我的物业通知</span></a></li>
+		<li$actives[click]><a href="space.php?uid=$space[uid]&do=$do&view=click"><span>我表態過的物业通知</span></a></li>
+		<li class="null"><a href="cp.php?ac=pronotice">發表新物业通知</a></li>
+	</ul>
+</div>		
+<!--{else}-->
+<!--{eval 
+	$_TPL['spacetitle'] = "日誌";
+	$_TPL['spacemenus'][] = "<a href=\"space.php?uid=$space[uid]&do=$do&view=me\">TA的所有日誌</a>";
+}-->
+<!--{template space_menu}-->
+<div class="h_status">按照發佈時間排序</div>
+<!--{/if}-->
+		
+<div id="content" style="width:640px;">
+	<!--{if $_GET['orderby'] && $_GET['orderby'] != 'dateline'}-->
+	<div class="h_status">
+		排行時間範圍：
+		<a href="space.php?do=pronotice&view=all&orderby=$_GET[orderby]"{$day_actives[0]}>全部</a><span class="pipe">|</span>
+		<a href="space.php?do=pronotice&view=all&orderby=$_GET[orderby]&day=1"{$day_actives[1]}>最近一天</a><span class="pipe">|</span>
+		<a href="space.php?do=pronotice&view=all&orderby=$_GET[orderby]&day=2"{$day_actives[2]}>最近兩天</a><span class="pipe">|</span>
+		<a href="space.php?do=pronotice&view=all&orderby=$_GET[orderby]&day=7"{$day_actives[7]}>最近七天</a><span class="pipe">|</span>
+		<a href="space.php?do=pronotice&view=all&orderby=$_GET[orderby]&day=30"{$day_actives[30]}>最近三十天</a><span class="pipe">|</span>
+		<a href="space.php?do=pronotice&view=all&orderby=$_GET[orderby]&day=90"{$day_actives[90]}>最近三個月</a><span class="pipe">|</span>
+		<a href="space.php?do=pronotice&view=all&orderby=$_GET[orderby]&day=120"{$day_actives[120]}>最近六個月</a>
+	</div>
+	<!--{/if}-->
+	
+	<!--{if $searchkey}-->
+	<div class="h_status">以下是搜索物业通知 <span style="color:red;font-weight:bold;">$searchkey</span> 結果列表</div>
+	<!--{/if}-->
+	
+	<!--{if $count}-->
+	<div class="entry_list">
+		<ul>
+		<!--{loop $list $value}-->
+			<li>
+				<div class="avatardiv">
+					<div class="avatar48"><a href="space.php?uid=$value[uid]"><!--{avatar($value[uid],small)}--></a></div>
+					<!--{if $value['hot']}--><div class="digb">$value[hot]</div><!--{/if}-->
+				</div>
+				
+				<div class="title">
+					<a href="cp.php?ac=share&type=pronotice&id=$value[pnid]" id="a_share_$value[pnid]" onclick="ajaxmenu(event, this.id, 1)" class="a_share">分享</a>
+					<h4><a href="space.php?uid=$value[uid]&do=$do&id=$value[pnid]" <!--{if $value[magiccolor]}--> class="magiccolor$value[magiccolor]"<!--{/if}-->>$value[subject]</a></h4>
+					<div>
+					<!--{if $value['friend']}-->
+					<span class="r_option locked gray"><a href="$theurl&friend=$value[friend]" class="gray">{$friendsname[$value[friend]]}</a></span>
+					<!--{/if}-->
+					<a href="space.php?uid=$value[uid]">{$_SN[$value[uid]]}</a> <span class="gray"><!--{date('Y-m-d H:i',$value[dateline],1)}--></span>
+					</div>
+				</div>
+				<div class="detail image_right l_text s_clear" id="pronotice_article_$value[pnid]">
+					<!--{if $value[pic]}--><p class="image"><a href="space.php?uid=$value[uid]&do=pronotice&id=$value[pnid]"><img src="$value[pic]" alt="$value[subject]" /></a></p><!--{/if}-->
+					$value[message]
+				</div>
+				<div class="gray">
+					<!--{if $classarr[$value[classid]]}-->分類: <a href="space.php?uid=$value[uid]&do=pronotice&classid=$value[classid]">{$classarr[$value[classid]]}</a><span class="pipe">|</span><!--{/if}-->
+					<!--{if $value[viewnum]}--><a href="space.php?uid=$value[uid]&do=$do&id=$value[pnid]">$value[viewnum] 次閱讀</a><span class="pipe">|</span><!--{/if}-->
+					<!--{if $value[replynum]}--><a href="space.php?uid=$value[uid]&do=$do&id=$value[pnid]#comment">$value[replynum] 個評論</a><!--{else}-->沒有評論<!--{/if}-->
+				</div>
+			</li>
+		<!--{/loop}-->
+		<!--{if $pricount}-->
+			<li>
+				<div class="title">本頁有 $pricount 篇物业通知因作者的隱私設置而隱藏</div>
+			</li>
+		<!--{/if}-->
+		</ul>
+	</div>
+	
+	<div class="page">$multi</div>
+	
+	<!--{else}-->
+	<div class="c_form">還沒有相關的物业通知。</div>
+	<!--{/if}-->
+
+</div>
+
+<div id="sidebar" style="width:150px;">
+
+<!--{if $userlist}-->
+	<div class="cat">
+	<h3>按好友查看</h3>
+	<ul class="post_list line_list">
+		<li>
+			選擇好友:<br>
+			<select name="fuidsel" onchange="fuidgoto(this.value);">
+			<option value="">全部好友</option>
+			<!--{loop $userlist $value}-->
+			<option value="$value[fuid]"{$fuid_actives[$value[fuid]]}>{$_SN[$value[fuid]]}</option>
+			<!--{/loop}-->
+			</select>
+		</li>
+	</ul>
+	</div>
+<!--{/if}-->
+	
+<!--{if $classarr}-->
+	<div class="cat">
+	<h3>物业通知分類</h3>
+	<ul class="post_list line_list">
+		<li<!--{if !$_GET[classid]}--> class="current"<!--{/if}-->><a href="space.php?uid=$space[uid]&do=pronotice&view=me">全部物业通知</a></li>
+		<!--{loop $classarr $classid $classname}-->
+		<li<!--{if $_GET[classid]==$classid}--> class="current"<!--{/if}-->>
+			<!--{if $space[self]}-->
+				<a href="cp.php?ac=class&op=edit&classid=$classid" id="c_edit_$classid" onclick="ajaxmenu(event, this.id)" class="c_edit">編輯</a>
+				<a href="cp.php?ac=class&op=delete&classid=$classid" id="c_delete_$classid" onclick="ajaxmenu(event, this.id)" class="c_delete">刪除</a>
+			<!--{/if}-->
+			<a href="space.php?uid=$space[uid]&do=pronotice&classid=$classid&view=me">$classname</a>
+		</li>
+		<!--{/loop}-->
+	</ul>
+	</div>
+<!--{/if}-->
+
+<!--{if $_GET['view'] == 'click'}-->
+	<div class="cat">
+	<h3>表態動作</h3>
+	<ul class="post_list line_list">
+		<li$click_actives[all]><a href="space.php?do=pronotice&view=click">全部動作</a></li>
+		<!--{loop $clicks $value}-->
+		<li{$click_actives[$value[clickid]]}>
+			<a href="space.php?do=pronotice&view=click&clickid=$value[clickid]">$value[name]</a>
+		</li>
+		<!--{/loop}-->
+	</ul>
+	</div>
+<!--{elseif $_GET['view'] == 'all'}-->
+	<div class="cat">
+	<h3>排行榜</h3>
+	<ul class="post_list line_list">
+		<li$all_actives[all]><a href="space.php?do=pronotice&view=all">推薦閱讀</a></li>
+		<li$all_actives[dateline]><a href="space.php?do=pronotice&view=all&orderby=dateline">最新發表</a></li>
+		<li$all_actives[hot]><a href="space.php?do=pronotice&view=all&orderby=hot&day=$_GET[hotday]">人氣排行</a></li>
+		<li$all_actives[replynum]><a href="space.php?do=pronotice&view=all&orderby=replynum&day=$_GET[hotday]">評論排行</a></li>
+		<li$all_actives[viewnum]><a href="space.php?do=pronotice&view=all&orderby=viewnum&day=$_GET[hotday]">查看排行</a></li>
+		<!--{loop $clicks $value}-->
+		<li{$all_actives['click_'.$value[clickid]]}><a href="space.php?do=pronotice&view=all&orderby=click_$value[clickid]&day=$_GET[hotday]">{$value[name]}排行</a></li>
+		<!--{/loop}-->
+	</ul>
+	
+	</div>
+<!--{/if}-->
+
+</div>
+
+<script>
+function fuidgoto(fuid) {
+	window.location.href = "space.php?do=pronotice&view=we&fuid="+fuid;
+}
+</script>
+<!--{/if}-->
+	
+<!--{template footer}-->

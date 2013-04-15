@@ -1,11 +1,11 @@
 <!--{template header}-->
 
-<h2 class="title"><img src="image/app/blog.gif" />日志</h2>
+<h2 class="title"><img src="image/app/blog.gif" />日誌</h2>
 <div class="tabs_header">
 	<ul class="tabs">
-		<li><a href="cp.php?ac=blog"><span>发表新日志</span></a></li>
-		<li class="active"><a href="cp.php?ac=import"><span>日志导入</span></a></li>
-		<li><a href="space.php?uid=$space[uid]&do=blog&view=me"><span>返回我的日志</span></a></li>
+		<li><a href="cp.php?ac=blog"><span>發表新日誌</span></a></li>
+		<li class="active"><a href="cp.php?ac=import"><span>日誌導入</span></a></li>
+		<li><a href="space.php?uid=$space[uid]&do=blog&view=me"><span>返回我的日誌</span></a></li>
 	</ul>
 </div>
 
@@ -14,9 +14,9 @@
 <form method="post" action="cp.php?ac=import" class="c_form">
 <table cellspacing="0" cellpadding="0" class="formtable">
 <caption>
-	<h2><!--{if $incount}-->导入结果<!--{else}-->选择要导入的日志<!--{/if}--></h2>
+	<h2><!--{if $incount}-->導入結果<!--{else}-->選擇要導入的日誌<!--{/if}--></h2>
 	<!--{if $paycredit}-->
-	<p>使用本功能需要支付积分: $paycredit (您现在的积分数 <a href="cp.php?ac=credit">$space[credit]</a>)</p>
+	<p>使用本功能需要支付積分: $paycredit (您現在的積分數 <a href="cp.php?ac=credit">$space[credit]</a>)</p>
 	<!--{/if}-->
 </caption>
 
@@ -31,8 +31,8 @@
 <!--{if !$incount}-->
 <tr>
 	<td colspan="3">
-	<input type="checkbox" id="chkall" name="chkall" onclick="checkAll(this.form, 'ids')">全选
-	<input type="submit" name="import2submit" value="导入" class="submit" />
+	<input type="checkbox" id="chkall" name="chkall" onclick="checkAll(this.form, 'ids')">全選
+	<input type="submit" name="import2submit" value="導入" class="submit" />
 	<input type="submit" name="resubmit" value="重置" class="submit" />
 	</td>
 </tr>
@@ -48,22 +48,22 @@
 <form method="post" action="cp.php?ac=import" class="c_form">
 <table cellspacing="0" cellpadding="0" class="formtable">
 	<caption>
-		<h2>日志导入</h2>
-		<p>本空间支持采用XML-RPC规范的MetaWeblog API<br />
-		地址为: {$siteurl}xmlrpc.php<br />
-		通过本接口，你可以轻松的将你在非本站空间上面的日志批量搬入到当前空间上面来；<br />
-		这需要你原来的空间也要提供XMLRPC规范的API接口，详情可以咨询原来空间站点的管理员
+		<h2>日誌導入</h2>
+		<p>本空間支持採用XML-RPC規範的MetaWeblog API<br />
+		地址為: {$siteurl}xmlrpc.php<br />
+		通過本接口，你可以輕鬆的將你在非本站空間上面的日誌批量搬入到當前空間上面來；<br />
+		這需要你原來的空間也要提供XMLRPC規範的API接口，詳情可以咨詢原來空間站點的管理員
 		</p>
 	</caption>
 	<!--{if $paycredit}-->
-	<tr><th width="120">需要积分</th><td>使用本功能需要支付积分: $paycredit (您现在的积分数 <a href="cp.php?ac=credit">$space[credit]</a>)</td></tr>
+	<tr><th width="120">需要積分</th><td>使用本功能需要支付積分: $paycredit (您現在的積分數 <a href="cp.php?ac=credit">$space[credit]</a>)</td></tr>
 	<!--{/if}-->
-	<tr><th width="120">原空间API访问地址</th><td><input type="text" class="t_input" name="url" value="http://" size="40" />
-		<br />通常为类似 http://u.discuz.net/xmlrpc.php 这样的URL链接
+	<tr><th width="120">原空間API訪問地址</th><td><input type="text" class="t_input" name="url" value="http://" size="40" />
+		<br />通常為類似 http://u.discuz.net/xmlrpc.php 這樣的URL鏈接
 		</td></tr>
-	<tr><th>原空间用户名</th><td><input type="text" class="t_input" name="username" value="" /></td></tr>
-	<tr><th>原空间密码</th><td><input type="password" class="t_input" name="password" value="" /></td></tr>
-	<tr><th>单次获取日志数</th><td><!--{eval echo $_SCONFIG['importnum'];}--></td></tr>
+	<tr><th>原空間用戶名</th><td><input type="text" class="t_input" name="username" value="" /></td></tr>
+	<tr><th>原空間密碼</th><td><input type="password" class="t_input" name="password" value="" /></td></tr>
+	<tr><th>單次獲取日誌數</th><td><!--{eval echo $_SCONFIG['importnum'];}--></td></tr>
 	<tr><th>&nbsp;</th><td><input type="submit" name="importsubmit" value="提交" class="submit" /></td></tr>
 </table>
 

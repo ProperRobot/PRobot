@@ -10,7 +10,7 @@ $allowhtml = empty($_GET['allowhtml'])?0:1;
 $doodle = empty($_GET['doodle'])?0:1;
 
 if(empty($_GET['op'])) {
-//工具条
+//工具條
 ?>
 <html>
 <head>
@@ -132,10 +132,10 @@ function fontsize(size,obj){format('fontsize',size);obj.parentNode.style.display
 <tr>
 <td height="31" style="padding-left:5px;">
 
-<!--纯文本状态工具栏-->
+<!--純文本狀態工具欄-->
 <div class="toobar">
 <div class="icons tble">
-<a href="javascript:;" class="icoSwitchMdi" title="切换到多媒体" onClick="changeEditType(true);return false;"></a>
+<a href="javascript:;" class="icoSwitchMdi" title="切換到多媒體" onClick="changeEditType(true);return false;"></a>
 </div>
 </div>
 </td></tr></table>
@@ -150,32 +150,32 @@ function fontsize(size,obj){format('fontsize',size);obj.parentNode.style.display
 <tr>
 <td height="31" style=" padding-left:3px">
 
-<!--多媒体状态工具栏-->
+<!--多媒體狀態工具欄-->
 <div class="toobar">
 <div class="icons tble">
 <a href="javascript:;" class="icoCut" title="剪切" onClick="format('Cut');return false;"></a>
-<a href="javascript:;" class="icoCpy" title="复制" onClick="format('Copy');return false;"></a>
-<a href="javascript:;" class="icoPse" title="粘贴" onClick="format('Paste');return false;"></a>
+<a href="javascript:;" class="icoCpy" title="複製" onClick="format('Copy');return false;"></a>
+<a href="javascript:;" class="icoPse" title="粘貼" onClick="format('Paste');return false;"></a>
 <div class="sepline"></div>
-<a href="javascript:;" class="icoFfm" id="imgFontface" title="字体" onClick="fGetEv(event);fDisplayElement('fontface','');return false;"></a>
-<a href="javascript:;" class="icoFsz" id="imgFontsize" title="字号" onClick="fGetEv(event);fDisplayElement('fontsize','');return false;"></a>
+<a href="javascript:;" class="icoFfm" id="imgFontface" title="字體" onClick="fGetEv(event);fDisplayElement('fontface','');return false;"></a>
+<a href="javascript:;" class="icoFsz" id="imgFontsize" title="字號" onClick="fGetEv(event);fDisplayElement('fontsize','');return false;"></a>
 <a href="javascript:;" class="icoWgt" onClick="format('Bold');return false;" title="加粗"></a>
-<a href="javascript:;" class="icoIta" title="斜体" onClick="format('Italic');return false;"></a>
-<a href="javascript:;" class="icoUln" onClick="format('Underline');return false;" title="下划线"></a>
-<a href="javascript:;" class="icoFcl" title="字体颜色" onClick="foreColor(event);return false;" id="imgFontColor"></a>
-<a href="javascript:;" class="icoAgn" id="imgAlign" onClick="fGetEv(event);fDisplayElement('divAlign','');return false;" title="对齐"></a>
-<a href="javascript:;" class="icoLst" id="imgList" onClick="fGetEv(event);fDisplayElement('divList','');return false;"title="编号"></a>
-<a href="javascript:;" class="icoOdt" id="imgInOut" onClick="fGetEv(event);fDisplayElement('divInOut','');return false;" title="缩进"></a>
+<a href="javascript:;" class="icoIta" title="斜體" onClick="format('Italic');return false;"></a>
+<a href="javascript:;" class="icoUln" onClick="format('Underline');return false;" title="下劃線"></a>
+<a href="javascript:;" class="icoFcl" title="字體顏色" onClick="foreColor(event);return false;" id="imgFontColor"></a>
+<a href="javascript:;" class="icoAgn" id="imgAlign" onClick="fGetEv(event);fDisplayElement('divAlign','');return false;" title="對齊"></a>
+<a href="javascript:;" class="icoLst" id="imgList" onClick="fGetEv(event);fDisplayElement('divList','');return false;"title="編號"></a>
+<a href="javascript:;" class="icoOdt" id="imgInOut" onClick="fGetEv(event);fDisplayElement('divInOut','');return false;" title="縮進"></a>
 <div class="sepline"></div>
-<a href="javascript:;" class="icoUrl" id="icoUrl" onClick="createLink(event, 1);return false;" title="超链接"></a>
-<a href="javascript:;" class="icoMoveUrl" onClick="clearLink();return false;" title="移除链接"></a>
-<a href="javascript:;" class="icoImg" id="icoImg" onClick="createImg(event, 1);return false;" title="引用图片"></a>
-<a href="javascript:;" class="icoSwf" id="icoSwf" onClick="createFlash(event, 1);return false;" title="引用视频FLASH"></a>
+<a href="javascript:;" class="icoUrl" id="icoUrl" onClick="createLink(event, 1);return false;" title="超鏈接"></a>
+<a href="javascript:;" class="icoMoveUrl" onClick="clearLink();return false;" title="移除鏈接"></a>
+<a href="javascript:;" class="icoImg" id="icoImg" onClick="createImg(event, 1);return false;" title="引用圖片"></a>
+<a href="javascript:;" class="icoSwf" id="icoSwf" onClick="createFlash(event, 1);return false;" title="引用視頻FLASH"></a>
 <a href="javascript:;" class="icoFace" id="faceBox" onClick="faceBox(event);return false;" title="插入表情"></a>
 <?php if($doodle) { ?>
-<a href="javascript:;" class="icoDoodle" id="doodleBox" onClick="doodleBox(event, this.id);return false;" title="涂鸦"></a>
+<a href="javascript:;" class="icoDoodle" id="doodleBox" onClick="doodleBox(event, this.id);return false;" title="塗鴉"></a>
 <?php }?>
-<a href="javascript:;" class="icoRenew" onClick="renewContent();return false;" title="恢复内容"></a>
+<a href="javascript:;" class="icoRenew" onClick="renewContent();return false;" title="恢復內容"></a>
 <?php if($allowhtml) {?>
 <input type="checkbox" value="1" name="switchMode" id="switchMode" style="float:left;margin-top:6px!important;margin-top:2px" onClick="setMode(this.checked)" onMouseOver="fSetModeTip(this)" onMouseOut="fHideTip()">
 <?php } else {?>
@@ -183,15 +183,15 @@ function fontsize(size,obj){format('fontsize',size);obj.parentNode.style.display
 <?php }?>
 </div>
 <div class="icons tbri">
-<a href="javascript:;" class="icoSwitchTxt" title="切换到纯文本" onClick="changeEditType(false, event);return false;"></a>
+<a href="javascript:;" class="icoSwitchTxt" title="切換到純文本" onClick="changeEditType(false, event);return false;"></a>
 </div>
 </div>
 
 
-<!--纯文本状态工具栏-->
+<!--純文本狀態工具欄-->
 <div class="toobar" style="display:none" id="dvHtmlLnk">
 <div class="icons tble">
-<a href="javascript:;" class="icoSwitchMdi" title="切换到多媒体" onClick="changeEditType(true, event);return false;"></a>
+<a href="javascript:;" class="icoSwitchMdi" title="切換到多媒體" onClick="changeEditType(true, event);return false;"></a>
 </div>
 </div>
 </td>
@@ -200,11 +200,11 @@ function fontsize(size,obj){format('fontsize',size);obj.parentNode.style.display
 
 <div style="width:100px;height:100px;position:absolute;display:none;top:-500px;left:-500px" ID="dvPortrait"></div>
 <div id="fontface" class="eMenu" style="z-index:99;display:none;top:35px;left:2px;width:110px;height:265px">
-<a href="javascript:void(0)" onClick="fontname(this)" class="n" style="font:normal 12px '宋体';">宋体</a>
-<a href="javascript:void(0)" onClick="fontname(this)" class="n" style="font:normal 12px '黑体';">黑体</a>
-<a href="javascript:void(0)" onClick="fontname(this)" class="n" style="font:normal 12px '楷体_GB2312';">楷体_GB2312</a>
-<a href="javascript:void(0)" onClick="fontname(this)" class="n" style="font:normal 12px '隶书';">隶书</a>
-<a href="javascript:void(0)" onClick="fontname(this)" class="n" style="font:normal 12px '幼圆';">幼圆</a>
+<a href="javascript:void(0)" onClick="fontname(this)" class="n" style="font:normal 12px '細明體';">細明體</a>
+<a href="javascript:void(0)" onClick="fontname(this)" class="n" style="font:normal 12px '黑體';">黑體</a>
+<a href="javascript:void(0)" onClick="fontname(this)" class="n" style="font:normal 12px '標楷體';">標楷體</a>
+<a href="javascript:void(0)" onClick="fontname(this)" class="n" style="font:normal 12px '隸書';">隸書</a>
+<a href="javascript:void(0)" onClick="fontname(this)" class="n" style="font:normal 12px '幼圓';">幼圓</a>
 <a href="javascript:void(0)" onClick="fontname(this)" class="n" style="font:normal 12px Arial;">Arial</a>
 <a href="javascript:void(0)" onClick="fontname(this)" class="n" style="font:normal 12px 'Arial Narrow';">Arial Narrow</a>
 <a href="javascript:void(0)" onClick="fontname(this)" class="n" style="font:normal 12px 'Arial Black';">Arial Black</a>
@@ -215,55 +215,55 @@ function fontsize(size,obj){format('fontsize',size);obj.parentNode.style.display
 <a href="javascript:void(0)" onClick="fontname(this)" class="n" style="font:normal 12px Verdana;">Verdana</a>
 </div>
 <div id="fontsize" class="eMenu" style="display:none;top:35px;left:26px;width:125px;height:120px">
-<a href="javascript:void(0)" onClick="fontsize(1,this)" class="n" style="font-size:xx-small;line-height:120%;">极小</a>
+<a href="javascript:void(0)" onClick="fontsize(1,this)" class="n" style="font-size:xx-small;line-height:120%;">極小</a>
 <a href="javascript:void(0)" onClick="fontsize(2,this)" class="n" style="font-size:x-small;line-height:120%;">特小</a>
 <a href="javascript:void(0)" onClick="fontsize(3,this)" class="n" style="font-size:small;line-height:120%;">小</a>
 <a href="javascript:void(0)" onClick="fontsize(4,this)" class="n" style="font-size:medium;line-height:120%;">中</a>
 <a href="javascript:void(0)" onClick="fontsize(5,this)" class="n" style="font-size:large;line-height:120%;">大</a>
 </div>
 
-<div id="divList" class="eMenu" style="display:none;top:35px;left:26px;width:60px;height:40px;"><a href="javascript:void(0)" onClick="format('Insertorderedlist');fHide(this.parentNode)" class="n">数字列表</a><a href="javascript:void(0)" onClick="format('Insertunorderedlist');fHide(this.parentNode)" class="n">符号列表</a></div>
-<div id="divAlign" class="eMenu" style="display:none;top:35px;left:26px;width:60px;height:60px;"><a href="javascript:void(0)" onClick="format('Justifyleft');fHide(this.parentNode)" class="n">左对齐</a><a href="javascript:void(0)" onClick="format('Justifycenter');fHide(this.parentNode)" class="n">居中对齐</a><a href="javascript:void(0)" onClick="format('Justifyright');fHide(this.parentNode)" class="n">右对齐</a></div>
-<div id="divInOut" class="eMenu" style="display:none;top:35px;left:26px;width:60px;height:40px;"><a href="javascript:void(0)" onClick="format('Indent');fHide(this.parentNode)" class="n">增加缩进</a><a href="javascript:void(0)" onClick="format('Outdent');fHide(this.parentNode)" class="n">减少缩进</a></div>
+<div id="divList" class="eMenu" style="display:none;top:35px;left:26px;width:60px;height:40px;"><a href="javascript:void(0)" onClick="format('Insertorderedlist');fHide(this.parentNode)" class="n">數字列表</a><a href="javascript:void(0)" onClick="format('Insertunorderedlist');fHide(this.parentNode)" class="n">符號列表</a></div>
+<div id="divAlign" class="eMenu" style="display:none;top:35px;left:26px;width:60px;height:60px;"><a href="javascript:void(0)" onClick="format('Justifyleft');fHide(this.parentNode)" class="n">左對齊</a><a href="javascript:void(0)" onClick="format('Justifycenter');fHide(this.parentNode)" class="n">居中對齊</a><a href="javascript:void(0)" onClick="format('Justifyright');fHide(this.parentNode)" class="n">右對齊</a></div>
+<div id="divInOut" class="eMenu" style="display:none;top:35px;left:26px;width:60px;height:40px;"><a href="javascript:void(0)" onClick="format('Indent');fHide(this.parentNode)" class="n">增加縮進</a><a href="javascript:void(0)" onClick="format('Outdent');fHide(this.parentNode)" class="n">減少縮進</a></div>
 
 <div id="dvForeColor" class="eMenu" style="display:none;top:35px;left:26px;width:90px;">
-<a href="javascript:void(0)" onClick="format(gSetColorType,'#800000')" class="n cs fRd1"><b class="cb"></b><span>暗红色</span></a>
+<a href="javascript:void(0)" onClick="format(gSetColorType,'#800000')" class="n cs fRd1"><b class="cb"></b><span>暗紅色</span></a>
 <a href="javascript:void(0)" onClick="format(gSetColorType,'#800080')" class="n cs fRd2"><b class="cb"></b><span>紫色</span></a>
-<a href="javascript:void(0)" onClick="format(gSetColorType,'#F00000')" class="n cs fRd3"><b class="cb"></b><span>红色</span></a>
-<a href="javascript:void(0)" onClick="format(gSetColorType,'#F000F0')" class="n cs fRd4"><b class="cb"></b><span>鲜粉色</span></a>
-<a href="javascript:void(0)" onClick="format(gSetColorType,'#000080')" class="n cs fBu1"><b class="cb"></b><span>深蓝色</span></a>
-<a href="javascript:void(0)" onClick="format(gSetColorType,'#0000F0')" class="n cs fBu2"><b class="cb"></b><span>蓝色</span></a>
-<a href="javascript:void(0)" onClick="format(gSetColorType,'#00F0F0')" class="n cs fBu3"><b class="cb"></b><span>湖蓝色</span></a>
-<a href="javascript:void(0)" onClick="format(gSetColorType,'#008080')" class="n cs fGn1"><b class="cb"></b><span>蓝绿色</span></a>
-<a href="javascript:void(0)" onClick="format(gSetColorType,'#008000')" class="n cs fGn2"><b class="cb"></b><span>绿色</span></a>
-<a href="javascript:void(0)" onClick="format(gSetColorType,'#808000')" class="n cs fGn3"><b class="cb"></b><span>橄榄色</span></a>
-<a href="javascript:void(0)" onClick="format(gSetColorType,'#00F000')" class="n cs fGn4"><b class="cb"></b><span>浅绿色</span></a>
-<a href="javascript:void(0)" onClick="format(gSetColorType,'#F0C000')" class="n cs fYl1"><b class="cb"></b><span>橙黄色</span></a>
+<a href="javascript:void(0)" onClick="format(gSetColorType,'#F00000')" class="n cs fRd3"><b class="cb"></b><span>紅色</span></a>
+<a href="javascript:void(0)" onClick="format(gSetColorType,'#F000F0')" class="n cs fRd4"><b class="cb"></b><span>鮮粉色</span></a>
+<a href="javascript:void(0)" onClick="format(gSetColorType,'#000080')" class="n cs fBu1"><b class="cb"></b><span>深藍色</span></a>
+<a href="javascript:void(0)" onClick="format(gSetColorType,'#0000F0')" class="n cs fBu2"><b class="cb"></b><span>藍色</span></a>
+<a href="javascript:void(0)" onClick="format(gSetColorType,'#00F0F0')" class="n cs fBu3"><b class="cb"></b><span>湖藍色</span></a>
+<a href="javascript:void(0)" onClick="format(gSetColorType,'#008080')" class="n cs fGn1"><b class="cb"></b><span>藍綠色</span></a>
+<a href="javascript:void(0)" onClick="format(gSetColorType,'#008000')" class="n cs fGn2"><b class="cb"></b><span>綠色</span></a>
+<a href="javascript:void(0)" onClick="format(gSetColorType,'#808000')" class="n cs fGn3"><b class="cb"></b><span>橄欖色</span></a>
+<a href="javascript:void(0)" onClick="format(gSetColorType,'#00F000')" class="n cs fGn4"><b class="cb"></b><span>淺綠色</span></a>
+<a href="javascript:void(0)" onClick="format(gSetColorType,'#F0C000')" class="n cs fYl1"><b class="cb"></b><span>橙黃色</span></a>
 <a href="javascript:void(0)" onClick="format(gSetColorType,'#000000')" class="n cs fBk1"><b class="cb"></b><span>黑色</span></a>
 <a href="javascript:void(0)" onClick="format(gSetColorType,'#808080')" class="n cs fBk2"><b class="cb"></b><span>灰色</span></a>
-<a href="javascript:void(0)" onClick="format(gSetColorType,'#C0C0C0')" class="n cs fBk3"><b class="cb"></b><span>银色</span></a>
+<a href="javascript:void(0)" onClick="format(gSetColorType,'#C0C0C0')" class="n cs fBk3"><b class="cb"></b><span>銀色</span></a>
 <a href="javascript:void(0)" onClick="format(gSetColorType,'#FFFFFF')" class="n cs fWt0"><b class="cb"></b><span>白色</span></a>
 </div>
 
 <div id="editFaceBox" class="eMenu" style="display:none;top:35px;left:26px;width:165px;"></div>
 
 <div id="createUrl" class="eMenu" style="display:none;top:35px;left:26px;width:300px;font-size:12px">
-	请输入选定文字链接地址:<br/>
-	<input type="text" id="insertUrl" name="url" value="http://" class="t_input" style="width: 190px;"> <input type="button" onclick="createLink();" name="createURL" value="确定" class="submit" /> <a href="javascript:;" onclick="fHide($('createUrl'));">取消</a>
+	請輸入選定文字鏈接地址:<br/>
+	<input type="text" id="insertUrl" name="url" value="http://" class="t_input" style="width: 190px;"> <input type="button" onclick="createLink();" name="createURL" value="確定" class="submit" /> <a href="javascript:;" onclick="fHide($('createUrl'));">取消</a>
 </div>
 <div id="createImg" class="eMenu" style="display:none;top:35px;left:26px;width:300px;font-size:12px">
-	请输入图片URL地址:<br/>
-	<input type="text" id="imgUrl" name="imgUrl" value="http://" class="t_input" style="width: 190px;" /> <input type="button" onclick="createImg();" name="createURL" value="确定" class="submit" /> <a href="javascript:;" onclick="fHide($('createImg'));">取消</a>
+	請輸入圖片URL地址:<br/>
+	<input type="text" id="imgUrl" name="imgUrl" value="http://" class="t_input" style="width: 190px;" /> <input type="button" onclick="createImg();" name="createURL" value="確定" class="submit" /> <a href="javascript:;" onclick="fHide($('createImg'));">取消</a>
 </div>
 <div id="createSwf" class="eMenu" style="display:none;top:35px;left:26px;width:400px;font-size:12px">
-	请输入视频URL地址:<br/>
+	請輸入視頻URL地址:<br/>
 	<select name="vtype" id="vtype">
-		<option value="0">Flash动画</option>
-		<option value="1">Media视频</option>
-		<option value="2">Real视频</option>
+		<option value="0">Flash動畫</option>
+		<option value="1">Media視頻</option>
+		<option value="2">Real視頻</option>
 	</select>
 	<input type="text" id="videoUrl" name="videoUrl" value="http://"  class="t_input" style="width: 200px;" />
-	<input type="button" onclick="createFlash();" name="createURL" value="确定" class="submit" />
+	<input type="button" onclick="createFlash();" name="createURL" value="確定" class="submit" />
 	<a href="javascript:;" onclick="fHide($('createSwf'));">取消</a>
 </div>
 
@@ -307,7 +307,7 @@ function fontsize(size,obj){format('fontsize',size);obj.parentNode.style.display
 
 } else {
 
-//空白页面
+//空白頁面
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <HTML>

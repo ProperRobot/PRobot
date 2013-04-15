@@ -170,7 +170,7 @@ function evalscript(s) {
 		} else {
 			p1 = /<script(.*?)>([^\x00]+?)<\/script>/i;
 			arr1 = p1.exec(arr[0]);
-			//获取字符集
+			//獲取字符集
 			var re = /charset=\"([\w\-]+?)\"/i;
 			var charsetarr = re.exec(arr1[1]);
 			appendscript('', arr1[2], arr1[1].indexOf('reload=') != -1, charsetarr[1]);
@@ -334,7 +334,7 @@ function ajaxpost_load() {
 		evalscript(s);
 	}
 
-	//层消失
+	//層消失
 	if(timeout && ajaxpostresult) jsmenu['timer'][formid] = setTimeout("hideMenu()", timeout);
 
 	formid.target = 'ajaxframe';
@@ -386,8 +386,8 @@ function ajaxmenu(e, ctrlid, isbox, timeout, func) {
 		if(s.indexOf('ajaxerror') != -1) {
 			evaled = true;
 		}
-		if(s.indexOf('hideMenu()') == -1) {//添加关闭
-			s = '<h1>消息</h1><a href="javascript:hideMenu();" class="float_del" title="关闭">关闭</a><div class="popupmenu_inner">' + s + '<div>';
+		if(s.indexOf('hideMenu()') == -1) {//添加關閉
+			s = '<h1>消息</h1><a href="javascript:hideMenu();" class="float_del" title="關閉">關閉</a><div class="popupmenu_inner">' + s + '<div>';
 		}
 		if(!evaled) {
 			if(x.div) x.div.innerHTML = s;
@@ -403,7 +403,7 @@ function ajaxmenu(e, ctrlid, isbox, timeout, func) {
 	showloading('none');
 	doane(e);
 }
-//得到一个定长的hash值,依赖于 stringxor()
+//得到一個定長的hash值,依賴於 stringxor()
 function hash(string, length) {
 	var length = length ? length : 32;
 	var start = 0;

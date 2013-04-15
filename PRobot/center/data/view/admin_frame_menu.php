@@ -24,20 +24,20 @@ a{ color:#2366A8; text-decoration:none; }
 <body>
 <div class="menu">
 	<ul id="leftmenu">
-		<li><a href="admin.php?m=frame&a=main" target="main" class="tabon">首页</a></li>
-		<?php if($user['allowadminsetting'] || $user['isfounder']) { ?><li><a href="admin.php?m=setting&a=ls" target="main">基本设置</a></li><?php } ?>
-		<?php if($user['allowadminsetting'] || $user['isfounder']) { ?><li><a href="admin.php?m=setting&a=register" target="main">注册设置</a></li><?php } ?>
-		<?php if($user['allowadminsetting'] || $user['isfounder']) { ?><li><a href="admin.php?m=setting&a=mail" target="main">邮件设置</a></li><?php } ?>
-		<?php if($user['allowadminapp'] || $user['isfounder']) { ?><li><a href="admin.php?m=app&a=ls" target="main">应用管理</a></li><?php } ?>
-		<?php if($user['allowadminuser'] || $user['isfounder']) { ?><li><a href="admin.php?m=user&a=ls" target="main">用户管理</a></li><?php } ?>
-		<?php if($user['isfounder']) { ?><li><a href="admin.php?m=admin&a=ls" target="main">管理员</a></li><?php } ?>
+		<li><a href="admin.php?m=frame&a=main" target="main" class="tabon">首頁</a></li>
+		<?php if($user['allowadminsetting'] || $user['isfounder']) { ?><li><a href="admin.php?m=setting&a=ls" target="main">基本設置</a></li><?php } ?>
+		<?php if($user['allowadminsetting'] || $user['isfounder']) { ?><li><a href="admin.php?m=setting&a=register" target="main">註冊設置</a></li><?php } ?>
+		<?php if($user['allowadminsetting'] || $user['isfounder']) { ?><li><a href="admin.php?m=setting&a=mail" target="main">郵件設置</a></li><?php } ?>
+		<?php if($user['allowadminapp'] || $user['isfounder']) { ?><li><a href="admin.php?m=app&a=ls" target="main">應用管理</a></li><?php } ?>
+		<?php if($user['allowadminuser'] || $user['isfounder']) { ?><li><a href="admin.php?m=user&a=ls" target="main">用戶管理</a></li><?php } ?>
+		<?php if($user['isfounder']) { ?><li><a href="admin.php?m=admin&a=ls" target="main">管理員</a></li><?php } ?>
 		<?php if($user['allowadminpm'] || $user['isfounder']) { ?><li><a href="admin.php?m=pm&a=ls" target="main">短消息</a></li><?php } ?>
-		<?php if($user['allowadmincredits'] || $user['isfounder']) { ?><li><a href="admin.php?m=credit&a=ls" target="main">积分兑换</a></li><?php } ?>
-		<?php if($user['allowadminbadword'] || $user['isfounder']) { ?><li><a href="admin.php?m=badword&a=ls" target="main">词语过滤</a></li><?php } ?>
+		<?php if($user['allowadmincredits'] || $user['isfounder']) { ?><li><a href="admin.php?m=credit&a=ls" target="main">積分兌換</a></li><?php } ?>
+		<?php if($user['allowadminbadword'] || $user['isfounder']) { ?><li><a href="admin.php?m=badword&a=ls" target="main">詞語過濾</a></li><?php } ?>
 		<?php if($user['allowadmindomain'] || $user['isfounder']) { ?><li><a href="admin.php?m=domain&a=ls" target="main">域名解析</a></li><?php } ?>
-		<?php if($user['allowadmindb'] || $user['isfounder']) { ?><li><a href="admin.php?m=db&a=ls" target="main">数据备份</a></li><?php } ?>
-		<?php if($user['isfounder']) { ?><li><a href="admin.php?m=feed&a=ls" target="main">数据列表</a></li><?php } ?>
-		<?php if($user['allowadmincache'] || $user['isfounder']) { ?><li><a href="admin.php?m=cache&a=update" target="main">更新缓存</a></li><?php } ?>
+		<?php if($user['allowadmindb'] || $user['isfounder']) { ?><li><a href="admin.php?m=db&a=ls" target="main">數據備份</a></li><?php } ?>
+		<?php if($user['isfounder']) { ?><li><a href="admin.php?m=feed&a=ls" target="main">數據列表</a></li><?php } ?>
+		<?php if($user['allowadmincache'] || $user['isfounder']) { ?><li><a href="admin.php?m=cache&a=update" target="main">更新緩存</a></li><?php } ?>
 		<?php if($user['isfounder']) { ?><li><a href="admin.php?m=plugin&a=filecheck" target="main">插件</a></li><?php } ?>
 	</ul>
 </div>

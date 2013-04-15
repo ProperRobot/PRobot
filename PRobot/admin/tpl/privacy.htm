@@ -9,118 +9,118 @@
 	<div class="bdrcontent">
 	
 	<div class="title">
-		<h3>系统开放程度</h3>
-		<p>可以根据自己的需求，决定系统的内容开放程度。</p>
+		<h3>系統開放程度</h3>
+		<p>可以根據自己的需求，決定系統的內容開放程度。</p>
 	</div>
 	
 	<table class="formtable">
 		<tr>
-			<th style="width:12em;">游客开放浏览</th>
+			<th style="width:12em;">遊客開放瀏覽</th>
 			<td>
 				<input type="radio" name="config[networkpublic]" value="1"<!--{if $configs[networkpublic] == 1}--> checked<!--{/if}-->>是
 				<input type="radio" name="config[networkpublic]" value="0"<!--{if $configs[networkpublic] == 0}--> checked<!--{/if}-->>否
-				<br>用户不需要登录也能浏览随便看看、未设置隐私的个人空间，同时，站内的信息也可以被搜索引擎收录。</td>
+				<br>用戶不需要登錄也能瀏覽隨便看看、未設置隱私的個人空間，同時，站內的信息也可以被搜索引擎收錄。</td>
 		</tr>
 	</table>
 	<br>
 	
 	<div class="title">
-		<h3>新用户默认隐私设置</h3>
-		<p>新用户将采用站内的默认隐私设置。用户可以修改自己的隐私设置，以下设置只对其他用户访问个人主页生效</p>
+		<h3>新用戶默認隱私設置</h3>
+		<p>新用戶將採用站內的默認隱私設置。用戶可以修改自己的隱私設置，以下設置只對其他用戶訪問個人主頁生效</p>
 	</div>
 
 	<table class="formtable">
 		<tr>
-			<th style="width:12em;">空间首页</th>
+			<th style="width:12em;">空間首頁</th>
 			<td><select name="privacy[view][index]">
-				<option value="0"$sels[view][index][0]>全站用户可见</option>
-				<option value="1"$sels[view][index][1]>仅好友可见</option>
-				<option value="2"$sels[view][index][2]>仅自己可见</option>
+				<option value="0"$sels[view][index][0]>全站用戶可見</option>
+				<option value="1"$sels[view][index][1]>僅好友可見</option>
+				<option value="2"$sels[view][index][2]>僅自己可見</option>
 				</select></td>
 		</tr>
 		<tr>
 			<th>好友列表</th>
 			<td><select name="privacy[view][friend]">
-				<option value="0"$sels[view][friend][0]>全站用户可见</option>
-				<option value="1"$sels[view][friend][1]>仅好友可见</option>
-				<option value="2"$sels[view][friend][2]>仅自己可见</option>
+				<option value="0"$sels[view][friend][0]>全站用戶可見</option>
+				<option value="1"$sels[view][friend][1]>僅好友可見</option>
+				<option value="2"$sels[view][friend][2]>僅自己可見</option>
 				</select></td>
 		</tr>
 		<tr>
 			<th>留言板</th>
 			<td><select name="privacy[view][wall]">
-				<option value="0"$sels[view][wall][0]>全站用户可见</option>
-				<option value="1"$sels[view][wall][1]>仅好友可见</option>
-				<option value="2"$sels[view][wall][2]>仅自己可见</option>
+				<option value="0"$sels[view][wall][0]>全站用戶可見</option>
+				<option value="1"$sels[view][wall][1]>僅好友可見</option>
+				<option value="2"$sels[view][wall][2]>僅自己可見</option>
 				</select></td>
 		</tr>
 		<tr>
-			<th>个人动态</th>
+			<th>個人動態</th>
 			<td><select name="privacy[view][feed]">
-				<option value="0"$sels[view][feed][0]>全站用户可见</option>
-				<option value="1"$sels[view][feed][1]>仅好友可见</option>
+				<option value="0"$sels[view][feed][0]>全站用戶可見</option>
+				<option value="1"$sels[view][feed][1]>僅好友可見</option>
 				</select></td>
 		</tr>
 		<tr>
-			<th>群组</th>
+			<th>群組</th>
 			<td><select name="privacy[view][mtag]">
-				<option value="0"$sels[view][mtag][0]>全站用户可见</option>
-				<option value="1"$sels[view][mtag][1]>仅好友可见</option>
-				<option value="2"$sels[view][mtag][2]>仅自己可见</option>
+				<option value="0"$sels[view][mtag][0]>全站用戶可見</option>
+				<option value="1"$sels[view][mtag][1]>僅好友可見</option>
+				<option value="2"$sels[view][mtag][2]>僅自己可見</option>
 				</select>
 				
 			</td>
 		</tr>
 		<tr>
-			<th>活动</th>
+			<th>活動</th>
 			<td><select name="privacy[view][event]">
-				<option value="0"$sels[view][event][0]>全站用户可见</option>
-				<option value="1"$sels[view][event][1]>仅好友可见</option>
+				<option value="0"$sels[view][event][0]>全站用戶可見</option>
+				<option value="1"$sels[view][event][1]>僅好友可見</option>
 				</select>
 			</td>
 		</tr>
 		<tr>
-			<th>记录</th>
+			<th>記錄</th>
 			<td><select name="privacy[view][doing]">
-				<option value="0"$sels[view][doing][0]>全站用户可见</option>
-				<option value="1"$sels[view][doing][1]>仅好友可见</option>
+				<option value="0"$sels[view][doing][0]>全站用戶可見</option>
+				<option value="1"$sels[view][doing][1]>僅好友可見</option>
 				</select><br/>
-				在全站的记录列表中可能会出现记录信息。 
+				在全站的記錄列表中可能會出現記錄信息。 
 			</td>
 		</tr>
 		<tr>
-			<th>日志</th>
+			<th>日誌</th>
 			<td><select name="privacy[view][blog]">
-				<option value="0"$sels[view][blog][0]>全站用户可见</option>
-				<option value="1"$sels[view][blog][1]>仅好友可见</option>
+				<option value="0"$sels[view][blog][0]>全站用戶可見</option>
+				<option value="1"$sels[view][blog][1]>僅好友可見</option>
 				</select><br/>
-				相关浏览权限需要在每篇日志中单独设置方可完全生效。
+				相關瀏覽權限需要在每篇日誌中單獨設置方可完全生效。
 			</td>
 		</tr>
 		<tr>
-			<th>相册</th>
+			<th>相冊</th>
 			<td><select name="privacy[view][album]">
-				<option value="0"$sels[view][album][0]>全站用户可见</option>
-				<option value="1"$sels[view][album][1]>仅好友可见</option>
+				<option value="0"$sels[view][album][0]>全站用戶可見</option>
+				<option value="1"$sels[view][album][1]>僅好友可見</option>
 				</select><br/>
-				相关浏览权限需要在每个相册中单独设置方可完全生效。
+				相關瀏覽權限需要在每個相冊中單獨設置方可完全生效。
 		</tr>
 		<tr>
 			<th>分享</th>
 			<td><select name="privacy[view][share]">
-				<option value="0"$sels[view][share][0]>全站用户可见</option>
-				<option value="1"$sels[view][share][1]>仅好友可见</option>
+				<option value="0"$sels[view][share][0]>全站用戶可見</option>
+				<option value="1"$sels[view][share][1]>僅好友可見</option>
 				</select><br/>
-				在全站的分享列表中可能会出现分享信息。 
+				在全站的分享列表中可能會出現分享信息。 
 			</td>
 		</tr>
 		<tr>
 			<th>投票</th>
 			<td><select name="privacy[view][poll]">
-				<option value="0"$sels[view][poll][0]>全站用户可见</option>
-				<option value="1"$sels[view][poll][1]>仅好友可见</option>
+				<option value="0"$sels[view][poll][0]>全站用戶可見</option>
+				<option value="1"$sels[view][poll][1]>僅好友可見</option>
 				</select><br/>
-				在全站的投票列表中可能会出现投票信息。 
+				在全站的投票列表中可能會出現投票信息。 
 			</td>
 		</tr>
 	</table>
@@ -128,21 +128,21 @@
 	<br>
 
 	<div class="title">
-		<h3>默认动态发布设置</h3>
-		<p>设置系统默认将哪些动作发布到个人动态里面。用户可以修改这些默认设置。</p>
+		<h3>默認動態發佈設置</h3>
+		<p>設置系統默認將哪些動作發佈到個人動態裡面。用戶可以修改這些默認設置。</p>
 	</div>
 	<table class="formtable">
 		<tr>
 			<th style="width:12em;">&nbsp;</th>
-			<td><input type="checkbox" name="privacy[feed][doing]" value="1"$sels[feed][doing]>记录</td>
+			<td><input type="checkbox" name="privacy[feed][doing]" value="1"$sels[feed][doing]>記錄</td>
 		</tr>
 		<tr>
 			<th>&nbsp;</th>
-			<td><input type="checkbox" name="privacy[feed][blog]" value="1"$sels[feed][blog]>撰写日志</td>
+			<td><input type="checkbox" name="privacy[feed][blog]" value="1"$sels[feed][blog]>撰寫日誌</td>
 		</tr>
 		<tr>
 			<th>&nbsp;</th>
-			<td><input type="checkbox" name="privacy[feed][upload]" value="1"$sels[feed][upload]>上传图片</td>
+			<td><input type="checkbox" name="privacy[feed][upload]" value="1"$sels[feed][upload]>上傳圖片</td>
 		</tr>
 		<tr>
 			<th>&nbsp;</th>
@@ -150,31 +150,31 @@
 		</tr>
 		<tr>
 			<th>&nbsp;</th>
-			<td><input type="checkbox" name="privacy[feed][poll]" value="1"$sels[feed][poll]>发起投票</td>
+			<td><input type="checkbox" name="privacy[feed][poll]" value="1"$sels[feed][poll]>發起投票</td>
 		</tr>
 		<tr>
 			<th>&nbsp;</th>
-			<td><input type="checkbox" name="privacy[feed][joinpoll]" value="1"$sels[feed][joinpoll]>参与投票</td>
+			<td><input type="checkbox" name="privacy[feed][joinpoll]" value="1"$sels[feed][joinpoll]>參與投票</td>
 		</tr>
 		<tr>
 			<th>&nbsp;</th>
-			<td><input type="checkbox" name="privacy[feed][thread]" value="1"$sels[feed][thread]>发起话题</td>
+			<td><input type="checkbox" name="privacy[feed][thread]" value="1"$sels[feed][thread]>發起話題</td>
 		</tr>
 		<tr>
 			<th>&nbsp;</th>
-			<td><input type="checkbox" name="privacy[feed][post]" value="1"$sels[feed][post]>对话题回复</td>
+			<td><input type="checkbox" name="privacy[feed][post]" value="1"$sels[feed][post]>對話題回復</td>
 		</tr>
 		<tr>
 			<th>&nbsp;</th>
-			<td><input type="checkbox" name="privacy[feed][mtag]" value="1"$sels[feed][mtag]>加入群组</td>
+			<td><input type="checkbox" name="privacy[feed][mtag]" value="1"$sels[feed][mtag]>加入群組</td>
 		</tr>
 		<tr>
 			<th>&nbsp;</th>
-			<td><input type="checkbox" name="privacy[feed][event]" value="1"$sels[feed][event]>组织活动</td>
+			<td><input type="checkbox" name="privacy[feed][event]" value="1"$sels[feed][event]>組織活動</td>
 		</tr>
 		<tr>
 			<th>&nbsp;</th>
-			<td><input type="checkbox" name="privacy[feed][join]" value="1"$sels[feed][join]>参加活动</td>
+			<td><input type="checkbox" name="privacy[feed][join]" value="1"$sels[feed][join]>參加活動</td>
 		</tr>
 		<tr>
 			<th>&nbsp;</th>
@@ -182,35 +182,35 @@
 		</tr>
 		<tr>
 			<th>&nbsp;</th>
-			<td><input type="checkbox" name="privacy[feed][comment]" value="1"$sels[feed][comment]>发表评论/留言</td>
+			<td><input type="checkbox" name="privacy[feed][comment]" value="1"$sels[feed][comment]>發表評論/留言</td>
 		</tr>
 		<tr>
 			<th>&nbsp;</th>
-			<td><input type="checkbox" name="privacy[feed][show]" value="1"$sels[feed][show]>竞价排名</td>
+			<td><input type="checkbox" name="privacy[feed][show]" value="1"$sels[feed][show]>競價排名</td>
 		</tr>
 		<tr>
 			<th>&nbsp;</th>
-			<td><input type="checkbox" name="privacy[feed][credit]" value="1"$sels[feed][credit]>积分消费</td>
+			<td><input type="checkbox" name="privacy[feed][credit]" value="1"$sels[feed][credit]>積分消費</td>
 		</tr>
 		<tr>
 			<th>&nbsp;</th>
-			<td><input type="checkbox" name="privacy[feed][spaceopen]" value="1"$sels[feed][spaceopen]>新空间开通</td>
+			<td><input type="checkbox" name="privacy[feed][spaceopen]" value="1"$sels[feed][spaceopen]>新空間開通</td>
 		</tr>
 		<tr>
 			<th>&nbsp;</th>
-			<td><input type="checkbox" name="privacy[feed][invite]" value="1"$sels[feed][invite]>邀请好友</td>
+			<td><input type="checkbox" name="privacy[feed][invite]" value="1"$sels[feed][invite]>邀請好友</td>
 		</tr>
 		<tr>
 			<th>&nbsp;</th>
-			<td><input type="checkbox" name="privacy[feed][task]" value="1"$sels[feed][task]>完成任务</td>
+			<td><input type="checkbox" name="privacy[feed][task]" value="1"$sels[feed][task]>完成任務</td>
 		</tr>
 		<tr>
 			<th>&nbsp;</th>
-			<td><input type="checkbox" name="privacy[feed][profile]" value="1"$sels[feed][profile]>更新个人资料</td>
+			<td><input type="checkbox" name="privacy[feed][profile]" value="1"$sels[feed][profile]>更新個人資料</td>
 		</tr>
 		<tr>
 			<th>&nbsp;</th>
-			<td><input type="checkbox" name="privacy[feed][click]" value="1"$sels[feed][click]>对日志/图片/话题表态</td>
+			<td><input type="checkbox" name="privacy[feed][click]" value="1"$sels[feed][click]>對日誌/圖片/話題表態</td>
 		</tr>
 	</table>
 	

@@ -14,6 +14,7 @@ $_SC['pconnect'] 		= 0; //是否持续连接
 $_SC['dbname']  		= 'uchome'; //数据库
 $_SC['tablepre'] 		= 'uchome_'; //表名前缀
 $_SC['charset'] 		= 'utf-8'; //页面字符集
+$_SC['language'] 		= 'zh_TW'; //语言
 
 $_SC['gzipcompress'] 	= 0; //启用gzip
 
@@ -41,8 +42,8 @@ define('UC_DBNAME', 'ucenter'); // UCenter 数据库名称
 define('UC_DBCHARSET', 'utf8'); // UCenter 数据库字符集
 define('UC_DBTABLEPRE', '`ucenter`.uc_'); // UCenter 数据库表前缀
 define('UC_DBCONNECT', '0'); // UCenter 数据库持久连接 0=关闭, 1=打开
-define('UC_KEY', '24T1e228d3Ebh1ubNfCdC2p5XdA2h4E9g7746fS4B9F2O37fQ4D9O237aeUap3Nb'); // 与 UCenter 的通信密钥, 要与 UCenter 保持一致
-define('UC_API', 'http://localhost/物业机器人/center'); // UCenter 的 URL 地址, 在调用头像时依赖此常量
+define('UC_KEY', '8cS0Z4Ecd414b03cR5500dHam322d7D0N1R0a2l2ke4ac3w727Z9aaQ0zbX1ZdX2'); // 与 UCenter 的通信密钥, 要与 UCenter 保持一致
+define('UC_API', 'http://localhost:8080/ucenter/index.php'); // UCenter 的 URL 地址, 在调用头像时依赖此常量
 define('UC_CHARSET', 'utf-8'); // UCenter 的字符集
 define('UC_IP', '127.0.0.1'); // UCenter 的 IP, 当 UC_CONNECT 为非 mysql 方式时, 并且当前应用服务器解析域名有问题时, 请设置此值
 define('UC_APPID', '1'); // 当前应用的 ID

@@ -21,7 +21,7 @@ if(defined('UC_SERVER_VERSION')) {
 	define('SOFT_RELEASE', '19700101');
 }
 
-define('INSTALL_LANG', 'SC_UTF8');
+define('INSTALL_LANG', 'TC_UTF8');
 
 define('CONFIG', ROOT_PATH.'./data/config.inc.php');
 

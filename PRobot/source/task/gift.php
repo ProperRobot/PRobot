@@ -10,9 +10,9 @@ if(!defined('IN_UCHOME')) {
 
 if($_SGLOBAL['supe_uid']) {
 	
-	$task['done'] = 1;//任务完成
+	$task['done'] = 1;//任務完成
 	
-	$task['result'] = '<p>给您送上一份 《热门日志导读》 看看吧：</p>';
+	$task['result'] = '<p>給您送上一份 《熱門日誌導讀》 看看吧：</p>';
 	$task['result'] .= '<br><ul class="line_list">';
 
 	$bloglist = array();
@@ -24,7 +24,7 @@ if($_SGLOBAL['supe_uid']) {
 	realname_get();
 	
 	foreach ($bloglist as $value) {
-		$task['result'] .= "<li><a href=\"space.php?uid=$value[uid]\" target=\"_blank\"><strong>".$_SN[$value['uid']]."</strong></a>：<a href=\"space.php?uid=$value[uid]&do=blog&id=$value[blogid]\" target=\"_blank\">$value[subject]</a> <span class=\"gray\">($value[hot]人推荐)</span></li>";
+		$task['result'] .= "<li><a href=\"space.php?uid=$value[uid]\" target=\"_blank\"><strong>".$_SN[$value['uid']]."</strong></a>：<a href=\"space.php?uid=$value[uid]&do=blog&id=$value[blogid]\" target=\"_blank\">$value[subject]</a> <span class=\"gray\">($value[hot]人推薦)</span></li>";
 	}
 	$task['result'] .= '</ul>';
 	

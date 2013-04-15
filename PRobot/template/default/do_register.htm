@@ -15,12 +15,12 @@
 <form id="registerform" name="registerform" action="do.php?ac=$_SCONFIG[register_action]&$url_plus&ref" method="post" class="c_form">
 <table cellpadding="0" cellspacing="0" class="formtable">
 	<caption>
-		<h2>注册本站帐号</h2>
-		<p>请完整填写以下信息进行注册。<br>注册完成后，该帐号将作为您在本站的通行帐号，您可以享受本站提供的各种服务。</p>
+		<h2>註冊本站帳號</h2>
+		<p>請完整填寫以下信息進行註冊。<br>註冊完成後，該帳號將作為您在本站的通行帳號，您可以享受本站提供的各種服務。</p>
 	</caption>
 	<!--{if $invitearr}-->
 	<tr>
-		<th width="100">好友邀请</th>
+		<th width="100">好友邀請</th>
 		<td>
 			<a href="space.php?$url_plus" target="_blank"><!--{avatar($invitearr[uid],small)}--></a>
 			<a href="space.php?$url_plus" target="_blank">{$_SN[$invitearr[uid]]}</a>
@@ -31,7 +31,7 @@
 	<!--{if $_SCONFIG['seccode_register']}-->
 	<!--{if $_SCONFIG['questionmode']}-->
 	<tr>
-		<th style="vertical-align: top;">请先回答问题</th>
+		<th style="vertical-align: top;">請先回答問題</th>
 		<td>
 			<p><!--{eval question();}--></p>
 			<input type="text" id="seccode" name="seccode" value="" class="t_input" onBlur="checkSeccode()" tabindex="1" autocomplete="off" />&nbsp;<span id="checkseccode">&nbsp;</span>
@@ -39,26 +39,26 @@
 	</tr>
 	<!--{else}-->
 	<tr>
-		<th style="vertical-align: top;">验证码</th>
+		<th style="vertical-align: top;">驗證碼</th>
 		<td>
 			<script>seccode();</script>
-			<p>请输入上面的4位字母或数字，看不清可<a href="javascript:updateseccode()">更换一张</a></p>
+			<p>請輸入上面的4位字母或數字，看不清可<a href="javascript:updateseccode()">更換一張</a></p>
 			<input type="text" id="seccode" name="seccode" value="" class="t_input" onBlur="checkSeccode()" tabindex="1" autocomplete="off" />&nbsp;<span id="checkseccode">&nbsp;</span>
 		</td>
 	</tr>
 	<!--{/if}-->
 	<!--{/if}-->
 	
-	<tr><th width="100">用户名</th><td><input type="text" id="username" name="username" value="" class="t_input" onBlur="checkUserName()" tabindex="2" />&nbsp;<span id="checkusername">&nbsp;</span></td></tr>
+	<tr><th width="100">用戶名</th><td><input type="text" id="username" name="username" value="" class="t_input" onBlur="checkUserName()" tabindex="2" />&nbsp;<span id="checkusername">&nbsp;</span></td></tr>
 	<tr>
-		<th>注册密码</th>
+		<th>註冊密碼</th>
 		<td>
 			<input type="password" name="password" id="password" value="" class="t_input" onBlur="checkPassword()" onkeyup="checkPwd(this.value);" tabindex="3" />&nbsp;<span id="checkpassword">&nbsp;</span><br/>
 			<style>
-				.psdiv0,.psdiv1,.psdiv2,.psdiv3,.psdiv4{position:relative;height:30px;color:#666}/*密码强度容器*/
-				.strongdepict{position:absolute; width:300px;left:0px;top:3px}/*密码强度固定文字*/
-				.strongbg{position:absolute;left:0px;top:22px;width:235px!important;width:234px;height:10px;background-color:#E0E0E0; font-size:0px;line-height:0px}/*灰色强度背景*/
-				.strong{float:left;font-size:0px;line-height:0px;height:10px}/*色块背景*/
+				.psdiv0,.psdiv1,.psdiv2,.psdiv3,.psdiv4{position:relative;height:30px;color:#666}/*密碼強度容器*/
+				.strongdepict{position:absolute; width:300px;left:0px;top:3px}/*密碼強度固定文字*/
+				.strongbg{position:absolute;left:0px;top:22px;width:235px!important;width:234px;height:10px;background-color:#E0E0E0; font-size:0px;line-height:0px}/*灰色強度背景*/
+				.strong{float:left;font-size:0px;line-height:0px;height:10px}/*色塊背景*/
 				
 				.psdiv0 span{display:none}
 				.psdiv1 span{display:inline;color:#F00}
@@ -73,27 +73,27 @@
 				.psdiv4 .strong{ width:100%;background-color:#063}
 			</style>
 			<div class="psdiv0" id="chkpswd">
-				<div class="strongdepict">密码安全程度：<span id="chkpswdcnt">太短</span></div>
+				<div class="strongdepict">密碼安全程度：<span id="chkpswdcnt">太短</span></div>
 				<div class="strongbg">
 					<div class="strong"></div>			
 				</div>		
 			</div>
 		</td>
 	</tr>
-	<tr><th>再次输入密码</th><td><input type="password" id="password2" name="password2" value="" class="t_input"  onBlur="checkPassword2()" tabindex="4" />&nbsp;<span id="checkpassword2">&nbsp;</span></td></tr>
-	<tr><th>邮箱</th><td><input type="text" id="email" name="email" value="@" class="t_input" tabindex="5" />
-		<br>请准确填入您的邮箱，在忘记密码，或者您使用邮件通知功能时，会发送邮件到该邮箱。</td></tr>
+	<tr><th>再次輸入密碼</th><td><input type="password" id="password2" name="password2" value="" class="t_input"  onBlur="checkPassword2()" tabindex="4" />&nbsp;<span id="checkpassword2">&nbsp;</span></td></tr>
+	<tr><th>郵箱</th><td><input type="text" id="email" name="email" value="@" class="t_input" tabindex="5" />
+		<br>請準確填入您的郵箱，在忘記密碼，或者您使用郵件通知功能時，會發送郵件到該郵箱。</td></tr>
 	
 	<!--{if $register_rule}-->
-	<tr><th>服务条款</th>
+	<tr><th>服務條款</th>
 		<td><div name="rule" style="border:1px solid #C3C3C3;width:500px;height:100px;overflow:auto;padding:5px;">$register_rule</div>
-		<input type="checkbox" name="accede" id="accede" value="1">我已阅读，并同意以上服务条款
+		<input type="checkbox" name="accede" id="accede" value="1">我已閱讀，並同意以上服務條款
 		<script type="text/javascript">
 			function checkClause() {
 				if($('accede').checked) {
 					return true;
 				} else {
-					alert("您必须同意服务条款后才能注册");
+					alert("您必須同意服務條款後才能註冊");
 					return false;
 				}
 			}
@@ -105,7 +105,7 @@
 	<tr><th>&nbsp;</th>
 		<td>
 		<input type="hidden" name="refer" value="space.php?do=home" />
-		<input type="submit" id="registersubmit" name="registersubmit" value="注册新用户" class="submit" onclick="<!--{if $register_rule}-->if(!checkClause()){return false;}<!--{/if}-->ajaxpost('registerform', 'register');" tabindex="6" />
+		<input type="submit" id="registersubmit" name="registersubmit" value="註冊新用戶" class="submit" onclick="<!--{if $register_rule}-->if(!checkClause()){return false;}<!--{/if}-->ajaxpost('registerform', 'register');" tabindex="6" />
 		</td>
 	</tr>
 	<tr><th>&nbsp;</th><td id="__registerform" style="color:red; font-weight:bold;"></td></tr>
@@ -127,7 +127,7 @@
 		var unLen = userName.replace(/[^\x00-\xff]/g, "**").length;
 
 		if(unLen < 3 || unLen > 15) {
-			warning(cu, unLen < 3 ? '用户名小于3个字符' : '用户名超过 15 个字符');
+			warning(cu, unLen < 3 ? '用戶名小於3個字符' : '用戶名超過 15 個字符');
 			return;
 		}
 		ajaxresponse('checkusername', 'op=checkusername&username=' + (is_ie && document.charset == 'utf-8' ? encodeURIComponent(userName) : userName));
@@ -141,7 +141,7 @@
 		}
 		var cp = $('checkpassword');
 		if(password == '' || /[\'\"\\]/.test(password)) {
-			warning(cp, '密码空或包含非法字符');
+			warning(cp, '密碼空或包含非法字符');
 			return false;
 		} else {
 			cp.style.display = '';
@@ -164,7 +164,7 @@
 			return;
 		}
 		if(password != password2) {
-			warning(cp2, '两次输入的密码不一致');
+			warning(cp2, '兩次輸入的密碼不一致');
 		} else {
 			cp2.style.display = '';
 			cp2.innerHTML = '<img src="image/check_right.gif" width="13" height="13">';
@@ -225,7 +225,7 @@
 					$( "chkpswd" ).className = "psdiv"+(csint + 1);
 					break;
 				case 3:		
-					$("chkpswdcnt").innerHTML = "很强";
+					$("chkpswdcnt").innerHTML = "很強";
 					$("chkpswd").className = "psdiv"+(csint + 1);
 					break;
 			}
@@ -242,16 +242,16 @@
 		return true;
 	}
 	function charMode(iN){ 
-		if (iN>=48 && iN <=57) //数字 
+		if (iN>=48 && iN <=57) //數字 
 		return 1; 
-		if (iN>=65 && iN <=90) //大写字母 
+		if (iN>=65 && iN <=90) //大寫字母 
 		return 2; 
-		if (iN>=97 && iN <=122) //小写 
+		if (iN>=97 && iN <=122) //小寫 
 		return 4; 
 		else 
 		return 8; //特殊字符 
 	} 
-	//计算出当前密码当中一共有多少种模式 
+	//計算出當前密碼當中一共有多少種模式 
 	function bitTotal(num){ 
 		modes=0; 
 		for (i=0;i<4;i++){ 
@@ -261,11 +261,11 @@
 		return modes; 
 	} 
 
-	//返回密码的强度级别 
+	//返回密碼的強度級別 
 	function checkStrong(pwd){ 
 		modes=0; 
 		for (i=0;i<pwd.length;i++){ 
-			//测试每一个字符的类别并统计一共有多少种模式. 
+			//測試每一個字符的類別並統計一共有多少種模式. 
 			modes|=charMode(pwd.charCodeAt(i)); 
 		} 
 		return bitTotal(modes);

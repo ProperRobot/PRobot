@@ -3,20 +3,20 @@ var gIsIE = document.all;
 var gIEVer = fGetIEVer();
 var gLoaded = false;
 var ev = null;
-var gIsHtml = true;//切换纯文本
+var gIsHtml = true;//切換純文本
 
 var pos = 0;
 var sLength = 0;
 
 /**
- * 获取event对象
+ * 獲取event對像
  */
 function fGetEv(e){
 	ev = e;
 }
 
 /**
- * 获取IE版本
+ * 獲取IE版本
  */
 function fGetIEVer(){
 	var iVerNo = 0;
@@ -29,7 +29,7 @@ function fGetIEVer(){
 	return iVerNo;
 }
 /**
- * 设置可编辑
+ * 設置可編輯
  */
 function fSetEditable(){
 	var f = window.frames["HtmlEditor"];
@@ -39,10 +39,10 @@ function fSetEditable(){
 }
 
 /**
- *恢复上次保存的内容
+ *恢復上次保存的內容
  */
 function renewContent() {
-	if(window.confirm('您确定要恢复上次保存?')) {
+	if(window.confirm('您確定要恢復上次保存?')) {
 		var oArea = parent.$('uchome-ttHtmlEditor');
 		var tagObj = parent.$('tag');
 		var subjectObj = parent.$('subject');
@@ -66,7 +66,7 @@ function renewContent() {
 	}
 }
 /**
- * 设置编辑区域的事件
+ * 設置編輯區域的事件
  */
 function fSetFrmClick(){
 	var f = window.frames["HtmlEditor"];
@@ -81,7 +81,7 @@ function fSetFrmClick(){
 }
 
 /**
- * 监听键盘按键事件
+ * 監聽鍵盤按鍵事件
  */
 function listenKeyDown(event) {
 	parent.gIsEdited = true;
@@ -89,7 +89,7 @@ function listenKeyDown(event) {
 }
 
 /**
- * 设置onload事件
+ * 設置onload事件
  */
 window.onload = function(){
 	try{
@@ -103,7 +103,7 @@ window.onload = function(){
 window.onbeforeunload = parent.edit_save;
 
 /**
- * 设置文字颜色
+ * 設置文字顏色
  */
 function fSetColor(){
 	var dvForeColor =$("dvForeColor");
@@ -114,7 +114,7 @@ function fSetColor(){
 
 
 /**
- * 设置mousemove事件
+ * 設置mousemove事件
  */
 document.onmousemove = function(e){
 	if(gIsIE) var el = event.srcElement;
@@ -132,7 +132,7 @@ document.onmousemove = function(e){
 	}
 }
 /**
- * 判断el对象是否在另一个节点里
+ * 判斷el對象是否在另一個節點裡
  */
 function fInObj(el, id){
 	if(el){
@@ -148,14 +148,14 @@ function fInObj(el, id){
 	}
 }
 /**
- * 显示对象
+ * 顯示對像
  */
 function fDisplayObj(id){
 	var o = $(id);
 	if(o) o.style.display = "";
 }
 /**
- * 设置onclick事件
+ * 設置onclick事件
  */
 document.onclick = function(e){
 	if(gIsIE) var el = event.srcElement;
@@ -179,7 +179,7 @@ document.onclick = function(e){
 			}
 		}catch(e){}
 	}
-	//弹出层的二次操作禁止关闭
+	//彈出層的二次操作禁止關閉
 	try{
 		if(fInObj(el, "createUrl") || fInObj(el, "createImg") || fInObj(el, "createSwf")){
 			return;
@@ -207,7 +207,7 @@ var arrMatch = {
 	icoSwf:"createSwf"
 }
 /**
- * 执行格式化显示
+ * 執行格式化顯示
  */
 function format(type, para){
 	var f = window.frames["HtmlEditor"];
@@ -215,13 +215,13 @@ function format(type, para){
 	if(!gIsIE){
 		switch(type){
 			case "Cut":
-				sAlert = "您的浏览器安全设置不允许编辑器自动执行剪切操作,请使用键盘快捷键(Ctrl+X)来完成";
+				sAlert = "您的瀏覽器安全設置不允許編輯器自動執行剪切操作,請使用鍵盤快捷鍵(Ctrl+X)來完成";
 				break;
 			case "Copy":
-				sAlert = "您的浏览器安全设置不允许编辑器自动执行拷贝操作,请使用键盘快捷键(Ctrl+C)来完成";
+				sAlert = "您的瀏覽器安全設置不允許編輯器自動執行拷貝操作,請使用鍵盤快捷鍵(Ctrl+C)來完成";
 				break;
 			case "Paste":
-				sAlert = "您的浏览器安全设置不允许编辑器自动执行粘贴操作,请使用键盘快捷键(Ctrl+V)来完成";
+				sAlert = "您的瀏覽器安全設置不允許編輯器自動執行粘貼操作,請使用鍵盤快捷鍵(Ctrl+V)來完成";
 				break;
 		}
 	}
@@ -253,7 +253,7 @@ function format(type, para){
 	f.focus();
 }
 /**
- * 转换编辑模式
+ * 轉換編輯模式
  */
 function setMode(bStatus){
 	var sourceEditor = $("sourceEditor");
@@ -274,14 +274,14 @@ function setMode(bStatus){
 	}
 }
 /**
- * 设置字体颜色
+ * 設置字體顏色
  */
 function foreColor(e) {
 	fDisplayColorBoard(e);
 	gSetColorType = "foreColor";
 }
 /**
- * 设置表情
+ * 設置表情
  */
 function faceBox(e) {
 	if(gIsIE){
@@ -308,16 +308,16 @@ function insertImg(src) {
 	format("insertHTML", '<img src="' + src + '"/>');
 }
 
-//打开涂鸦板
+//打開塗鴉板
 function doodleBox(event, id) {
 	if(parent.$(id) != null) {
 		parent.ajaxmenu(event, id, 1);
 	} else {
-		alert("找不到涂鸦板初始化数据");
+		alert("找不到塗鴉板初始化數據");
 	}
 }
 /**
- * 设置背景色
+ * 設置背景色
  */
 function backColor(e){
 	var sColor = fDisplayColorBoard(e);
@@ -328,7 +328,7 @@ function backColor(e){
 }
 
 /**
- * 显示颜色拾取器
+ * 顯示顏色拾取器
  */
 function fDisplayColorBoard(e){
 
@@ -352,7 +352,7 @@ function fDisplayColorBoard(e){
 }
 
 /**
- * 创建链接
+ * 創建鏈接
  */
 function createLink(e, show) {
 	if(typeof show == 'undefined') {
@@ -377,7 +377,7 @@ function createLink(e, show) {
 		dvUrlBox.style.top = 33 + "px";
 	}
 }
-//获取起始焦点
+//獲取起始焦點
 function getCaret() {
 	if(gIsIE){
 		window.frames["HtmlEditor"].focus();
@@ -391,11 +391,11 @@ function getCaret() {
 		pos = rang.text.replace(/\r?\n/g, ' ').length;
 	}
 }
-//重设焦点
+//重設焦點
 function setCaret() {
 	if(gIsIE){
 		window.frames["HtmlEditor"].focus();
-		//重新选持字符串
+		//重新選持字符串
 		var r = window.frames["HtmlEditor"].document.body.createTextRange();
 		var textLen = r.text.replace(/\r?\n/g, ' ').length;
 		r.moveStart('character', pos);
@@ -410,13 +410,13 @@ function setCaret() {
 }
 
 /**
- * 删除链接
+ * 刪除鏈接
  */
 function clearLink() {
 	format("Unlink", false);
 }
 /**
- * 创建图片
+ * 創建圖片
  */
 function createImg(e, show) {
 	if(typeof show == 'undefined') {
@@ -442,7 +442,7 @@ function createImg(e, show) {
 	}
 }
 /**
- * 视频FLASH
+ * 視頻FLASH
  */
 function createFlash(e, show) {
 	if(typeof show == 'undefined') {
@@ -477,13 +477,13 @@ function createFlash(e, show) {
 	}
 }
 /**
- * 删除字符串两边空格
+ * 刪除字符串兩邊空格
  */
 String.prototype.trim = function(){
 	return this.replace(/(^\s*)|(\s*$)/g, "");
 }
 /**
- * 鼠标移上图标
+ * 鼠標移上圖標
  */
 function fSetBorderMouseOver(obj) {
 	obj.style.borderRight="1px solid #aaa";
@@ -492,13 +492,13 @@ function fSetBorderMouseOver(obj) {
 	obj.style.borderLeft="1px solid #fff";
 } 
 /**
- * 鼠标移出图标
+ * 鼠標移出圖標
  */
 function fSetBorderMouseOut(obj) {
 	obj.style.border="none";
 }
 /**
- * 鼠标按下图标
+ * 鼠標按下圖標
  */
 function fSetBorderMouseDown(obj) {
 	obj.style.borderRight="1px #F3F8FC solid";
@@ -507,7 +507,7 @@ function fSetBorderMouseDown(obj) {
 	obj.style.borderLeft="1px #cccccc solid";
 }
 /**
- * 显示下拉菜单
+ * 顯示下拉菜單
  */
 function fDisplayElement(element,displayValue) {
 	if(gIEVer<=5.01 && gIsIE){
@@ -534,7 +534,7 @@ function fDisplayElement(element,displayValue) {
 	return true;
 }
 /**
- * 显示编辑源码提示
+ * 顯示編輯源碼提示
  */
 function fSetModeTip(obj){
 	var x = f_GetX(obj);
@@ -552,20 +552,20 @@ function fSetModeTip(obj){
 		dv.style.border = "1px #000000 solid";
 		dv.style.backgroundColor = "#FFFFCC";
 		dv.style.height = "12px";
-		dv.innerHTML = "编辑源码";
+		dv.innerHTML = "編輯源碼";
 		document.body.appendChild(dv);
 	}else{
 		dvModeTip.style.display = "";
 	}
 }
 /**
- * 隐藏编辑源码
+ * 隱藏編輯源碼
  */
 function fHideTip(){
 	$("dvModeTip").style.display = "none";
 }
 /**
- * 获取对象的x坐标
+ * 獲取對象的x坐標
  */
 function f_GetX(e)
 {
@@ -576,7 +576,7 @@ function f_GetX(e)
 	return l;
 }
 /**
- * 获取对象的y坐标
+ * 獲取對象的y坐標
  */
 function f_GetY(e)
 {
@@ -587,7 +587,7 @@ function f_GetY(e)
 	return t;
 }
 /**
- * 隐藏下拉菜单
+ * 隱藏下拉菜單
  */
 function fHideMenu(){
 	try{
@@ -605,19 +605,19 @@ function fHideMenu(){
 }
 
 /**
- * 获取对象
+ * 獲取對像
  */
 function $(id){
 	return document.getElementById(id);
 }
 /**
- * 隐藏对象
+ * 隱藏對像
  */
 function fHide(obj){
 	obj.style.display="none";
 }
 /**
- * 切换编辑模式
+ * 切換編輯模式
  */
 function changeEditType(flag, ev){
 	gIsHtml = flag;
@@ -668,7 +668,7 @@ function changeEditType(flag, ev){
 			}
 			ev = ev || event;
 			if(ev){
-				if(window.confirm("转换为纯文本时将会遗失某些格式。\n您确定要继续吗？")){
+				if(window.confirm("轉換為純文本時將會遺失某些格式。\n您確定要繼續嗎？")){
 					$('uchome-editstatus').value = 'text';
 					sub1();
 				}else{
@@ -681,13 +681,13 @@ function changeEditType(flag, ev){
 	}
 }
 /**
- * 删除标签符号
+ * 刪除標籤符號
  */
 String.prototype.stripTags = function(){
     return this.replace(/<\/?[^>]+>/gi, '');
 };
 /**
- * 转换成文本格式
+ * 轉換成文本格式
  */
 String.prototype.unescapeHTML = function(){
     var div = document.createElement('div');
@@ -767,13 +767,13 @@ function drawCube() {
 }
 
 /**
- * event函数集合
+ * event函數集合
  * 
- * @class event对象
+ * @class event對像
  */
 function EV(){}
-EV.getTarget		= fGetTarget;			// 获取target
-EV.getEvent			= fGetEvent;			// 获取event
+EV.getTarget		= fGetTarget;			// 獲取target
+EV.getEvent			= fGetEvent;			// 獲取event
 EV.stopEvent		= fStopEvent;			// 取消事件和事件冒泡
 EV.stopPropagation	= fStopPropagation;		// 取消事件冒泡
 EV.preventDefault	= fPreventDefault;		// 取消事件

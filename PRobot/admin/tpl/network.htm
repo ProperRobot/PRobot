@@ -8,309 +8,309 @@
 	<div class="bdrcontent">
 	
 		<div class="title">
-			<h3>日志聚合设置</h3>
-			<p>设置日志显示在随便看看页面的条件</p>
+			<h3>日誌聚合設置</h3>
+			<p>設置日誌顯示在隨便看看頁面的條件</p>
 		</div>
 		<table cellspacing="0" cellpadding="0" class="formtable">
 			<tr>
-				<td style="width:10em;">指定日志(blogid)</td>
+				<td style="width:10em;">指定日誌(blogid)</td>
 				<td>
-					<input name="network[blog][blogid]" type="text" size="50" value="$network[blog][blogid]" /> 多个blogid用","分隔
+					<input name="network[blog][blogid]" type="text" size="50" value="$network[blog][blogid]" /> 多個blogid用","分隔
 				</td>
 			</tr>
 			<tr>
 				<td>指定作者(uid)</td>
 				<td>
-					<input name="network[blog][uid]" type="text" size="50" value="$network[blog][uid]" /> 多个uid用","分隔
+					<input name="network[blog][uid]" type="text" size="50" value="$network[blog][uid]" /> 多個uid用","分隔
 				</td>
 			</tr>
 			<tr>
-				<td>热度范围</td>
+				<td>熱度範圍</td>
 				<td>
 					<input name="network[blog][hot1]" type="text" size="10" value="$network[blog][hot1]" /> ~ 
 					<input name="network[blog][hot2]" type="text" size="10" value="$network[blog][hot2]" />
 				</td>
 			</tr>
 			<tr>
-				<td>查看数范围</td>
+				<td>查看數範圍</td>
 				<td>
 					<input name="network[blog][viewnum1]" type="text" size="10" value="$network[blog][viewnum1]" /> ~ 
 					<input name="network[blog][viewnum2]" type="text" size="10" value="$network[blog][viewnum2]" />
 				</td>
 			</tr>
 			<tr>
-				<td>回复数范围</td>
+				<td>回複數範圍</td>
 				<td>
 					<input name="network[blog][replynum1]" type="text" size="10" value="$network[blog][replynum1]" /> ~ 
 					<input name="network[blog][replynum2]" type="text" size="10" value="$network[blog][replynum2]" />
 				</td>
 			</tr>
 			<tr>
-				<td>发布时间范围</td>
-				<td><input type="text" name="network[blog][dateline]" value="$network[blog][dateline]" size="10"> 内天发布的才显示</td>
+				<td>發佈時間範圍</td>
+				<td><input type="text" name="network[blog][dateline]" value="$network[blog][dateline]" size="10"> 內天發佈的才顯示</td>
 			</tr>
 			<tr>
 				<td>列表排序</td>
 				<td>
 					<select name="network[blog][order]">
-						<option value="dateline">发布时间</option>
-						<option value="viewnum"{$orders[blog][viewnum]}>查看数</option>
-						<option value="replynum"{$orders[blog][replynum]}>回复数</option>
-						<option value="hot"{$orders[blog][hot]}>热度</option>
+						<option value="dateline">發佈時間</option>
+						<option value="viewnum"{$orders[blog][viewnum]}>查看數</option>
+						<option value="replynum"{$orders[blog][replynum]}>回複數</option>
+						<option value="hot"{$orders[blog][hot]}>熱度</option>
 					</select>
 					<select name="network[blog][sc]">
-						<option value="desc">递减</option>
-						<option value="asc"{$scs[blog][asc]}>递增</option>
+						<option value="desc">遞減</option>
+						<option value="asc"{$scs[blog][asc]}>遞增</option>
 					</select>
 				</td>
 			</tr>
 			<tr>
-				<td>缓存有效时间</td>
-				<td><input type="text" name="network[blog][cache]" value="$network[blog][cache]" size="10"> 单位:秒 (设为0将不使用缓存机制，这会增加服务器负担)</td>
+				<td>緩存有效時間</td>
+				<td><input type="text" name="network[blog][cache]" value="$network[blog][cache]" size="10"> 單位:秒 (設為0將不使用緩存機制，這會增加服務器負擔)</td>
 			</tr>
 		</table>
 		
 		<br>
 		<div class="title">
-			<h3>图片聚合设置</h3>
-			<p>设置图片显示在随便看看页面的条件</p>
+			<h3>圖片聚合設置</h3>
+			<p>設置圖片顯示在隨便看看頁面的條件</p>
 		</div>
 		<table cellspacing="0" cellpadding="0" class="formtable">
 			<tr>
-				<td style="width:10em;">指定图片(picid)</td>
+				<td style="width:10em;">指定圖片(picid)</td>
 				<td>
-					<input name="network[pic][picid]" type="text" size="50" value="$network[pic][picid]" /> 多个picid用","分隔
+					<input name="network[pic][picid]" type="text" size="50" value="$network[pic][picid]" /> 多個picid用","分隔
 				</td>
 			</tr>
 			<tr>
 				<td>指定作者(uid)</td>
 				<td>
-					<input name="network[pic][uid]" type="text" size="50" value="$network[pic][uid]" /> 多个uid用","分隔
+					<input name="network[pic][uid]" type="text" size="50" value="$network[pic][uid]" /> 多個uid用","分隔
 				</td>
 			</tr>
 			<tr>
-				<td>热度范围</td>
+				<td>熱度範圍</td>
 				<td>
 					<input name="network[pic][hot1]" type="text" size="10" value="$network[pic][hot1]" /> ~ 
 					<input name="network[pic][hot2]" type="text" size="10" value="$network[pic][hot2]" />
 				</td>
 			</tr>
 			<tr>
-				<td>发布时间范围</td>
-				<td><input type="text" name="network[pic][dateline]" value="$network[pic][dateline]" size="10"> 内天发布的才显示</td>
+				<td>發佈時間範圍</td>
+				<td><input type="text" name="network[pic][dateline]" value="$network[pic][dateline]" size="10"> 內天發佈的才顯示</td>
 			</tr>
 			<tr>
 				<td>列表排序</td>
 				<td>
 					<select name="network[pic][order]">
-						<option value="dateline">发布时间</option>
-						<option value="hot"{$orders[pic][hot]}>热度</option>
+						<option value="dateline">發佈時間</option>
+						<option value="hot"{$orders[pic][hot]}>熱度</option>
 					</select>
 					<select name="network[pic][sc]">
-						<option value="desc">递减</option>
-						<option value="asc"{$scs[pic][asc]}>递增</option>
+						<option value="desc">遞減</option>
+						<option value="asc"{$scs[pic][asc]}>遞增</option>
 					</select>
 				</td>
 			</tr>
 			<tr>
-				<td>缓存有效时间</td>
-				<td><input type="text" name="network[pic][cache]" value="$network[pic][cache]" size="10"> 单位:秒 (设为0将不使用缓存机制，这会增加服务器负担)</td>
+				<td>緩存有效時間</td>
+				<td><input type="text" name="network[pic][cache]" value="$network[pic][cache]" size="10"> 單位:秒 (設為0將不使用緩存機制，這會增加服務器負擔)</td>
 			</tr>
 		</table>
 		<br>
 
 		<div class="title">
-			<h3>话题聚合设置</h3>
-			<p>设置话题显示在随便看看页面的条件</p>
+			<h3>話題聚合設置</h3>
+			<p>設置話題顯示在隨便看看頁面的條件</p>
 		</div>
 		<table cellspacing="0" cellpadding="0" class="formtable">
 			<tr>
-				<td style="width:10em;">指定话题(tid)</td>
+				<td style="width:10em;">指定話題(tid)</td>
 				<td>
-					<input name="network[thread][tid]" type="text" size="50" value="$network[thread][tid]" /> 多个tid用","分隔
+					<input name="network[thread][tid]" type="text" size="50" value="$network[thread][tid]" /> 多個tid用","分隔
 				</td>
 			</tr>
 			<tr>
 				<td>指定作者(uid)</td>
 				<td>
-					<input name="network[thread][uid]" type="text" size="50" value="$network[thread][uid]" /> 多个uid用","分隔
+					<input name="network[thread][uid]" type="text" size="50" value="$network[thread][uid]" /> 多個uid用","分隔
 				</td>
 			</tr>
 			<tr>
-				<td>热度范围</td>
+				<td>熱度範圍</td>
 				<td>
 					<input name="network[thread][hot1]" type="text" size="10" value="$network[thread][hot1]" /> ~ 
 					<input name="network[thread][hot2]" type="text" size="10" value="$network[thread][hot2]" />
 				</td>
 			</tr>
 			<tr>
-				<td>查看数范围</td>
+				<td>查看數範圍</td>
 				<td>
 					<input name="network[thread][viewnum1]" type="text" size="10" value="$network[thread][viewnum1]" /> ~ 
 					<input name="network[thread][viewnum2]" type="text" size="10" value="$network[thread][viewnum2]" />
 				</td>
 			</tr>
 			<tr>
-				<td>回复数范围</td>
+				<td>回複數範圍</td>
 				<td>
 					<input name="network[thread][replynum1]" type="text" size="10" value="$network[thread][replynum1]" /> ~ 
 					<input name="network[thread][replynum2]" type="text" size="10" value="$network[thread][replynum2]" />
 				</td>
 			</tr>
 			<tr>
-				<td>发布时间范围</td>
-				<td><input type="text" name="network[thread][dateline]" value="$network[thread][dateline]" size="10"> 内天发布的才显示</td>
+				<td>發佈時間範圍</td>
+				<td><input type="text" name="network[thread][dateline]" value="$network[thread][dateline]" size="10"> 內天發佈的才顯示</td>
 			</tr>
 			<tr>
-				<td>回复时间范围</td>
-				<td><input type="text" name="network[thread][lastpost]" value="$network[thread][lastpost]" size="10"> 内天回复的才显示</td>
+				<td>回復時間範圍</td>
+				<td><input type="text" name="network[thread][lastpost]" value="$network[thread][lastpost]" size="10"> 內天回復的才顯示</td>
 			</tr>
 			<tr>
 				<td>列表排序</td>
 				<td>
 					<select name="network[thread][order]">
-						<option value="dateline">发布时间</option>
-						<option value="viewnum"{$orders[thread][viewnum]}>查看数</option>
-						<option value="replynum"{$orders[thread][replynum]}>回复数</option>
-						<option value="hot"{$orders[thread][hot]}>热度</option>
+						<option value="dateline">發佈時間</option>
+						<option value="viewnum"{$orders[thread][viewnum]}>查看數</option>
+						<option value="replynum"{$orders[thread][replynum]}>回複數</option>
+						<option value="hot"{$orders[thread][hot]}>熱度</option>
 					</select>
 					<select name="network[thread][sc]">
-						<option value="desc">递减</option>
-						<option value="asc"{$scs[thread][asc]}>递增</option>
+						<option value="desc">遞減</option>
+						<option value="asc"{$scs[thread][asc]}>遞增</option>
 					</select>
 				</td>
 			</tr>
 			<tr>
-				<td>缓存有效时间</td>
-				<td><input type="text" name="network[thread][cache]" value="$network[thread][cache]" size="10"> 单位:秒 (设为0将不使用缓存机制，这会增加服务器负担)</td>
+				<td>緩存有效時間</td>
+				<td><input type="text" name="network[thread][cache]" value="$network[thread][cache]" size="10"> 單位:秒 (設為0將不使用緩存機制，這會增加服務器負擔)</td>
 			</tr>
 		</table>
 		<br>
 
 		<div class="title">
-			<h3>活动聚合设置</h3>
-			<p>设置活动显示在随便看看页面的条件</p>
+			<h3>活動聚合設置</h3>
+			<p>設置活動顯示在隨便看看頁面的條件</p>
 		</div>
 		<table cellspacing="0" cellpadding="0" class="formtable">
 			<tr>
-				<td style="width:10em;">指定活动(eventid)</td>
+				<td style="width:10em;">指定活動(eventid)</td>
 				<td>
-					<input name="network[event][eventid]" type="text" size="50" value="$network[event][eventid]" /> 多个eventid用","分隔
+					<input name="network[event][eventid]" type="text" size="50" value="$network[event][eventid]" /> 多個eventid用","分隔
 				</td>
 			</tr>
 			<tr>
 				<td>指定作者(uid)</td>
 				<td>
-					<input name="network[event][uid]" type="text" size="50" value="$network[event][uid]" /> 多个uid用","分隔
+					<input name="network[event][uid]" type="text" size="50" value="$network[event][uid]" /> 多個uid用","分隔
 				</td>
 			</tr>
 			<tr>
-				<td>热度范围</td>
+				<td>熱度範圍</td>
 				<td>
 					<input name="network[event][hot1]" type="text" size="10" value="$network[event][hot1]" /> ~ 
 					<input name="network[event][hot2]" type="text" size="10" value="$network[event][hot2]" />
 				</td>
 			</tr>
 			<tr>
-				<td>参与人数范围</td>
+				<td>參與人數範圍</td>
 				<td>
 					<input name="network[event][membernum1]" type="text" size="10" value="$network[event][membernum1]" /> ~ 
 					<input name="network[event][membernum2]" type="text" size="10" value="$network[event][membernum2]" />
 				</td>
 			</tr>
 			<tr>
-				<td>关注人数范围</td>
+				<td>關注人數範圍</td>
 				<td>
 					<input name="network[event][follownum1]" type="text" size="10" value="$network[event][follownum1]" /> ~ 
 					<input name="network[event][follownum2]" type="text" size="10" value="$network[event][follownum2]" />
 				</td>
 			</tr>
 			<tr>
-				<td>发布时间范围</td>
-				<td><input type="text" name="network[event][dateline]" value="$network[event][dateline]" size="10"> 内天发布的才显示</td>
+				<td>發佈時間範圍</td>
+				<td><input type="text" name="network[event][dateline]" value="$network[event][dateline]" size="10"> 內天發佈的才顯示</td>
 			</tr>
 			<tr>
 				<td>列表排序</td>
 				<td>
 					<select name="network[event][order]">
-						<option value="dateline">发布时间</option>
-						<option value="membernum"{$orders[event][membernum]}>参与人数</option>
-						<option value="follownum"{$orders[event][follownum]}>关注人数</option>
-						<option value="hot"{$orders[event][hot]}>热度</option>
+						<option value="dateline">發佈時間</option>
+						<option value="membernum"{$orders[event][membernum]}>參與人數</option>
+						<option value="follownum"{$orders[event][follownum]}>關注人數</option>
+						<option value="hot"{$orders[event][hot]}>熱度</option>
 					</select>
 					<select name="network[event][sc]">
-						<option value="desc">递减</option>
-						<option value="asc"{$scs[event][asc]}>递增</option>
+						<option value="desc">遞減</option>
+						<option value="asc"{$scs[event][asc]}>遞增</option>
 					</select>
 				</td>
 			</tr>
 			<tr>
-				<td>缓存有效时间</td>
-				<td><input type="text" name="network[event][cache]" value="$network[event][cache]" size="10"> 单位:秒 (设为0将不使用缓存机制，这会增加服务器负担)</td>
+				<td>緩存有效時間</td>
+				<td><input type="text" name="network[event][cache]" value="$network[event][cache]" size="10"> 單位:秒 (設為0將不使用緩存機制，這會增加服務器負擔)</td>
 			</tr>
 		</table>
 		<br>
 
 		<div class="title">
-			<h3>投票聚合设置</h3>
-			<p>设置投票显示在随便看看页面的条件</p>
+			<h3>投票聚合設置</h3>
+			<p>設置投票顯示在隨便看看頁面的條件</p>
 		</div>
 		<table cellspacing="0" cellpadding="0" class="formtable">
 			<tr>
 				<td style="width:10em;">指定投票(pid)</td>
 				<td>
-					<input name="network[poll][pid]" type="text" size="50" value="$network[poll][pid]" /> 多个pid用","分隔
+					<input name="network[poll][pid]" type="text" size="50" value="$network[poll][pid]" /> 多個pid用","分隔
 				</td>
 			</tr>
 			<tr>
 				<td>指定作者(uid)</td>
 				<td>
-					<input name="network[poll][uid]" type="text" size="50" value="$network[poll][uid]" /> 多个uid用","分隔
+					<input name="network[poll][uid]" type="text" size="50" value="$network[poll][uid]" /> 多個uid用","分隔
 				</td>
 			</tr>
 			<tr>
-				<td>热度范围</td>
+				<td>熱度範圍</td>
 				<td>
 					<input name="network[poll][hot1]" type="text" size="10" value="$network[poll][hot1]" /> ~ 
 					<input name="network[poll][hot2]" type="text" size="10" value="$network[poll][hot2]" />
 				</td>
 			</tr>
 			<tr>
-				<td>投票人数范围</td>
+				<td>投票人數範圍</td>
 				<td>
 					<input name="network[poll][voternum1]" type="text" size="10" value="$network[poll][voternum1]" /> ~ 
 					<input name="network[poll][voternum2]" type="text" size="10" value="$network[poll][voternum2]" />
 				</td>
 			</tr>
 			<tr>
-				<td>回复人数范围</td>
+				<td>回復人數範圍</td>
 				<td>
 					<input name="network[poll][replynum1]" type="text" size="10" value="$network[poll][replynum1]" /> ~ 
 					<input name="network[poll][replynum2]" type="text" size="10" value="$network[poll][replynum2]" />
 				</td>
 			</tr>
 			<tr>
-				<td>发布时间范围</td>
-				<td><input type="text" name="network[poll][dateline]" value="$network[poll][dateline]" size="10"> 内天发布的才显示</td>
+				<td>發佈時間範圍</td>
+				<td><input type="text" name="network[poll][dateline]" value="$network[poll][dateline]" size="10"> 內天發佈的才顯示</td>
 			</tr>
 			<tr>
 				<td>列表排序</td>
 				<td>
 					<select name="network[poll][order]">
-						<option value="dateline">发布时间</option>
-						<option value="voternum"{$orders[poll][voternum]}>参与人数</option>
-						<option value="replynum"{$orders[poll][replynum]}>关注人数</option>
-						<option value="hot"{$orders[poll][hot]}>热度</option>
+						<option value="dateline">發佈時間</option>
+						<option value="voternum"{$orders[poll][voternum]}>參與人數</option>
+						<option value="replynum"{$orders[poll][replynum]}>關注人數</option>
+						<option value="hot"{$orders[poll][hot]}>熱度</option>
 					</select>
 					<select name="network[poll][sc]">
-						<option value="desc">递减</option>
-						<option value="asc"{$scs[poll][asc]}>递增</option>
+						<option value="desc">遞減</option>
+						<option value="asc"{$scs[poll][asc]}>遞增</option>
 					</select>
 				</td>
 			</tr>
 			<tr>
-				<td>缓存有效时间</td>
-				<td><input type="text" name="network[poll][cache]" value="$network[poll][cache]" size="10"> 单位:秒 (设为0将不使用缓存机制，这会增加服务器负担)</td>
+				<td>緩存有效時間</td>
+				<td><input type="text" name="network[poll][cache]" value="$network[poll][cache]" size="10"> 單位:秒 (設為0將不使用緩存機制，這會增加服務器負擔)</td>
 			</tr>
 		</table>
 		

@@ -8,18 +8,18 @@ if(!defined('IN_UCHOME')) {
 	exit('Access Denied');
 }
 
-//判断用户是否全部设置了个人资料
+//判斷用戶是否全部設置了個人資料
 $nones = array();
 $profile_lang = array(
 	'name' => '姓名',
-	'sex' => '性别',
+	'sex' => '性別',
 	'birthyear' => '生日(年)',
 	'birthmonth' => '生日(月)',
 	'birthday' => '生日(日)',
 	'blood' => '血型',
-	'marry' => '婚恋状态',
-	'birthprovince' => '家乡(省)',
-	'birthcity' => '家乡(市)',
+	'marry' => '婚戀狀態',
+	'birthprovince' => '家鄉(省)',
+	'birthcity' => '家鄉(市)',
 	'resideprovince' => '居住地(省)',
 	'residecity' => '居住地(市)'
 );
@@ -29,7 +29,7 @@ foreach (array('name','sex','birthyear','birthmonth','birthday','marry','birthpr
 		$nones[] = $profile_lang[$key];
 	}
 }
-//站长扩展
+//站長擴展
 @include_once(S_ROOT.'./data/data_profilefield.php');
 foreach ($_SGLOBAL['profilefield'] as $field => $value) {
 	if($value['required'] && empty($space['field_'.$field])) {
@@ -39,9 +39,9 @@ foreach ($_SGLOBAL['profilefield'] as $field => $value) {
 
 if(empty($nones)) {
 
-	$task['done'] = 1;//任务完成
+	$task['done'] = 1;//任務完成
 	
-	//自动找好友
+	//自動找好友
 	$findmaxnum = 10;
 	$space['friends'][] = $space['uid'];
 	$nouids = implode(',', $space['friends']);
@@ -60,11 +60,11 @@ if(empty($nones)) {
 		$residelist[] = $value;
 	}
 
-	//性别好友
+	//性別好友
 	$sexlist = array();
 	$warr = array();
-	if(empty($space['marry']) || $space['marry'] < 2) {//单身
-		$warr[] = "sf.marry='1'";//单身
+	if(empty($space['marry']) || $space['marry'] < 2) {//單身
+		$warr[] = "sf.marry='1'";//單身
 	}
 	if(empty($space['sex']) || $space['sex'] < 2) {//男生
 		$warr[] = "sf.sex='2'";//女生
@@ -83,25 +83,25 @@ if(empty($nones)) {
 	realname_get();
 	
 	if($residelist) {
-		$task['result'] .= '<p>为您找到同城的会员，赶快加为好友吧：</p>';
+		$task['result'] .= '<p>為您找到同城的會員，趕快加為好友吧：</p>';
 		$task['result'] .= '<ul class="avatar_list">';
 		foreach ($residelist as $key => $value) {
 			$task['result'] .= '<li>
 				<div class="avatar48"><a href="space.php?uid='.$value['uid'].'" target="_blank">'.avatar($value['uid'], 'small').'</a></div>
 				<p><a href="space.php?uid='.$value['uid'].'" target="_blank">'.$_SN[$value['uid']].'</a></p>
-				<p><a href="cp.php?ac=friend&op=add&uid='.$value['uid'].'" id="a_reside_friend_'.$key.'" onclick="ajaxmenu(event, this.id, 1)">加为好友</a></p>
+				<p><a href="cp.php?ac=friend&op=add&uid='.$value['uid'].'" id="a_reside_friend_'.$key.'" onclick="ajaxmenu(event, this.id, 1)">加為好友</a></p>
 				</li>';
 		}
 		$task['result'] .= '</ul>';
 	}
 	if($sexlist) {
-		$task['result'] .= '<p>为您找到异性热门会员，赶快加为好友吧：</p>';
+		$task['result'] .= '<p>為您找到異性熱門會員，趕快加為好友吧：</p>';
 		$task['result'] .= '<ul class="avatar_list">';
 		foreach ($sexlist as $key => $value) {
 			$task['result'] .= '<li>
 				<div class="avatar48"><a href="space.php?uid='.$value['uid'].'" target="_blank">'.avatar($value['uid'], 'small').'</a></div>
 				<p><a href="space.php?uid='.$value['uid'].'" target="_blank">'.$_SN[$value['uid']].'</a></p>
-				<p><a href="cp.php?ac=friend&op=add&uid='.$value['uid'].'" id="a_sex_friend_'.$key.'" onclick="ajaxmenu(event, this.id, 1)">加为好友</a></p>
+				<p><a href="cp.php?ac=friend&op=add&uid='.$value['uid'].'" id="a_sex_friend_'.$key.'" onclick="ajaxmenu(event, this.id, 1)">加為好友</a></p>
 				</li>';
 		}
 		$task['result'] .= '</ul>';
@@ -109,14 +109,14 @@ if(empty($nones)) {
 
 } else {
 
-	//任务完成向导
+	//任務完成嚮導
 	$task['guide'] = '
-		<strong>您还有以下个人资料项需要补充完整：</strong><br>
+		<strong>您還有以下個人資料項需要補充完整：</strong><br>
 		<span style="color:red;">'.implode('<br>', $nones).'</span><br><br>
-		<strong>请按照以下的说明来完成本任务：</strong>
+		<strong>請按照以下的說明來完成本任務：</strong>
 		<ul>
-		<li><a href="cp.php?ac=profile" target="_blank">新窗口打开个人资料设置页面</a>；</li>
-		<li>在新打开的设置页面中，将上述个人资料补充完整。</li>
+		<li><a href="cp.php?ac=profile" target="_blank">新窗口打開個人資料設置頁面</a>；</li>
+		<li>在新打開的設置頁面中，將上述個人資料補充完整。</li>
 		</ul>';
 
 }

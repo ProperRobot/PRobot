@@ -9,8 +9,8 @@
 
 	<div class="tabs_header">
 		<ul class="tabs">
-			<li$actives[view]><a href="admincp.php?ac=eventclass"><span>浏览全部分类</span></a></li>
-			<li class="null"><a href="admincp.php?ac=eventclass&op=add">添加新活动分类</a></li>
+			<li$actives[view]><a href="admincp.php?ac=eventclass"><span>瀏覽全部分類</span></a></li>
+			<li class="null"><a href="admincp.php?ac=eventclass&op=add">添加新活動分類</a></li>
 		</ul>
 	</div>
 		
@@ -23,29 +23,29 @@
 
 		<table cellspacing="0" cellpadding="0" class="formtable">
 			<tr>
-				<th style="width:15em;">分类名称</th>
+				<th style="width:15em;">分類名稱</th>
 				<td><input type="text" name="classname" value="$thevalue[classname]"></td>
 			</tr>
 			<tr>
-				<th>默认海报</th>
+				<th>默認海報</th>
 				<td>
-					活动发起者发起此类型的活动时如果没有上传海报则默认使用此海报 <br />
-					<img id="posterview" class="poster" src="$thevalue[poster]?v=$_SGLOBAL[timestamp]" alt="默认海报" onerror="this.src='image/event/default.jpg'" />
-					<a href="#" onclick="$('posterview').src='image/event/default.jpg'; $('delposter').value='1'; return false;">删除</a>
+					活動發起者發起此類型的活動時如果沒有上傳海報則默認使用此海報 <br />
+					<img id="posterview" class="poster" src="$thevalue[poster]?v=$_SGLOBAL[timestamp]" alt="默認海報" onerror="this.src='image/event/default.jpg'" />
+					<a href="#" onclick="$('posterview').src='image/event/default.jpg'; $('delposter').value='1'; return false;">刪除</a>
 					<br />
 					<input type="hidden" id="delposter" name="delposter" value="0" />
 					<input type="file" name="poster" value="">
 				</td>
 			</tr>
 			<tr>
-				<th>默认模板</th>
+				<th>默認模板</th>
 				<td>
-					建议活动发起者发起此类型的活动时按此内容模板填写活动介绍 <br />
+					建議活動發起者發起此類型的活動時按此內容模板填寫活動介紹 <br />
 					<textarea name="template" rows="8" cols="80">$thevalue[template]</textarea>
 				</td>
 			</tr>
 			<tr>
-				<th>显示顺序</th>
+				<th>顯示順序</th>
 				<td>
 					<input type="text" name="displayorder" value="$thevalue[displayorder]" />
 				</td>
@@ -63,11 +63,11 @@
 <!--{elseif "delete" == $_GET['op']}-->
 
 		<div class="topactions">
-			该活动分类删除后，请选择该活动分类下面已有的活动会归类到那个新活动分类。
+			該活動分類刪除後，請選擇該活動分類下面已有的活動會歸類到那個新活動分類。
 		</div>
 		<table cellspacing="0" cellpadding="0" class="formtable">
 			<tr>
-				<th width="150">活动分类下的新归类</th>
+				<th width="150">活動分類下的新歸類</th>
 				<td>
 				<select name="newclassid">
 				<!--{loop $list $key $value}-->
@@ -83,7 +83,7 @@
 
 	<div class="footactions">
 		<input type="hidden" name="classid" value="$thevalue[classid]" />
-		<input type="submit" name="deletesubmit" value="确认" class="submit">
+		<input type="submit" name="deletesubmit" value="確認" class="submit">
 	</div>
 
 	</form>
@@ -92,10 +92,10 @@
 
 		<table cellspacing="0" cellpadding="0" class="formtable">
 			<tr>
-				<th>名称</th>
-				<th>设置海报</th>
-				<th>设置模板</th>
-				<th>显示顺序</th>
+				<th>名稱</th>
+				<th>設置海報</th>
+				<th>設置模板</th>
+				<th>顯示順序</th>
 				<th width="80">操作</th>
 			</tr>
 			<!--{loop $list $key=>$value}-->
@@ -105,8 +105,8 @@
 				<td><!--{if empty($value[template])}-->否<!--{else}-->是<!--{/if}--></td>
 				<td><input type="text" name="displayorder[$key]" value="$value[displayorder]" size="5"></td>
 				<td width="80">
-				<a href="admincp.php?ac=eventclass&op=edit&classid=$key">编辑</a> |
-				<a onclick="return confirm('确认删除？');" href="admincp.php?ac=eventclass&op=delete&classid=$key">删除</a></td>
+				<a href="admincp.php?ac=eventclass&op=edit&classid=$key">編輯</a> |
+				<a onclick="return confirm('確認刪除？');" href="admincp.php?ac=eventclass&op=delete&classid=$key">刪除</a></td>
 			</tr>
 			<!--{/loop}-->
 		</table>

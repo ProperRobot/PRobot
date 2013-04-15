@@ -4,7 +4,7 @@
 
 	<!--{if !$frombuy}-->
 	<h1>使用道具</h1>
-	<a class="float_del" title="关闭" href="javascript:hideMenu();">关闭</a>
+	<a class="float_del" title="關閉" href="javascript:hideMenu();">關閉</a>
 	<!--{/if}-->
 	<div class="toolly popupmenu_inner" id="__magicuse_form_$mid">
 		<form method="post" id="magicuse_form_$mid" action="magic.php?mid=$mid&idtype=$idtype&id=$id">
@@ -14,22 +14,22 @@
 			<div class="magic_info">
 				<h3>$magic[name]</h3>
 				<p class="gray">$magic[description]</p>
-				<p>拥有个数: $usermagic[count]</p>
+				<p>擁有個數: $usermagic[count]</p>
 				<div>
-					<h4>设置红包</h4>
+					<h4>設置紅包</h4>
 					<p>
-						您当前积分数为：$space[credit]
+						您當前積分數為：$space[credit]
 					</p>
-					<label for="credit">总积分数：</label>
+					<label for="credit">總積分數：</label>
 					<input type="text" name="credit" id="credit" size="4" maxlength="4">
-					<font class="gray">不能超过当前积分数</font>
+					<font class="gray">不能超過當前積分數</font>
 					<br />
-					<label for="chunk">每份积分：</label>
+					<label for="chunk">每份積分：</label>
 					<input type="text" name="chunk" id="chunk" size="4" maxlength="3">
-					<font class="gray">不能超过 $magic[custom][maxchunk]</font>
+					<font class="gray">不能超過 $magic[custom][maxchunk]</font>
 					<!--{if $leftcredit}-->
 					<p style="color:#00663A; font-size:11px; padding:10px 0;">
-						提示：您上次埋下的红包还剩余 $leftcredit 个积分，将在此次红包设置后返还给您
+						提示：您上次埋下的紅包還剩餘 $leftcredit 個積分，將在此次紅包設置後返還給您
 					</p>
 					<!--{/if}-->
 				</div>

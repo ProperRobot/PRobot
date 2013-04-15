@@ -9,25 +9,25 @@
 	<div class="bdrcontent">
 	
 		<div class="title">
-			<h3>数据备份</h3>
+			<h3>數據備份</h3>
 		</div>
 		
 		<table cellspacing="0" cellpadding="0" class="formtable">
 			<tr>
-				<th colspan="2"><input type="radio" name="type" value="uchomes" checked onclick="$('showtables').style.display='none'">UCenter Home 全部数据</th>
+				<th colspan="2"><input type="radio" name="type" value="uchomes" checked onclick="$('showtables').style.display='none'">UCenter Home 全部數據</th>
 			</tr>
 			<tr>
-				<th><input type="radio" name="type" value="custom" onclick="$('showtables').style.display=''">自定义备份</th>
-				<td>根据需要自行选择需要备份的数据表</td>
+				<th><input type="radio" name="type" value="custom" onclick="$('showtables').style.display=''">自定義備份</th>
+				<td>根據需要自行選擇需要備份的數據表</td>
 			</tr>
 			<tr>
-				<td colspan="2" align="right"><input type="checkbox"  onclick="$('advanceoption').style.display=$('advanceoption').style.display == 'none' ? '' : 'none'; this.value = this.value == 1 ? 0 : 1; this.checked = this.value == 1 ? false : true" value="1">更多选项</td>
+				<td colspan="2" align="right"><input type="checkbox"  onclick="$('advanceoption').style.display=$('advanceoption').style.display == 'none' ? '' : 'none'; this.value = this.value == 1 ? 0 : 1; this.checked = this.value == 1 ? false : true" value="1">更多選項</td>
 			</tr>
 		</table>
 		
 		<div id="showtables" style="display:none">
 		<table cellspacing="0" cellpadding="0" class="formtable">
-		<tr><td><input type="checkbox" name="chkall" onclick="checkAll(this.form, 'customtables')" checked>全选 <strong>UCenter Home表</strong></td>
+		<tr><td><input type="checkbox" name="chkall" onclick="checkAll(this.form, 'customtables')" checked>全選 <strong>UCenter Home表</strong></td>
 		</table>
 		<table cellspacing="0" cellpadding="0" class="formtable">
 		<tr>
@@ -43,32 +43,32 @@
 		
 		<table cellspacing="0" cellpadding="0" class="formtable">
 		<tr>
-		<th>备份方式</th>
+		<th>備份方式</th>
 		</tr>
 		<tr>
-		<td><input type="radio" name="method" value="shell" $shelldisabled onclick="if($dbversion < '4.1'){if(this.form.sqlcompat[2].checked==true) this.form.sqlcompat[0].checked=true; this.form.sqlcompat[2].disabled=true; this.form.sizelimit.disabled=true;} else {this.form.sqlcharset[0].checked=true; for(var i=1; i<=5; i++) {if(this.form.sqlcharset[i]) this.form.sqlcharset[i].disabled=true;}}">系统 MySQL Dump (Shell) 备份</td>
+		<td><input type="radio" name="method" value="shell" $shelldisabled onclick="if($dbversion < '4.1'){if(this.form.sqlcompat[2].checked==true) this.form.sqlcompat[0].checked=true; this.form.sqlcompat[2].disabled=true; this.form.sizelimit.disabled=true;} else {this.form.sqlcharset[0].checked=true; for(var i=1; i<=5; i++) {if(this.form.sqlcharset[i]) this.form.sqlcharset[i].disabled=true;}}">系統 MySQL Dump (Shell) 備份</td>
 		</tr>
 		<tr>
-		<td><input type="radio" name="method" value="multivol" checked onclick="this.form.sqlcompat[2].disabled=false; this.form.sizelimit.disabled=false; for(var i=1; i<=5; i++) {if(this.form.sqlcharset[i]) this.form.sqlcharset[i].disabled=false;}">UCenter Home 分卷备份: 文件长度限制 <input type="text" size="5" value="2048" name="sizelimit"> kb</td>
+		<td><input type="radio" name="method" value="multivol" checked onclick="this.form.sqlcompat[2].disabled=false; this.form.sizelimit.disabled=false; for(var i=1; i<=5; i++) {if(this.form.sqlcharset[i]) this.form.sqlcharset[i].disabled=false;}">UCenter Home 分卷備份: 文件長度限制 <input type="text" size="5" value="2048" name="sizelimit"> kb</td>
 		</tr>
 		</table>
 	
 		<table cellspacing="0" cellpadding="0" class="formtable">
 		<tr>
-		<th colspan="2">备份选项</th>
+		<th colspan="2">備份選項</th>
 		</tr>
 			<tr>
-				<th>使用扩展插入</th>
+				<th>使用擴展插入</th>
 				<td><input type="radio" value="1" name="extendins" checked>是 <input type="radio" value="0" name="extendins" checked>否</td>
 			</tr>
 			<tr>
-				<th>建表语句格式</th>
-				<td><input type="radio" value="" name="sqlcompat" checked>默认(MySQL$dbversion) <input type="radio" value="MYSQL40" name="sqlcompat">MySQL 3.23/4.0.x  <input type="radio" value="MYSQL41" name="sqlcompat">MySQL 4.1.x/5.x </td>
+				<th>建表語句格式</th>
+				<td><input type="radio" value="" name="sqlcompat" checked>默認(MySQL$dbversion) <input type="radio" value="MYSQL40" name="sqlcompat">MySQL 3.23/4.0.x  <input type="radio" value="MYSQL41" name="sqlcompat">MySQL 4.1.x/5.x </td>
 			</tr>
 			<tr>
-				<th>强制字符集</th>
+				<th>強制字符集</th>
 				<td>
-				<input class="radio" type="radio" name="sqlcharset" value="" checked>默认($_SC['dbcharset'])&nbsp;
+				<input class="radio" type="radio" name="sqlcharset" value="" checked>默認($_SC['dbcharset'])&nbsp;
 				<!--{if $_SC['dbcharset']}-->
 				<input class="radio" type="radio" name="sqlcharset" value="$_SC[dbcharset]">$_SC['dbcharset']&nbsp;
 				<!--{/if}-->
@@ -78,15 +78,15 @@
 				</td>
 			</tr>
 			<tr>
-				<th>十六进制方式</th>
+				<th>十六進制方式</th>
 				<td><input type="radio" value="1" name="usehex" checked>是 <input type="radio" value="0" name="usehex" checked>否</td>
 			</tr>
 			<tr $zipdisplay>
-				<th>压缩备份文件</th>
-				<td><input type="radio" value="1" name="usezip">多分卷压缩成一个文件 <input type="radio" value="2" name="usezip">每个分卷压缩成单独文件 <input type="radio" value="0" name="usezip" checked>不压缩</td>
+				<th>壓縮備份文件</th>
+				<td><input type="radio" value="1" name="usezip">多分卷壓縮成一個文件 <input type="radio" value="2" name="usezip">每個分卷壓縮成單獨文件 <input type="radio" value="0" name="usezip" checked>不壓縮</td>
 			</tr>
 			<tr>
-				<th>备份文件名</th>
+				<th>備份文件名</th>
 				<td><input type="text" size="40" value="$filename" name="filename">.sql</td>
 			</tr>
 		</table>
@@ -107,11 +107,11 @@
 	<div class="bdrcontent">
 	
 		<div class="title">
-			<h3>数据恢复</h3>
+			<h3>數據恢復</h3>
 		</div>
 			
 		<table cellspacing="0" cellpadding="0" class="formtable">
-			<tr><td>服务器备份文件名: ./data/<input type="text" name="datafile" value="$backupdir/" size="50"></td></tr>
+			<tr><td>服務器備份文件名: ./data/<input type="text" name="datafile" value="$backupdir/" size="50"></td></tr>
 		</table>
 	</div>
 	<div class="footactions">
@@ -127,7 +127,7 @@
 	<div class="bdrcontent">
 	
 		<div class="title">
-			<h3>数据备份记录</h3>
+			<h3>數據備份記錄</h3>
 		</div>
 		
 		<table cellspacing="0" cellpadding="0" class="formtable">
@@ -135,7 +135,7 @@
 		<th width="4%">&nbsp;</th>
 		<th>文件名</th>
 		<th width="15%">版本</th>
-		<th width="15%">类型</th>
+		<th width="15%">類型</th>
 		<th width="10%">操作</th>
 		</tr>
 		<!--{loop $exportlog $key $value}-->
@@ -150,22 +150,22 @@
 		<!--{elseif $value['method'] == 'multivol'}-->
 		SHELL
 		<!--{else}-->
-		压缩
+		壓縮
 		<!--{/if}-->
 		<!--{if !empty($value['volume'])}-->
 		($value['volume'])
 		<!--{/if}-->
 		</td>
 		<td>$value[version]</td>
-		<td><!--{if $value['type'] == 'custom'}-->自定义备份<!--{else}-->全部备份<!--{/if}--></td>
+		<td><!--{if $value['type'] == 'custom'}-->自定義備份<!--{else}-->全部備份<!--{/if}--></td>
 		<td>
 		<!--{if $value['type'] == 'zip'}-->
-		<a href="admincp.php?ac=backup&op=import&do=zip&datafile=$value[filename]">[解压]
+		<a href="admincp.php?ac=backup&op=import&do=zip&datafile=$value[filename]">[解壓]
 		<!--{else}-->
 			<!--{if $value['version'] != $x_ver}-->
-			<a href="admincp.php?ac=backup&op=import&do=import&datafile=$value[filename]"  onclick="return confirm('确定导入?');">[导入]</a>
+			<a href="admincp.php?ac=backup&op=import&do=import&datafile=$value[filename]"  onclick="return confirm('確定導入?');">[導入]</a>
 			<!--{else}-->
-			<a href="admincp.php?ac=backup&op=import&do=import&datafile=$value[filename]">[导入]</a>
+			<a href="admincp.php?ac=backup&op=import&do=import&datafile=$value[filename]">[導入]</a>
 			<!--{/if}-->
 		<!--{/if}-->
 		</td>
@@ -175,8 +175,8 @@
 	</div>
 
 	<div class="footactions">
-		<input type="checkbox" name="chkall" onclick="checkAll(this.form, 'delexport')">全选
-		<input type="submit" name="delexportsubmit" value="批量删除" class="submit">
+		<input type="checkbox" name="chkall" onclick="checkAll(this.form, 'delexport')">全選
+		<input type="submit" name="delexportsubmit" value="批量刪除" class="submit">
 	</div>
 
 	</form>
@@ -186,15 +186,15 @@
 	<form method="get" action="admincp.php" name="thevalueform">
 	<div class="bdrcontent">
 		<div class="title">
-			<h3>导入确认</h3>
+			<h3>導入確認</h3>
 		</div>
 		
 		<p>
 		<!--{eval echo basename($datafile)}--><br />
-		导入版本:$identify[1]<br />
-		导入类型:<!--{if $identify[2] == 'custom'}-->自定义备份<!--{else}-->全部备份<!--{/if}--><br />
+		導入版本:$identify[1]<br />
+		導入類型:<!--{if $identify[2] == 'custom'}-->自定義備份<!--{else}-->全部備份<!--{/if}--><br />
 		方式:<!--{if $identify[3] == 'multivol'}-->多卷<!--{else}-->Shell<!--{/if}--><br />
-		<br />确定导入吗?
+		<br />確定導入嗎?
 		</p>
 	</div>
 	
@@ -204,7 +204,7 @@
 		<input type="hidden" name="do" value="zip">
 		<input type="hidden" name="datafile" value="$datafile">
 		<input type="hidden" name="confirm" value="yes">
-		<input type="submit" name="confirmed" value="继续" class="submit">
+		<input type="submit" name="confirmed" value="繼續" class="submit">
 		<input type="button" value="返回" onClick="location.href='admincp.php?ac=backup'">
 	</div>
 	</form>
@@ -214,10 +214,10 @@
 	<form method="get" action="admincp.php" name="thevalueform">
 	<div class="bdrcontent">
 		<div class="title">
-			<h3>自动导入确认</h3>
+			<h3>自動導入確認</h3>
 		</div>
 		
-		<p>所有分卷文件解压缩完毕，您需要自动导入备份吗？导入后解压缩的文件将会被删除。</p>
+		<p>所有分卷文件解壓縮完畢，您需要自動導入備份嗎？導入後解壓縮的文件將會被刪除。</p>
 
 	</div>
 	
@@ -227,7 +227,7 @@
 		<input type="hidden" name="do" value="import">
 		<input type="hidden" name="datafile" value="$datafile_vol1">
 		<input type="hidden" name="delunzip" value="yes">
-		<input type="submit" name="confirmed" value="继续" class="submit">
+		<input type="submit" name="confirmed" value="繼續" class="submit">
 		<input type="button" value="返回" onClick="location.href='admincp.php?ac=backup'">
 	</div>
 	</form>
@@ -237,10 +237,10 @@
 	<form method="get" action="admincp.php" name="thevalueform">
 	<div class="bdrcontent">
 		<div class="title">
-			<h3>继续解压确认</h3>
+			<h3>繼續解壓確認</h3>
 		</div>
 		
-		<p>$info<br />备份文件解压缩完毕，您需要自动解压缩其他的分卷文件吗？</p>
+		<p>$info<br />備份文件解壓縮完畢，您需要自動解壓縮其他的分卷文件嗎？</p>
 	</div>
 	
 	<div class="footactions">
@@ -250,7 +250,7 @@
 		<input type="hidden" name="multivol" value="1">
 		<input type="hidden" name="datafile_vol1" value="$datafile">
 		<input type="hidden" name="confirm" value="yes">
-		<input type="submit" name="confirmed" value="继续" class="submit">
+		<input type="submit" name="confirmed" value="繼續" class="submit">
 		<input type="button" value="返回" onClick="location.href='admincp.php?ac=backup'" class="submit">
 	</div>
 	</form>
@@ -260,15 +260,15 @@
 	<form method="get" action="admincp.php" name="thevalueform">
 	<div class="bdrcontent">
 		<div class="title">
-			<h3>自动导入备份确认</h3>
+			<h3>自動導入備份確認</h3>
 		</div>
 		
 		<p>
 		<!--{eval echo basename($datafile)}--><br />
-		导入版本:$identify[1]<br />
-		导入类型:<!--{if $identify[2] == 'custom'}-->自定义备份<!--{else}-->全部备份<!--{/if}--><br />
+		導入版本:$identify[1]<br />
+		導入類型:<!--{if $identify[2] == 'custom'}-->自定義備份<!--{else}-->全部備份<!--{/if}--><br />
 		方式:<!--{if $identify[3] == 'multivol'}-->多卷<!--{else}-->Shell<!--{/if}--><br />
-		<br />备份文件解压缩完毕，您需要自动导入备份吗？导入后解压缩的文件将会被删除
+		<br />備份文件解壓縮完畢，您需要自動導入備份嗎？導入後解壓縮的文件將會被刪除
 		</p>
 	</div>
 	
@@ -278,7 +278,7 @@
 		<input type="hidden" name="do" value="import">
 		<input type="hidden" name="datafile" value="$backupdir/$importfile">
 		<input type="hidden" name="delunzip" value="yes">
-		<input type="submit" name="confirmed" value="继续" class="submit">
+		<input type="submit" name="confirmed" value="繼續" class="submit">
 		<input type="button" value="返回" onClick="location.href='admincp.php?ac=backup'" class="submit">
 	</div>
 	</form>
@@ -287,10 +287,10 @@
 	<form method="get" action="admincp.php" name="thevalueform">
 	<div class="bdrcontent">
 		<div class="title">
-			<h3>自动导入备份确认</h3>
+			<h3>自動導入備份確認</h3>
 		</div>
 		
-		<p>分卷数据成功导入数据库，您需要自动导入本次其他的备份吗？</p>
+		<p>分卷數據成功導入數據庫，您需要自動導入本次其他的備份嗎？</p>
 	</div>
 	
 	<div class="footactions">
@@ -302,7 +302,7 @@
 		<!--{if isset($_GET['unzip'])}-->
 		<input type="hidden" name="delunzip" value="yes">
 		<!--{/if}-->
-		<input type="submit" name="confirmed" value="继续" class="submit">
+		<input type="submit" name="confirmed" value="繼續" class="submit">
 		<input type="button" value="返回" onClick="location.href='admincp.php?ac=backup'" class="submit">
 	</div>
 	</form>

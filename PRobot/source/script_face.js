@@ -1,4 +1,4 @@
-//显示表情菜单
+//顯示表情菜單
 function showFace(showid, target) {
 	var div = $('uchome_face_bg');
 	if(div) {
@@ -37,7 +37,7 @@ function showFace(showid, target) {
 		faceDiv.appendChild(faceul);
 		$('append_parent').appendChild(faceDiv)
 	}
-	//定位菜单
+	//定位菜單
 	setMenuPosition(showid, 0);
 	div.style.display = '';
 }

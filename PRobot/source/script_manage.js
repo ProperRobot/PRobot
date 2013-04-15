@@ -16,7 +16,7 @@ function wall_add(cid, result) {
 		if($('comment_message')) {
 			$('comment_message').value= '';
 		}
-		//提示获得积分
+		//提示獲得積分
 		showreward();
 	}
 }
@@ -33,11 +33,11 @@ function share_add(sid, result) {
 		obj.insertBefore(newli, obj.firstChild);
 		$('share_link').value = 'http://';
 		$('share_general').value = '';
-		//提示获得积分
+		//提示獲得積分
 		showreward();
 	}
 }
-//添加评论
+//添加評論
 function comment_add(id, result) {
 	if(result) {
 		var obj = $('comment_ul');
@@ -63,11 +63,11 @@ function comment_add(id, result) {
 			var b = a + 1;
 			$('comment_replynum').innerHTML = b + '';
 		}
-		//提示获得积分
+		//提示獲得積分
 		showreward();
 	}
 }
-//编辑
+//編輯
 function comment_edit(id, result) {
 	if(result) {
 		var ids = explode('_', id);
@@ -79,7 +79,7 @@ function comment_edit(id, result) {
 		});
 	}
 }
-//删除
+//刪除
 function comment_delete(id, result) {
 	if(result) {
 		var ids = explode('_', id);
@@ -93,7 +93,7 @@ function comment_delete(id, result) {
 		}
 	}
 }
-//删除feed
+//刪除feed
 function feed_delete(id, result) {
 	if(result) {
 		var ids = explode('_', id);
@@ -103,7 +103,7 @@ function feed_delete(id, result) {
 	}
 }
 
-//删除分享
+//刪除分享
 function share_delete(id, result) {
 	if(result) {
 		var ids = explode('_', id);
@@ -112,7 +112,7 @@ function share_delete(id, result) {
 		obj.style.display = "none";
 	}
 }
-//删除好友
+//刪除好友
 function friend_delete(id, result) {
 	if(result) {
 		var ids = explode('_', id);
@@ -123,7 +123,7 @@ function friend_delete(id, result) {
 		if(obj2 != null) obj2.style.display = "none";
 	}
 }
-//更改分组
+//更改分組
 function friend_changegroup(id, result) {
 	if(result) {
 		var ids = explode('_', id);
@@ -135,7 +135,7 @@ function friend_changegroup(id, result) {
 		});
 	}
 }
-//更改分组名
+//更改分組名
 function friend_changegroupname(id, result) {
 	if(result) {
 		var ids = explode('_', id);
@@ -177,11 +177,11 @@ function post_add(pid, result) {
 			var b = a + 1;
 			$('post_replynum').innerHTML = b + '';
 		}
-		//提示获得积分
+		//提示獲得積分
 		showreward();
 	}
 }
-//编辑回帖
+//編輯回帖
 function post_edit(id, result) {
 	if(result) {
 		var ids = explode('_', id);
@@ -194,7 +194,7 @@ function post_edit(id, result) {
 		});
 	}
 }
-//删除回帖
+//刪除回帖
 function post_delete(id, result) {
 	if(result) {
 		var ids = explode('_', id);
@@ -218,33 +218,33 @@ function poke_send(id, result) {
 		if($('poke_'+ uid)) {
 			$('poke_'+ uid).style.display = "none";
 		}
-		//提示获得积分
+		//提示獲得積分
 		showreward();
 	}
 }
-//好友请求
+//好友請求
 function myfriend_post(id, result) {
 	if(result) {
 		var ids = explode('_', id);
 		var uid = ids[1];
-		$('friend_'+uid).innerHTML = '<p>你们现在是好友了，接下来，您还可以：<a href="space.php?uid='+uid+'#comment" target="_blank">给TA留言</a> ，或者 <a href="cp.php?ac=poke&op=send&uid='+uid+'" id="a_poke_'+uid+'" onclick="ajaxmenu(event, this.id, 1)">打个招呼</a></p>';
+		$('friend_'+uid).innerHTML = '<p>你們現在是好友了，接下來，您還可以：<a href="space.php?uid='+uid+'#comment" target="_blank">給TA留言</a> ，或者 <a href="cp.php?ac=poke&op=send&uid='+uid+'" id="a_poke_'+uid+'" onclick="ajaxmenu(event, this.id, 1)">打個招呼</a></p>';
 	}
 }
-//删除好友请求
+//刪除好友請求
 function myfriend_ignore(id) {
 	var ids = explode('_', id);
 	var uid = ids[1];
 	$('friend_tbody_'+uid).style.display = "none";
 }
 
-//加入群组
+//加入群組
 function mtag_join(tagid, result) {
 	if(result) {
 		location.reload();
 	}
 }
 
-//选择图片
+//選擇圖片
 function picView(albumid) {
 	if(albumid == 'none') {
 		$('albumpic_body').innerHTML = '';
@@ -252,7 +252,7 @@ function picView(albumid) {
 		ajaxget('do.php?ac=ajax&op=album&id='+albumid+'&ajaxdiv=albumpic_body', 'albumpic_body');
 	}
 }
-//删除重发邮件
+//刪除重發郵件
 function resend_mail(id, result) {
 	if(result) {
 		var ids = explode('_', id);
@@ -262,7 +262,7 @@ function resend_mail(id, result) {
 	}
 }
 
-//设置应用不可见
+//設置應用不可見
 function userapp_delete(id, result) {
 	if(result) {
 		var ids = explode('_', id);
@@ -271,7 +271,7 @@ function userapp_delete(id, result) {
 	}
 }
 
-//do评论
+//do評論
 function docomment_get(id, result) {
 	if(result) {
 		var ids = explode('_', id);
@@ -289,7 +289,7 @@ function docomment_get(id, result) {
 				docomment_colse(doid);
 			}
 		}
-		//提示获得积分
+		//提示獲得積分
 		showreward();
 	}
 }
@@ -301,7 +301,7 @@ function docomment_colse(doid) {
 	$(showid).style.display = 'none';
 	$(showid).style.className = '';
 
-	$(opid).innerHTML = '回复';
+	$(opid).innerHTML = '回復';
 	$(opid).onclick = function() {
 		docomment_get(showid, 1);
 	}
@@ -321,7 +321,7 @@ function docomment_form_close(doid, id) {
 	$(showid).innerHTML = '';
 }
 
-//feed评论
+//feed評論
 function feedcomment_get(feedid, result) {
 	var showid = 'feedcomment_'+feedid;
 	var opid = 'feedcomment_a_op_'+feedid;
@@ -351,12 +351,12 @@ function feedcomment_add(id, result) {
 		obj.appendChild(newli);
 
 		$('feedmessage_'+cid).value= '';
-		//提示获得积分
+		//提示獲得積分
 		showreward();
 	}
 }
 
-//关闭评论
+//關閉評論
 function feedcomment_close(feedid) {
 	var showid = 'feedcomment_'+feedid;
 	var opid = 'feedcomment_a_op_'+feedid;
@@ -364,7 +364,7 @@ function feedcomment_close(feedid) {
 	$(showid).style.display = 'none';
 	$(showid).style.className = '';
 
-	$(opid).innerHTML = '评论';
+	$(opid).innerHTML = '評論';
 	$(opid).onclick = function() {
 		feedcomment_get(feedid);
 	}
@@ -377,7 +377,7 @@ function feed_post_result(feedid, result) {
 	}
 }
 
-//显示更多动态
+//顯示更多動態
 function feed_more_show(feedid) {
 	var showid = 'feed_more_'+feedid;
 	var opid = 'feed_a_more_'+feedid;
@@ -397,13 +397,13 @@ function feed_more_close(feedid) {
 
 	$(showid).style.display = 'none';
 
-	$(opid).innerHTML = '&raquo; 更多动态';
+	$(opid).innerHTML = '&raquo; 更多動態';
 	$(opid).onclick = function() {
 		feed_more_show(feedid);
 	}
 }
 
-//发布投票
+//發佈投票
 function poll_post_result(id, result) {
 	if(result) {
 		var aObj = $('__'+id).getElementsByTagName("a");
@@ -411,18 +411,18 @@ function poll_post_result(id, result) {
 	}
 }
 
-//点评之后
+//點評之後
 function show_click(id) {
 	var ids = id.split('_');
 	var idtype = ids[1];
 	var id = ids[2];
 	var clickid = ids[3];
 	ajaxget('cp.php?ac=click&op=show&clickid='+clickid+'&idtype='+idtype+'&id='+id, 'click_div');
-	//提示获得积分
+	//提示獲得積分
 	showreward();
 }
 
-//feed菜单
+//feed菜單
 function feed_menu(feedid, show) {
 	var obj = $('a_feed_menu_'+feedid);
 	if(obj) {
@@ -442,7 +442,7 @@ function feed_menu(feedid, show) {
 	}
 }
 
-//填写生日
+//填寫生日
 function showbirthday(){
 	$('birthday').length=0;
 	for(var i=0;i<28;i++){
@@ -468,19 +468,19 @@ function showbirthday(){
 	}
 }
 /**
- * 插入涂鸦
- * @param String fid: 要关闭的层ID
- * @param String oid: 要插入到对象的目标ID
- * @param String url: 涂鸦文件的地址
- * @param String tid: 切换标签ID
- * @param String from: 涂鸦从哪来的
- * @return 没有返回值
+ * 插入塗鴉
+ * @param String fid: 要關閉的層ID
+ * @param String oid: 要插入到對象的目標ID
+ * @param String url: 塗鴉文件的地址
+ * @param String tid: 切換標籤ID
+ * @param String from: 塗鴉從哪來的
+ * @return 沒有返回值
  */
 function setDoodle(fid, oid, url, tid, from) {
 	if(tid == null) {
 		hideMenu();
 	} else {
-		//用于两标签切换用
+		//用於兩標籤切換用
 		$(tid).style.display = '';
 		$(fid).style.display = 'none';
 	}
@@ -500,12 +500,12 @@ function selCommentTab(hid, sid) {
 }
 
 
-//文字闪烁
+//文字閃爍
 function magicColor(elem, t) {
-	t = t || 10;//最多尝试
+	t = t || 10;//最多嘗試
 	elem = (elem && elem.constructor == String) ? $(elem) : elem;
 	if(!elem){
-		setTimeout(function(){magicColor(elem, t-1);}, 400);//如果没有加载完成，推迟
+		setTimeout(function(){magicColor(elem, t-1);}, 400);//如果沒有加載完成，推遲
 		return;
 	}
 	if(window.mcHandler == undefined) {
@@ -523,7 +523,7 @@ function magicColor(elem, t) {
 	}
 }
 
-//隐私密码
+//隱私密碼
 function passwordShow(value) {
 	if(value==4) {
 		$('span_password').style.display = '';
@@ -537,7 +537,7 @@ function passwordShow(value) {
 	}
 }
 
-//隐私特定好友
+//隱私特定好友
 function getgroup(gid) {
 	if(gid) {
 		var x = new Ajax();

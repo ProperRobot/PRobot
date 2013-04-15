@@ -28,7 +28,7 @@ function edit_save() {
 	backupContent($('uchome-ttHtmlEditor').value);
 }
 
-//获取关键字
+//獲取關鍵字
 function relatekw() {
 	edit_save();
 	var subject = cnCode($('subject').value);
@@ -89,13 +89,13 @@ function backupContent(sHTML) {
 	}
 }
 
-//向编辑器插入代码
+//向編輯器插入代碼
 function edit_insert(html) {
 	var p = window.frames['uchome-ifrHtmlEditor'];
 	var obj = p.window.frames['HtmlEditor'];
 	var status = p.document.getElementById('uchome-editstatus').value;
 	if(status != 'html') {
-		alert('本操作只在多媒体编辑模式下才有效');
+		alert('本操作只在多媒體編輯模式下才有效');
 		return;
 	}
 	obj.focus();
@@ -110,7 +110,7 @@ function edit_insert(html) {
 	}
 }
 
-//插入图片
+//插入圖片
 function insertImage(image) {
 	edit_insert('<p><img src="'+image+'"></p>');
 }

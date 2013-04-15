@@ -4,7 +4,7 @@
 
 	<!--{if !$frombuy}-->
 	<h1>使用道具</h1>
-	<a class="float_del" title="关闭" href="javascript:hideMenu();">关闭</a>
+	<a class="float_del" title="關閉" href="javascript:hideMenu();">關閉</a>
 	<!--{/if}-->
 	<div class="toolly" id="__magicuse_form_$mid">
 		<form method="post" id="magicuse_form_$mid" action="magic.php?mid=$mid&idtype=$idtype&id=$id">
@@ -14,7 +14,7 @@
 			<div class="magic_info">
 				<h3>$magic[name]</h3>
 				<p class="gray">$magic[description]</p>
-				<p>拥有个数: $usermagic[count]</p>
+				<p>擁有個數: $usermagic[count]</p>
 				<p class="btn_line">
 					<input type="hidden" name="formhash" value="<!--{eval echo formhash()}-->" />
 					<input type="hidden" name="refer" value="$_SGLOBAL[refer]"/>
@@ -29,7 +29,7 @@
 	<div style="width:340px;">
 		<!--{if $list}-->
 		<p>
-			用户最近使用的道具
+			用戶最近使用的道具
 		</p>
 		<ul>
 			<!--{loop $list $value}-->
@@ -43,7 +43,7 @@
 			<!--{/loop}-->
 		</ul>
 		<!--{else}-->
-		<p>该用户最近没有使用任何道具</p>
+		<p>該用戶最近沒有使用任何道具</p>
 		<!--{/if}-->
 	</div>
 <!--{/if}-->

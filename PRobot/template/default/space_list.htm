@@ -14,16 +14,16 @@
 				<img src="image/videophoto.gif" align="absmiddle">
 				<!--{/if}-->
 			</h2>
-			<!--{if $value[sex]==2}--><p>美女</p><!--{elseif $value[sex]==1}--><p>帅哥</p><!--{/if}--></p>
+			<!--{if $value[sex]==2}--><p>美女</p><!--{elseif $value[sex]==1}--><p>帥哥</p><!--{/if}--></p>
 			<p>
-				<!--{if $_GET['view']=='show'}-->竞价<!--{/if}-->积分：$value[credit] / <!--{if $value[experience]}-->经验：$value[experience] / <!--{/if}-->人气：$value[viewnum] / 好友：$value[friendnum]</p>
+				<!--{if $_GET['view']=='show'}-->競價<!--{/if}-->積分：$value[credit] / <!--{if $value[experience]}-->經驗：$value[experience] / <!--{/if}-->人氣：$value[viewnum] / 好友：$value[friendnum]</p>
 			<!--{if $value[note]}-->$value[note]<!--{/if}-->
 		</td>
 		<td width="100">
 			<ul class="line_list">
-				<li><a href="space.php?uid=$value[uid]">去串个门</a></li>
-				<li><a href="cp.php?ac=poke&op=send&uid=$value[uid]" id="a_poke_$key" onclick="ajaxmenu(event, this.id, 1)" title="打招呼">打个招呼</a></li>
-				<!--{if isset($value['isfriend']) && !$value['isfriend']}--><li><a href="cp.php?ac=friend&op=add&uid=$value[uid]" id="a_friend_$key" onclick="ajaxmenu(event, this.id, 1)" title="加好友">加为好友</a></li><!--{/if}-->	
+				<li><a href="space.php?uid=$value[uid]">去串個門</a></li>
+				<li><a href="cp.php?ac=poke&op=send&uid=$value[uid]" id="a_poke_$key" onclick="ajaxmenu(event, this.id, 1)" title="打招呼">打個招呼</a></li>
+				<!--{if isset($value['isfriend']) && !$value['isfriend']}--><li><a href="cp.php?ac=friend&op=add&uid=$value[uid]" id="a_friend_$key" onclick="ajaxmenu(event, this.id, 1)" title="加好友">加為好友</a></li><!--{/if}-->	
 			</ul>
 		</td>
 	</tr>
@@ -31,7 +31,7 @@
 	<!--{/loop}-->
 	<div class="page">$multi</div>
 	<!--{else}-->
-	<div class="c_form">没有相关成员。</div>
+	<div class="c_form">沒有相關成員。</div>
 	<!--{/if}-->
 	</div>
 

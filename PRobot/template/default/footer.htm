@@ -11,7 +11,7 @@
 
 	<div id="footer">
 		<!--{if $_TPL['templates']}-->
-		<div class="chostlp" title="切换风格"><img id="chostlp" src="{$_TPL['default_template']['icon']}" onmouseover="showMenu(this.id)" alt="{$_TPL['default_template']['name']}" /></div>
+		<div class="chostlp" title="切換風格"><img id="chostlp" src="{$_TPL['default_template']['icon']}" onmouseover="showMenu(this.id)" alt="{$_TPL['default_template']['name']}" /></div>
 		<ul id="chostlp_menu" class="chostlp_drop" style="display: none">
 		<!--{loop $_TPL['templates'] $value}-->
 			<li><a href="cp.php?ac=common&op=changetpl&name=$value[name]" title="$value[name]"><img src="$value[icon]" alt="$value[name]" /></a></li>
@@ -29,12 +29,12 @@
 			
 		<!--{if $_SCONFIG['close']}-->
 		<p style="color:blue;font-weight:bold;">
-			提醒：当前站点处于关闭状态
+			提醒：當前站點處於關閉狀態
 		</p>
 		<!--{/if}-->
 		<p>
 			$_SCONFIG[sitename] - 
-			<a href="mailto:$_SCONFIG[adminemail]">联系我们</a>
+			<a href="mailto:$_SCONFIG[adminemail]">聯繫我們</a>
 			<!--{if $_SCONFIG['miibeian']}--> - <a  href="http://www.miibeian.gov.cn" target="_blank">$_SCONFIG[miibeian]</a><!--{/if}-->
 		</p>
 		<p>
@@ -61,12 +61,12 @@
 <!--{if $_SGLOBAL[supe_uid]}-->
 <ul id="membernotemenu_menu" class="dropmenu_drop" style="display:none;">
 	<!--{eval $member = $_SGLOBAL['member'];}-->
-	<!--{if $member[notenum]}--><li><img src="image/icon/notice.gif" width="16" alt="" /> <a href="space.php?do=notice"><strong>$member[notenum]</strong> 个新通知</a></li><!--{/if}-->
-	<!--{if $member[pokenum]}--><li><img src="image/icon/poke.gif" alt="" /> <a href="cp.php?ac=poke"><strong>$member[pokenum]</strong> 个新招呼</a></li><!--{/if}-->
-	<!--{if $member[addfriendnum]}--><li><img src="image/icon/friend.gif" alt="" /> <a href="cp.php?ac=friend&op=request"><strong>$member[addfriendnum]</strong> 个好友请求</a></li><!--{/if}-->
-	<!--{if $member[mtaginvitenum]}--><li><img src="image/icon/mtag.gif" alt="" /> <a href="cp.php?ac=mtag&op=mtaginvite"><strong>$member[mtaginvitenum]</strong> 个群组邀请</a></li><!--{/if}-->
-	<!--{if $member[eventinvitenum]}--><li><img src="image/icon/event.gif" alt="" /> <a href="cp.php?ac=event&op=eventinvite"><strong>$member[eventinvitenum]</strong> 个活动邀请</a></li><!--{/if}-->
-	<!--{if $member[myinvitenum]}--><li><img src="image/icon/userapp.gif" alt="" /> <a href="space.php?do=notice&view=userapp"><strong>$member[myinvitenum]</strong> 个应用消息</a></li><!--{/if}-->
+	<!--{if $member[notenum]}--><li><img src="image/icon/notice.gif" width="16" alt="" /> <a href="space.php?do=notice"><strong>$member[notenum]</strong> 個新通知</a></li><!--{/if}-->
+	<!--{if $member[pokenum]}--><li><img src="image/icon/poke.gif" alt="" /> <a href="cp.php?ac=poke"><strong>$member[pokenum]</strong> 個新招呼</a></li><!--{/if}-->
+	<!--{if $member[addfriendnum]}--><li><img src="image/icon/friend.gif" alt="" /> <a href="cp.php?ac=friend&op=request"><strong>$member[addfriendnum]</strong> 個好友請求</a></li><!--{/if}-->
+	<!--{if $member[mtaginvitenum]}--><li><img src="image/icon/mtag.gif" alt="" /> <a href="cp.php?ac=mtag&op=mtaginvite"><strong>$member[mtaginvitenum]</strong> 個群組邀請</a></li><!--{/if}-->
+	<!--{if $member[eventinvitenum]}--><li><img src="image/icon/event.gif" alt="" /> <a href="cp.php?ac=event&op=eventinvite"><strong>$member[eventinvitenum]</strong> 個活動邀請</a></li><!--{/if}-->
+	<!--{if $member[myinvitenum]}--><li><img src="image/icon/userapp.gif" alt="" /> <a href="space.php?do=notice&view=userapp"><strong>$member[myinvitenum]</strong> 個應用消息</a></li><!--{/if}-->
 </ul>
 <!--{/if}-->
 

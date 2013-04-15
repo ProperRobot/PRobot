@@ -1,4 +1,4 @@
-<!--{eval $_TPL['titles'] = array($mtag['tagname'], $mtag['title'], '成员');}-->
+<!--{eval $_TPL['titles'] = array($mtag['tagname'], $mtag['title'], '成員');}-->
 <!--{template header}-->
 
 <h2 class="title">
@@ -7,14 +7,14 @@
 </h2>
 <div class="tabs_header">
 	<ul class="tabs">
-		<li><a href="space.php?do=mtag&tagid=$mtag[tagid]"><span>首页</span></a></li>
-		<li><a href="space.php?do=mtag&tagid=$mtag[tagid]&view=list"><span>讨论区</span></a></li>
-		<li><a href="space.php?do=mtag&tagid=$mtag[tagid]&view=digest"><span>精华区</span></a></li>
+		<li><a href="space.php?do=mtag&tagid=$mtag[tagid]"><span>首頁</span></a></li>
+		<li><a href="space.php?do=mtag&tagid=$mtag[tagid]&view=list"><span>討論區</span></a></li>
+		<li><a href="space.php?do=mtag&tagid=$mtag[tagid]&view=digest"><span>精華區</span></a></li>
 		<!--{if $eventnum}-->
-		<li><a href="space.php?do=mtag&tagid=$mtag[tagid]&view=event"><span>群组活动</span></a></li>
+		<li><a href="space.php?do=mtag&tagid=$mtag[tagid]&view=event"><span>群組活動</span></a></li>
 		<!--{/if}-->
-		<li class="active"><a href="space.php?do=mtag&tagid=$mtag[tagid]&view=member"><span>成员列表</span></a></li>
-		<!--{if $mtag['allowpost']}--><li class="null"><a href="cp.php?ac=thread&tagid=$tagid">发起新话题</a></li><!--{/if}-->
+		<li class="active"><a href="space.php?do=mtag&tagid=$mtag[tagid]&view=member"><span>成員列表</span></a></li>
+		<!--{if $mtag['allowpost']}--><li class="null"><a href="cp.php?ac=thread&tagid=$tagid">發起新話題</a></li><!--{/if}-->
 	</ul>
 </div>
 
@@ -29,13 +29,13 @@ function searchFriend() {
 <table cellpadding="0" cellspacing="0" width="100%">
 	<tr>
 		<td>
-			成员列表
-			<!--{if $mtag[grade]>=8}--><span class="pipe">|</span><a href="cp.php?ac=mtag&op=manage&tagid=$mtag[tagid]&subop=members">成员批量管理</a><!--{/if}-->
+			成員列表
+			<!--{if $mtag[grade]>=8}--><span class="pipe">|</span><a href="cp.php?ac=mtag&op=manage&tagid=$mtag[tagid]&subop=members">成員批量管理</a><!--{/if}-->
 			</td>
 		<td align="right">
 			<table cellspacing="0" cellpadding="0">
 				<tr>
-					<td style="padding: 0;"><input type="text" id="key" name="key" value="搜索成员" onfocus="if(this.value=='搜索成员')this.value='';" class="t_input" tabindex="1" style="width: 160px; border-right: none;" /></td>
+					<td style="padding: 0;"><input type="text" id="key" name="key" value="搜索成員" onfocus="if(this.value=='搜索成員')this.value='';" class="t_input" tabindex="1" style="width: 160px; border-right: none;" /></td>
 					<td style="padding: 0;"><a href="javascript:searchFriend();"><img src="image/search_btn.gif" alt="搜索" /></a></td>
 				</tr>
 			</table>
@@ -65,35 +65,35 @@ function searchFriend() {
 							<h6>
 								<a href="space.php?uid=$value[uid]">{$_SN[$value[uid]]}</a>
 								<!--{if $value['videostatus']}-->
-								<img src="image/videophoto.gif" align="absmiddle"> <span class="gray">已通过视频认证</span>
+								<img src="image/videophoto.gif" align="absmiddle"> <span class="gray">已通過視頻認證</span>
 								<!--{/if}-->
 							</h6>
 							<p class="l_status">
 							<!--{if $mtag[grade]>=8}-->
-								<a href="cp.php?ac=mtag&op=manage&subop=member&tagid=$mtag[tagid]&uid=$value[uid]" id="a_mod_$key" onclick="ajaxmenu(event, this.id, 1)" class="r_option" style="padding-left:0.5em;">管理该成员</a>
+								<a href="cp.php?ac=mtag&op=manage&subop=member&tagid=$mtag[tagid]&uid=$value[uid]" id="a_mod_$key" onclick="ajaxmenu(event, this.id, 1)" class="r_option" style="padding-left:0.5em;">管理該成員</a>
 							<!--{/if}-->
 								<span class="r_option gray" id="mtag_member_$value[uid]">
 								<!--{if $value[grade]==9}-->群主
 								<!--{elseif $value[grade]==8}-->副群主
 								<!--{elseif $value[grade]==1}-->明星
 								<!--{elseif $value[grade]==-1}-->禁言
-								<!--{elseif $value[grade]==-2}-->待审核<!--{/if}-->
+								<!--{elseif $value[grade]==-2}-->待審核<!--{/if}-->
 								</span>
-								<a href="cp.php?ac=friend&op=add&uid=$value[uid]" id="a_friend_$key" onclick="ajaxmenu(event, this.id, 1)">加为好友</a>
-								<span class="pipe">|</span><a href="cp.php?ac=pm&uid=$value[uid]" id="a_pm_$key" onclick="ajaxmenu(event, this.id, 1)">发短消息</a>
+								<a href="cp.php?ac=friend&op=add&uid=$value[uid]" id="a_friend_$key" onclick="ajaxmenu(event, this.id, 1)">加為好友</a>
+								<span class="pipe">|</span><a href="cp.php?ac=pm&uid=$value[uid]" id="a_pm_$key" onclick="ajaxmenu(event, this.id, 1)">發短消息</a>
 								<span class="pipe">|</span><a href="cp.php?ac=poke&op=send&uid=$value[uid]" id="a_poke_$key" onclick="ajaxmenu(event, this.id, 1)">打招呼</a>
 							</p>
 							
 							<!--{if $ols[$value[uid]]}-->
-							<p><span class="gray">动作：</span><!--{date('m-d H:i',$ols[$value[uid]],1)}--></p>
+							<p><span class="gray">動作：</span><!--{date('m-d H:i',$ols[$value[uid]],1)}--></p>
 							<!--{/if}-->
 
 							<!--{if $value[resideprovince] || $value[residecity]}-->
-							<p><span class="gray">地区：</span><a href="cp.php?ac=friend&op=search&resideprovince=$value[p]&residecity=&searchmode=1">$value[resideprovince]</a> <a href="cp.php?ac=friend&op=search&resideprovince=$value[p]&residecity=$value[c]&searchmode=1">$value[residecity]</a></p>
+							<p><span class="gray">地區：</span><a href="cp.php?ac=friend&op=search&resideprovince=$value[p]&residecity=&searchmode=1">$value[resideprovince]</a> <a href="cp.php?ac=friend&op=search&resideprovince=$value[p]&residecity=$value[c]&searchmode=1">$value[residecity]</a></p>
 							<!--{/if}-->
 	
 							<!--{if $value[note]}-->
-							<p><span class="gray">状态：</span>$value[note]</p>
+							<p><span class="gray">狀態：</span>$value[note]</p>
 							<!--{/if}-->
 
 						</td>
@@ -104,7 +104,7 @@ function searchFriend() {
 		<!--{/loop}-->
 	</table>
 	<!--{else}-->
-	<div class="c_form">没有找到可浏览的成员信息。</div>
+	<div class="c_form">沒有找到可瀏覽的成員信息。</div>
 	<!--{/if}-->
 </div>
 

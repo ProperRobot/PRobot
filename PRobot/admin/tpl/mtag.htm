@@ -7,69 +7,69 @@
 	<div class="block style4">
 		
 		<table cellspacing="3" cellpadding="3">
-		<tr><th>群组名*</th><td><input type="text" name="tagname" value="$_GET[tagname]"></td>
-			<th>指定群组ID</th>
+		<tr><th>群組名*</th><td><input type="text" name="tagname" value="$_GET[tagname]"></td>
+			<th>指定群組ID</th>
 			<td>
 				<input type="text" name="tagid" value="$_GET[tagid]" />
 			</td>
 		</tr>
 		
 		<tr>
-			<th>是否锁定</th><td>
+			<th>是否鎖定</th><td>
 			<select name="close">
 			<option value="">不限制</option>
-			<option value="1"<!--{if $_GET[close]==1}--> selected<!--{/if}-->>锁定</option>
+			<option value="1"<!--{if $_GET[close]==1}--> selected<!--{/if}-->>鎖定</option>
 			</select>
 			</td>
-			<th>是否推荐</th><td>
+			<th>是否推薦</th><td>
 			<select name="recommend">
 			<option value="">不限制</option>
-			<option value="1"<!--{if $_GET[recommend]==1}--> selected<!--{/if}-->>推荐</option>
+			<option value="1"<!--{if $_GET[recommend]==1}--> selected<!--{/if}-->>推薦</option>
 			</select>
 			</td>
 		</tr>
 		
 		<tr>
 			
-			<th>加入权限</th>
+			<th>加入權限</th>
 			<td>
 				<select name="joinperm">
 					<option value="">全部</option>
-					<option value="0"$joinperms[0]>公开</option>
-					<option value="1"$joinperms[1]>审核</option>
+					<option value="0"$joinperms[0]>公開</option>
+					<option value="1"$joinperms[1]>審核</option>
 					<option value="2"$joinperms[2]>私密</option>
 				</select>
 			</td>
-			<th>浏览权限</th>
+			<th>瀏覽權限</th>
 			<td>
 				<select name="viewperm">
 					<option value="">全部</option>
-					<option value="0"$viewperms[0]>公开</option>
-					<option value="1"$viewperms[1]>封闭</option>
+					<option value="0"$viewperms[0]>公開</option>
+					<option value="1"$viewperms[1]>封閉</option>
 				</select>
 			</td>
 		</tr>
 		<tr>
 			
-			<th>发帖权限</th>
+			<th>發帖權限</th>
 			<td>
 				<select name="threadperm">
 					<option value="">全部</option>
-					<option value="0"$threadperms[0]>仅成员可发话题</option>
-					<option value="1"$threadperms[1]>所有人可以发话题</option>
+					<option value="0"$threadperms[0]>僅成員可發話題</option>
+					<option value="1"$threadperms[1]>所有人可以發話題</option>
 				</select>
 			</td>
-			<th>回帖权限</th>
+			<th>回帖權限</th>
 			<td>
 				<select name="postperm">
 					<option value="">全部</option>
-					<option value="0"$postperms[0]>仅成员可回帖</option>
+					<option value="0"$postperms[0]>僅成員可回帖</option>
 					<option value="1"$postperms[1]>所有人可以回帖</option>
 				</select>
 			</td>
 		</tr>
 		<tr>
-			<th>归属栏目</th><td colspan="3">
+			<th>歸屬欄目</th><td colspan="3">
 			<select name="fieldid">
 			<option value="">全部</option>
 			<!--{loop $_SGLOBAL[profield] $value}-->
@@ -78,35 +78,35 @@
 			</select>
 			</td>
 		</tr>
-		<tr><th>用户数</th><td colspan="3">
+		<tr><th>用戶數</th><td colspan="3">
 			<input type="text" name="membernum1" value="$_GET[membernum1]" size="10"> ~
 			<input type="text" name="membernum2" value="$_GET[membernum2]" size="10">
 		</td></tr>
-		<tr><th>话题数</th><td colspan="3">
+		<tr><th>話題數</th><td colspan="3">
 			<input type="text" name="threadnum1" value="$_GET[threadnum1]" size="10"> ~
 			<input type="text" name="threadnum2" value="$_GET[threadnum2]" size="10">
 		</td></tr>
-		<tr><th>回帖数</th><td colspan="3">
+		<tr><th>回帖數</th><td colspan="3">
 			<input type="text" name="postnum1" value="$_GET[postnum1]" size="10"> ~
 			<input type="text" name="postnum2" value="$_GET[postnum2]" size="10">
 		</td></tr>
 	
-		<tr><th>结果排序</th>
+		<tr><th>結果排序</th>
 		<td colspan="3">
 		<select name="orderby">
-		<option value="">默认排序</option>
-		<option value="membernum"$orderby[membernum]>成员数</option>
-		<option value="threadnum"$orderby[threadnum]>话题数</option>
-		<option value="postnum"$orderby[postnum]>回帖数</option>
+		<option value="">默認排序</option>
+		<option value="membernum"$orderby[membernum]>成員數</option>
+		<option value="threadnum"$orderby[threadnum]>話題數</option>
+		<option value="postnum"$orderby[postnum]>回帖數</option>
 		</select>
 		<select name="ordersc">
-		<option value="desc"$ordersc[desc]>递减</option>
-		<option value="asc"$ordersc[asc]>递增</option>
+		<option value="desc"$ordersc[desc]>遞減</option>
+		<option value="asc"$ordersc[asc]>遞增</option>
 		</select>
 		<select name="perpage">
-		<option value="20"$perpages[20]>每页显示20个</option>
-		<option value="50"$perpages[50]>每页显示50个</option>
-		<option value="100"$perpages[100]>每页显示100个</option>
+		<option value="20"$perpages[20]>每頁顯示20個</option>
+		<option value="50"$perpages[50]>每頁顯示50個</option>
+		<option value="100"$perpages[100]>每頁顯示100個</option>
 		</select>
 		<input type="hidden" name="ac" value="mtag">
 		<input type="submit" name="searchsubmit" value="搜索" class="submit">
@@ -125,25 +125,25 @@
 	<div class="bdrcontent">
 	<table cellspacing="0" cellpadding="0" class="formtable">
 	<tr>
-		<th>群组名</th>
-		<th>分类</th>
-		<th width="80">用户数</th>
-		<th width="80">话题数</th>
-		<th width="80">回帖数</th>
+		<th>群組名</th>
+		<th>分類</th>
+		<th width="80">用戶數</th>
+		<th width="80">話題數</th>
+		<th width="80">回帖數</th>
 		<th width="100">群主</th>
 	</tr>
 	<!--{loop $list $value}-->
 	<tr>
 		<td><input type="<!--{if $managebatch}-->checkbox<!--{else}-->radio<!--{/if}-->" name="ids[]" value="$value[tagid]">
 		<a href="space.php?do=mtag&tagid=$value[tagid]" target="_blank">$value[tagname]</a>
-			<!--{if $value[close]}-->(<a href="admincp.php?ac=mtag&close=$value[close]">锁定</a>)<!--{/if}-->
-			<!--{if $value[recommend]}-->(<a href="admincp.php?ac=mtag&recommend=$value[recommend]">推荐</a>)<!--{/if}-->
+			<!--{if $value[close]}-->(<a href="admincp.php?ac=mtag&close=$value[close]">鎖定</a>)<!--{/if}-->
+			<!--{if $value[recommend]}-->(<a href="admincp.php?ac=mtag&recommend=$value[recommend]">推薦</a>)<!--{/if}-->
 		</td>
 		<td><a href="admincp.php?ac=mtag&fieldid=$value[fieldid]">{$_SGLOBAL[profield][$value[fieldid]][title]}</a></td>
 		<td>$value[membernum]</td>
 		<td>$value[threadnum]</td>
 		<td>$value[postnum]</td>
-		<td>[<a href="cp.php?ac=mtag&op=manage&tagid=$value[tagid]&subop=base" target="_blank">群组管理</a>]</td>
+		<td>[<a href="cp.php?ac=mtag&op=manage&tagid=$value[tagid]&subop=base" target="_blank">群組管理</a>]</td>
 	</tr>
 	<!--{/loop}-->
 	</table>
@@ -152,30 +152,30 @@
 	<div class="footactions" style="text-align:left;line-height:2.5em;">
 		<input type="hidden" name="mpurl" value="$mpurl">
 		<!--{if $managebatch}-->
-		<input type="checkbox" id="chkall" name="chkall" onclick="checkAll(this.form, 'ids')">全选 &nbsp; 请选择操作类型：<br>
+		<input type="checkbox" id="chkall" name="chkall" onclick="checkAll(this.form, 'ids')">全選 &nbsp; 請選擇操作類型：<br>
 		<!--{/if}-->
-		<input type="radio" name="optype" value="delete"> 删除(群组里面的帖子也会删除)<br>
-		<input type="radio" name="optype" value="close"> 锁定
-		<input type="radio" name="optype" value="open"> 取消锁定<br>
-		<input type="radio" name="optype" value="recommend"> 推荐
-		<input type="radio" name="optype" value="unrecommend"> 取消推荐
+		<input type="radio" name="optype" value="delete"> 刪除(群組裡面的帖子也會刪除)<br>
+		<input type="radio" name="optype" value="close"> 鎖定
+		<input type="radio" name="optype" value="open"> 取消鎖定<br>
+		<input type="radio" name="optype" value="recommend"> 推薦
+		<input type="radio" name="optype" value="unrecommend"> 取消推薦
 		<br>
-		<input type="radio" name="optype" value="move"> 转移到新分类:
+		<input type="radio" name="optype" value="move"> 轉移到新分類:
 			<select name="move_newfieldid">
 			<!--{loop $_SGLOBAL[profield] $value}-->
 			<option value="$value[fieldid]">$value[title]</option>
 			<!--{/loop}-->
 			</select>
 		<br>
-		<input type="radio" name="optype" value="merge"> 合并到其他群组:
+		<input type="radio" name="optype" value="merge"> 合併到其他群組:
 			<select name="merge_newfieldid">
 			<!--{loop $_SGLOBAL[profield] $value}-->
 			<option value="$value[fieldid]">$value[title]</option>
 			<!--{/loop}-->
 			</select>
-			群组名：<input type="text" name="newtagname" value="" size="5">
+			群組名：<input type="text" name="newtagname" value="" size="5">
 		<br>
-		<input type="submit" name="opsubmit" value="执行操作" onclick="return confirm('本操作不可恢复，确认继续？');" class="submit">
+		<input type="submit" name="opsubmit" value="執行操作" onclick="return confirm('本操作不可恢復，確認繼續？');" class="submit">
 	
 		<div class="pages">$multi</div>
 	</div>
@@ -183,7 +183,7 @@
 	</form>
 <!--{else}-->
 	<div class="bdrcontent">
-		<p>指定条件下还没有数据</p>
+		<p>指定條件下還沒有數據</p>
 	</div>
 <!--{/if}-->
 </div>

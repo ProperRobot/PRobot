@@ -1,4 +1,4 @@
-<!--{eval $_TPL['titles'] = array($mtag['tagname'], $mtag['title'], '活动');}-->
+<!--{eval $_TPL['titles'] = array($mtag['tagname'], $mtag['title'], '活動');}-->
 <!--{template header}-->
 
 <h2 class="title">
@@ -7,14 +7,14 @@
 </h2>
 <div class="tabs_header">
 	<ul class="tabs">
-		<li><a href="space.php?do=mtag&tagid=$mtag[tagid]"><span>首页</span></a></li>
-		<li><a href="space.php?do=mtag&tagid=$mtag[tagid]&view=list"><span>讨论区</span></a></li>
-		<li><a href="space.php?do=mtag&tagid=$mtag[tagid]&view=digest"><span>精华区</span></a></li>		
+		<li><a href="space.php?do=mtag&tagid=$mtag[tagid]"><span>首頁</span></a></li>
+		<li><a href="space.php?do=mtag&tagid=$mtag[tagid]&view=list"><span>討論區</span></a></li>
+		<li><a href="space.php?do=mtag&tagid=$mtag[tagid]&view=digest"><span>精華區</span></a></li>		
 		<!--{if $eventnum}-->
-		<li class="active"><a href="space.php?do=mtag&tagid=$mtag[tagid]&view=event"><span>群组活动</span></a></li>
+		<li class="active"><a href="space.php?do=mtag&tagid=$mtag[tagid]&view=event"><span>群組活動</span></a></li>
 		<!--{/if}-->
-		<li><a href="space.php?do=mtag&tagid=$mtag[tagid]&view=member"><span>成员列表</span></a></li>
-		<!--{if $mtag['allowpost']}--><li class="null"><a href="cp.php?ac=thread&tagid=$tagid">发起新话题</a></li><!--{/if}-->
+		<li><a href="space.php?do=mtag&tagid=$mtag[tagid]&view=member"><span>成員列表</span></a></li>
+		<!--{if $mtag['allowpost']}--><li class="null"><a href="cp.php?ac=thread&tagid=$tagid">發起新話題</a></li><!--{/if}-->
 	</ul>
 </div>
 
@@ -34,23 +34,23 @@
 				<h4 class="event_title"><a href="space.php?do=event&id=$event[eventid]">$event[title]</a><span class="gray">[<!--{$_SGLOBAL[eventclass][$event[classid]][classname]}-->]</span></h4>
 				<ul>
 					<li>
-						<span class="gray">活动时间:</span> 	<!--{eval echo sgmdate("n月d日 G:i", $event[starttime])}--> - <!--{eval echo sgmdate("n月d日 G:i", $event[endtime])}-->
+						<span class="gray">活動時間:</span> 	<!--{eval echo sgmdate("n月d日 G:i", $event[starttime])}--> - <!--{eval echo sgmdate("n月d日 G:i", $event[endtime])}-->
 						<!--{if $event[grade] == 0}-->
-						<span class="event_state"> 待审核</span>
+						<span class="event_state"> 待審核</span>
 						<!--{/if}-->
 						<!--{if $event[endtime]<$_SGLOBAL[timestamp]}-->
-						<span class="event_state"> 已结束</span>
+						<span class="event_state"> 已結束</span>
 						<!--{elseif $event[deadline]<$_SGLOBAL[timestamp]}-->
-						<span class="event_state"> 报名截止</span>
+						<span class="event_state"> 報名截止</span>
 						<!--{/if}-->						
 					</li>
-					<li><span class="gray">活动地点:</span>
+					<li><span class="gray">活動地點:</span>
 						<a href="space.php?uid=$_GET[uid]&do=event&view=$view&type=$type&classid=$_GET[classid]&province=$event[province]&date=$_GET[date]">$event[province]</a>
 						<a href="space.php?uid=$_GET[uid]&do=event&view=$view&type=$type&classid=$_GET[classid]&province=$event[province]&city=$event[city]&date=$_GET[date]">$event[city]</a>
 						$event[location]
 					</li>
-					<li><span class="gray">发起人:</span> <a href="space.php?uid=$event[uid]">$_SN[$event[uid]]</a></li>
-					<li style="margin: 5px 0 0;">$event[viewnum] 次查看&nbsp; $event[membernum] 人参加&nbsp; $event[follownum] 人关注</li>
+					<li><span class="gray">發起人:</span> <a href="space.php?uid=$event[uid]">$_SN[$event[uid]]</a></li>
+					<li style="margin: 5px 0 0;">$event[viewnum] 次查看&nbsp; $event[membernum] 人參加&nbsp; $event[follownum] 人關注</li>
 				</ul>
 			</div>
 		</li>
@@ -58,13 +58,13 @@
 		<!--{/loop}-->
 	</ol>
 	<!--{if $hiddencount}-->
-	<div>本页有 $hiddencount 个活动因隐私设置而隐藏</div>
+	<div>本頁有 $hiddencount 個活動因隱私設置而隱藏</div>
 	<!--{/if}-->
 	<div class="page">$multi</div>
 </div>
 <!--{else}-->
 <div class="c_form">	
-	现在还没有群组活动。
+	現在還沒有群組活動。
 </div>
 <!--{/if}-->
 

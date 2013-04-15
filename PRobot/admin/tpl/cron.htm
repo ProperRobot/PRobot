@@ -5,8 +5,8 @@
 
 	<div class="tabs_header">
 		<ul class="tabs">
-			<li$actives[view]><a href="admincp.php?ac=cron"><span>浏览全部</span></a></li>
-			<li class="null"><a href="admincp.php?ac=cron&op=add">添加新计划任务</a></li>
+			<li$actives[view]><a href="admincp.php?ac=cron"><span>瀏覽全部</span></a></li>
+			<li class="null"><a href="admincp.php?ac=cron&op=add">添加新計劃任務</a></li>
 		</ul>
 	</div>
 	
@@ -19,17 +19,17 @@
 	
 	<table cellspacing="0" cellpadding="0" class="formtable">
 	<tr>
-		<th style="width:12em;">任务名</th>
+		<th style="width:12em;">任務名</th>
 		<td><input size="25" name="name" value="$thevalue[name]" type="text">
 		</td></tr>
 	<tr>
-		<th>任务脚本</th>
+		<th>任務腳本</th>
 		<td><input size="25" name="filename" value="$thevalue[filename]" type="text">
-			<br>不能包含路径，程序脚本必须存放于 ./source/cron/ 目录中
+			<br>不能包含路徑，程序腳本必須存放於 ./source/cron/ 目錄中
 		</td></tr>
 	<tr>
 		<th>有效性</th>
-		<td><input type="radio" name="available" value="1"$availables[1]>有效 <input type="radio" name="available" value="0"$availables[0]>无效
+		<td><input type="radio" name="available" value="1"$availables[1]>有效 <input type="radio" name="available" value="0"$availables[0]>無效
 		</td></tr>
 	<tr>
 		<th>星期</th>
@@ -43,7 +43,7 @@
 			<option value="5"$weekdays[5]>星期五</option>
 			<option value="6"$weekdays[6]>星期六</option>
 			</select>
-			<br>本设置会覆盖下面的“日”设定</td></tr>
+			<br>本設置會覆蓋下面的「日」設定</td></tr>
 	<tr>
 		<th>日</th>
 		<td>
@@ -52,14 +52,14 @@
 		$daystr
 		</select></td></tr>
 	<tr>
-		<th>小时</th>
+		<th>小時</th>
 		<td>
 		<select name="hour">
 		<option value="-1">*</option>
 		$hourstr
 		</select></td></tr>
 	<tr>
-		<th>分钟</th>
+		<th>分鐘</th>
 		<td>
 		$minuteselect</td></tr>
 	</table>
@@ -72,17 +72,17 @@
 <!--{else}-->
 	<table cellspacing="0" cellpadding="0" class="formtable">
 	<tr>
-		<th>任务名</th>
-		<th>上次执行/下次执行</th>
+		<th>任務名</th>
+		<th>上次執行/下次執行</th>
 		<th>操作</th>
 	</tr>
 	<!--{loop $list $cron}-->
 	<tr>
 		<td><b>$cron[name]</b><br />$cron[filename]</td>
 		<td>$cron[lastrun]<br>$cron[nextrun]</td>
-		<td><a href="admincp.php?ac=cron&op=edit&cronid=$cron[cronid]">编辑</a>
-		<!--{if $cron['available']}-->&nbsp;|&nbsp;<a href="admincp.php?ac=cron&op=run&cronid=$cron[cronid]">执行</a><!--{/if}-->
-		<!--{if $cron['type']!='system'}-->&nbsp;|&nbsp;<a href="admincp.php?ac=cron&op=delete&cronid=$cron[cronid]">删除</a><!--{/if}-->
+		<td><a href="admincp.php?ac=cron&op=edit&cronid=$cron[cronid]">編輯</a>
+		<!--{if $cron['available']}-->&nbsp;|&nbsp;<a href="admincp.php?ac=cron&op=run&cronid=$cron[cronid]">執行</a><!--{/if}-->
+		<!--{if $cron['type']!='system'}-->&nbsp;|&nbsp;<a href="admincp.php?ac=cron&op=delete&cronid=$cron[cronid]">刪除</a><!--{/if}-->
 		</td>
 	</tr>
 	<!--{/loop}-->

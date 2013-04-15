@@ -5,11 +5,11 @@
 
 	<div class="tabs_header">
 		<ul class="tabs">
-			<li$actives[holdlog]><a href="admincp.php?ac=magiclog&view=holdlog"><span>道具持有记录</span></a></li>
-			<li$actives[inlog]><a href="admincp.php?ac=magiclog&view=inlog"><span>道具获取记录</span></a></li>
-			<li$actives[uselog]><a href="admincp.php?ac=magiclog&view=uselog"><span>道具使用记录</span></a></li>
+			<li$actives[holdlog]><a href="admincp.php?ac=magiclog&view=holdlog"><span>道具持有記錄</span></a></li>
+			<li$actives[inlog]><a href="admincp.php?ac=magiclog&view=inlog"><span>道具獲取記錄</span></a></li>
+			<li$actives[uselog]><a href="admincp.php?ac=magiclog&view=uselog"><span>道具使用記錄</span></a></li>
 			<!--{if $allowmanage}-->
-			<li$actives[storelog]><a href="admincp.php?ac=magiclog&view=storelog"><span>道具出售统计</span></a></li>
+			<li$actives[storelog]><a href="admincp.php?ac=magiclog&view=storelog"><span>道具出售統計</span></a></li>
 			<!--{/if}-->
 		</ul>
 	</div>
@@ -20,9 +20,9 @@
 	<table cellspacing="3" cellpadding="3">
 		<tr>
 			<!--{if $allowmanage}-->
-			<th>用户名</th><td><input type="text" name="username" value="$_GET[username]"></td>
+			<th>用戶名</th><td><input type="text" name="username" value="$_GET[username]"></td>
 			<!--{else}-->
-			<th>用户名</th><td><input type="text" name="username" value="$_SGLOBAL[supe_username]" disabled></td>
+			<th>用戶名</th><td><input type="text" name="username" value="$_SGLOBAL[supe_username]" disabled></td>
 			<!--{/if}-->
 			<th>道具</th>
 			<td>
@@ -46,18 +46,18 @@
 					<option value="100-99999"<!--{if $_GET['count']=='100-99999'}--> selected<!--{/if}-->>100以上</option>
 				</select>
 			</td>
-			<th>获得途径</th>
+			<th>獲得途徑</th>
 			<td>
 				<select name="type">
 					<option value="">不限</option>
-					<option value="1"<!--{if $_GET[type]==1}--> selected<!--{/if}-->>购买</option>
-					<option value="2"<!--{if $_GET[type]==2}--> selected<!--{/if}-->>赠送</option>
-					<option value="3"<!--{if $_GET[type]==3}--> selected<!--{/if}-->>升级</option>
+					<option value="1"<!--{if $_GET[type]==1}--> selected<!--{/if}-->>購買</option>
+					<option value="2"<!--{if $_GET[type]==2}--> selected<!--{/if}-->>贈送</option>
+					<option value="3"<!--{if $_GET[type]==3}--> selected<!--{/if}-->>升級</option>
 				</select>
 			</td>
 		</tr>
 		<tr>
-			<th>记录时间</th>
+			<th>記錄時間</th>
 			<td colspan="3">
 				<script type="text/javascript" src="source/script_calendar.js" charset="$_SC[charset]"></script>
 				<input type="text" name="starttime" value="$_GET[starttime]" onclick="showcalendar(event,this,1)"/> ~
@@ -75,11 +75,11 @@
 	<div class="bdrcontent">
 	<table width="100%">
 		<tr>
-			<th>用户</th>
+			<th>用戶</th>
 			<th>方式</th>
 			<th>道具</th>
-			<th>数量</th>
-			<th>时间</th>
+			<th>數量</th>
+			<th>時間</th>
 		</tr>
 		<!--{loop $list $value}-->
 		<tr>
@@ -88,11 +88,11 @@
 			</td>
 			<td>
 			<!--{if $value[type]==2}-->
-			获赠
+			獲贈
 			<!--{elseif $value[type] == 3}-->
-			升级用户组
+			升級用戶組
 			<!--{else}-->
-			购买
+			購買
 			<!--{/if}-->
 			</td>
 			<td>
@@ -113,7 +113,7 @@
 	</div>
 	<!--{else}-->
 	<div class="bdrcontent">
-	没有指定数据
+	沒有指定數據
 	</div>	
 	<!--{/if}-->
 	
@@ -123,9 +123,9 @@
 	<table cellspacing="3" cellpadding="3">
 		<tr>
 			<!--{if $allowmanage}-->
-			<th>用户名</th><td><input type="text" name="username" value="$_GET[username]"></td>
+			<th>用戶名</th><td><input type="text" name="username" value="$_GET[username]"></td>
 			<!--{else}-->
-			<th>用户名</th><td><input type="text" name="username" value="$_SGLOBAL[supe_username]" disabled></td>
+			<th>用戶名</th><td><input type="text" name="username" value="$_SGLOBAL[supe_username]" disabled></td>
 			<!--{/if}-->
 			<th>道具</th>
 			<td>
@@ -139,26 +139,26 @@
 			</td>
 		</tr>
 		<tr>
-			<th>作用对象类型</th>
+			<th>作用對像類型</th>
 			<td>
 				<select name="idtype">
 					<option value="">不限</option>
-					<option value="blogid"<!--{if $_GET['idtype']=='blogid'}--> selected<!--{/if}-->>日志</option>
-					<option value="tid"<!--{if $_GET['idtype']=='tid'}--> selected<!--{/if}-->>话题</option>
-					<option value="cid"<!--{if $_GET['idtype']=='cid'}--> selected<!--{/if}-->>评论/留言</option>
-					<option value="uid"<!--{if $_GET['idtype']=='uid'}--> selected<!--{/if}-->>空间</option>
-					<option value="picid"<!--{if $_GET['idtype']=='picid'}--> selected<!--{/if}-->>图片</option>
+					<option value="blogid"<!--{if $_GET['idtype']=='blogid'}--> selected<!--{/if}-->>日誌</option>
+					<option value="tid"<!--{if $_GET['idtype']=='tid'}--> selected<!--{/if}-->>話題</option>
+					<option value="cid"<!--{if $_GET['idtype']=='cid'}--> selected<!--{/if}-->>評論/留言</option>
+					<option value="uid"<!--{if $_GET['idtype']=='uid'}--> selected<!--{/if}-->>空間</option>
+					<option value="picid"<!--{if $_GET['idtype']=='picid'}--> selected<!--{/if}-->>圖片</option>
 					<option value="pollid"<!--{if $_GET['idtype']=='pollid'}--> selected<!--{/if}-->>投票</option>
-					<option value="eventid"<!--{if $_GET['idtype']=='eventid'}--> selected<!--{/if}-->>活动</option>
+					<option value="eventid"<!--{if $_GET['idtype']=='eventid'}--> selected<!--{/if}-->>活動</option>
 				</select>
 			</td>
-			<th>作用对象ID</th>
+			<th>作用對像ID</th>
 			<td>
 				<input type="text" name="id" value="$_GET[id]" />
 			</td>
 		</tr>
 		<tr>
-			<th>记录时间</th>
+			<th>記錄時間</th>
 			<td colspan="3">
 				<script type="text/javascript" src="source/script_calendar.js"></script>
 				<input type="text" name="starttime" value="$_GET[starttime]" onclick="showcalendar(event,this,1)"/> ~
@@ -176,9 +176,9 @@
 	<div class="bdrcontent">	
 	<table width="100%">
 		<tr>
-			<th>用户</th>
+			<th>用戶</th>
 			<th>道具</th>
-			<th>时间</th>
+			<th>時間</th>
 		</tr>
 		<!--{loop $list $value}-->
 		<tr>
@@ -200,21 +200,21 @@
 	</div>
 	<!--{else}-->
 	<div class="bdrcontent">
-	没有指定数据
+	沒有指定數據
 	</div>	
 	<!--{/if}-->
 <!--{elseif $_GET['view'] == 'storelog'}-->
 	<!--{if $list}-->	
 	<div class="bdrcontent">
 	<h3>
-		共售出道具 $totalcount 件，回收 $totalcredit 积分
+		共售出道具 $totalcount 件，回收 $totalcredit 積分
 	</h3>
 	<br />
 	<table width="100%">
 		<tr>
 			<th>道具</th>
-			<th>售出数</th>
-			<th>回收积分</th>
+			<th>售出數</th>
+			<th>回收積分</th>
 		</tr>
 		<!--{loop $list $value}-->
 		<tr>
@@ -231,7 +231,7 @@
 	</div>
 	<!--{else}-->
 	<div class="bdrcontent">
-	没有指定数据
+	沒有指定數據
 	</div>	
 	<!--{/if}-->
 <!--{else}-->
@@ -240,11 +240,11 @@
 	<table cellspacing="3" cellpadding="3">
 		<tr>
 			<!--{if $allowmanage}-->
-			<th>用户UID</th><td><input type="text" name="uid" value="$_GET[uid]"></td>
-			<th>用户名</th><td><input type="text" name="username" value="$_GET[username]"></td>
+			<th>用戶UID</th><td><input type="text" name="uid" value="$_GET[uid]"></td>
+			<th>用戶名</th><td><input type="text" name="username" value="$_GET[username]"></td>
 			<!--{else}-->
-			<th>用户UID</th><td><input type="text" name="uid" value="$_SGLOBAL[supe_uid]" disabled></td>
-			<th>用户名</th><td><input type="text" name="username" value="$_GET[username]" disabled></td>
+			<th>用戶UID</th><td><input type="text" name="uid" value="$_SGLOBAL[supe_uid]" disabled></td>
+			<th>用戶名</th><td><input type="text" name="username" value="$_GET[username]" disabled></td>
 			<!--{/if}-->
 		</tr>
 		<tr>
@@ -270,9 +270,9 @@
 	<div class="bdrcontent">	
 	<table width="100%">
 		<tr>
-			<th>用户</th>
+			<th>用戶</th>
 			<th>道具</th>
-			<th>数量</th>
+			<th>數量</th>
 		</tr>
 		<!--{loop $list $value}-->
 		<tr>
@@ -296,7 +296,7 @@
 	</div>
 	<!--{else}-->
 	<div class="bdrcontent">
-	没有指定数据
+	沒有指定數據
 	</div>	
 	<!--{/if}-->
 

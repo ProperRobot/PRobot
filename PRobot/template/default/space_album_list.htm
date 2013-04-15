@@ -1,13 +1,13 @@
-<!--{eval $_TPL['titles'] = array('相册');}-->
-<!--{eval $friendsname = array(1 => '仅好友可见',2 => '指定好友可见',3 => '仅自己可见',4 => '凭密码可见');}-->
+<!--{eval $_TPL['titles'] = array('相冊');}-->
+<!--{eval $friendsname = array(1 => '僅好友可見',2 => '指定好友可見',3 => '僅自己可見',4 => '憑密碼可見');}-->
 
 <!--{template header}-->
 
 <!--{if !empty($_SGLOBAL[inajax])}-->
 	<div id="space_photo">
 		<h3 class="feed_header">
-			<a href="cp.php?ac=upload" class="r_option" target="_blank">上传图片</a>
-			相册(共 $count 个)</h3>
+			<a href="cp.php?ac=upload" class="r_option" target="_blank">上傳圖片</a>
+			相冊(共 $count 個)</h3>
 		<!--{if $count}-->
 		<table cellspacing="4" cellpadding="4" width="100%">
 		<tr>
@@ -15,19 +15,19 @@
 			<td width="85" align="center"><a href="space.php?uid=$space[uid]&do=album&id=$value[albumid]" target="_blank"><img src="$value[pic]" alt="$value[albumname]" width="70" /></a></td>
 			<td width="165">
 				<h6><a href="space.php?uid=$space[uid]&do=album&id=$value[albumid]" target="_blank" title="$value[albumname]">$value[albumname]</a></h6>
-				<p class="gray">$value[picnum] 张照片</p>
-				<p class="gray">更新于 <!--{date('m-d',$value[dateline],1)}--></p>
+				<p class="gray">$value[picnum] 張照片</p>
+				<p class="gray">更新於 <!--{date('m-d',$value[dateline],1)}--></p>
 			</td>
 			<!--{if $key%2==1}--></tr><tr><!--{/if}-->
 			<!--{/loop}-->
 		</tr>
 		</table>
 		<!--{if $pricount}-->
-		<div class="c_form">本页有 $pricount 个相册因作者的隐私设置而隐藏</div>
+		<div class="c_form">本頁有 $pricount 個相冊因作者的隱私設置而隱藏</div>
 		<!--{/if}-->
 		<div class="page">$multi</div>
 		<!--{else}-->
-		<div class="c_form">没有可浏览的列表。</div>
+		<div class="c_form">沒有可瀏覽的列表。</div>
 		<!--{/if}-->
 	</div><br>
 <!--{else}-->
@@ -36,26 +36,26 @@
 <div class="searchbar floatright">
 	<form method="get" action="space.php">
 		<input name="searchkey" value="" size="15" class="t_input" type="text">
-		<input name="searchsubmit" value="搜索相册" class="submit" type="submit">
+		<input name="searchsubmit" value="搜索相冊" class="submit" type="submit">
 		<input type="hidden" name="do" value="album" />
 		<input type="hidden" name="view" value="all" />
 		<input type="hidden" name="orderby" value="dateline" />
 	</form>
 </div>
-<h2 class="title"><img src="image/app/album.gif">相册</h2>
+<h2 class="title"><img src="image/app/album.gif">相冊</h2>
 <div class="tabs_header">
 	<ul class="tabs">
-		<!--{if $space[friendnum]}--><li$actives[we]><a href="space.php?uid=$space[uid]&do=$do&view=we"><span>好友最新相册</span></a></li><!--{/if}-->
-		<li$actives[all]><a href="space.php?uid=$space[uid]&do=$do&view=all"><span>大家的相册</span></a></li>
-		<li$actives[me]><a href="space.php?uid=$space[uid]&do=$do&view=me"><span>我的相册</span></a></li>
-		<li$actives[click]><a href="space.php?uid=$space[uid]&do=$do&view=click"><span>我表态过的图片</span></a></li>
-		<li class="null"><a href="cp.php?ac=upload">上传新图片</a></li>
+		<!--{if $space[friendnum]}--><li$actives[we]><a href="space.php?uid=$space[uid]&do=$do&view=we"><span>好友最新相冊</span></a></li><!--{/if}-->
+		<li$actives[all]><a href="space.php?uid=$space[uid]&do=$do&view=all"><span>大家的相冊</span></a></li>
+		<li$actives[me]><a href="space.php?uid=$space[uid]&do=$do&view=me"><span>我的相冊</span></a></li>
+		<li$actives[click]><a href="space.php?uid=$space[uid]&do=$do&view=click"><span>我表態過的圖片</span></a></li>
+		<li class="null"><a href="cp.php?ac=upload">上傳新圖片</a></li>
 	</ul>
 </div>
 <!--{else}-->
 <!--{eval 
-	$_TPL['spacetitle'] = "相册";
-	$_TPL['spacemenus'][] = "<a href=\"space.php?uid=$space[uid]&do=album&view=me\">TA的所有相册</a>";
+	$_TPL['spacetitle'] = "相冊";
+	$_TPL['spacemenus'][] = "<a href=\"space.php?uid=$space[uid]&do=album&view=me\">TA的所有相冊</a>";
 }-->
 <!--{template space_menu}-->
 <!--{/if}-->
@@ -69,21 +69,21 @@
 
 <!--{if $_GET['orderby'] && $_GET['orderby'] != 'dateline'}-->
 <div class="h_status">
-	排行时间范围：
+	排行時間範圍：
 	<a href="space.php?do=album&view=all&orderby=$_GET[orderby]"{$day_actives[0]}>全部</a><span class="pipe">|</span>
 	<a href="space.php?do=album&view=all&orderby=$_GET[orderby]&day=1"{$day_actives[1]}>最近一天</a><span class="pipe">|</span>
-	<a href="space.php?do=album&view=all&orderby=$_GET[orderby]&day=2"{$day_actives[2]}>最近两天</a><span class="pipe">|</span>
+	<a href="space.php?do=album&view=all&orderby=$_GET[orderby]&day=2"{$day_actives[2]}>最近兩天</a><span class="pipe">|</span>
 	<a href="space.php?do=album&view=all&orderby=$_GET[orderby]&day=7"{$day_actives[7]}>最近七天</a><span class="pipe">|</span>
 	<a href="space.php?do=album&view=all&orderby=$_GET[orderby]&day=30"{$day_actives[30]}>最近三十天</a><span class="pipe">|</span>
-	<a href="space.php?do=album&view=all&orderby=$_GET[orderby]&day=90"{$day_actives[90]}>最近三个月</a><span class="pipe">|</span>
-	<a href="space.php?do=album&view=all&orderby=$_GET[orderby]&day=120"{$day_actives[120]}>最近六个月</a>
+	<a href="space.php?do=album&view=all&orderby=$_GET[orderby]&day=90"{$day_actives[90]}>最近三個月</a><span class="pipe">|</span>
+	<a href="space.php?do=album&view=all&orderby=$_GET[orderby]&day=120"{$day_actives[120]}>最近六個月</a>
 </div>
 <!--{/if}-->
 
 <!--{if $space[self] && $_GET['view']=='me'}-->
 <div class="h_status">
-下面列出的是你自行创建相册列表。<br>
-你在日志、话题等里面上传的图片附件，全部存放在<a href="space.php?uid=$space[uid]&do=album&id=-1">系统默认相册</a>里面。
+下面列出的是你自行創建相冊列表。<br>
+你在日誌、話題等裡面上傳的圖片附件，全部存放在<a href="space.php?uid=$space[uid]&do=album&id=-1">系統默認相冊</a>裡面。
 </div>
 <!--{/if}-->
 	
@@ -91,7 +91,7 @@
 <!--{if $picmode}-->
 
 	<!--{if $pricount}-->
-	<div class="h_status">本页有 $pricount 张图片因作者的隐私设置而隐藏</div>
+	<div class="h_status">本頁有 $pricount 張圖片因作者的隱私設置而隱藏</div>
 	<!--{/if}-->
 	
 	<!--{if $count}-->
@@ -109,17 +109,17 @@
 	</table>
 	<div class="page">$multi</div>
 	<!--{else}-->
-	<div class="c_form">没有可浏览的列表。</div>
+	<div class="c_form">沒有可瀏覽的列表。</div>
 	<!--{/if}-->
 	
 <!--{else}-->
 
 	<!--{if $searchkey}-->
-	<div class="h_status">以下是搜索相册 <span style="color:red;font-weight:bold;">$searchkey</span> 结果列表</div>
+	<div class="h_status">以下是搜索相冊 <span style="color:red;font-weight:bold;">$searchkey</span> 結果列表</div>
 	<!--{/if}-->
 	
 	<!--{if $pricount}-->
-	<div class="h_status">提示：本页有 $pricount 个相册因作者的隐私设置而隐藏</div>
+	<div class="h_status">提示：本頁有 $pricount 個相冊因作者的隱私設置而隱藏</div>
 	<!--{/if}-->
 
 	<!--{if $count}-->
@@ -128,9 +128,9 @@
 		<!--{loop $list $key $value}-->
 		<td style="padding-bottom: 20px;">
 			<div class="album_bg"><a href="space.php?uid=$value[uid]&do=$do&id=$value[albumid]"><img src="$value[pic]" alt="$value[albumname]" /></a></div>
-			<p><a href="space.php?uid=$value[uid]&do=$do&id=$value[albumid]"><!--{if $value[albumname]}-->$value[albumname]<!--{else}-->默认相册<!--{/if}--></a> <!--{if $value[picnum]}--><span class="gray">($value[picnum])</span><!--{/if}--></p>
+			<p><a href="space.php?uid=$value[uid]&do=$do&id=$value[albumid]"><!--{if $value[albumname]}-->$value[albumname]<!--{else}-->默認相冊<!--{/if}--></a> <!--{if $value[picnum]}--><span class="gray">($value[picnum])</span><!--{/if}--></p>
 			<!--{if $_GET[view]!='me'}--><p><a href="space.php?uid=$value[uid]">{$_SN[$value[uid]]}</a></p><!--{/if}-->
-			<!--{if $value[uid]==$_SGLOBAL[supe_uid]}--><p class="gray"><a href="cp.php?ac=album&op=editpic&albumid=$value[albumid]">管理相册</a><span class="pipe">|</span><a href="cp.php?ac=upload&albumid=$value[albumid]">上传图片</a></p><!--{/if}-->
+			<!--{if $value[uid]==$_SGLOBAL[supe_uid]}--><p class="gray"><a href="cp.php?ac=album&op=editpic&albumid=$value[albumid]">管理相冊</a><span class="pipe">|</span><a href="cp.php?ac=upload&albumid=$value[albumid]">上傳圖片</a></p><!--{/if}-->
 			<!--{if $_GET[view]!='me'}--><p class="gray">更新: <!--{date('m-d H:i', $value[updatetime], 1)}--></p><!--{/if}-->
 		</td>
 		<!--{if $key%4==3}--></tr><tr><!--{/if}-->
@@ -139,7 +139,7 @@
 	</table>
 	<div class="page">$multi</div>
 	<!--{else}-->
-	<div class="c_form">没有可浏览的列表。</div>
+	<div class="c_form">沒有可瀏覽的列表。</div>
 	<!--{/if}-->
 	
 <!--{/if}-->
@@ -154,7 +154,7 @@
 	<h3>按好友查看</h3>
 	<ul class="post_list line_list">
 		<li>
-			选择好友:<br>
+			選擇好友:<br>
 			<select name="fuidsel" onchange="fuidgoto(this.value);">
 			<option value="">全部好友</option>
 			<!--{loop $userlist $value}-->
@@ -168,9 +168,9 @@
 
 <!--{if $_GET['view'] == 'click'}-->
 	<div class="cat">
-	<h3>表态动作</h3>
+	<h3>表態動作</h3>
 	<ul class="post_list line_list">
-		<li$click_actives[all]><a href="space.php?do=album&view=click">全部动作</a></li>
+		<li$click_actives[all]><a href="space.php?do=album&view=click">全部動作</a></li>
 		<!--{loop $clicks $value}-->
 		<li{$click_actives[$value[clickid]]}>
 			<a href="space.php?do=album&view=click&clickid=$value[clickid]">$value[name]</a>
@@ -182,9 +182,9 @@
 	<div class="cat">
 	<h3>排行榜</h3>
 	<ul class="post_list line_list">
-		<li$all_actives[all]><a href="space.php?do=album&view=all">热图推荐</a></li>
+		<li$all_actives[all]><a href="space.php?do=album&view=all">熱圖推薦</a></li>
 		<li$all_actives[dateline]><a href="space.php?do=album&view=all&orderby=dateline">最新更新</a></li>
-		<li$all_actives[hot]><a href="space.php?do=album&view=all&orderby=hot&day=$_GET[hotday]">人气排行</a></li>
+		<li$all_actives[hot]><a href="space.php?do=album&view=all&orderby=hot&day=$_GET[hotday]">人氣排行</a></li>
 		<!--{loop $clicks $value}-->
 		<li{$all_actives['click_'.$value[clickid]]}><a href="space.php?do=album&view=all&orderby=click_$value[clickid]&day=$_GET[hotday]">{$value[name]}排行</a></li>
 		<!--{/loop}-->

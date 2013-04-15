@@ -8,99 +8,99 @@
 
 	<div class="bdrcontent">
 	<div class="title">
-		<h3>防灌水设置</h3>
-		<p>您可以选择一些措施，来增加对灌水机的干扰，避免大量垃圾广告信息的产生，但这也会影响到新用户的使用体验。</p>
+		<h3>防灌水設置</h3>
+		<p>您可以選擇一些措施，來增加對灌水機的干擾，避免大量垃圾廣告信息的產生，但這也會影響到新用戶的使用體驗。</p>
 	</div>
 	
 	<table class="formtable">
 	<tr>
-		<th style="width:15em;">自定义登录识别名</th>
+		<th style="width:15em;">自定義登錄識別名</th>
 		<td>
-			<input type="text" name="config[login_action]" value="$configs[login_action]" size="10"> (必须为英文字母)<br>
-			给登录页面设置个性名，可加大灌水机自动登录的难度，如果有必要，可以不定期更改一下。
+			<input type="text" name="config[login_action]" value="$configs[login_action]" size="10"> (必須為英文字母)<br>
+			給登錄頁面設置個性名，可加大灌水機自動登錄的難度，如果有必要，可以不定期更改一下。
 		</td>
 	</tr>
 	<tr>
-		<th>自定义注册识别名</th>
+		<th>自定義註冊識別名</th>
 		<td>
-			<input type="text" name="config[register_action]" value="$configs[register_action]" size="10"> (必须为英文字母)<br>
-			给注册页面设置个性名。注意，不能与登录识别名相同。
+			<input type="text" name="config[register_action]" value="$configs[register_action]" size="10"> (必須為英文字母)<br>
+			給註冊頁面設置個性名。注意，不能與登錄識別名相同。
 		</td>
 	</tr>
 	<tr>
-		<th>页面开启验证码功能</th>
+		<th>頁面開啟驗證碼功能</th>
 		<td>
-			<input type="checkbox" name="config[seccode_login]" value="1"<!--{if $configs[seccode_login]}--> checked<!--{/if}-->>登录页面
-			<input type="checkbox" name="config[seccode_register]" value="1"<!--{if $configs[seccode_register]}--> checked<!--{/if}-->>注册页面
-			<br>说明：<br>对发布日志等发布操作是否开启验证码功能，您需要在<a href="admincp.php?ac=usergroup">用户组管理</a>中，对用户组进行不同的开启设置。
+			<input type="checkbox" name="config[seccode_login]" value="1"<!--{if $configs[seccode_login]}--> checked<!--{/if}-->>登錄頁面
+			<input type="checkbox" name="config[seccode_register]" value="1"<!--{if $configs[seccode_register]}--> checked<!--{/if}-->>註冊頁面
+			<br>說明：<br>對發佈日誌等發佈操作是否開啟驗證碼功能，您需要在<a href="admincp.php?ac=usergroup">用戶組管理</a>中，對用戶組進行不同的開啟設置。
 		</td>
 	</tr>
 	<tr>
-		<th>验证码采用个性提问模式</th>
+		<th>驗證碼採用個性提問模式</th>
 		<td>
-			<input type="radio" name="config[questionmode]" value="1"<!--{if $configs[questionmode] == 1}--> checked<!--{/if}-->>是，使用我自定义的问答（推荐，效果好）
-			<input type="radio" name="config[questionmode]" value="0"<!--{if $configs[questionmode] != '1'}--> checked<!--{/if}-->>否，使用系统验证码图片
+			<input type="radio" name="config[questionmode]" value="1"<!--{if $configs[questionmode] == 1}--> checked<!--{/if}-->>是，使用我自定義的問答（推薦，效果好）
+			<input type="radio" name="config[questionmode]" value="0"<!--{if $configs[questionmode] != '1'}--> checked<!--{/if}-->>否，使用系統驗證碼圖片
 		</td>
 	</tr>
 	<tr>
-		<th>设置个性问题和答案</th>
+		<th>設置個性問題和答案</th>
 		<td id="q_td">
 			<!--{loop $datas[question] $key $value}-->
 			<div style="margin-bottom:0.5em;">
-				问题：<input type="text" name="data[question][]" value="{$datas[question][$key]}" size="20">&nbsp;
+				問題：<input type="text" name="data[question][]" value="{$datas[question][$key]}" size="20">&nbsp;
 				答案：<input type="text" name="data[answer][]" value="{$datas[answer][$key]}" size="20">
 			</div>
 			<!--{/loop}-->
-			<a href="javascript:;" onclick="new_q();">添加新的问答</a> (填写的答案不能为0或者空值)
+			<a href="javascript:;" onclick="new_q();">添加新的問答</a> (填寫的答案不能為0或者空值)
 			<div id="new_div" style="margin-bottom:0.5em;margin-top:0.5em;">
-				问题：<input type="text" name="data[question][]" value="" size="20">&nbsp;
+				問題：<input type="text" name="data[question][]" value="" size="20">&nbsp;
 				答案：<input type="text" name="data[answer][]" value="" size="20">
 			</div>
 		</td>
 	</tr>
 	<tr>
-		<th>强制新用户验证激活邮箱</th>
+		<th>強制新用戶驗證激活郵箱</th>
 		<td>
 			<input type="radio" name="config[need_email]" value="1"<!--{if $configs[need_email] == 1}--> checked<!--{/if}-->>是
 			<input type="radio" name="config[need_email]" value="0"<!--{if $configs[need_email] != '1'}--> checked<!--{/if}-->>否
-			<br>选择是的话，用户必须验证激活自己的邮箱后，才可以进行发布操作。
+			<br>選擇是的話，用戶必須驗證激活自己的郵箱後，才可以進行發佈操作。
 		</td>
 	</tr>
 	<tr>
-		<th>验证激活邮箱唯一性</th>
+		<th>驗證激活郵箱唯一性</th>
 		<td>
 			<input type="radio" name="config[uniqueemail]" value="1"<!--{if $configs[uniqueemail] == 1}--> checked<!--{/if}-->>是
 			<input type="radio" name="config[uniqueemail]" value="0"<!--{if $configs[uniqueemail] != '1'}--> checked<!--{/if}-->>否
-			<br>选择是的话，验证激活的邮箱将唯一性，不允许重复。
+			<br>選擇是的話，驗證激活的郵箱將唯一性，不允許重複。
 		</td>
 	</tr>	
 	<tr>
-		<th>新用户见习时间</th>
+		<th>新用戶見習時間</th>
 		<td>
-			<input type="text" name="config[newusertime]" value="$configs[newusertime]" size="10"> 小时
-			<br>设置新注册用户必须等待多少小时后才可以发布操作。
+			<input type="text" name="config[newusertime]" value="$configs[newusertime]" size="10"> 小時
+			<br>設置新註冊用戶必須等待多少小時後才可以發佈操作。
 		</td>
 	</tr>
 	<tr>
-		<th>强制新用户上传头像</th>
+		<th>強制新用戶上傳頭像</th>
 		<td>
 			<input type="radio" name="config[need_avatar]" value="1"<!--{if $configs[need_avatar] == 1}--> checked<!--{/if}-->>是
 			<input type="radio" name="config[need_avatar]" value="0"<!--{if $configs[need_avatar] != '1'}--> checked<!--{/if}-->>否
-			<br>选择是的话，用户必须设置自己的头像后才能进行发布操作。
+			<br>選擇是的話，用戶必須設置自己的頭像後才能進行發佈操作。
 		</td>
 	</tr>
 	<tr>
-		<th>强制新用户好友个数</th>
+		<th>強制新用戶好友個數</th>
 		<td>
 			<input type="text" name="config[need_friendnum]" value="$configs[need_friendnum]" size="10">
-			<br>设置用户必须拥有多少个好友后，才可以进行发布操作。
+			<br>設置用戶必須擁有多少個好友後，才可以進行發佈操作。
 		</td>
 	</tr>
 	<tr>
-		<th>其他一些防灌水措施设置</th>
+		<th>其他一些防灌水措施設置</th>
 		<td>
-			1. 您可以在<a href="admincp.php?ac=config">站点设置</a>中，关闭站点注册功能，仅允许好友邀请注册功能。<br>
-			2. 您可以在<a href="admincp.php?ac=privacy">隐私设置</a>中，关闭游客开放浏览功能。<br>
+			1. 您可以在<a href="admincp.php?ac=config">站點設置</a>中，關閉站點註冊功能，僅允許好友邀請註冊功能。<br>
+			2. 您可以在<a href="admincp.php?ac=privacy">隱私設置</a>中，關閉遊客開放瀏覽功能。<br>
 		</td>
 	</tr>
 	</table>

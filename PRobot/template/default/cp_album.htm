@@ -1,12 +1,12 @@
 <!--{template header}-->
 
 <!--{if $_GET['op']=='edit' || $_GET['op']=='editpic'}-->
-<h2 class="title"><img src="image/app/album.gif" />相册<!--{if $album[albumname]}--> - $album[albumname]<!--{/if}--></h2>
+<h2 class="title"><img src="image/app/album.gif" />相冊<!--{if $album[albumname]}--> - $album[albumname]<!--{/if}--></h2>
 <div class="tabs_header">
 	<ul class="tabs">
-		<li<!--{if $_GET['op']=='edit'}--> class="active"<!--{/if}-->><a href="cp.php?ac=album&op=edit&albumid=$albumid"><span>编辑相册信息</span></a></li>
-		<li<!--{if $_GET['op']=='editpic'}--> class="active"<!--{/if}-->><a href="cp.php?ac=album&op=editpic&albumid=$albumid"><span>编辑图片</span></a></li>
-		<li><a href="space.php?uid=$space[uid]&do=album&view=me"><span>返回我的相册</span></a></li>
+		<li<!--{if $_GET['op']=='edit'}--> class="active"<!--{/if}-->><a href="cp.php?ac=album&op=edit&albumid=$albumid"><span>編輯相冊信息</span></a></li>
+		<li<!--{if $_GET['op']=='editpic'}--> class="active"<!--{/if}-->><a href="cp.php?ac=album&op=editpic&albumid=$albumid"><span>編輯圖片</span></a></li>
+		<li><a href="space.php?uid=$space[uid]&do=album&view=me"><span>返回我的相冊</span></a></li>
 	</ul>
 </div>
 <!--{/if}-->
@@ -16,37 +16,37 @@
 <form method="post" id="theform" name="theform" action="cp.php?ac=album&op=edit&albumid=$albumid" class="c_form">
 <table cellspacing="0" cellpadding="0" class="formtable">
 	<tr>
-		<th width="80"><label for="albumname">相册名</label></th>
+		<th width="80"><label for="albumname">相冊名</label></th>
 		<td><input type="text" id="albumname" name="albumname" value="$album[albumname]" size="20" class="t_input" /></td>
 	</tr>
 	<tr>
-		<th>隐私设置</th>
+		<th>隱私設置</th>
 		<td>
 			<select name="friend" onchange="passwordShow(this.value);">
-				<option value="0"$friendarr[0]>全站用户可见</option>
-				<option value="1"$friendarr[1]>全好友可见</option>
-				<option value="2"$friendarr[2]>仅指定的好友可见</option>
-				<option value="3"$friendarr[3]>仅自己可见</option>
-				<option value="4"$friendarr[4]>凭密码查看</option>
+				<option value="0"$friendarr[0]>全站用戶可見</option>
+				<option value="1"$friendarr[1]>全好友可見</option>
+				<option value="2"$friendarr[2]>僅指定的好友可見</option>
+				<option value="3"$friendarr[3]>僅自己可見</option>
+				<option value="4"$friendarr[4]>憑密碼查看</option>
 			</select>
-			<span id="span_password" style="$passwordstyle">密码:<input type="text" name="password" value="$album[password]" size="10"></span>
+			<span id="span_password" style="$passwordstyle">密碼:<input type="text" name="password" value="$album[password]" size="10"></span>
 		</td>
 	</tr>
 	<tbody id="tb_selectgroup" style="$selectgroupstyle">
 	<tr>
 		<th>指定好友</th>
 		<td><select name="selectgroup" onchange="getgroup(this.value);">
-			<option value="">从好友组选择好友</option>
+			<option value="">從好友組選擇好友</option>
 			<!--{loop $groups $key $value}-->
 			<option value="$key">$value</option>
 			<!--{/loop}-->
-			</select> 多次选择会累加到下面的好友名单</td>
+			</select> 多次選擇會累加到下面的好友名單</td>
 	</tr>
 	<tr>
 		<th>&nbsp;</th>
 		<td>
 		<textarea name="target_names" id="target_names" style="width:85%;" rows="3">$album[target_names]</textarea>
-		<br>(可以填写多个好友名，请用空格进行分割)</td>
+		<br>(可以填寫多個好友名，請用空格進行分割)</td>
 	</tr>
 	</tbody>
 	<tr>
@@ -54,12 +54,12 @@
 		<td>
 		<input type="hidden" name="refer" value="$_SGLOBAL[refer]" />
 		<input type="hidden" name="editsubmit" value="true" />
-		<button name="submit" type="submit" class="submit" value="true">确定</button>&nbsp;
+		<button name="submit" type="submit" class="submit" value="true">確定</button>&nbsp;
 		</td>
 	</tr>
 	<tr>
 		<th>&nbsp;</th>
-		<td><a href="cp.php?ac=album&op=delete&albumid=$album[albumid]" id="album_delete_$album[albumid]" onclick="ajaxmenu(event, this.id)">删除相册</a></td>
+		<td><a href="cp.php?ac=album&op=delete&albumid=$album[albumid]" id="album_delete_$album[albumid]" onclick="ajaxmenu(event, this.id)">刪除相冊</a></td>
 	</tr>
 
 </table>
@@ -70,7 +70,7 @@
 <!--{elseif $_GET['op'] == 'editpic'}-->
 
 <div class="notice">
-提示：您可以指定一张图片作为当前相册的封面图片，但是，在下次上传新的图片后，系统会自动选择一张新图片来更新本相册的封面图片。
+提示：您可以指定一張圖片作為當前相冊的封面圖片，但是，在下次上傳新的圖片後，系統會自動選擇一張新圖片來更新本相冊的封面圖片。
 </div>
 
 <!--{if $list}-->
@@ -86,7 +86,7 @@
 						<td width="20"><input type="checkbox" name="ids[{$value[picid]}]" value="{$value[picid]}"></td>
 						<td class="image">
 							<a href="$value[bigpic]" target="_blank"><img src="$value[pic]" alt="" /></a>
-							<!--{if $album[albumname]}--><p style="text-align: center;"><a href="cp.php?ac=album&op=setpic&picid=$value[picid]" id="a_picid_$value[picid]" onclick="ajaxmenu(event, this.id, 0, 2000)">设为封面</a></p><!--{/if}-->
+							<!--{if $album[albumname]}--><p style="text-align: center;"><a href="cp.php?ac=album&op=setpic&picid=$value[picid]" id="a_picid_$value[picid]" onclick="ajaxmenu(event, this.id, 0, 2000)">設為封面</a></p><!--{/if}-->
 						</td>
 						<td>
 							<textarea name="title[{$value[picid]}]" rows="4" cols="70">$value[title]</textarea>
@@ -98,17 +98,17 @@
 		<!--{/loop}-->
 		<tr>
 			<td style="padding:10px;">
-				<input type="checkbox" id="chkall" name="chkall" onclick="checkAll(this.form, 'ids')"><label for="chkall"> 全选</label>
-				<input type="submit" name="editpicsubmit" value="更新说明" class="submit" onclick="this.form.action+='&subop=update';">
-				<input type="submit" name="editpicsubmit" value="删除" class="submit" onclick="this.form.action+='&subop=delete';return ischeck('theform', 'ids')">
-				<input type="submit" name="editpicsubmit" value="转移到:" class="submit" onclick="this.form.action+='&subop=move';return ischeck('theform', 'ids')">
+				<input type="checkbox" id="chkall" name="chkall" onclick="checkAll(this.form, 'ids')"><label for="chkall"> 全選</label>
+				<input type="submit" name="editpicsubmit" value="更新說明" class="submit" onclick="this.form.action+='&subop=update';">
+				<input type="submit" name="editpicsubmit" value="刪除" class="submit" onclick="this.form.action+='&subop=delete';return ischeck('theform', 'ids')">
+				<input type="submit" name="editpicsubmit" value="轉移到:" class="submit" onclick="this.form.action+='&subop=move';return ischeck('theform', 'ids')">
 				<select name="newalbumid">
 				<!--{loop $albumlist $key $value}-->
 				<!--{if $albumid != $value[albumid]}--><option value="$value[albumid]">$value[albumname]</option><!--{/if}-->
 				<!--{/loop}-->
-				<!--{if $albumid>0}--><option value="0">默认相册</option><!--{/if}-->
+				<!--{if $albumid>0}--><option value="0">默認相冊</option><!--{/if}-->
 				</select>
-				<br>删除图片提示：如果你要删除的图片出现在你的日志、话题中，删除后，会导致内容里面的图片同时无法显示。
+				<br>刪除圖片提示：如果你要刪除的圖片出現在你的日誌、話題中，刪除後，會導致內容裡面的圖片同時無法顯示。
 			</td>
 		</tr>
 	</table>
@@ -119,31 +119,31 @@
 </div>
 <div class="page">$multi</div>
 <!--{else}-->
-<div class="c_form">该相册下还没有图片。</div>
+<div class="c_form">該相冊下還沒有圖片。</div>
 <!--{/if}-->
 
 
 <!--{elseif $_GET['op'] == 'delete'}-->
 
-<h1>删除相册</h1>
-<a href="javascript:hideMenu();" class="float_del" title="关闭">关闭</a>
+<h1>刪除相冊</h1>
+<a href="javascript:hideMenu();" class="float_del" title="關閉">關閉</a>
 <div class="popupmenu_inner">
 <form method="post" id="theform" name="theform" action="cp.php?ac=album&op=delete&albumid=$albumid">
-	<p>确定删除相册吗？</p>
+	<p>確定刪除相冊嗎？</p>
 	<p>
-		相册中的图片: 
+		相冊中的圖片: 
 		<select name="moveto">
-			<option value="-1">彻底删除</option>
-			<option value="0">转移到 默认相册</option>
+			<option value="-1">徹底刪除</option>
+			<option value="0">轉移到 默認相冊</option>
 			<!--{loop $albums $value}-->
-			<option value="$value[albumid]">转移到 $value[albumname]</option>
+			<option value="$value[albumid]">轉移到 $value[albumname]</option>
 			<!--{/loop}-->
 		</select>
 	</p>
 	<p class="btn_line">
 		<input type="hidden" name="refer" value="$_SGLOBAL[refer]" />
 		<input type="hidden" name="deletesubmit" value="true" />
-		<button name="submit" type="submit" class="submit" value="true">确定</button>&nbsp;
+		<button name="submit" type="submit" class="submit" value="true">確定</button>&nbsp;
 	</p>
 	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
 </form>
@@ -151,8 +151,8 @@
 
 <!--{elseif $_GET['op'] == 'edittitle'}-->
 
-<h1>编辑图片说明</h1>
-<a href="javascript:hideMenu();" class="float_del" title="关闭">关闭</a>
+<h1>編輯圖片說明</h1>
+<a href="javascript:hideMenu();" class="float_del" title="關閉">關閉</a>
 <div class="popupmenu_inner">
 	<form id="titleform" name="titleform" action="cp.php?ac=album&op=editpic&subop=update&albumid=$pic[albumid]" method="post">
 		<textarea name="title[{$pic[picid]}]" cols="50" rows="7">$pic[title]</textarea>
@@ -166,15 +166,15 @@
 
 <!--{elseif $_GET[op] == 'edithot'}-->
 
-<h1>调整热度</h1>
-<a href="javascript:hideMenu();" class="float_del" title="关闭">关闭</a>
+<h1>調整熱度</h1>
+<a href="javascript:hideMenu();" class="float_del" title="關閉">關閉</a>
 <div class="popupmenu_inner">
 <form method="post" action="cp.php?ac=album&op=edithot&picid=$picid">
 	<p class="btn_line">
-		新的热度：<input type="text" name="hot" value="$pic[hot]" size="5"> 
+		新的熱度：<input type="text" name="hot" value="$pic[hot]" size="5"> 
 		<input type="hidden" name="refer" value="$_SGLOBAL[refer]" />
 		<input type="hidden" name="hotsubmit" value="true" />
-		<input type="submit" name="btnsubmit" value="确定" class="submit" />
+		<input type="submit" name="btnsubmit" value="確定" class="submit" />
 	</p>
 	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
 </form>

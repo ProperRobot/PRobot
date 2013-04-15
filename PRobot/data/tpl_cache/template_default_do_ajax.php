@@ -1,4 +1,4 @@
-<?php if(!defined('IN_UCHOME')) exit('Access Denied');?><?php subtplcheck('template/default/do_ajax|template/default/header|template/default/space_comment_li|template/default/space_post_li|template/default/space_share_li|template/default/footer', '1364924856', 'template/default/do_ajax');?><?php if(empty($_SGLOBAL['inajax'])) { ?>
+<?php if(!defined('IN_UCHOME')) exit('Access Denied');?><?php subtplcheck('template/default/do_ajax|template/default/header|template/default/space_comment_li|template/default/space_post_li|template/default/space_share_li|template/default/footer', '1366034900', 'template/default/do_ajax');?><?php if(empty($_SGLOBAL['inajax'])) { ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -38,18 +38,18 @@
 <h1 class="logo"><a href="index.php"><img src="template/<?=$_SCONFIG['template']?>/image/logo.gif" alt="<?=$_SCONFIG['sitename']?>" /></a></h1>
 <ul class="menu">
 <?php if($_SGLOBAL['supe_uid']) { ?>
-<li><a href="space.php?do=home">首页</a></li>
-<li><a href="space.php">个人主页</a></li>
+<li><a href="space.php?do=home">首頁</a></li>
+<li><a href="space.php">個人主頁</a></li>
 <li><a href="space.php?do=friend">好友</a></li>
-<li><a href="network.php">随便看看</a></li>
+<li><a href="network.php">隨便看看</a></li>
 <?php } else { ?>
-<li><a href="index.php">首页</a></li>
+<li><a href="index.php">首頁</a></li>
 <?php } ?>
 
 <?php if($_SGLOBAL['appmenu']) { ?>
 <?php if($_SGLOBAL['appmenus']) { ?>
 <li class="dropmenu" id="ucappmenu" onclick="showMenu(this.id)">
-<a href="javascript:;">站内导航</a>
+<a href="javascript:;">站內導航</a>
 </li>
 <?php } else { ?>
 <li><a target="_blank" href="<?=$_SGLOBAL['appmenu']['url']?>" title="<?=$_SGLOBAL['appmenu']['name']?>"><?=$_SGLOBAL['appmenu']['name']?></a></li>
@@ -58,9 +58,9 @@
 
 <?php if($_SGLOBAL['supe_uid']) { ?>
 <li><a href="space.php?do=pm<?php if(!empty($_SGLOBAL['member']['newpm'])) { ?>&filter=newpm<?php } ?>">消息<?php if(!empty($_SGLOBAL['member']['newpm'])) { ?>(新)<?php } ?></a></li>
-<?php if($_SGLOBAL['member']['allnotenum']) { ?><li class="notify" id="membernotemenu" onmouseover="showMenu(this.id)"><a href="space.php?do=notice"><?=$_SGLOBAL['member']['allnotenum']?>个提醒</a></li><?php } ?>
+<?php if($_SGLOBAL['member']['allnotenum']) { ?><li class="notify" id="membernotemenu" onmouseover="showMenu(this.id)"><a href="space.php?do=notice"><?=$_SGLOBAL['member']['allnotenum']?>個提醒</a></li><?php } ?>
 <?php } else { ?>
-<li><a href="help.php">帮助</a></li>
+<li><a href="help.php">幫助</a></li>
 <?php } ?>
 </ul>
 
@@ -73,17 +73,17 @@
 <?php } ?>
 <br />
 <?php if(empty($_SCONFIG['closeinvite'])) { ?>
-<a href="cp.php?ac=invite">邀请</a> 
+<a href="cp.php?ac=invite">邀請</a> 
 <?php } ?>
-<a href="cp.php?ac=task">任务</a> 
+<a href="cp.php?ac=task">任務</a> 
 <a href="cp.php?ac=magic">道具</a>
-<a href="cp.php">设置</a> 
+<a href="cp.php">設置</a> 
 <a href="cp.php?ac=common&op=logout&uhash=<?=$_SGLOBAL['uhash']?>">退出</a>
 <?php } else { ?>
 <a href="do.php?ac=<?=$_SCONFIG['register_action']?>" class="login_thumb"><?php echo avatar($_SGLOBAL[supe_uid]); ?></a>
-欢迎您<br>
-<a href="do.php?ac=<?=$_SCONFIG['login_action']?>">登录</a> | 
-<a href="do.php?ac=<?=$_SCONFIG['register_action']?>">注册</a>
+歡迎您<br>
+<a href="do.php?ac=<?=$_SCONFIG['login_action']?>">登錄</a> | 
+<a href="do.php?ac=<?=$_SCONFIG['register_action']?>">註冊</a>
 <?php } ?>
 </div>
 </div>
@@ -96,14 +96,15 @@
 <div id="app_sidebar">
 <?php if($_SGLOBAL['supe_uid']) { ?>
 <ul class="app_list" id="default_userapp">
-<li><img src="image/app/doing.gif"><a href="space.php?do=doing">记录</a></li>
-<li><img src="image/app/album.gif"><a href="space.php?do=album">相册</a><em><a href="cp.php?ac=upload" class="gray">上传</a></em></li>
-<li><img src="image/app/blog.gif"><a href="space.php?do=blog">日志</a><em><a href="cp.php?ac=blog" class="gray">发表</a></em></li>
-<li><img src="image/app/poll.gif"/><a href="space.php?do=poll">投票</a><em><a href="cp.php?ac=poll" class="gray">发起</a></em></li>
-<li><img src="image/app/mtag.gif"><a href="space.php?do=mtag">群组</a><em><a href="cp.php?ac=thread" class="gray">话题</a></em></li>
-<li><img src="image/app/event.gif"/><a href="space.php?do=event">活动</a><em><a href="cp.php?ac=event" class="gray">发起</a></em></li>
+<li><img src="image/app/doing.gif"><a href="space.php?do=doing">記錄</a></li>
+<li><img src="image/app/album.gif"><a href="space.php?do=album">相冊</a><em><a href="cp.php?ac=upload" class="gray">上傳</a></em></li>
+<li><img src="image/app/blog.gif"><a href="space.php?do=blog">日誌</a><em><a href="cp.php?ac=blog" class="gray">發表</a></em></li>
+<li><img src="image/app/doing.gif"><a href="space.php?do=pronotice">物业通知</a></li>
+<li><img src="image/app/poll.gif"/><a href="space.php?do=poll">投票</a><em><a href="cp.php?ac=poll" class="gray">發起</a></em></li>
+<li><img src="image/app/mtag.gif"><a href="space.php?do=mtag">群組</a><em><a href="cp.php?ac=thread" class="gray">話題</a></em></li>
+<li><img src="image/app/event.gif"/><a href="space.php?do=event">活動</a><em><a href="cp.php?ac=event" class="gray">發起</a></em></li>
 <li><img src="image/app/share.gif"><a href="space.php?do=share">分享</a></li>
-<li><img src="image/app/topic.gif"><a href="space.php?do=topic">热闹</a></li>
+<li><img src="image/app/topic.gif"><a href="space.php?do=topic">熱鬧</a></li>
 </ul>
 
 <ul class="app_list topline" id="my_defaultapp">
@@ -123,14 +124,14 @@
 <?php } ?>
 
 <?php if($_SGLOBAL['my_menu_more']) { ?>
-<p class="app_more"><a href="javascript:;" id="a_app_more" onclick="userapp_open();" class="off">展开</a></p>
+<p class="app_more"><a href="javascript:;" id="a_app_more" onclick="userapp_open();" class="off">展開</a></p>
 <?php } ?>
 
 <?php if($_SCONFIG['my_status']) { ?>
 <div class="app_m">
 <ul>
-<li><img src="image/app_add.gif"><a href="cp.php?ac=userapp&my_suffix=%2Fapp%2Flist" class="addApp">添加应用</a></li>
-<li><img src="image/app_set.gif"><a href="cp.php?ac=userapp&op=menu" class="myApp">管理应用</a></li>
+<li><img src="image/app_add.gif"><a href="cp.php?ac=userapp&my_suffix=%2Fapp%2Flist" class="addApp">添加應用</a></li>
+<li><img src="image/app_set.gif"><a href="cp.php?ac=userapp&op=menu" class="myApp">管理應用</a></li>
 </ul>
 </div>
 <?php } ?>
@@ -139,15 +140,15 @@
 <div class="bar_text">
 <form id="loginform" name="loginform" action="do.php?ac=<?=$_SCONFIG['login_action']?>&ref" method="post">
 <input type="hidden" name="formhash" value="<?php echo formhash(); ?>" />
-<p class="title">登录站点</p>
-<p>用户名</p>
+<p class="title">登錄站點</p>
+<p>用戶名</p>
 <p><input type="text" name="username" id="username" class="t_input" size="15" value="" /></p>
-<p>密码</p>
+<p>密碼</p>
 <p><input type="password" name="password" id="password" class="t_input" size="15" value="" /></p>
-<p><input type="checkbox" id="cookietime" name="cookietime" value="315360000" checked /><label for="cookietime">记住我</label></p>
+<p><input type="checkbox" id="cookietime" name="cookietime" value="315360000" checked /><label for="cookietime">記住我</label></p>
 <p>
-<input type="submit" id="loginsubmit" name="loginsubmit" value="登录" class="submit" />
-<input type="button" name="regbutton" value="注册" class="button" onclick="urlto('do.php?ac=<?=$_SCONFIG['register_action']?>');">
+<input type="submit" id="loginsubmit" name="loginsubmit" value="登錄" class="submit" />
+<input type="button" name="regbutton" value="註冊" class="button" onclick="urlto('do.php?ac=<?=$_SCONFIG['register_action']?>');">
 </p>
 </form>
 </div>
@@ -195,15 +196,15 @@
 <span class="pipe">|</span>
 <?php } ?>
 
-<a href="cp.php?ac=comment&op=edit&cid=<?=$value['cid']?>" id="c_<?=$value['cid']?>_edit" onclick="ajaxmenu(event, this.id, 1)">编辑</a>
+<a href="cp.php?ac=comment&op=edit&cid=<?=$value['cid']?>" id="c_<?=$value['cid']?>_edit" onclick="ajaxmenu(event, this.id, 1)">編輯</a>
 <?php } ?>
 <?php if($value['authorid']==$_SGLOBAL['supe_uid'] || $value['uid']==$_SGLOBAL['supe_uid'] || checkperm('managecomment')) { ?>
-<a href="cp.php?ac=comment&op=delete&cid=<?=$value['cid']?>" id="c_<?=$value['cid']?>_delete" onclick="ajaxmenu(event, this.id)">删除</a>
+<a href="cp.php?ac=comment&op=delete&cid=<?=$value['cid']?>" id="c_<?=$value['cid']?>_delete" onclick="ajaxmenu(event, this.id)">刪除</a>
 <?php } ?>
 <?php if($value['authorid']!=$_SGLOBAL['supe_uid'] && ($value['idtype'] != 'uid' || $space['self'])) { ?>
-<a href="cp.php?ac=comment&op=reply&cid=<?=$value['cid']?>&feedid=<?=$feedid?>" id="c_<?=$value['cid']?>_reply" onclick="ajaxmenu(event, this.id, 1)">回复</a>
+<a href="cp.php?ac=comment&op=reply&cid=<?=$value['cid']?>&feedid=<?=$feedid?>" id="c_<?=$value['cid']?>_reply" onclick="ajaxmenu(event, this.id, 1)">回復</a>
 <?php } ?>
-<a href="cp.php?ac=common&op=report&idtype=comment&id=<?=$value['cid']?>" id="a_report_<?=$value['cid']?>" onclick="ajaxmenu(event, this.id, 1)">举报</a>
+<a href="cp.php?ac=common&op=report&idtype=comment&id=<?=$value['cid']?>" id="a_report_<?=$value['cid']?>" onclick="ajaxmenu(event, this.id, 1)">舉報</a>
 </div>
 
 <?php if($value['author']) { ?>
@@ -228,9 +229,9 @@
 <?php if($tagspace['grade']==9) { ?>群主
 <?php } elseif($tagspace['grade']==8) { ?>副群主
 <?php } elseif($tagspace['grade']==1) { ?>明星
-<?php } elseif($tagspace['grade']==-1) { ?>待审核
+<?php } elseif($tagspace['grade']==-1) { ?>待審核
 <?php } elseif($tagspace['grade']==-2) { ?>禁言
-<?php } else { ?>普通会员
+<?php } else { ?>普通會員
 <?php } ?>
 
 <?php } elseif($op == 'post') { ?>
@@ -248,11 +249,11 @@
 <div class="title">
 <div class="r_option">
 <?php if($mtag['grade']>=8 || $value['uid']==$_SGLOBAL['supe_uid'] || ($eventid && $userevent['status']>=3)) { ?>
-<a href="cp.php?ac=thread&op=edit&pid=<?=$value['pid']?>" id="p_<?=$value['pid']?>_edit" onclick="ajaxmenu(event, this.id, 1)">编辑</a>
-<a href="cp.php?ac=thread&op=delete&pid=<?=$value['pid']?>&tagid=<?=$thread['tagid']?>" id="p_<?=$value['pid']?>_delete" onclick="ajaxmenu(event, this.id)">删除</a>
+<a href="cp.php?ac=thread&op=edit&pid=<?=$value['pid']?>" id="p_<?=$value['pid']?>_edit" onclick="ajaxmenu(event, this.id, 1)">編輯</a>
+<a href="cp.php?ac=thread&op=delete&pid=<?=$value['pid']?>&tagid=<?=$thread['tagid']?>" id="p_<?=$value['pid']?>_delete" onclick="ajaxmenu(event, this.id)">刪除</a>
 <?php } ?>
-<?php if($value['uid']!=$_SGLOBAL['supe_uid'] && (($mtag['allowpost'] && !$eventid) || ($eventid && $userevent['status']>1))) { ?><a href="cp.php?ac=thread&op=reply&pid=<?=$value['pid']?>" id="p_<?=$value['pid']?>_reply" onclick="ajaxmenu(event, this.id, 1)">回复</a> <?php } ?>
-<a href="cp.php?ac=common&op=report&idtype=post&id=<?=$value['pid']?>" id="a_report_<?=$value['pid']?>" onclick="ajaxmenu(event, this.id, 1)">举报</a>
+<?php if($value['uid']!=$_SGLOBAL['supe_uid'] && (($mtag['allowpost'] && !$eventid) || ($eventid && $userevent['status']>1))) { ?><a href="cp.php?ac=thread&op=reply&pid=<?=$value['pid']?>" id="p_<?=$value['pid']?>_reply" onclick="ajaxmenu(event, this.id, 1)">回復</a> <?php } ?>
+<a href="cp.php?ac=common&op=report&idtype=post&id=<?=$value['pid']?>" id="a_report_<?=$value['pid']?>" onclick="ajaxmenu(event, this.id, 1)">舉報</a>
 <span class="gray">#<?=$value['num']?></span>
 </div>
 <a href="space.php?uid=<?=$value['uid']?>"><?=$_SN[$value['uid']]?></a> 
@@ -277,10 +278,10 @@
 <div class="title">
 <div class="r_option">
 <?php if($value['sid'] && ($_SGLOBAL['supe_uid'] == $value['uid'] || checkperm('manageshare'))) { ?>
-<a href="cp.php?ac=topic&op=join&id=<?=$value['sid']?>&idtype=sid" id="a_topicjoin_<?=$value['sid']?>" onclick="ajaxmenu(event, this.id)">凑热闹</a><span class="pipe">|</span>
+<a href="cp.php?ac=topic&op=join&id=<?=$value['sid']?>&idtype=sid" id="a_topicjoin_<?=$value['sid']?>" onclick="ajaxmenu(event, this.id)">湊熱鬧</a><span class="pipe">|</span>
 <?php } ?>
-<?php if($value['sid']) { ?><a href="space.php?uid=<?=$value['uid']?>&do=share&id=<?=$value['sid']?>">评论</a>&nbsp;<?php } ?>
-<?php if($value['uid']==$_SGLOBAL['supe_uid']) { ?><?php if($value['type']=='link' || 'video' == $value['type'] || 'music' == $value['type']) { ?><span class="pipe">|</span><?php } ?><a href="cp.php?ac=share&op=delete&sid=<?=$value['sid']?>" id="s_<?=$value['sid']?>_delete" onclick="ajaxmenu(event, this.id)">删除</a><?php } ?>
+<?php if($value['sid']) { ?><a href="space.php?uid=<?=$value['uid']?>&do=share&id=<?=$value['sid']?>">評論</a>&nbsp;<?php } ?>
+<?php if($value['uid']==$_SGLOBAL['supe_uid']) { ?><?php if($value['type']=='link' || 'video' == $value['type'] || 'music' == $value['type']) { ?><span class="pipe">|</span><?php } ?><a href="cp.php?ac=share&op=delete&sid=<?=$value['sid']?>" id="s_<?=$value['sid']?>_delete" onclick="ajaxmenu(event, this.id)">刪除</a><?php } ?>
 </div>
 <a href="space.php?uid=<?=$value['uid']?>"><?=$_SN[$value['uid']]?></a> <a href="space.php?uid=<?=$value['uid']?>&do=share&id=<?=$value['sid']?>"><?=$value['title_template']?></a>
 &nbsp;<span class="gray"><?php echo sgmdate('Y-m-d H:i',$value[dateline],1); ?></span>
@@ -295,15 +296,15 @@
 </div>
 <?php if('video' == $value['type']) { ?>
 <div class="media">
-<img src="image/vd.gif" alt="点击播放" onclick="javascript:showFlash('<?=$value['body_data']['host']?>', '<?=$value['body_data']['flashvar']?>', this, '<?=$value['sid']?>');" style="cursor:pointer;" />
+<img src="image/vd.gif" alt="點擊播放" onclick="javascript:showFlash('<?=$value['body_data']['host']?>', '<?=$value['body_data']['flashvar']?>', this, '<?=$value['sid']?>');" style="cursor:pointer;" />
 </div>
 <?php } elseif('music' == $value['type']) { ?>
 <div class="media">
-<img src="image/music.gif" alt="点击播放" onclick="javascript:showFlash('music', '<?=$value['body_data']['musicvar']?>', this, '<?=$value['sid']?>');" style="cursor:pointer;" />
+<img src="image/music.gif" alt="點擊播放" onclick="javascript:showFlash('music', '<?=$value['body_data']['musicvar']?>', this, '<?=$value['sid']?>');" style="cursor:pointer;" />
 </div>
 <?php } elseif('flash' == $value['type']) { ?>
 <div class="media">
-<img src="image/flash.gif" alt="点击查看" onclick="javascript:showFlash('flash', '<?=$value['body_data']['flashaddr']?>', this, '<?=$value['sid']?>');" style="cursor:pointer;" />
+<img src="image/flash.gif" alt="點擊查看" onclick="javascript:showFlash('flash', '<?=$value['body_data']['flashaddr']?>', this, '<?=$value['sid']?>');" style="cursor:pointer;" />
 </div>
 <?php } ?>
 <div class="quote"><span id="quote" class="q"><?=$value['body_general']?></span></div>
@@ -329,12 +330,12 @@
 <div class="popupmenu_layer">
 <p><?=$rule['rulename']?></p>
 <p class="btn_line">
-<?php if($rule['credit']) { ?>积分 <strong>+<?=$rule['credit']?></strong> <?php } ?>
-<?php if($rule['experience']) { ?>经验 <strong>+<?=$rule['experience']?></strong> <?php } ?>
+<?php if($rule['credit']) { ?>積分 <strong>+<?=$rule['credit']?></strong> <?php } ?>
+<?php if($rule['experience']) { ?>經驗 <strong>+<?=$rule['experience']?></strong> <?php } ?>
 </p>
 <?php if($rule['cyclenum']) { ?>
 <p>
-本周期内，您还有 <?=$rule['cyclenum']?> 次机会
+本週期內，您還有 <?=$rule['cyclenum']?> 次機會
 </p>
 <?php } ?>
 </div>
@@ -354,7 +355,7 @@
 
 <div id="footer">
 <?php if($_TPL['templates']) { ?>
-<div class="chostlp" title="切换风格"><img id="chostlp" src="<?=$_TPL['default_template']['icon']?>" onmouseover="showMenu(this.id)" alt="<?=$_TPL['default_template']['name']?>" /></div>
+<div class="chostlp" title="切換風格"><img id="chostlp" src="<?=$_TPL['default_template']['icon']?>" onmouseover="showMenu(this.id)" alt="<?=$_TPL['default_template']['name']?>" /></div>
 <ul id="chostlp_menu" class="chostlp_drop" style="display: none">
 <?php if(is_array($_TPL['templates'])) { foreach($_TPL['templates'] as $value) { ?>
 <li><a href="cp.php?ac=common&op=changetpl&name=<?=$value['name']?>" title="<?=$value['name']?>"><img src="<?=$value['icon']?>" alt="<?=$value['name']?>" /></a></li>
@@ -372,12 +373,12 @@
 
 <?php if($_SCONFIG['close']) { ?>
 <p style="color:blue;font-weight:bold;">
-提醒：当前站点处于关闭状态
+提醒：當前站點處於關閉狀態
 </p>
 <?php } ?>
 <p>
 <?=$_SCONFIG['sitename']?> - 
-<a href="mailto:<?=$_SCONFIG['adminemail']?>">联系我们</a>
+<a href="mailto:<?=$_SCONFIG['adminemail']?>">聯繫我們</a>
 <?php if($_SCONFIG['miibeian']) { ?> - <a  href="http://www.miibeian.gov.cn" target="_blank"><?=$_SCONFIG['miibeian']?></a><?php } ?>
 </p>
 <p>
@@ -404,12 +405,12 @@ Powered by <a  href="http://u.discuz.net" target="_blank"><strong>UCenter Home</
 <?php if($_SGLOBAL['supe_uid']) { ?>
 <ul id="membernotemenu_menu" class="dropmenu_drop" style="display:none;">
 <?php $member = $_SGLOBAL['member']; ?>
-<?php if($member['notenum']) { ?><li><img src="image/icon/notice.gif" width="16" alt="" /> <a href="space.php?do=notice"><strong><?=$member['notenum']?></strong> 个新通知</a></li><?php } ?>
-<?php if($member['pokenum']) { ?><li><img src="image/icon/poke.gif" alt="" /> <a href="cp.php?ac=poke"><strong><?=$member['pokenum']?></strong> 个新招呼</a></li><?php } ?>
-<?php if($member['addfriendnum']) { ?><li><img src="image/icon/friend.gif" alt="" /> <a href="cp.php?ac=friend&op=request"><strong><?=$member['addfriendnum']?></strong> 个好友请求</a></li><?php } ?>
-<?php if($member['mtaginvitenum']) { ?><li><img src="image/icon/mtag.gif" alt="" /> <a href="cp.php?ac=mtag&op=mtaginvite"><strong><?=$member['mtaginvitenum']?></strong> 个群组邀请</a></li><?php } ?>
-<?php if($member['eventinvitenum']) { ?><li><img src="image/icon/event.gif" alt="" /> <a href="cp.php?ac=event&op=eventinvite"><strong><?=$member['eventinvitenum']?></strong> 个活动邀请</a></li><?php } ?>
-<?php if($member['myinvitenum']) { ?><li><img src="image/icon/userapp.gif" alt="" /> <a href="space.php?do=notice&view=userapp"><strong><?=$member['myinvitenum']?></strong> 个应用消息</a></li><?php } ?>
+<?php if($member['notenum']) { ?><li><img src="image/icon/notice.gif" width="16" alt="" /> <a href="space.php?do=notice"><strong><?=$member['notenum']?></strong> 個新通知</a></li><?php } ?>
+<?php if($member['pokenum']) { ?><li><img src="image/icon/poke.gif" alt="" /> <a href="cp.php?ac=poke"><strong><?=$member['pokenum']?></strong> 個新招呼</a></li><?php } ?>
+<?php if($member['addfriendnum']) { ?><li><img src="image/icon/friend.gif" alt="" /> <a href="cp.php?ac=friend&op=request"><strong><?=$member['addfriendnum']?></strong> 個好友請求</a></li><?php } ?>
+<?php if($member['mtaginvitenum']) { ?><li><img src="image/icon/mtag.gif" alt="" /> <a href="cp.php?ac=mtag&op=mtaginvite"><strong><?=$member['mtaginvitenum']?></strong> 個群組邀請</a></li><?php } ?>
+<?php if($member['eventinvitenum']) { ?><li><img src="image/icon/event.gif" alt="" /> <a href="cp.php?ac=event&op=eventinvite"><strong><?=$member['eventinvitenum']?></strong> 個活動邀請</a></li><?php } ?>
+<?php if($member['myinvitenum']) { ?><li><img src="image/icon/userapp.gif" alt="" /> <a href="space.php?do=notice&view=userapp"><strong><?=$member['myinvitenum']?></strong> 個應用消息</a></li><?php } ?>
 </ul>
 <?php } ?>
 

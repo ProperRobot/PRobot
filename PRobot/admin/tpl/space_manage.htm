@@ -11,28 +11,28 @@
 			<h3>$member[username] 基本信息</h3>
 		</div>
 		<table cellspacing="0" cellpadding="0" class="formtable">
-		<tr><th style="width:12em;">用户名</th>
+		<tr><th style="width:12em;">用戶名</th>
 			<td><a href="space.php?uid=$member[uid]" target="_blank">$member[username]</a></td></tr>
 		
 		
-		<tr><th>开通时间</th><td><!--{date('Y-m-d H:i',$member[dateline])}--></td></tr>
-		<tr><th>更新时间</th><td><!--{if $member[updatetime]}--><!--{date('Y-m-d H:i',$member[updatetime])}--><!--{else}-->-<!--{/if}--></td></tr>
-		<tr><th>上次登录</th><td><!--{date('Y-m-d H:i',$member[lastlogin])}--></td></tr>
-		<tr><th>注册IP</th><td>$member[regip]</td></tr>
-		<tr><th>好友数</th><td>$member[friendnum]</td></tr>
-		<tr><th>查看数</th><td>$member[viewnum]</td></tr>
+		<tr><th>開通時間</th><td><!--{date('Y-m-d H:i',$member[dateline])}--></td></tr>
+		<tr><th>更新時間</th><td><!--{if $member[updatetime]}--><!--{date('Y-m-d H:i',$member[updatetime])}--><!--{else}-->-<!--{/if}--></td></tr>
+		<tr><th>上次登錄</th><td><!--{date('Y-m-d H:i',$member[lastlogin])}--></td></tr>
+		<tr><th>註冊IP</th><td>$member[regip]</td></tr>
+		<tr><th>好友數</th><td>$member[friendnum]</td></tr>
+		<tr><th>查看數</th><td>$member[viewnum]</td></tr>
 		<tr><th>批量管理</th>
 			<td>
-			<a href="admincp.php?ac=blog&uid=$member[uid]&searchsubmit=1" target="_blank">日志($member[blognum])</a> | 
-			<a href="admincp.php?ac=album&uid=$member[uid]&searchsubmit=1" target="_blank">相册($member[albumnum])</a> | 
-			<a href="admincp.php?ac=thread&uid=$member[uid]&searchsubmit=1" target="_blank">话题($member[threadnum])</a> | 
+			<a href="admincp.php?ac=blog&uid=$member[uid]&searchsubmit=1" target="_blank">日誌($member[blognum])</a> | 
+			<a href="admincp.php?ac=album&uid=$member[uid]&searchsubmit=1" target="_blank">相冊($member[albumnum])</a> | 
+			<a href="admincp.php?ac=thread&uid=$member[uid]&searchsubmit=1" target="_blank">話題($member[threadnum])</a> | 
 			<a href="admincp.php?ac=poll&uid=$member[uid]&searchsubmit=1" target="_blank">投票($member[pollnum])</a> | 
-			<a href="admincp.php?ac=event&uid=$member[uid]&searchsubmit=1" target="_blank">活动($member[eventnum])</a> | 
-			<a href="admincp.php?ac=doing&uid=$member[uid]&searchsubmit=1" target="_blank">记录($member[doingnum])</a> | 
+			<a href="admincp.php?ac=event&uid=$member[uid]&searchsubmit=1" target="_blank">活動($member[eventnum])</a> | 
+			<a href="admincp.php?ac=doing&uid=$member[uid]&searchsubmit=1" target="_blank">記錄($member[doingnum])</a> | 
 			<a href="admincp.php?ac=share&uid=$member[uid]&searchsubmit=1" target="_blank">分享($member[sharenum])</a> | 
 			<a href="admincp.php?ac=feed&uid=$member[uid]&searchsubmit=1" target="_blank">事件</a> | 
-			<a href="admincp.php?ac=pic&uid=$member[uid]&searchsubmit=1" target="_blank">图片</a> | 
-			<a href="admincp.php?ac=comment&authorid=$member[uid]&searchsubmit=1" target="_blank">评论</a> | 
+			<a href="admincp.php?ac=pic&uid=$member[uid]&searchsubmit=1" target="_blank">圖片</a> | 
+			<a href="admincp.php?ac=comment&authorid=$member[uid]&searchsubmit=1" target="_blank">評論</a> | 
 			<a href="admincp.php?ac=post&uid=$member[uid]&searchsubmit=1" target="_blank">回帖</a>
 		</td></tr>
 		
@@ -40,10 +40,10 @@
 			<td>
 			
 			<!--{if $member['flag'] != 1 && checkperm('managedelspace')}-->
-				<a href="admincp.php?ac=space&op=close&uid=$member[uid]" <!--{if $member[flag]!=-1}--> onclick="return confirm('锁定后该空间将被禁止访问，确认锁定吗？');" <!--{/if}--> class="submit"><!--{if $member[flag]!=-1}-->锁定空间(不会删除数据)<!--{else}-->解除锁定状态<!--{/if}--></a> &nbsp;
-				<a href="admincp.php?ac=space&op=delete&uid=$member[uid]" onclick="return confirm('危险，这将删除该空间所有数据，并且本操作不可恢复，确认删除？');">删除该空间(删除数据并不可恢复)</a>&nbsp;&nbsp;&nbsp;
+				<a href="admincp.php?ac=space&op=close&uid=$member[uid]" <!--{if $member[flag]!=-1}--> onclick="return confirm('鎖定後該空間將被禁止訪問，確認鎖定嗎？');" <!--{/if}--> class="submit"><!--{if $member[flag]!=-1}-->鎖定空間(不會刪除數據)<!--{else}-->解除鎖定狀態<!--{/if}--></a> &nbsp;
+				<a href="admincp.php?ac=space&op=delete&uid=$member[uid]" onclick="return confirm('危險，這將刪除該空間所有數據，並且本操作不可恢復，確認刪除？');">刪除該空間(刪除數據並不可恢復)</a>&nbsp;&nbsp;&nbsp;
 			<!--{else}-->
-				本用户被保护，不能删除、不能锁定
+				本用戶被保護，不能刪除、不能鎖定
 			<!--{/if}-->
 			</td>
 		</tr>
@@ -54,59 +54,59 @@
 	<br>
 	<div class="bdrcontent">
 		<div class="title">
-			<h3>$member[username] 个人资料</h3>
+			<h3>$member[username] 個人資料</h3>
 		</div>
 		<table cellspacing="0" cellpadding="0" class="formtable">
-		<tr><th style="width:12em;">头像</th><td><a href="space.php?uid=$member[uid]" target="_blank"><!--{avatar($member[uid],big)}--></a>
-		<br>[<a href="admincp.php?ac=space&op=deleteavatar&uid=$uid">删除头像</a>]
+		<tr><th style="width:12em;">頭像</th><td><a href="space.php?uid=$member[uid]" target="_blank"><!--{avatar($member[uid],big)}--></a>
+		<br>[<a href="admincp.php?ac=space&op=deleteavatar&uid=$uid">刪除頭像</a>]
 		</td></tr>
 		
 		<!--{if $_SCONFIG['videophoto']}-->
-		<tr><th>视频认证</th><td>
+		<tr><th>視頻認證</th><td>
 			<p>
-				<input type="radio" name="videostatus" value="0"$videostatusarr[0]>未通过
-				<input type="radio" name="videostatus" value="1"$videostatusarr[1]>已通过(需要有视频照片)
+				<input type="radio" name="videostatus" value="0"$videostatusarr[0]>未通過
+				<input type="radio" name="videostatus" value="1"$videostatusarr[1]>已通過(需要有視頻照片)
 			</p>
 			<!--{if $videopic}--><img src="$videopic" width="400"><br><!--{/if}-->
-			上传一张该用户照片，更新视频认证照片:<br>
+			上傳一張該用戶照片，更新視頻認證照片:<br>
 			<input type="file" name="newvideopic" value="">
 		</td></tr>
 		<!--{/if}-->
 		
 		<tr>
-			<th style="width:12em;">常用邮箱</th>
+			<th style="width:12em;">常用郵箱</th>
 			<td>
 				<input type="text" id="email" class="t_input" name="email" value="$member[email]" />
 				<input type="radio" name="emailcheck" value="0"<!--{if $member[emailcheck]==0}--> checked<!--{/if}-->> 未激活
-				<input type="radio" name="emailcheck" value="1"<!--{if $member[emailcheck]==1}--> checked<!--{/if}-->> 已经验证激活
+				<input type="radio" name="emailcheck" value="1"<!--{if $member[emailcheck]==1}--> checked<!--{/if}-->> 已經驗證激活
 			</td>
 		</tr>
 		<!--{if $_SCONFIG['allowdomain'] && $_SCONFIG['domainroot']}-->
-		<tr><th style="width:12em;">二级域名</th><td><input type="text" class="t_input" name="domain" value="$member[domain]" size="10">.{$_SCONFIG[domainroot]}</td></tr>
+		<tr><th style="width:12em;">二級域名</th><td><input type="text" class="t_input" name="domain" value="$member[domain]" size="10">.{$_SCONFIG[domainroot]}</td></tr>
 		<!--{/if}-->
-		<tr><th style="width:12em;">额外好友数</th><td><input type="text" class="t_input" name="addfriend" value="$member[addfriend]" size="10"> 个</td></tr>
+		<tr><th style="width:12em;">額外好友數</th><td><input type="text" class="t_input" name="addfriend" value="$member[addfriend]" size="10"> 個</td></tr>
 		
 		
-		<tr><th>清空自定义CSS</th><td>
-			<input type="radio" name="clearcss" value="0" checked> 不处理
+		<tr><th>清空自定義CSS</th><td>
+			<input type="radio" name="clearcss" value="0" checked> 不處理
 			<input type="radio" name="clearcss" value="1"> 清空
-			<p>用户自定义的CSS如果存在恶意代码，可以选择清空。</p>
+			<p>用戶自定義的CSS如果存在惡意代碼，可以選擇清空。</p>
 		</td></tr>
 		
 		<tr>
-			<th>性别</th>
+			<th>性別</th>
 			<td>
 				<label for="sexm"><input id="sexm" type="radio" value="1" name="sex"$sexarr[1] />男</label> 
 				<label for="sexw"><input id="sexw" type="radio" value="2" name="sex"$sexarr[2] />女</label>
 			</td>
 		</tr>
 		<tr>
-			<th>婚恋状态</th>
+			<th>婚戀狀態</th>
 			<td>
 				<select id="marry" name="marry">
-					<option value="0">无</option>
-					<option value="1"$marryarr[1]>单身</option>
-					<option value="2"$marryarr[2]>非单身</option>
+					<option value="0">無</option>
+					<option value="1"$marryarr[1]>單身</option>
+					<option value="2"$marryarr[2]>非單身</option>
 				</select>
 			</td>
 		</tr>
@@ -115,15 +115,15 @@
 			<th>生日</th>
 			<td>
 				<select id="birthyear" name="birthyear">
-					<option value="0">无</option>
+					<option value="0">無</option>
 					$birthyeayhtml
 				</select> 年 
 				<select id="birthmonth" name="birthmonth">
-					<option value="0">无</option>
+					<option value="0">無</option>
 					$birthmonthhtml
 				</select> 月 
 				<select id="birthday" name="birthday">
-					<option value="0">无</option>
+					<option value="0">無</option>
 					$birthdayhtml
 				</select> 日
 			</td>
@@ -139,7 +139,7 @@
 		</tr>
 	
 		<tr>
-			<th>家乡</th>
+			<th>家鄉</th>
 			<td id="birthcitybox">
 				<script type="text/javascript" src="source/script_city.js"></script>
 				<script type="text/javascript">
@@ -194,12 +194,12 @@
 	<br>
 	<div class="bdrcontent">
 		<div class="title">
-			<h3>$member[username] 实名认证</h3>
+			<h3>$member[username] 實名認證</h3>
 		</div>
 		<table cellspacing="0" cellpadding="0" class="formtable">
 		<tr><th style="width:12em;">姓名</th><td><input type="text" class="t_input" name="name" value="$member[name]">
-			<input type="radio" name="namestatus" value="0"<!--{if $member[namestatus]==0}--> checked<!--{/if}-->> 认证失败
-			<input type="radio" name="namestatus" value="1"<!--{if $member[namestatus]==1}--> checked<!--{/if}-->> 认证通过
+			<input type="radio" name="namestatus" value="0"<!--{if $member[namestatus]==0}--> checked<!--{/if}-->> 認證失敗
+			<input type="radio" name="namestatus" value="1"<!--{if $member[namestatus]==1}--> checked<!--{/if}-->> 認證通過
 		</td></tr>
 		</table>
 	</div>
@@ -208,12 +208,12 @@
 	<br>
 	<div class="bdrcontent">
 		<div class="title">
-			<h3>$member[username] 积分、经验值、空间大小管理</h3>
+			<h3>$member[username] 積分、經驗值、空間大小管理</h3>
 		</div>
 		<table cellspacing="0" cellpadding="0" class="formtable">
-		<tr><th style="width:12em;">额外空间大小</th><td><input type="text" class="t_input" name="addsize" value="$member[addsize]" size="10"> M</td></tr>
-		<tr><th>积分数</th><td><input type="text" name="credit" class="t_input" value="$member[credit]" size="10"></td></tr>
-		<tr><th>经验值</th><td><input type="text" class="t_input" name="experience" value="$member[experience]" size="10"></td></tr>
+		<tr><th style="width:12em;">額外空間大小</th><td><input type="text" class="t_input" name="addsize" value="$member[addsize]" size="10"> M</td></tr>
+		<tr><th>積分數</th><td><input type="text" name="credit" class="t_input" value="$member[credit]" size="10"></td></tr>
+		<tr><th>經驗值</th><td><input type="text" class="t_input" name="experience" value="$member[experience]" size="10"></td></tr>
 		</table>
 	</div>
 	<!--{/if}-->
@@ -221,29 +221,29 @@
 	<br>
 	<div class="bdrcontent">
 		<div class="title">
-			<h3>$member[username] 保护信息</h3>
+			<h3>$member[username] 保護信息</h3>
 		</div>
 		<table cellspacing="0" cellpadding="0" class="formtable">
 		
-		<tr><th style="width:12em;">用户组</th><td>
+		<tr><th style="width:12em;">用戶組</th><td>
 		<select name="groupid" onchange="showDateSet(this.value);">
-		<option value="0">普通用户组</option>
+		<option value="0">普通用戶組</option>
 		<!--{eval $show=true;}-->
 		<!--{loop $usergroups $value}-->
 			<!--{if $groupidarr[$value['gid']]}--><!--{eval $show=false;}--><!--{/if}-->
 		<option value="$value[gid]"{$groupidarr[$value[gid]]}>$value[grouptitle]</option>
 		<!--{/loop}-->
 		</select>
-		<p>普通用户组，会自动根据用户经验数目的多少进行自动升级/降级<br>系统用户组，用户的身份不受经验值影响</p></td></tr>
-		<tr id="expirationtr" <!--{if $show}-->style="display:none;"<!--{/if}-->><th>用户组过期时间</th><td>
+		<p>普通用戶組，會自動根據用戶經驗數目的多少進行自動升級/降級<br>系統用戶組，用戶的身份不受經驗值影響</p></td></tr>
+		<tr id="expirationtr" <!--{if $show}-->style="display:none;"<!--{/if}-->><th>用戶組過期時間</th><td>
 			<input type="text" class="t_input" name="expiration" value="$member[expiration]" size="20">(格式：2009-8-8 00:00)
-			<p>为空则永久有效</p>
+			<p>為空則永久有效</p>
 		</td></tr>
 		<!--{if $member[flag] != -1}-->
-		<tr><th>删除保护</th><td>
-			<input type="radio" name="flag" value="0"<!--{if $member[flag]==0}--> checked<!--{/if}-->> 不保护
-			<input type="radio" name="flag" value="1"<!--{if $member[flag]==1}--> checked<!--{/if}-->> 保护
-			<p>保护状态下，该用户将不能够在UCenter、以及本应用中删除。</p>
+		<tr><th>刪除保護</th><td>
+			<input type="radio" name="flag" value="0"<!--{if $member[flag]==0}--> checked<!--{/if}-->> 不保護
+			<input type="radio" name="flag" value="1"<!--{if $member[flag]==1}--> checked<!--{/if}-->> 保護
+			<p>保護狀態下，該用戶將不能夠在UCenter、以及本應用中刪除。</p>
 			</td></tr>
 		</td></tr>
 		<!--{/if}-->
@@ -268,28 +268,28 @@
 	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
 	<div class="bdrcontent">
 		<div class="title">
-			<h3>批量发送邮件</h3>
-			<p>您可以对选定的用户进行批量发送邮件。注意，本操作将会增加服务器负载。</p>
+			<h3>批量發送郵件</h3>
+			<p>您可以對選定的用戶進行批量發送郵件。注意，本操作將會增加服務器負載。</p>
 		</div>
 		<table cellspacing="0" cellpadding="0" class="formtable">
 		<tr>
 			<th style="width:8em;">收件人(UID)</th>
-			<td><input type="text" name="uids" value="$uids" size="60"> 多个UID间用 "," 分隔</td>
+			<td><input type="text" name="uids" value="$uids" size="60"> 多個UID間用 "," 分隔</td>
 		</tr>
 		<tr>
-			<th>邮件标题</th>
+			<th>郵件標題</th>
 			<td><input type="text" name="subject" value="" size="60"></td>
 		</tr>
 		<tr>
-			<th>邮件内容</th>
-			<td><textarea name="message" cols="80" rows="10"></textarea><br>邮件内容支持html代码</td>
+			<th>郵件內容</th>
+			<td><textarea name="message" cols="80" rows="10"></textarea><br>郵件內容支持html代碼</td>
 		</tr>
 		</table>
 	</div>
 	
 	<div class="footactions">		
 		<input type="hidden" name="refer" value="$_SGLOBAL[refer]">
-		<input type="submit" name="sendemailsubmit" value="发送邮件" class="submit">
+		<input type="submit" name="sendemailsubmit" value="發送郵件" class="submit">
 	</div>
 	</form>
 	
@@ -300,16 +300,16 @@
 	<div class="bdrcontent">
 		<div class="title">
 			<h3>批量打招呼</h3>
-			<p>您可以对选定的用户进行批量打招呼，以对其简单说明一些事情。注意，本操作将会增加服务器负载。</p>
+			<p>您可以對選定的用戶進行批量打招呼，以對其簡單說明一些事情。注意，本操作將會增加服務器負載。</p>
 		</div>
 		<table cellspacing="0" cellpadding="0" class="formtable">
 		<tr>
 			<th style="width:8em;">收件人(UID)</th>
-			<td><input type="text" name="uids" value="$uids" size="60"> 多个UID间用 "," 分隔</td>
+			<td><input type="text" name="uids" value="$uids" size="60"> 多個UID間用 "," 分隔</td>
 		</tr>
 		<tr>
-			<th>招呼内容</th>
-			<td><input type="text" name="note" value="" size="60"> （不要超过50个字符）</td>
+			<th>招呼內容</th>
+			<td><input type="text" name="note" value="" size="60"> （不要超過50個字符）</td>
 		</tr>
 		</table>
 	</div>
@@ -326,16 +326,16 @@
 	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
 	<div class="bdrcontent">
 		<div class="title">
-			<h3>批量赠送道具</h3>
-			<p>您可以给选定的用户批量赠送道具。注意，本操作将会增加服务器负载。</p>
+			<h3>批量贈送道具</h3>
+			<p>您可以給選定的用戶批量贈送道具。注意，本操作將會增加服務器負載。</p>
 		</div>
 		<table cellspacing="0" cellpadding="0" class="formtable">
 		<tr>
-			<th style="width:8em;">受赠者(UID)</th>
-			<td><input type="text" name="uids" value="$uids" size="60"> 多个UID间用 "," 分隔</td>
+			<th style="width:8em;">受贈者(UID)</th>
+			<td><input type="text" name="uids" value="$uids" size="60"> 多個UID間用 "," 分隔</td>
 		</tr>
 		<tr>
-			<th>赠送道具</th>
+			<th>贈送道具</th>
 			<td>
 				<select id="newmagicaward">
 					<!--{loop $_SGLOBAL['magic'] $key $value}-->
@@ -358,7 +358,7 @@
 					s += '<input type="hidden" name="magicaward[]" value="' + mid + ',' + num + '" />';
 					s += name + ' &nbsp;&nbsp;' + "\n";
 					s += num + ' &nbsp;&nbsp;' + "\n";
-					s += '<a href="#" onclick="removeMagicAward(this);return false;">删除</a>';
+					s += '<a href="#" onclick="removeMagicAward(this);return false;">刪除</a>';
 					s += '</li>';
 					$('magicawards').innerHTML += s;
 				}
@@ -369,7 +369,7 @@
 					if($('magicawards').getElementsByTagName("li").length) {
 						return true;
 					} else {
-						alert('请至少选择一种道具并点击“添加”按钮');
+						alert('請至少選擇一種道具並點擊「添加」按鈕');
 						return false;
 					}
 				}
@@ -381,7 +381,7 @@
 	
 	<div class="footactions">
 		<input type="hidden" name="refer" value="$_SGLOBAL[refer]">
-		<input type="submit" name="magicsubmit" value="赠送道具" class="submit">
+		<input type="submit" name="magicsubmit" value="贈送道具" class="submit">
 	</div>
 	</form>
 <!--{/if}-->

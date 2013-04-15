@@ -1,28 +1,28 @@
-<!--{eval $_TPL['titles'] = array($blog['subject'], '日志');}-->
-<!--{eval $friendsname = array(1 => '仅好友可见',2 => '指定好友可见',3 => '仅自己可见',4 => '凭密码可见');}-->
+<!--{eval $_TPL['titles'] = array($blog['subject'], '日誌');}-->
+<!--{eval $friendsname = array(1 => '僅好友可見',2 => '指定好友可見',3 => '僅自己可見',4 => '憑密碼可見');}-->
 <!--{template header}-->
 
 <!--{if $space[self]}-->
-<h2 class="title"><img src="image/app/blog.gif" />日志</h2>
+<h2 class="title"><img src="image/app/blog.gif" />日誌</h2>
 <div class="tabs_header">
 	<ul class="tabs">
-		<!--{if $space[friendnum]}--><li$actives[we]><a href="space.php?uid=$space[uid]&do=$do&view=we"><span>好友最新日志</span></a></li><!--{/if}-->
-		<li class="active"><a href="space.php?uid=$space[uid]&do=$do&view=me"><span>我的日志</span></a></li>
-		<li><a href="space.php?uid=$space[uid]&do=$do&view=click"><span>我踩过的日志</span></a></li>
-		<li><a href="space.php?uid=$space[uid]&do=$do&view=all"><span>大家的日志</span></a></li>
-		<li class="null"><a href="cp.php?ac=blog">发表新日志</a></li>
+		<!--{if $space[friendnum]}--><li$actives[we]><a href="space.php?uid=$space[uid]&do=$do&view=we"><span>好友最新日誌</span></a></li><!--{/if}-->
+		<li class="active"><a href="space.php?uid=$space[uid]&do=$do&view=me"><span>我的日誌</span></a></li>
+		<li><a href="space.php?uid=$space[uid]&do=$do&view=click"><span>我踩過的日誌</span></a></li>
+		<li><a href="space.php?uid=$space[uid]&do=$do&view=all"><span>大家的日誌</span></a></li>
+		<li class="null"><a href="cp.php?ac=blog">發表新日誌</a></li>
 	</ul>
 	<!--{if $_SGLOBAL[refer]}-->
 	<div class="r_option">
-		<a  href="$_SGLOBAL[refer]">&laquo; 返回上一页</a>
+		<a  href="$_SGLOBAL[refer]">&laquo; 返回上一頁</a>
 	</div>
 	<!--{/if}-->
 </div>
 <!--{else}-->
 <!--{eval
-	$_TPL['spacetitle'] = "日志";
-	$_TPL['spacemenus'][] = "<a href=\"space.php?uid=$space[uid]&do=$do&view=me\">TA的所有日志</a>";
-	$_TPL['spacemenus'][] = "<a href=\"space.php?uid=$space[uid]&do=blog&id=$blog[blogid]\">查看日志</a>";
+	$_TPL['spacetitle'] = "日誌";
+	$_TPL['spacemenus'][] = "<a href=\"space.php?uid=$space[uid]&do=$do&view=me\">TA的所有日誌</a>";
+	$_TPL['spacemenus'][] = "<a href=\"space.php?uid=$space[uid]&do=blog&id=$blog[blogid]\">查看日誌</a>";
 }-->
 <!--{template space_menu}-->
 <!--{/if}-->
@@ -36,16 +36,16 @@
 		<!--{if $blog['friend']}-->
 		<span class="r_option locked gray">{$friendsname[$blog[friend]]}</span>
 		<!--{/if}-->
-		<!--{if $blog[hot]}--><span class="hot"><em>热</em>$blog[hot]</span><!--{/if}-->
+		<!--{if $blog[hot]}--><span class="hot"><em>熱</em>$blog[hot]</span><!--{/if}-->
 		<!--{if $blog['friend']}-->
 		<span class="r_option locked gray">
 		<a href="space.php?uid=$space[uid]&do=$do&view=me&friend=$blog[friend]" class="gray">{$friendsname[$value[friend]]}</a>
 		</span>
 		<!--{/if}-->
-		<!--{if $blog[viewnum]}--><span class="gray">已有 $blog[viewnum] 次阅读</span><!--{/if}-->
+		<!--{if $blog[viewnum]}--><span class="gray">已有 $blog[viewnum] 次閱讀</span><!--{/if}-->
 		&nbsp; <span class="gray"><!--{date('Y-m-d H:i',$blog[dateline],1)}--></span>
 		<!--{if $blog[tag]}-->
-		&nbsp; <a href="space.php?uid=$blog[uid]&do=tag">标签</a>:&nbsp;
+		&nbsp; <a href="space.php?uid=$blog[uid]&do=tag">標籤</a>:&nbsp;
 		<!--{loop $blog[tag] $tagid $tagname}-->
 		<a href="space.php?uid=$blog[uid]&do=tag&id=$tagid">$tagname</a>&nbsp;
 		<!--{/loop}-->
@@ -110,14 +110,14 @@
 		<!--{/if}-->
 
 		<!--{if $_SGLOBAL[supe_uid] == $blog[uid] || checkperm('manageblog')}-->
-		<a href="cp.php?ac=topic&op=join&id=$blog[blogid]&idtype=blogid" id="a_topicjoin_$blog[blogid]" onclick="ajaxmenu(event, this.id)">凑热闹</a><span class="pipe">|</span>
-		<a href="cp.php?ac=blog&blogid=$blog[blogid]&op=edit">编辑</a><span class="pipe">|</span>
-		<a href="cp.php?ac=blog&blogid=$blog[blogid]&op=delete" id="blog_delete_$blog[blogid]" onclick="ajaxmenu(event, this.id)">删除</a><span class="pipe">|</span>
+		<a href="cp.php?ac=topic&op=join&id=$blog[blogid]&idtype=blogid" id="a_topicjoin_$blog[blogid]" onclick="ajaxmenu(event, this.id)">湊熱鬧</a><span class="pipe">|</span>
+		<a href="cp.php?ac=blog&blogid=$blog[blogid]&op=edit">編輯</a><span class="pipe">|</span>
+		<a href="cp.php?ac=blog&blogid=$blog[blogid]&op=delete" id="blog_delete_$blog[blogid]" onclick="ajaxmenu(event, this.id)">刪除</a><span class="pipe">|</span>
 		<!--{/if}-->
 		<!--{if checkperm('manageblog')}-->
-		<a href="cp.php?ac=blog&blogid=$blog[blogid]&op=edithot" id="blog_hot_$blog[blogid]" onclick="ajaxmenu(event, this.id)">热度</a><span class="pipe">|</span>
+		<a href="cp.php?ac=blog&blogid=$blog[blogid]&op=edithot" id="blog_hot_$blog[blogid]" onclick="ajaxmenu(event, this.id)">熱度</a><span class="pipe">|</span>
 		<!--{/if}-->
-		<a href="cp.php?ac=common&op=report&idtype=blogid&id=$blog[blogid]" id="a_report" onclick="ajaxmenu(event, this.id, 1)">举报</a>
+		<a href="cp.php?ac=common&op=report&idtype=blogid&id=$blog[blogid]" id="a_report" onclick="ajaxmenu(event, this.id, 1)">舉報</a>
 	</div>
 
 </div>
@@ -131,14 +131,14 @@
 	<div class="comments" id="div_main_content">
 		<h2>
 			<!--{if !$blog[noreply]}-->
-			<a href="#quickcommentform_{$id}" class="r_option">发表评论</a>
+			<a href="#quickcommentform_{$id}" class="r_option">發表評論</a>
 			<!--{/if}-->
-			评论 (<span id="comment_replynum">$blog[replynum]</span> 个评论)</h2>
+			評論 (<span id="comment_replynum">$blog[replynum]</span> 個評論)</h2>
 		<div class="page">$multi</div>
 		<div class="comments_list" id="comment">
 			<!--{if $cid}-->
 			<div class="notice">
-				当前只显示与你操作相关的单个评论，<a href="space.php?uid=$blog[uid]&do=blog&id=$blog[blogid]">点击此处查看全部评论</a>
+				當前只顯示與你操作相關的單個評論，<a href="space.php?uid=$blog[uid]&do=blog&id=$blog[blogid]">點擊此處查看全部評論</a>
 			</div>
 			<!--{/if}-->
 			<ul id="comment_ul">
@@ -157,7 +157,7 @@
 					<td>
 						<a href="###" id="comment_face" title="插入表情" onclick="showFace(this.id, 'comment_message');return false;"><img src="image/facelist.gif" align="absmiddle" /></a>
 						<!--{if $_SGLOBAL['magic']['doodle']}-->
-						<a id="a_magic_doodle" href="magic.php?mid=doodle&showid=comment_doodle&target=comment_message" onclick="ajaxmenu(event, this.id, 1)"><img src="image/magic/doodle.small.gif" class="magicicon" />涂鸦板</a>
+						<a id="a_magic_doodle" href="magic.php?mid=doodle&showid=comment_doodle&target=comment_message" onclick="ajaxmenu(event, this.id, 1)"><img src="image/magic/doodle.small.gif" class="magicicon" />塗鴉板</a>
 						<!--{/if}-->
 						<br />
 						<textarea id="comment_message" onkeydown="ctrlEnter(event, 'commentsubmit_btn');" name="message" rows="5" style="width:500px;"></textarea>
@@ -169,7 +169,7 @@
 						<input type="hidden" name="id" value="$id">
 						<input type="hidden" name="idtype" value="blogid">
 						<input type="hidden" name="commentsubmit" value="true" />
-						<input type="button" id="commentsubmit_btn" name="commentsubmit_btn" class="submit" value="评论" onclick="ajaxpost('quickcommentform_{$id}', 'comment_add')" />
+						<input type="button" id="commentsubmit_btn" name="commentsubmit_btn" class="submit" value="評論" onclick="ajaxpost('quickcommentform_{$id}', 'comment_add')" />
 						<div id="__quickcommentform_{$id}"></div>
 					</td>
 				</tr>
@@ -187,7 +187,7 @@
 	<!--{if $topic}-->
 	<div class="affiche">
 		<img src="image/app/topic.gif" align="absmiddle">
-		<strong>凑个热闹</strong>：
+		<strong>湊個熱鬧</strong>：
 		<a href="space.php?do=topic&topicid=$topic[topicid]">$topic[subject]</a>
 	</div>
 	<!--{/if}-->
@@ -196,7 +196,7 @@
 	<div class="sidebox">
 		<h2 class="title">
 			<a href="space.php?uid=$blog[uid]&do=blog&view=me" class="r_option">全部</a>
-			作者的其他最新日志
+			作者的其他最新日誌
 		</h2>
 		<ul class="news_list">
 			<!--{loop $otherlist $value}-->
@@ -208,7 +208,7 @@
 
 	<!--{if $newlist}-->
 	<div class="sidebox">
-	<h2 class="title">热门日志导读</h2>
+	<h2 class="title">熱門日誌導讀</h2>
 		<ul class="news_list">
 			<!--{loop $newlist $value}-->
 			<li style="height:auto;"><a href="space.php?uid=$value[uid]" style="font-weight:bold;">{$_SN[$value[uid]]}</a>: <a href="space.php?uid=$value[uid]&do=blog&id=$value[blogid]">$value[subject]</a></li>
@@ -220,7 +220,7 @@
 	<!--{if $blog['related']}-->
 	<!--{loop $blog['related'] $appid $values}-->
 	<div class="sidebox">
-	<h2 class="title">您可能感兴趣的<!--{if $_SGLOBAL[app][$appid][name]}-->({$_SGLOBAL[app][$appid][name]})<!--{/if}--></h2>
+	<h2 class="title">您可能感興趣的<!--{if $_SGLOBAL[app][$appid][name]}-->({$_SGLOBAL[app][$appid][name]})<!--{/if}--></h2>
 		<ul class="news_list">
 			<!--{loop $values['data'] $value}-->
 			<li style="height:auto;">$value[html]</li>
@@ -239,12 +239,12 @@ function closeSide2(oo) {
 	if($('sidebar').style.display == 'none'){
 		$('content').style.cssText = '';
 		$('sidebar').style.display = 'block';
-		oo.innerHTML = '&raquo; 关闭侧边栏';
+		oo.innerHTML = '&raquo; 關閉側邊欄';
 	}
 	else{
 		$('content').style.cssText = 'margin: 0pt; width: 810px;';
 		$('sidebar').style.display = 'none';
-		oo.innerHTML = '&laquo; 打开侧边栏';
+		oo.innerHTML = '&laquo; 打開側邊欄';
 	}
 }
 function addFriendCall(){

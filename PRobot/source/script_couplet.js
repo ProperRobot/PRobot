@@ -10,7 +10,7 @@ function lsfloatdiv(id, sx, sy, floatid, bottom) {
 	adobj.style.left = (typeof(sx) == 'string' ? eval(sx) : sx) + 'px';
 	adobj.style.top = (typeof(sy) == 'string'? eval(sy) : sy) + 'px';
 	
-	//设置两个紧贴主体两测
+	//設置兩個緊貼主體兩測
 	//$('couplet_left').style.left = ($('wrap').offsetLeft - 0) + 'px';
 	//$('couplet_rigth').style.left = ($('wrap').offsetLeft + $('wrap').offsetWidth+2) + 'px';
 	
@@ -38,7 +38,7 @@ function lsfloatdiv(id, sx, sy, floatid, bottom) {
 		this.sP(this.cx, this.cy);
 		setTimeout(this.id + "_obj.floatIt()", 40);
 	}
-	//分辨率小于800*600隐藏浮动广告
+	//分辨率小於800*600隱藏浮動廣告
 	var lengthobj = getWindowSize();
 	if(lengthobj.winWidth < 800) {
 		closeBanner(id);
@@ -47,7 +47,7 @@ function lsfloatdiv(id, sx, sy, floatid, bottom) {
 }
 
 /**
- * 获取窗口的高度与宽度
+ * 獲取窗口的高度與寬度
  */
 function getWindowSize() {
   var winWidth = 0, winHeight = 0;

@@ -11,19 +11,19 @@ function setintro(type) {
 	var intro = '';
 	var bPosition = '';
 	if(type == 'doing') {
-		intro = '用一句话记录自己生活中的点点滴滴';
+		intro = '用一句話記錄自己生活中的點點滴滴';
 		bPosition = '0';
 	} else if(type == 'mtag') {
-		intro = '创建自己的小圈子，与大家交流感兴趣的话题';
+		intro = '創建自己的小圈子，與大家交流感興趣的話題';
 		bPosition = '175px';
 	} else if(type == 'pic') {
-		intro = '上传照片，分享生活中的精彩瞬间';
+		intro = '上傳照片，分享生活中的精彩瞬間';
 		bPosition = '55px';
 	} else if(type == 'app') {
-		intro = '与好友一起玩转游戏和应用，增加好友感情';
+		intro = '與好友一起玩轉遊戲和應用，增加好友感情';
 		bPosition = '118px';
 	} else {
-		intro = '马上注册，与好友分享日志、照片，一起玩转游戏';
+		intro = '馬上註冊，與好友分享日誌、照片，一起玩轉遊戲';
 		bPosition = '0';
 	}
 	$('guest_intro').innerHTML = intro + '......';
@@ -33,26 +33,26 @@ function setintro(type) {
 
 <div id="guestbar" class="nbox">
 	<div class="nbox_c">
-		<p id="guest_intro">马上注册，与好友分享日志、照片，一起玩转游戏......</p>
-		<a href="do.php?ac=$_SCONFIG[register_action]" id="regbutton" onmouseover="setintro('register');">马上注册</a>
+		<p id="guest_intro">馬上註冊，與好友分享日誌、照片，一起玩轉遊戲......</p>
+		<a href="do.php?ac=$_SCONFIG[register_action]" id="regbutton" onmouseover="setintro('register');">馬上註冊</a>
 		<p id="guest_app">
-			<a href="javascript:;" class="appdoing" onmouseover="setintro('doing');">记录</a>
+			<a href="javascript:;" class="appdoing" onmouseover="setintro('doing');">記錄</a>
 			<a href="javascript:;" class="appphotos" onmouseover="setintro('pic');">照片</a>
-			<a href="javascript:;" class="appgames" onmouseover="setintro('app');">游戏</a>
-			<a href="javascript:;" class="appgroups" onmouseover="setintro('mtag');">群组</a> 
+			<a href="javascript:;" class="appgames" onmouseover="setintro('app');">遊戲</a>
+			<a href="javascript:;" class="appgroups" onmouseover="setintro('mtag');">群組</a> 
 		</p>
 	</div>	
 	<div class="nbox_s side_rbox" id="nlogin_box">
-		<h3 class="ntitle">请登录</h3>
+		<h3 class="ntitle">請登錄</h3>
 		<div class="side_rbox_c">
 			<form name="loginform" action="do.php?ac=$_SCONFIG[login_action]&$url_plus&ref" method="post">
-				<p><label for="username">用户名</label> <input type="text" name="username" id="username" class="t_input" value="$membername" /></p>
-				<p><label for="password">密　码</label> <input type="password" name="password" id="password" class="t_input" value="$password" /></p>
-				<p class="checkrow"><input type="checkbox" id="cookietime" name="cookietime" value="315360000" $cookiecheck style="margin-bottom: -2px;" /><label for="cookietime">下次自动登录</label></p>
+				<p><label for="username">用戶名</label> <input type="text" name="username" id="username" class="t_input" value="$membername" /></p>
+				<p><label for="password">密　碼</label> <input type="password" name="password" id="password" class="t_input" value="$password" /></p>
+				<p class="checkrow"><input type="checkbox" id="cookietime" name="cookietime" value="315360000" $cookiecheck style="margin-bottom: -2px;" /><label for="cookietime">下次自動登錄</label></p>
 				<p class="submitrow">
 					<input type="hidden" name="refer" value="space.php?do=home" />
-					<input type="submit" id="loginsubmit" name="loginsubmit" value="登录" class="submit" />
-					<a href="do.php?ac=lostpasswd">忘记密码?</a>
+					<input type="submit" id="loginsubmit" name="loginsubmit" value="登錄" class="submit" />
+					<a href="do.php?ac=lostpasswd">忘記密碼?</a>
 					<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
 				</p>
 			</form>
@@ -75,8 +75,8 @@ function setintro(type) {
 	<div class="susb">
 		<div class="ye_r_t"><div class="ye_l_t"><div class="ye_r_b"><div class="ye_l_b">
 			<div class="appmo">
-				<p>共有 <span>$myappcount</span> 个应用</p>
-				<p class="appmobutton"><a href="cp.php?ac=userapp&my_suffix=%2Fapp%2Flist">查看更多应用</a></p>
+				<p>共有 <span>$myappcount</span> 個應用</p>
+				<p class="appmobutton"><a href="cp.php?ac=userapp&my_suffix=%2Fapp%2Flist">查看更多應用</a></p>
 			</div>
 		</div></div></div></div>	
 	</div>
@@ -86,7 +86,7 @@ function setintro(type) {
 
 <div id="radomuser" class="nbox">
 	<div class="nbox_c">
-		<h2 class="ntitle">欢迎您，与大家一起交流与分享吧</h2>
+		<h2 class="ntitle">歡迎您，與大家一起交流與分享吧</h2>
 		<ul class="s_clear">
 		<!--{loop $spacelist $value}-->
 			<li>

@@ -11,16 +11,16 @@ if(!defined('IN_UCHOME')) {
 $blogcount = getcount('blog', array('uid'=>$space['uid']));
 if($blogcount) {
 
-	$task['done'] = 1;//任务完成
+	$task['done'] = 1;//任務完成
 
 } else {
 
-	//任务完成向导
+	//任務完成嚮導
 	$task['guide'] = '
-		<strong>请按照以下的说明来参与本任务：</strong>
+		<strong>請按照以下的說明來參與本任務：</strong>
 		<ul>
-		<li>1. <a href="cp.php?ac=blog" target="_blank">新窗口打开发表日志页面</a>；</li>
-		<li>2. 在新打开的页面中，书写自己的第一篇日志，并进行发布。</li>
+		<li>1. <a href="cp.php?ac=blog" target="_blank">新窗口打開發表日誌頁面</a>；</li>
+		<li>2. 在新打開的頁面中，書寫自己的第一篇日誌，並進行發佈。</li>
 		</ul>';
 
 }

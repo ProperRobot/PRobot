@@ -612,6 +612,45 @@ $_SGLOBAL['creditrule']=Array
 		'norepeat' => '0',
 		'credit' => 2,
 		'experience' => 2
+		),
+	'pushpronotice' => Array
+		(
+		'rid' => 48,
+		'rulename' => '物业通知',
+		'action' => 'pushpronotice',
+		'cycletype' => 1,
+		'cycletime' => '0',
+		'rewardnum' => 3,
+		'rewardtype' => 1,
+		'norepeat' => '0',
+		'credit' => 5,
+		'experience' => 5
+		),
+	'pronoticeimport' => Array
+		(
+		'rid' => 49,
+		'rulename' => '物业通知导入',
+		'action' => 'pronoticeimport',
+		'cycletype' => '0',
+		'cycletime' => '0',
+		'rewardnum' => 1,
+		'rewardtype' => '0',
+		'norepeat' => '0',
+		'credit' => 10,
+		'experience' => '0'
+		),
+	'delpronotice' => Array
+		(
+		'rid' => 50,
+		'rulename' => '日志被删除',
+		'action' => 'delpronotice',
+		'cycletype' => '0',
+		'cycletime' => '0',
+		'rewardnum' => 1,
+		'rewardtype' => '0',
+		'norepeat' => '0',
+		'credit' => 10,
+		'experience' => '0'
 		)
 	)
 ?>

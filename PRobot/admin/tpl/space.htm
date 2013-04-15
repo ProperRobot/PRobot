@@ -6,13 +6,13 @@
 
 	<div class="tabs_header">
 		<ul class="tabs">
-			<li$actives[all]><a href="admincp.php?ac=$ac"><span>浏览全部用户</span></a></li>
+			<li$actives[all]><a href="admincp.php?ac=$ac"><span>瀏覽全部用戶</span></a></li>
 			<!--{if checkperm('managename')}-->
-			<li$actives[0]><a href="admincp.php?ac=$ac&perpage=20&namestatus=0&searchsubmit=1&tab=0"><span>实名未认证</span></a></li>
-			<li$actives[1]><a href="admincp.php?ac=$ac&perpage=20&namestatus=1&searchsubmit=1&tab=1"><span>实名已认证</span></a></li>
+			<li$actives[0]><a href="admincp.php?ac=$ac&perpage=20&namestatus=0&searchsubmit=1&tab=0"><span>實名未認證</span></a></li>
+			<li$actives[1]><a href="admincp.php?ac=$ac&perpage=20&namestatus=1&searchsubmit=1&tab=1"><span>實名已認證</span></a></li>
 			<!--{/if}-->
-			<li$actives[2]><a href="admincp.php?ac=$ac&perpage=20&videostatus=0&searchsubmit=1&tab=2"><span>视频未认证</span></a></li>
-			<li$actives[3]><a href="admincp.php?ac=$ac&perpage=20&videostatus=1&searchsubmit=1&tab=3"><span>视频已认证</span></a></li>
+			<li$actives[2]><a href="admincp.php?ac=$ac&perpage=20&videostatus=0&searchsubmit=1&tab=2"><span>視頻未認證</span></a></li>
+			<li$actives[3]><a href="admincp.php?ac=$ac&perpage=20&videostatus=1&searchsubmit=1&tab=3"><span>視頻已認證</span></a></li>
 		</ul>
 	</div>
 
@@ -21,34 +21,34 @@
 	<div class="block style4">
 		<table cellspacing="3" cellpadding="3">
 		<tr>
-			<th>用户UID</th><td><input type="text" name="uid" value="$_GET[uid]" size="10"></td>
-			<th>用户名</th><td><input type="text" name="username" value="$_GET[username]"></td>
+			<th>用戶UID</th><td><input type="text" name="uid" value="$_GET[uid]" size="10"></td>
+			<th>用戶名</th><td><input type="text" name="username" value="$_GET[username]"></td>
 		</tr>
 		<tr>
 			<th>姓名*</th><td><input type="text" name="name" value="$_GET[name]"></td>
-			<th>头像</th><td>
+			<th>頭像</th><td>
 			<select name="avatar">
 			<option value="">不限</option>
-			<option value="1"<!--{if $_GET[avatar] == '1'}--> selected<!--{/if}-->>上传头像</option>
-			<option value="0"<!--{if $_GET[avatar] == '0'}--> selected<!--{/if}-->>没有头像</option>
+			<option value="1"<!--{if $_GET[avatar] == '1'}--> selected<!--{/if}-->>上傳頭像</option>
+			<option value="0"<!--{if $_GET[avatar] == '0'}--> selected<!--{/if}-->>沒有頭像</option>
 			</select></td>
 		</tr>
 		<tr>
-			<th>实名认证</th><td>
+			<th>實名認證</th><td>
 			<select name="namestatus">
 			<option value="">不限</option>
-			<option value="1"<!--{if $_GET[namestatus] == '1'}--> selected<!--{/if}-->>已认证</option>
-			<option value="0"<!--{if $_GET[namestatus] == '0'}--> selected<!--{/if}-->>未认证</option>
+			<option value="1"<!--{if $_GET[namestatus] == '1'}--> selected<!--{/if}-->>已認證</option>
+			<option value="0"<!--{if $_GET[namestatus] == '0'}--> selected<!--{/if}-->>未認證</option>
 			</select></td>
-			<th>视频认证</th><td>
+			<th>視頻認證</th><td>
 			<select name="videostatus">
 			<option value="">不限</option>
-			<option value="1"<!--{if $_GET[videostatus] == '1'}--> selected<!--{/if}-->>已认证</option>
-			<option value="0"<!--{if $_GET[videostatus] == '0'}--> selected<!--{/if}-->>未认证</option>
+			<option value="1"<!--{if $_GET[videostatus] == '1'}--> selected<!--{/if}-->>已認證</option>
+			<option value="0"<!--{if $_GET[videostatus] == '0'}--> selected<!--{/if}-->>未認證</option>
 			</select></td>
 		</tr>
 		<tr>
-			<th>用户组</th><td>
+			<th>用戶組</th><td>
 			<select name="groupid">
 			<option value="">不限制</option>
 			<!--{loop $usergroups $gid $value}-->
@@ -56,63 +56,63 @@
 			<!--{/loop}-->
 			</select>
 			</td>
-			<th>用户状态</th><td>
+			<th>用戶狀態</th><td>
 			<select name="flag">
 			<option value="">不限</option>
-			<option value="1"<!--{if $_GET[flag] == '1'}--> selected<!--{/if}-->>保护用户</option>
-			<option value="0"<!--{if $_GET[flag] == '0'}--> selected<!--{/if}-->>普通用户</option>
-			<option value="-1"<!--{if $_GET[flag] == '-1'}--> selected<!--{/if}-->>锁定用户</option>
+			<option value="1"<!--{if $_GET[flag] == '1'}--> selected<!--{/if}-->>保護用戶</option>
+			<option value="0"<!--{if $_GET[flag] == '0'}--> selected<!--{/if}-->>普通用戶</option>
+			<option value="-1"<!--{if $_GET[flag] == '-1'}--> selected<!--{/if}-->>鎖定用戶</option>
 			</select>
 			</td>
 		</tr>
 		<tr>
-			<th>用户经验值</th><td>
+			<th>用戶經驗值</th><td>
 			<input type="text" name="experience1" value="$_GET[experience1]" size="10"> ~
 			<input type="text" name="experience2" value="$_GET[experience2]" size="10">
 			</td>
 		</tr>
 		<tr>
-			<th>用户积分</th><td>
+			<th>用戶積分</th><td>
 			<input type="text" name="credit1" value="$_GET[credit1]" size="10"> ~
 			<input type="text" name="credit2" value="$_GET[credit2]" size="10">
 			</td>
 		</tr>
-		<tr><th>空间创建时间</th><td colspan="3">
+		<tr><th>空間創建時間</th><td colspan="3">
 			<input type="text" name="dateline1" value="$_GET[dateline1]" size="10"> ~
 			<input type="text" name="dateline2" value="$_GET[dateline2]" size="10"> (YYYY-MM-DD)
 		</td></tr>
-		<tr><th>最后更新时间</th><td colspan="3">
+		<tr><th>最後更新時間</th><td colspan="3">
 			<input type="text" name="updatetime1" value="$_GET[updatetime1]" size="10"> ~
 			<input type="text" name="updatetime2" value="$_GET[updatetime2]" size="10"> (YYYY-MM-DD)
 		</td></tr>
 		
-		<tr><th>最后访问时间</th><td colspan="3">
+		<tr><th>最後訪問時間</th><td colspan="3">
 			<input type="text" name="lastlogin1" value="$_GET[lastlogin1]" size="10"> ~
 			<input type="text" name="lastlogin2" value="$_GET[lastlogin2]" size="10"> (YYYY-MM-DD)
 		</td></tr>
-		<tr><th>最后发信息时间</th><td colspan="3">
+		<tr><th>最後發信息時間</th><td colspan="3">
 			<input type="text" name="lastpost1" value="$_GET[lastpost1]" size="10"> ~
 			<input type="text" name="lastpost2" value="$_GET[lastpost2]" size="10"> (YYYY-MM-DD)
 		</td></tr>
-		<tr><th>结果排序</th>
+		<tr><th>結果排序</th>
 		<td colspan="3">
 		<select name="orderby">
-		<option value="">默认排序</option>
-		<option value="dateline"$orderby[dateline]>建立时间</option>
-		<option value="updatetime"$orderby[updatetime]>更新时间</option>
-		<option value="viewnum"$orderby[viewnum]>访问量</option>
-		<option value="experience"$orderby[experience]>经验值</option>
-		<option value="credit"$orderby[credit]>积分数</option>
-		<option value="friendnum"$orderby[friendnum]>好友数</option>
+		<option value="">默認排序</option>
+		<option value="dateline"$orderby[dateline]>建立時間</option>
+		<option value="updatetime"$orderby[updatetime]>更新時間</option>
+		<option value="viewnum"$orderby[viewnum]>訪問量</option>
+		<option value="experience"$orderby[experience]>經驗值</option>
+		<option value="credit"$orderby[credit]>積分數</option>
+		<option value="friendnum"$orderby[friendnum]>好友數</option>
 		</select>
 		<select name="ordersc">
-		<option value="desc"$ordersc[desc]>递减</option>
-		<option value="asc"$ordersc[asc]>递增</option>
+		<option value="desc"$ordersc[desc]>遞減</option>
+		<option value="asc"$ordersc[asc]>遞增</option>
 		</select>
 		<select name="perpage">
-		<option value="20"$perpages[20]>每页显示20个</option>
-		<option value="50"$perpages[50]>每页显示50个</option>
-		<option value="100"$perpages[100]>每页显示100个</option>
+		<option value="20"$perpages[20]>每頁顯示20個</option>
+		<option value="50"$perpages[50]>每頁顯示50個</option>
+		<option value="100"$perpages[100]>每頁顯示100個</option>
 		</select>
 		<input type="hidden" name="ac" value="$ac">
 		<!--{if isset($_GET[tab])}-->
@@ -130,9 +130,9 @@
 
 	<!--{eval 
 	$flagarr = array(
-		'-1' => '<span style="color:blue;">锁定</span>',
+		'-1' => '<span style="color:blue;">鎖定</span>',
 		'0' => '正常',
-		'1' => '<span style="color:red;">保护</span>'
+		'1' => '<span style="color:red;">保護</span>'
 	);
 	}-->
 	<div class="bdrcontent">
@@ -141,14 +141,14 @@
 	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
 		<table cellspacing="2" cellpadding="2" class="listtable">
 		<tr class="line">
-			<th width="30">选择</th>
-			<th width="55">用户</th>
-			<th>用户名/姓名</th>
-			<th>用户组</th>
-			<th>经验/积分/好友</th>
+			<th width="30">選擇</th>
+			<th width="55">用戶</th>
+			<th>用戶名/姓名</th>
+			<th>用戶組</th>
+			<th>經驗/積分/好友</th>
 			<th>附件</th>
-			<th>注册/更新</th>
-			<th>状态</th>
+			<th>註冊/更新</th>
+			<th>狀態</th>
 			<th>操作</th>
 		</tr>
 		<!--{loop $list $key $value}-->
@@ -193,19 +193,19 @@
 	</div>
 
 	<div class="footactions">
-		<input type="checkbox" id="chkall" name="chkall" onclick="checkAll(this.form, 'uids')">全选 &nbsp;&nbsp;
+		<input type="checkbox" id="chkall" name="chkall" onclick="checkAll(this.form, 'uids')">全選 &nbsp;&nbsp;
 		<!--{if checkperm('managename')}-->
-		<input type="radio" name="optype" value="1"> 通过实名
-		<input type="radio" name="optype" value="2"> 取消实名
-		<input type="radio" name="optype" value="3"> 清空实名
+		<input type="radio" name="optype" value="1"> 通過實名
+		<input type="radio" name="optype" value="2"> 取消實名
+		<input type="radio" name="optype" value="3"> 清空實名
 		<!--{/if}-->
 
 		<!--{if $managespacenote}-->
-		<input type="radio" name="optype" value="4"> 发送邮件
+		<input type="radio" name="optype" value="4"> 發送郵件
 		<input type="radio" name="optype" value="5"> 打招呼
 		<!--{/if}-->
 		<!--{if checkperm('manageconfig')}-->
-		<input type="radio" name="optype" value="7"> 赠送道具
+		<input type="radio" name="optype" value="7"> 贈送道具
 		<!--{/if}-->
 		<!--{if $managespaceinfo}-->
 		<input type="radio" name="optype" value="6"> 清理CSS
@@ -218,7 +218,7 @@
 	</form>
 <!--{else}-->
 	<div class="bdrcontent">
-		<p>指定条件下还没有数据</p>
+		<p>指定條件下還沒有數據</p>
 	</div>
 <!--{/if}-->
 </div>
